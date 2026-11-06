@@ -1,0 +1,5 @@
+node_modules/
+out/
+scripts/client_secret.json
+*.partial.mp4
+__pycache__/

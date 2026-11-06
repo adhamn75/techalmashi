@@ -1,0 +1,19 @@
+{
+  "settings": {
+    "timezone": "Asia/Beirut",
+    "per_day": 3,
+    "publish_times": ["13:00", "18:00", "21:00"],
+    "category_id": "27",
+    "language": "ar"
+  },
+  "episodes": [
+    {
+      "id": "ep01-snake",
+      "composition": "Ep01Snake",
+      "title": "لعبة Snake جوّا Excel؟؟ 🐍 #shorts",
+      "description": "ما حدا بيصدّق إنها Excel 😅\nكل خلية بالشيت = بكسل، والحية عم تتحرك بكود VBA.\n\nبدك الملف؟ اكتب «بدي» بالكومنتات 👇\n\nسيريز «Excel ما بتعرفو» — الحلقة 1\n\n#excel #vba #اكسل #shorts",
+      "tags": ["excel", "vba", "اكسل", "excel tricks", "snake game", "Excel ما بتعرفو"],
+      "status": "ready"
+    }
+  ]
+}

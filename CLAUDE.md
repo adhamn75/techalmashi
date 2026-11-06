@@ -1,0 +1,39 @@
+# Excel ما بتعرفو — how to make a new episode
+
+This repo is a YouTube Shorts channel built entirely in code. GitHub Actions renders and
+schedules whatever is `"ready"` in `episodes.json` every morning. Your job, when asked to
+make episodes, is to keep that queue full with good, *different* episodes.
+
+## The series
+- Name: **Excel ما بتعرفو** ("the Excel you don't know"). Audience: Arabic speakers, Lebanese dialect.
+- Every episode shows something people don't believe Excel can do, then reveals how (VBA, formulas,
+  Power Query, LAMBDA, Python in Excel…). It must be **real**: if the episode claims Excel does it,
+  it has to be doable.
+- Host: **أبو خلية** (`src/shared/AbuKhalye.tsx`, used through `Mokaab` in `src/shared/Mascot.tsx`):
+  chubby green cell guy, moustache, round glasses, red tie. Props: `mood` (happy/shock/smirk),
+  `wave`, `talk`, `wink`, `lookX`, `scale`, `y`.
+
+## Hard rules
+- 10–15 seconds. 30 fps, 1080×1920.
+- The hook is the impossible thing itself, on screen from frame 0. No intro.
+- Everything drawn in code: no AI images, no stock footage, no AI voice.
+- Each episode must look different from the last one (layout, colors of the scene, motion,
+  structure). Never copy an episode and swap the words — YouTube demonetises templated content.
+- Lebanese Arabic captions, short, big (Cairo 900). Sound only from `public/sfx` via `<Sfx>`.
+- End with a CTA that fits (file in comments, follow for part 2, "جرّبها").
+  Only promise a file if one actually exists in `files/`.
+
+## Adding an episode
+1. `src/episodes/EpNNName.tsx` exporting the component and `EPNN_FRAMES`.
+2. Register it in `src/Root.tsx`.
+3. Render 3–4 stills at the busiest moments and look at them before anything else:
+   `npx remotion still src/index.ts EpNNName out/check.png --frame=60 --gl=swangle`
+4. Append to `episodes.json` with `"status": "ready"`, an Arabic title (≤ 100 chars, ends with #shorts),
+   description, tags.
+5. Commit and push.
+
+## Episode ideas not yet made
+Excel draws your photo (pixel art from cells) · full attendance system with overtime in one click ·
+Excel sends WhatsApp messages · 3D cube spinning with formulas only · invoice that fills itself and
+exports PDF · AI inside a cell · live gold/dollar prices refreshing · Excel plays music ·
+Tetris in Excel · Excel as a calendar app · QR code generator in Excel.
