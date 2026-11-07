@@ -40,3 +40,30 @@ Excel draws your photo (pixel art from cells) · full attendance system with ove
 Excel sends WhatsApp messages · 3D cube spinning with formulas only · invoice that fills itself and
 exports PDF · AI inside a cell · live gold/dollar prices refreshing · Excel plays music ·
 Tetris in Excel · Excel as a calendar app · QR code generator in Excel.
+
+## Adopted third-party skills (`.claude/skills/`, MIT — see `third_party/LICENSES.txt`)
+Copied unmodified from their repos, so read these notes where our repo differs from theirs.
+
+| Skill | From | Use it for |
+|---|---|---|
+| `motion-design` | whaleyxbt/claude-motion | Timing/easing/spring numbers and anti-patterns for every new episode. |
+| `review-loop` | whaleyxbt/claude-motion | Contact sheets at every beat before a full render. |
+| `sound-design` | whaleyxbt/claude-motion | The procedural `sfx/` engine (pure Python stdlib). |
+| `remotion-motion-graphics` | haidrrrry/claude-remotion-skill | Remotion patterns: staggered entrances, gradient backgrounds, verified renders. |
+| `yt-script`, `yt-package`, `yt-seo` | Jakeschincariol/youtube-agent-skill | Hook scoring (21 formulas), Arabic titles/descriptions, tags. |
+| `yt-viral`, `yt-plan` | same | Rank what is working in the niche; plan the next batch. Needs public channel listings (yt-dlp), which run in GitHub Actions, not in the cloud sandbox. |
+| `yt-comment`, `yt-audit`, `yt-retention` | same | Once the channel has comments/analytics exports to feed them. |
+
+Differences from the source repos:
+- claude-motion assumes `timeline.json` + `src/lib.ts`. Here, older episodes keep beats inline. For NEW
+  episodes, put beats in `src/episodes/<id>.timeline.json` and pass it to the cue sheet (`sfx/cues/<id>.py`)
+  so picture and sound share one clock.
+- One-shot SFX used by `<Sfx>` are built by `python3 scripts/make_sfx.py` (C major). A full per-episode
+  score can be rendered with `python3 -m sfx sfx/cues/<id>.py` and placed as one `<Audio>`.
+- claude-motion's typography (Instrument Serif/Inter) does not apply: captions are Arabic, Cairo 900.
+- The yt-* skills never publish; `scripts/publish.py` does, after review.
+
+Not adopted (checked, not a fit): howseen-ai/claude-motion-design (HTML+Playwright pipeline, we already
+use Remotion), AgriciDaniel/claude-youtube (overlaps yt-*, parts need YouTube/Gemini keys),
+mohitagw15856/pm-claude-skills youtube-script-writer (long-form), cdeistopened/content-os (newsletter/
+podcast writing, needs Gemini/Anthropic keys), agamm/video-agent (edits real footage; Grok part is paid).
