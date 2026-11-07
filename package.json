@@ -1,8 +1,8 @@
 {
-  "name": "excel-shorts",
+  "name": "techalmashi",
   "private": true,
   "version": "1.0.0",
-  "description": "Excel ما بتعرفو — YouTube Shorts made entirely in code (Remotion + Three.js), rendered and published by GitHub Actions.",
+  "description": "تك عالماشي — YouTube Shorts made entirely in code (Remotion + Three.js), rendered and published by GitHub Actions.",
   "scripts": {
     "studio": "remotion studio src/index.ts",
     "still": "remotion still src/index.ts"

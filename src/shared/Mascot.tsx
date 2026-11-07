@@ -2,6 +2,7 @@ import React from 'react';
 import {useVideoConfig} from 'remotion';
 import {ThreeCanvas} from '@remotion/three';
 import {AbuKhalye} from './AbuKhalye';
+import {ShieldHost, ShieldLights} from './ShieldHost';
 
 export const GREEN = '#21c46b';
 export const BG = '#0b1410';
@@ -20,6 +21,7 @@ type Props = {
   spin?: number;      // body y-rotation
   wave?: number;
   talk?: number;
+  outfit?: 'tie' | 'shield';
 };
 
 // Original mascot "مكعّب": a green spreadsheet-cell cube with a face.
@@ -88,15 +90,27 @@ const Body: React.FC<Props> = ({frame, mood = 'smirk', wink = 0, lookX = 0, tilt
   );
 };
 
-export const Mokaab: React.FC<Props> = (props) => {
+// Channel host. Now the animated shield ("تك عالماشي" logo); the old Abu Khalye body stays in AbuKhalye.tsx
+// and can be brought back with legacy={true}. Same props, so every episode switches at once.
+export const Mokaab: React.FC<Props & {legacy?: boolean; rings?: boolean}> = (props) => {
   const {width, height} = useVideoConfig();
+  if (props.legacy) {
+    return (
+      <ThreeCanvas width={width} height={height} camera={{position: [0, 0, 10], fov: 40}}>
+        <ambientLight intensity={0.65} />
+        <directionalLight position={[4, 6, 8]} intensity={1.3} />
+        <directionalLight position={[-6, -2, 3]} intensity={0.4} color={GREEN} />
+        <group scale={props.scale ?? 1} position={[0, props.y ?? 0, 0]}>
+          <AbuKhalye {...props} />
+        </group>
+      </ThreeCanvas>
+    );
+  }
   return (
     <ThreeCanvas width={width} height={height} camera={{position: [0, 0, 10], fov: 40}}>
-      <ambientLight intensity={0.65} />
-      <directionalLight position={[4, 6, 8]} intensity={1.3} />
-      <directionalLight position={[-6, -2, 3]} intensity={0.4} color={GREEN} />
-      <group scale={props.scale ?? 1} position={[0, props.y ?? 0, 0]}>
-        <AbuKhalye {...props} />
+      <ShieldLights />
+      <group scale={(props.scale ?? 1) * 0.92} position={[0, (props.y ?? 0) + 0.15, 0]}>
+        <ShieldHost {...props} />
       </group>
     </ThreeCanvas>
   );
