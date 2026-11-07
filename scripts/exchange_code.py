@@ -10,6 +10,10 @@ import sys
 import urllib.parse
 import urllib.request
 
+missing = [k for k in ("YT_CLIENT_ID", "YT_CLIENT_SECRET") if not os.environ.get(k, "").strip()]
+if missing:
+    print("Missing GitHub secrets:", ", ".join(missing))
+    sys.exit(1)
 code = os.environ["AUTH_CODE"].strip()
 if "code=" in code:  # the whole redirect URL was pasted
     code = urllib.parse.parse_qs(urllib.parse.urlparse(code).query)["code"][0]
