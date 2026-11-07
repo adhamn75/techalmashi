@@ -4,7 +4,8 @@
 
 ## كيف بيشتغل
 - `episodes.json`: لائحة الحلقات. أي حلقة `"status": "ready"` بتنزل بأقرب وقت فاضي.
-- كل يوم الساعة 8 الصبح (بيروت) بينرفع لحد 3 فيديوهات **Private ومجدولة** على الساعات `13:00`، `18:00`، `21:00`.
+- كل يوم الساعة 8 الصبح (بيروت) بينرفع **فيديوين Private ومجدولين**: حلقة Excel الساعة `13:00` وحلقة أمان للأهل الساعة `20:00` (من `slots` بـ `episodes.json`).
+- بيحط كل فيديو بالـPlaylist تبعو إذا حطّيت الـID بـ `playlists`، وبيكتب `stats.json` بمشاهدات كل فيديو.
 - يعني عندك وقت تشوف كل فيديو بـYouTube Studio قبل ما يصير Public، وإذا ما عجبك بتلغيه.
 - الفيديوهات كمان بتنحفظ 7 أيام بـActions → Artifacts.
 
@@ -35,6 +36,5 @@ python scripts/auth_setup.py
 | شو بدك | الأمر |
 |---|---|
 | تشوف الحلقات وتعدّل عليها | `npm run studio` |
-| تغيّر عدد الحلقات باليوم | `per_day` بـ `episodes.json` |
-| تغيّر ساعات النشر | `publish_times` بـ `episodes.json` |
+| تغيّر السيريز والساعات | `slots` بـ `episodes.json` |
 | توقف النشر | Actions → Publish Shorts → Disable workflow |

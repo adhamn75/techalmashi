@@ -6,14 +6,14 @@
 4. A Google page opens: pick the account that owns the channel and allow access.
 5. Copy the three values it prints into GitHub → Settings → Secrets and variables → Actions.
 
-Only the upload permission is requested. Your password is never seen by this script.
+Requested: manage your YouTube videos (upload, add to playlists, read view counts). Your password is never seen by this script.
 You can revoke access any time at https://myaccount.google.com/permissions
 """
 from pathlib import Path
 
 from google_auth_oauthlib.flow import InstalledAppFlow
 
-SCOPES = ["https://www.googleapis.com/auth/youtube.upload"]
+SCOPES = ["https://www.googleapis.com/auth/youtube"]  # upload + playlists + reading stats
 secret = Path(__file__).with_name("client_secret.json")
 
 flow = InstalledAppFlow.from_client_secrets_file(str(secret), SCOPES)
