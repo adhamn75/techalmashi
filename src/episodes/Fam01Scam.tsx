@@ -146,6 +146,7 @@ const Rule: React.FC = () => {
           padding: '18px 46px', borderRadius: 60, opacity: c, transform: `scale(${0.8 + 0.2 * c})`}}>
           ابعتو لغروب العيلة
         </div>
+        <div style={{marginTop: 34, fontSize: 44, color: '#c7d2e3', direction: 'ltr', opacity: c}}>@tech3almashi</div>
       </div>
     </AbsoluteFill>
   );
