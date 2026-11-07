@@ -1,31 +1,36 @@
-name: auth (one-time YouTube connect)
+name: Connect YouTube (one time)
 
+# Paste the whole "localhost/?code=..." address from the Google sign-in into the box.
+# The resulting token is encrypted with the YT_CLIENT_SECRET secret and saved as
+# youtube_token.enc, so it never appears in logs or in plain text in the repo.
 on:
   workflow_dispatch:
     inputs:
       code:
-        description: "The code from the Google sign-in redirect"
+        description: "Paste the localhost address you got after allowing access"
         required: true
 
+permissions:
+  contents: write
+
 jobs:
-  exchange:
+  connect:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Exchange code for refresh token
+      - name: Hide the code in logs
+        run: echo "::add-mask::${{ inputs.code }}"
+      - name: Exchange code and save encrypted token
         env:
           AUTH_CODE: ${{ inputs.code }}
           YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
           YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
-        run: python3 scripts/exchange_code.py
-      - name: Encrypt token
         run: |
-          openssl pkeyutl -encrypt -pubin -inkey auth_pubkey.pem \
-            -pkeyopt rsa_padding_mode:oaep -pkeyopt rsa_oaep_md:sha256 \
-            -in token.txt -out token.enc
+          python3 scripts/exchange_code.py
+          openssl enc -aes-256-cbc -pbkdf2 -a -A -salt -pass env:YT_CLIENT_SECRET -in token.txt -out youtube_token.enc
           rm token.txt
-      - uses: actions/upload-artifact@v4
-        with:
-          name: token
-          path: token.enc
-          retention-days: 1
+          git config user.name "shorts-bot"
+          git config user.email "shorts-bot@users.noreply.github.com"
+          git add youtube_token.enc
+          git commit -m "Connect YouTube (encrypted token)"
+          git push

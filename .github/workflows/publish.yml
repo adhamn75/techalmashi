@@ -39,11 +39,20 @@ jobs:
           npx remotion browser ensure
           pip install google-api-python-client google-auth
 
+      - name: Load YouTube token
+        env:
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+        run: |
+          if [ -f youtube_token.enc ] && [ -n "$YT_CLIENT_SECRET" ]; then
+            T=$(openssl enc -d -aes-256-cbc -pbkdf2 -a -A -pass env:YT_CLIENT_SECRET -in youtube_token.enc)
+            echo "::add-mask::$T"
+            echo "YT_REFRESH_TOKEN=$T" >> "$GITHUB_ENV"
+          fi
+
       - name: Render and schedule today's episodes
         env:
           YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
           YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
-          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
           DRY_RUN: ${{ inputs.dry_run && '1' || '0' }}
         run: python scripts/publish.py
 

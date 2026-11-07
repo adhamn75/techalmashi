@@ -1,8 +1,8 @@
 """Exchange a one-time Google OAuth code for a refresh token.
 
 Runs inside GitHub Actions (the auth workflow). The refresh token is never printed:
-it is written to token.txt, which the workflow encrypts with auth_pubkey.pem
-before uploading, so only the holder of the matching private key can read it.
+it is written to token.txt, which the workflow encrypts with YT_CLIENT_SECRET
+and commits as youtube_token.enc.
 """
 import json
 import os
@@ -32,4 +32,4 @@ if not token:
     print("No refresh_token in the response; keys returned:", sorted(resp))
     sys.exit(1)
 open("token.txt", "w").write(token)
-print("Refresh token received (encrypted before upload).")
+print("Refresh token received (saved encrypted).")
