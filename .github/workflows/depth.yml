@@ -1,0 +1,31 @@
+name: Depth motion (2.5D)
+# Turns each still in a folder into a short 3D-parallax clip with DepthFlow + Depth Anything V2.
+on:
+  workflow_dispatch:
+    inputs:
+      folder: {description: "folder of PNG stills, e.g. public/horror/h02", required: true}
+      seconds: {description: "clip length", default: "5"}
+permissions: {contents: write}
+jobs:
+  depth:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - run: sudo apt-get update -qq && sudo apt-get install -y -qq xvfb libegl1 libgl1-mesa-dri ffmpeg
+      - run: pip -q install depthflow
+      - name: Render clips
+        env: {LIBGL_ALWAYS_SOFTWARE: "1"}
+        run: |
+          D="${{ inputs.folder }}"; mkdir -p "$D/clips"
+          for f in "$D"/*.png; do
+            n=$(basename "$f" .png)
+            case $n in lunge|near|hook) A="dolly";; behind|fear) A="zoom";; *) A="orbital";; esac
+            xvfb-run -a depthflow input -i "$f" da2 $A main -w 1080 -h 1920 -t ${{ inputs.seconds }} -f 30 -o "$D/clips/$n.mp4" || echo "fail $n"
+          done
+          ls -la "$D/clips"
+      - run: |
+          git config user.name shorts-bot; git config user.email shorts-bot@users.noreply.github.com
+          git add "${{ inputs.folder }}/clips" && git commit -m "depth clips ${{ inputs.folder }}" && git pull --rebase -q && git push
