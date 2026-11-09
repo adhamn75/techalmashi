@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>tech3almashi Live</title>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0b1324">
+<link rel="icon" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+/* Layout: a phone-first control room — channel pulse on top, then the views curve, then each Short as a row. */
+:root {
+  --bg: #0b1324; --panel: #121c33; --line: #22304f; --fg: #eef2fb; --muted: #93a2c2;
+  --green: #1fd14a; --blue: #3a86ff; --orange: #ff8a1f; --red: #ff5a5f;
+  --display: "Cairo", system-ui, sans-serif; --num: "JetBrains Mono", ui-monospace, monospace;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; background: var(--bg); color: var(--fg); font-family: var(--display); }
+body { padding: max(12px, env(safe-area-inset-top)) max(16px, env(safe-area-inset-right)) 32px max(16px, env(safe-area-inset-left)); }
+.wrap { max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+header { display: flex; align-items: center; gap: 12px; }
+header img { width: 48px; height: 48px; border-radius: 12px; }
+header h1 { margin: 0; font-size: 1.35rem; font-weight: 900; line-height: 1.2; }
+header h1 .t { color: var(--orange); } header h1 .m { color: var(--green); }
+.status { font-size: .8rem; color: var(--muted); display: flex; align-items: center; gap: 6px; }
+.dot { width: 8px; height: 8px; border-radius: 50%; background: var(--green); box-shadow: 0 0 0 0 rgba(31,209,74,.6); }
+@media (prefers-reduced-motion: no-preference) { .dot.live { animation: pulse 2s infinite; } }
+@keyframes pulse { 70% { box-shadow: 0 0 0 8px rgba(31,209,74,0); } 100% { box-shadow: 0 0 0 0 rgba(31,209,74,0); } }
+.dot.stale { background: var(--orange); }
+.tiles { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 10px; }
+@media (min-width: 640px) { .tiles { grid-template-columns: repeat(4, minmax(0,1fr)); } }
+.tile { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 14px; display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.tile .lbl { font-size: .8rem; color: var(--muted); }
+.tile .num { font-family: var(--num); font-size: 1.7rem; direction: ltr; text-align: right; font-variant-numeric: tabular-nums; }
+.tile .chg { font-family: var(--num); font-size: .8rem; direction: ltr; text-align: right; color: var(--muted); }
+.tile .chg.up { color: var(--green); }
+.tile.subs .num { color: var(--orange); }
+h2 { font-size: 1rem; margin: 0 0 8px; font-weight: 700; }
+.card { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 14px; }
+#curve { width: 100%; height: 180px; display: block; }
+#curve text { font-family: var(--num); font-size: 10px; fill: var(--muted); }
+.vids { display: flex; flex-direction: column; gap: 12px; }
+.vid { display: grid; grid-template-columns: 1fr auto; gap: 4px 12px; align-items: center; text-decoration: none; color: inherit; }
+.vid .ttl { font-size: .95rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0; }
+.vid .v { font-family: var(--num); direction: ltr; font-variant-numeric: tabular-nums; }
+.vid .bar { grid-column: 1 / -1; height: 6px; border-radius: 3px; background: var(--line); overflow: hidden; }
+.vid .bar i { display: block; height: 100%; background: linear-gradient(90deg, var(--blue), var(--green)); border-radius: 3px; margin-inline-start: auto; }
+.vid .meta { grid-column: 1 / -1; font-size: .75rem; color: var(--muted); display: flex; gap: 12px; }
+.vid .meta span { direction: ltr; unicode-bidi: isolate; font-family: var(--num); }
+.vid:focus-visible { outline: 2px solid var(--blue); outline-offset: 4px; border-radius: 6px; }
+.err { color: var(--orange); font-size: .9rem; }
+footer { font-size: .75rem; color: var(--muted); line-height: 1.6; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <img src="icon-192.png" alt="">
+    <div>
+      <h1><span class="t">tech3</span>al<span class="m">mashi</span> · لايف</h1>
+      <div class="status"><span class="dot" id="dot"></span><span id="updated">جارٍ التحميل…</span></div>
+    </div>
+  </header>
+
+  <section class="tiles" aria-label="أرقام القناة">
+    <div class="tile subs"><span class="lbl">المشتركون</span><span class="num" id="subs">—</span><span class="chg" id="subs-chg"></span></div>
+    <div class="tile"><span class="lbl">المشاهدات</span><span class="num" id="views">—</span><span class="chg" id="views-chg"></span></div>
+    <div class="tile"><span class="lbl">الإعجابات</span><span class="num" id="likes">—</span><span class="chg" id="likes-chg"></span></div>
+    <div class="tile"><span class="lbl">التعليقات</span><span class="num" id="comments">—</span><span class="chg" id="comments-chg"></span></div>
+  </section>
+
+  <section class="card">
+    <h2>المشاهدات مع الوقت</h2>
+    <svg id="curve" role="img" aria-label="مجموع المشاهدات مع الوقت"></svg>
+  </section>
+
+  <section class="card">
+    <h2>كل فيديو</h2>
+    <div class="vids" id="vids"></div>
+  </section>
+
+  <footer>الأرقام من YouTube مباشرة، يحدّثها GitHub كل 10 دقائق تقريباً، والصفحة تتحقق كل دقيقة. التغيير بالأخضر = آخر 24 ساعة.<br>لتثبيتها كتطبيق على أندرويد: قائمة Chrome ⋮ ← «إضافة إلى الشاشة الرئيسية».</footer>
+</div>
+
+<script>
+const fmt = new Intl.NumberFormat('en-US');
+const $ = (id) => document.getElementById(id);
+const ago = (iso) => {
+  const m = Math.round((Date.now() - new Date(iso)) / 60000);
+  if (m < 1) return 'الآن';
+  if (m < 60) return `قبل ${m} دقيقة`;
+  const h = Math.round(m / 60);
+  return h < 24 ? `قبل ${h} ساعة` : `قبل ${Math.round(h / 24)} يوم`;
+};
+let last = null;
+
+function change(hist, key) {
+  if (!hist.length) return '';
+  const now = hist[hist.length - 1];
+  const cutoff = new Date(now.t) - 24 * 3600e3;
+  const base = hist.find((p) => new Date(p.t) >= cutoff) || hist[0];
+  const d = now[key] - base[key];
+  return d > 0 ? `+${fmt.format(d)}` : '';
+}
+
+function drawCurve(hist) {
+  const svg = $('curve');
+  const W = svg.clientWidth || 600, H = 180, pl = 44, pr = 8, pt = 10, pb = 20;
+  svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
+  svg.replaceChildren();
+  const ns = 'http://www.w3.org/2000/svg';
+  const el = (n, a) => { const e = document.createElementNS(ns, n); for (const k in a) e.setAttribute(k, a[k]); svg.append(e); return e; };
+  if (hist.length < 2) {
+    const t = el('text', {x: W / 2, y: H / 2, 'text-anchor': 'middle'}); t.textContent = 'المنحنى يظهر بعد أول تحديثين'; return;
+  }
+  const xs = hist.map((p) => +new Date(p.t)), ys = hist.map((p) => p.views);
+  const x0 = Math.min(...xs), x1 = Math.max(...xs), y0 = 0, y1 = Math.max(...ys) * 1.08 || 1;
+  const X = (v) => pl + (v - x0) / (x1 - x0 || 1) * (W - pl - pr);
+  const Y = (v) => H - pb - (v - y0) / (y1 - y0) * (H - pt - pb);
+  for (let i = 0; i <= 3; i++) {
+    const v = y1 * i / 3, y = Y(v);
+    el('line', {x1: pl, x2: W - pr, y1: y, y2: y, stroke: '#22304f'});
+    const t = el('text', {x: pl - 6, y: y + 3, 'text-anchor': 'end'}); t.textContent = fmt.format(Math.round(v));
+  }
+  const pts = hist.map((p) => `${X(+new Date(p.t)).toFixed(1)},${Y(p.views).toFixed(1)}`);
+  el('path', {d: `M${pl},${Y(0)} L${pts.join(' L')} L${X(x1)},${Y(0)} Z`, fill: 'rgba(58,134,255,.15)'});
+  el('polyline', {points: pts.join(' '), fill: 'none', stroke: '#3a86ff', 'stroke-width': 2, 'stroke-linejoin': 'round'});
+  const lp = hist[hist.length - 1];
+  el('circle', {cx: X(x1), cy: Y(lp.views), r: 4, fill: '#1fd14a'});
+  const fd = (v) => new Date(v).toLocaleString('ar-LB', {day: 'numeric', month: 'numeric', hour: '2-digit', minute: '2-digit', timeZone: 'Asia/Beirut'});
+  const a = el('text', {x: pl, y: H - 4, 'text-anchor': 'start'}); a.textContent = fd(x0);
+  const b = el('text', {x: W - pr, y: H - 4, 'text-anchor': 'end'}); b.textContent = fd(x1);
+}
+
+function render(stats, hist) {
+  const v = stats.videos;
+  const sum = (k) => v.reduce((s, x) => s + x[k], 0);
+  $('subs').textContent = fmt.format(stats.channel.subscribers);
+  $('views').textContent = fmt.format(sum('views'));
+  $('likes').textContent = fmt.format(sum('likes'));
+  $('comments').textContent = fmt.format(sum('comments'));
+  for (const [id, k] of [['subs-chg', 'subs'], ['views-chg', 'views'], ['likes-chg', 'likes'], ['comments-chg', 'comments']]) {
+    const c = change(hist, k); $(id).textContent = c; $(id).classList.toggle('up', !!c);
+  }
+  const max = Math.max(1, ...v.map((x) => x.views));
+  const box = $('vids'); box.replaceChildren();
+  for (const x of [...v].sort((a, b) => b.views - a.views)) {
+    const a = document.createElement('a');
+    a.className = 'vid'; a.href = 'https://youtube.com/shorts/' + x.id; a.target = '_blank'; a.rel = 'noopener';
+    const t = document.createElement('span'); t.className = 'ttl'; t.textContent = x.title.replace(/\s*#shorts\s*$/i, '');
+    const n = document.createElement('span'); n.className = 'v'; n.textContent = fmt.format(x.views);
+    const bar = document.createElement('span'); bar.className = 'bar';
+    const i = document.createElement('i'); i.style.width = (x.views / max * 100).toFixed(1) + '%'; bar.append(i);
+    const meta = document.createElement('span'); meta.className = 'meta';
+    meta.innerHTML = '<b>👍 <span></span></b><b>💬 <span></span></b><b><span></span></b>';
+    const s = meta.querySelectorAll('span');
+    s[0].textContent = fmt.format(x.likes); s[1].textContent = fmt.format(x.comments); s[2].textContent = ago(x.published);
+    a.append(t, n, bar, meta); box.append(a);
+  }
+  drawCurve(hist);
+}
+
+function tickStatus() {
+  if (!last) return;
+  $('updated').textContent = 'آخر تحديث ' + ago(last);
+  const stale = Date.now() - new Date(last) > 40 * 60000;
+  $('dot').classList.toggle('stale', stale); $('dot').classList.toggle('live', !stale);
+}
+
+async function load() {
+  try {
+    const bust = '?t=' + Date.now();
+    const [s, h] = await Promise.all([
+      fetch('stats.json' + bust, {cache: 'no-store'}).then((r) => { if (!r.ok) throw new Error(r.status); return r.json(); }),
+      fetch('history.json' + bust, {cache: 'no-store'}).then((r) => (r.ok ? r.json() : [])).catch(() => []),
+    ]);
+    last = s.updated; render(s, h); tickStatus();
+  } catch (e) {
+    if (!last) $('updated').innerHTML = '<span class="err">لا توجد أرقام بعد — تظهر بعد أول تحديث من GitHub.</span>';
+  }
+}
+load();
+setInterval(load, 60000);
+setInterval(tickStatus, 15000);
+window.addEventListener('resize', () => last && load());
+</script>
+</body>
+</html>
