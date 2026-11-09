@@ -1,0 +1,55 @@
+name: Watcher (file replies every 2 min, stats every 10 min)
+
+# GitHub's cron is often hours late, so one job stays awake for ~5h45m, loops, then starts its own
+# next run. The hourly cron only restarts it if the chain ever breaks. Free on a public repo.
+on:
+  schedule:
+    - cron: "17 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: watcher
+  cancel-in-progress: false
+
+jobs:
+  watch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 355
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -q google-api-python-client google-auth
+      - name: Loop
+        env:
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+        run: |
+          git config user.name "shorts-bot"
+          git config user.email "shorts-bot@users.noreply.github.com"
+          export YT_REFRESH_TOKEN=$(openssl enc -d -aes-256-cbc -pbkdf2 -a -A -pass env:YT_CLIENT_SECRET -in youtube_token.enc)
+          echo "::add-mask::$YT_REFRESH_TOKEN"
+          end=$(( $(date +%s) + 345*60 )); i=0
+          while [ "$(date +%s)" -lt "$end" ]; do
+            git pull -q --rebase origin main || true
+            python scripts/auto_reply.py || echo "::warning::auto_reply failed"
+            if [ $(( i % 5 )) -eq 0 ]; then
+              (cd scripts && python live_stats.py tech) || echo "::warning::stats failed"
+              if [ -f youtube_token_horror.enc ]; then (cd scripts && python live_stats.py horror) || echo "::warning::horror stats failed"; fi
+            fi
+            git add docs/stats*.json docs/history*.json docs/queue.json docs/requests.json 2>/dev/null || true
+            if ! git diff --cached --quiet; then
+              git commit -q -m "Watcher: stats / file requests"
+              for t in 1 2 3; do git pull -q --rebase origin main && git push -q && break; sleep 5; done
+            fi
+            i=$(( i + 1 )); sleep 120
+          done
+      - name: Start the next run
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run watch.yml --ref main -R ${{ github.repository }}

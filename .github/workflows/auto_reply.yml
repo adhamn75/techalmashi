@@ -3,8 +3,6 @@ name: Auto-reply to file requests
 # Every 5 minutes (GitHub's shortest schedule; runs can start a few minutes late).
 # Replies under comments like "اريده" on Excel videos with the file link from files/files_map.json.
 on:
-  schedule:
-    - cron: "*/5 * * * *"
   workflow_dispatch:
     inputs:
       dry_run:

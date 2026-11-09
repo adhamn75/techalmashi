@@ -2,8 +2,6 @@ name: Live stats
 
 # Refreshes docs/stats.json for the live page (GitHub runs scheduled jobs every ~10 min, sometimes later).
 on:
-  schedule:
-    - cron: "*/10 * * * *"
   workflow_dispatch:
 
 permissions:
