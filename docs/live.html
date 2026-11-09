@@ -9,177 +9,327 @@
 <link rel="icon" href="icon-192.png">
 <link rel="apple-touch-icon" href="icon-192.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&family=JetBrains+Mono:wght@500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=JetBrains+Mono:wght@500;700&display=swap">
 <style>
-/* Layout: a phone-first control room — channel pulse on top, then the views curve, then each Short as a row. */
+/* Layout: a phone-first control room. Money and the monetisation goal first, then the pulse, the trend,
+   the videos, who asked for files, what is queued, and what it all costs. */
 :root {
-  --bg: #0b1324; --panel: #121c33; --line: #22304f; --fg: #eef2fb; --muted: #93a2c2;
-  --green: #1fd14a; --blue: #3a86ff; --orange: #ff8a1f; --red: #ff5a5f;
+  --bg: #0b1324; --panel: #121c33; --panel2: #18243f; --line: #22304f; --fg: #eef2fb; --muted: #93a2c2;
+  --green: #1fd14a; --blue: #3a86ff; --orange: #ff8a1f; --red: #ff5a5f; --gold: #ffc93a;
   --display: "Cairo", system-ui, sans-serif; --num: "JetBrains Mono", ui-monospace, monospace;
   color-scheme: dark;
 }
+body.horror { --green: #b06cff; --blue: #ff4d6d; --orange: #ff4d6d; --bg: #0d0a14; --panel: #17111f; --panel2: #1f1729; --line: #2e2340; }
 * { box-sizing: border-box; }
 html, body { margin: 0; background: var(--bg); color: var(--fg); font-family: var(--display); }
-body { padding: max(12px, env(safe-area-inset-top)) max(16px, env(safe-area-inset-right)) 32px max(16px, env(safe-area-inset-left)); }
-.wrap { max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
-header { display: flex; align-items: center; gap: 12px; }
+body { padding: max(12px, env(safe-area-inset-top)) max(16px, env(safe-area-inset-right)) 40px max(16px, env(safe-area-inset-left)); transition: background .3s; }
+.wrap { max-width: 980px; margin: 0 auto; display: flex; flex-direction: column; gap: 18px; }
+header { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
 header img { width: 48px; height: 48px; border-radius: 12px; }
+header .ttl { flex: 1; min-width: 180px; }
 header h1 { margin: 0; font-size: 1.35rem; font-weight: 900; line-height: 1.2; }
 header h1 .t { color: var(--orange); } header h1 .m { color: var(--green); }
 .status { font-size: .8rem; color: var(--muted); display: flex; align-items: center; gap: 6px; }
-.dot { width: 8px; height: 8px; border-radius: 50%; background: var(--green); box-shadow: 0 0 0 0 rgba(31,209,74,.6); }
+.dot { width: 8px; height: 8px; border-radius: 50%; background: var(--green); }
 @media (prefers-reduced-motion: no-preference) { .dot.live { animation: pulse 2s infinite; } }
-@keyframes pulse { 70% { box-shadow: 0 0 0 8px rgba(31,209,74,0); } 100% { box-shadow: 0 0 0 0 rgba(31,209,74,0); } }
+@keyframes pulse { 0% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--green) 60%, transparent); } 70% { box-shadow: 0 0 0 8px transparent; } }
 .dot.stale { background: var(--orange); }
-.tiles { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 10px; }
-@media (min-width: 640px) { .tiles { grid-template-columns: repeat(4, minmax(0,1fr)); } }
-.tile { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 14px; display: flex; flex-direction: column; gap: 4px; min-width: 0; }
-.tile .lbl { font-size: .8rem; color: var(--muted); }
-.tile .num { font-family: var(--num); font-size: 1.7rem; direction: ltr; text-align: right; font-variant-numeric: tabular-nums; }
-.tile .chg { font-family: var(--num); font-size: .8rem; direction: ltr; text-align: right; color: var(--muted); }
+.tabs { display: flex; gap: 6px; }
+.tabs button { font: inherit; font-weight: 700; font-size: .9rem; color: var(--muted); background: var(--panel); border: 1px solid var(--line); border-radius: 999px; padding: 6px 14px; cursor: pointer; }
+.tabs button[aria-pressed="true"] { color: var(--bg); background: var(--green); border-color: var(--green); }
+.tabs button:focus-visible, a:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
+
+.card { background: var(--panel); border: 1px solid var(--line); border-radius: 16px; padding: 16px; min-width: 0; }
+h2 { font-size: 1rem; margin: 0 0 10px; font-weight: 700; display: flex; justify-content: space-between; gap: 8px; align-items: baseline; }
+h2 small { font-weight: 400; color: var(--muted); font-size: .75rem; }
+.mono { font-family: var(--num); direction: ltr; unicode-bidi: isolate; font-variant-numeric: tabular-nums; }
+.muted { color: var(--muted); }
+
+/* money band */
+.money { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+@media (max-width: 560px) { .money { grid-template-columns: 1fr; } }
+.money .m { background: var(--panel2); border-radius: 12px; padding: 12px 14px; display: flex; flex-direction: column; gap: 2px; }
+.money .lbl { font-size: .8rem; color: var(--muted); }
+.money .val { font-family: var(--num); font-size: 1.6rem; direction: ltr; text-align: right; }
+.money .val.in { color: var(--gold); } .money .val.out { color: var(--green); }
+.money .sub { font-size: .75rem; color: var(--muted); line-height: 1.5; }
+.goals { display: flex; flex-direction: column; gap: 12px; margin-top: 14px; }
+.goal .row { display: flex; justify-content: space-between; gap: 8px; font-size: .85rem; }
+.goal .bar { height: 8px; border-radius: 4px; background: var(--line); overflow: hidden; margin-top: 4px; }
+.goal .bar i { display: block; height: 100%; background: linear-gradient(90deg, var(--gold), var(--orange)); margin-inline-start: auto; border-radius: 4px; min-width: 2px; }
+
+.tiles { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+@media (min-width: 760px) { .tiles { grid-template-columns: repeat(6, minmax(0, 1fr)); } }
+@media (max-width: 380px) { .tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.tile { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 12px; display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.tile .lbl { font-size: .75rem; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.tile .num { font-family: var(--num); font-size: 1.45rem; direction: ltr; text-align: right; font-variant-numeric: tabular-nums; }
+.tile .chg { font-family: var(--num); font-size: .75rem; direction: ltr; text-align: right; color: var(--muted); min-height: 1em; }
 .tile .chg.up { color: var(--green); }
 .tile.subs .num { color: var(--orange); }
-h2 { font-size: 1rem; margin: 0 0 8px; font-weight: 700; }
-.card { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 14px; }
-#curve { width: 100%; height: 180px; display: block; }
-#curve text { font-family: var(--num); font-size: 10px; fill: var(--muted); }
-.vids { display: flex; flex-direction: column; gap: 12px; }
-.vid { display: grid; grid-template-columns: 1fr auto; gap: 4px 12px; align-items: center; text-decoration: none; color: inherit; }
-.vid .ttl { font-size: .95rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0; }
-.vid .v { font-family: var(--num); direction: ltr; font-variant-numeric: tabular-nums; }
-.vid .bar { grid-column: 1 / -1; height: 6px; border-radius: 3px; background: var(--line); overflow: hidden; }
-.vid .bar i { display: block; height: 100%; background: linear-gradient(90deg, var(--blue), var(--green)); border-radius: 3px; margin-inline-start: auto; }
-.vid .meta { grid-column: 1 / -1; font-size: .75rem; color: var(--muted); display: flex; gap: 12px; }
-.vid .meta span { direction: ltr; unicode-bidi: isolate; font-family: var(--num); }
-.vid:focus-visible { outline: 2px solid var(--blue); outline-offset: 4px; border-radius: 6px; }
-.err { color: var(--orange); font-size: .9rem; }
-.tabs { display: flex; gap: 8px; }
-.tabs button { font: inherit; font-weight: 700; color: var(--muted); background: var(--panel); border: 1px solid var(--line); border-radius: 999px; padding: 6px 16px; cursor: pointer; }
-.tabs button[aria-pressed="true"] { color: var(--bg); background: var(--green); border-color: var(--green); }
-.tabs button:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
-footer { font-size: .75rem; color: var(--muted); line-height: 1.6; }
+
+.grid2 { display: grid; grid-template-columns: minmax(0, 1fr); gap: 18px; }
+@media (min-width: 860px) { .grid2 { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); } }
+svg.chart { width: 100%; height: 190px; display: block; }
+svg.chart text { font-family: var(--num); font-size: 10px; fill: var(--muted); }
+
+.tablewrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: .88rem; }
+th, td { padding: 8px 6px; border-bottom: 1px solid var(--line); text-align: right; vertical-align: middle; }
+th { font-size: .72rem; color: var(--muted); font-weight: 600; white-space: nowrap; }
+td.n { font-family: var(--num); direction: ltr; text-align: left; white-space: nowrap; font-variant-numeric: tabular-nums; }
+td.t a { color: var(--fg); text-decoration: none; display: block; max-width: 34ch; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+td.t a:hover { text-decoration: underline; }
+.pill { display: inline-block; font-size: .7rem; padding: 2px 8px; border-radius: 999px; background: var(--panel2); color: var(--muted); white-space: nowrap; }
+.pill.excel { color: #7ee2a0; } .pill.family { color: #8fb8ff; } .pill.horror { color: #d3a6ff; }
+.pill.ready { color: var(--gold); } .pill.scheduled { color: var(--blue); } .pill.published { color: var(--green); }
+.empty { color: var(--muted); font-size: .9rem; padding: 6px 0; }
+.costs td:last-child { font-family: var(--num); direction: ltr; text-align: left; color: var(--green); }
+footer { font-size: .75rem; color: var(--muted); line-height: 1.7; }
+[hidden] { display: none !important; }
 </style>
 </head>
 <body>
 <div class="wrap">
   <header>
     <img src="icon-192.png" alt="">
-    <div>
+    <div class="ttl">
       <h1><span class="t">tech3</span>al<span class="m">mashi</span> · لايف</h1>
       <div class="status"><span class="dot" id="dot"></span><span id="updated">جارٍ التحميل…</span></div>
     </div>
+    <nav class="tabs" aria-label="القناة">
+      <button type="button" data-ch="">تك عالماشي</button>
+      <button type="button" data-ch="_horror">قناة الرعب</button>
+    </nav>
   </header>
 
-  <nav class="tabs" aria-label="القناة">
-    <button type="button" id="tab-tech" data-ch="">تك عالماشي</button>
-    <button type="button" id="tab-horror" data-ch="_horror">قناة الرعب</button>
-  </nav>
+  <section class="card" aria-labelledby="money-h">
+    <h2 id="money-h">المال <small>كل شي ببلاش لحد هلّق</small></h2>
+    <div class="money">
+      <div class="m"><span class="lbl">صرفنا</span><span class="val out">$0.00</span><span class="sub">GitHub وYouTube API والصوت كلها مجانية</span></div>
+      <div class="m"><span class="lbl">دخلنا</span><span class="val in" id="earned">$0.00</span><span class="sub" id="earned-sub">القناة لسّا مش بشراكة يوتيوب (YPP)</span></div>
+      <div class="m"><span class="lbl">لو كانت مفعّلة (تقدير)</span><span class="val" id="est">—</span><span class="sub">على أساس $0.02–$0.07 لكل 1,000 مشاهدة Shorts</span></div>
+    </div>
+    <div class="goals">
+      <div class="goal"><div class="row"><span>مشتركين لشراكة يوتيوب</span><span class="mono" id="g-subs-t">—</span></div><div class="bar"><i id="g-subs"></i></div></div>
+      <div class="goal"><div class="row"><span>مشاهدات Shorts (آخر 90 يوم)</span><span class="mono" id="g-views-t">—</span></div><div class="bar"><i id="g-views"></i></div></div>
+      <div class="goal"><div class="row"><span>أول مرحلة: دعم المعجبين (500 مشترك + 3M مشاهدة)</span><span class="mono" id="g-fan-t">—</span></div><div class="bar"><i id="g-fan"></i></div></div>
+    </div>
+  </section>
 
   <section class="tiles" aria-label="أرقام القناة">
     <div class="tile subs"><span class="lbl">المشتركون</span><span class="num" id="subs">—</span><span class="chg" id="subs-chg"></span></div>
     <div class="tile"><span class="lbl">المشاهدات</span><span class="num" id="views">—</span><span class="chg" id="views-chg"></span></div>
     <div class="tile"><span class="lbl">الإعجابات</span><span class="num" id="likes">—</span><span class="chg" id="likes-chg"></span></div>
     <div class="tile"><span class="lbl">التعليقات</span><span class="num" id="comments">—</span><span class="chg" id="comments-chg"></span></div>
+    <div class="tile"><span class="lbl">فيديوهات منشورة</span><span class="num" id="count">—</span><span class="chg" id="count-chg"></span></div>
+    <div class="tile"><span class="lbl">طلبوا الملف</span><span class="num" id="reqs">—</span><span class="chg" id="reqs-chg"></span></div>
   </section>
+
+  <div class="grid2">
+    <section class="card">
+      <h2>مشاهدات كل يوم <small>توقيت بيروت</small></h2>
+      <svg class="chart" id="daily" role="img" aria-label="المشاهدات الجديدة كل يوم"></svg>
+    </section>
+    <section class="card">
+      <h2>المجموع مع الوقت</h2>
+      <svg class="chart" id="curve" role="img" aria-label="مجموع المشاهدات مع الوقت"></svg>
+    </section>
+  </div>
 
   <section class="card">
-    <h2>المشاهدات مع الوقت</h2>
-    <svg id="curve" role="img" aria-label="مجموع المشاهدات مع الوقت"></svg>
+    <h2>الفيديوهات <small id="vids-note"></small></h2>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>الفيديو</th><th>مشاهدات</th><th>بالساعة</th><th>إعجابات</th><th>نسبة الإعجاب</th><th>تعليقات</th><th>نُشر</th></tr></thead>
+        <tbody id="vids"></tbody>
+      </table>
+    </div>
   </section>
 
-  <section class="card">
-    <h2>كل فيديو</h2>
-    <div class="vids" id="vids"></div>
+  <div class="grid2">
+    <section class="card" id="req-card">
+      <h2>مين طلب الملف <small>الرد بيروح أوتوماتيك</small></h2>
+      <div class="tablewrap"><table><thead><tr><th>الشخص</th><th>الملف</th><th>إيمتى</th></tr></thead><tbody id="reqlist"></tbody></table></div>
+    </section>
+    <section class="card">
+      <h2>شو جايي <small>من الدور على GitHub</small></h2>
+      <div class="tablewrap"><table><thead><tr><th>الحلقة</th><th>السلسلة</th><th>الحالة</th><th>موعد</th></tr></thead><tbody id="queue"></tbody></table></div>
+    </section>
+  </div>
+
+  <section class="card costs">
+    <h2>التكاليف <small>شهرياً</small></h2>
+    <div class="tablewrap"><table><tbody>
+      <tr><td>GitHub Actions (نشر، ردود، إحصائيات) — ريبو عام</td><td>$0</td></tr>
+      <tr><td>GitHub Pages (هالصفحة)</td><td>$0</td></tr>
+      <tr><td>YouTube Data API — حوالي 4,500 من 10,000 نقطة مجانية باليوم</td><td>$0</td></tr>
+      <tr><td>الصوت (Microsoft Edge TTS)</td><td>$0</td></tr>
+      <tr><td><b>المجموع</b></td><td><b>$0</b></td></tr>
+    </tbody></table></div>
   </section>
 
-  <footer>الأرقام من YouTube مباشرة، يحدّثها GitHub كل 10 دقائق تقريباً، والصفحة تتحقق كل دقيقة. التغيير بالأخضر = آخر 24 ساعة.<br>لتثبيتها كتطبيق على أندرويد: قائمة Chrome ⋮ ← «إضافة إلى الشاشة الرئيسية».</footer>
+  <footer>الأرقام من YouTube مباشرة، يحدّثها GitHub كل 10 دقائق تقريباً، والصفحة تتحقق كل دقيقة. التغيير بالأخضر = آخر 24 ساعة.
+  الأرباح الحقيقية تظهر هنا فقط بعد قبول القناة في شراكة يوتيوب؛ «التقدير» مجرد حساب تقريبي وليس دخلاً.<br>
+  لتثبيتها كتطبيق على أندرويد: قائمة Chrome ⋮ ← «إضافة إلى الشاشة الرئيسية».</footer>
 </div>
 
 <script>
 const fmt = new Intl.NumberFormat('en-US');
+const usd = (v) => '$' + v.toFixed(2);
 const $ = (id) => document.getElementById(id);
+const SERIES = {excel: 'أسرار Excel', family: 'احمِ أطفالك', horror: 'رعب'};
+const STATUS = {ready: 'جاهزة', scheduled: 'مجدولة', published: 'منشورة', manual: 'يدوي'};
 const ago = (iso) => {
   const m = Math.round((Date.now() - new Date(iso)) / 60000);
   if (m < 1) return 'الآن';
-  if (m < 60) return `قبل ${m} دقيقة`;
+  if (m < 60) return `قبل ${m} د`;
   const h = Math.round(m / 60);
-  return h < 24 ? `قبل ${h} ساعة` : `قبل ${Math.round(h / 24)} يوم`;
+  return h < 24 ? `قبل ${h} س` : `قبل ${Math.round(h / 24)} يوم`;
 };
+const fdate = (iso) => new Date(iso).toLocaleString('ar-LB', {weekday: 'short', day: 'numeric', month: 'numeric', hour: '2-digit', minute: '2-digit', timeZone: 'Asia/Beirut'});
 let last = null;
 let ch = location.hash === '#horror' ? '_horror' : '';
-function setTabs() { document.querySelectorAll('.tabs button').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.ch === ch))); }
+
+function setTabs() {
+  document.querySelectorAll('.tabs button').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.ch === ch)));
+  document.body.classList.toggle('horror', ch === '_horror');
+  $('req-card').hidden = ch === '_horror';
+}
 document.querySelectorAll('.tabs button').forEach((b) => b.addEventListener('click', () => {
-  ch = b.dataset.ch; history.replaceState(null, '', ch ? '#horror' : '#'); setTabs(); last = null;
-  $('vids').replaceChildren(); ['subs','views','likes','comments'].forEach((k) => { $(k).textContent = '—'; $(k + '-chg').textContent = ''; });
-  load();
+  ch = b.dataset.ch; history.replaceState(null, '', ch ? '#horror' : '#'); setTabs(); last = null; load();
 }));
 setTabs();
 
 function change(hist, key) {
-  if (!hist.length) return '';
+  if (!hist.length) return 0;
   const now = hist[hist.length - 1];
   const cutoff = new Date(now.t) - 24 * 3600e3;
   const base = hist.find((p) => new Date(p.t) >= cutoff) || hist[0];
-  const d = now[key] - base[key];
-  return d > 0 ? `+${fmt.format(d)}` : '';
+  return (now[key] ?? 0) - (base[key] ?? 0);
+}
+const setChg = (id, d) => { $(id).textContent = d > 0 ? `+${fmt.format(d)}` : ''; $(id).classList.toggle('up', d > 0); };
+
+function svgEl(svg, n, a, text) {
+  const e = document.createElementNS('http://www.w3.org/2000/svg', n);
+  for (const k in a) e.setAttribute(k, a[k]);
+  if (text != null) e.textContent = text;
+  svg.append(e); return e;
+}
+const css = (v) => getComputedStyle(document.body).getPropertyValue(v).trim();
+
+function drawDaily(hist) {
+  const svg = $('daily'); const W = svg.clientWidth || 440, H = 190, pl = 40, pr = 8, pt = 14, pb = 22;
+  svg.setAttribute('viewBox', `0 0 ${W} ${H}`); svg.replaceChildren();
+  const day = (t) => new Date(t).toLocaleDateString('en-CA', {timeZone: 'Asia/Beirut'});
+  const byDay = new Map();
+  for (const p of hist) byDay.set(day(p.t), p.views);
+  const days = [...byDay.keys()].sort();
+  const rows = days.map((d, i) => ({d, v: i === 0 ? null : byDay.get(d) - byDay.get(days[i - 1])})).filter((r) => r.v !== null).slice(-14);
+  if (!rows.length) { svgEl(svg, 'text', {x: W / 2, y: H / 2, 'text-anchor': 'middle'}, 'يظهر بعد أول يوم كامل من التسجيل'); return; }
+  const max = Math.max(1, ...rows.map((r) => r.v)) * 1.15;
+  const bw = (W - pl - pr) / rows.length;
+  const Y = (v) => H - pb - v / max * (H - pt - pb);
+  for (let i = 0; i <= 2; i++) { const v = max * i / 2; svgEl(svg, 'line', {x1: pl, x2: W - pr, y1: Y(v), y2: Y(v), stroke: css('--line')}); svgEl(svg, 'text', {x: pl - 6, y: Y(v) + 3, 'text-anchor': 'end'}, fmt.format(Math.round(v))); }
+  rows.forEach((r, i) => {
+    const x = pl + i * bw + bw * 0.18, w = bw * 0.64;
+    svgEl(svg, 'rect', {x, y: Y(r.v), width: w, height: Math.max(1, Y(0) - Y(r.v)), rx: 3, fill: i === rows.length - 1 ? css('--green') : css('--blue')});
+    if (rows.length <= 10 || i === rows.length - 1) svgEl(svg, 'text', {x: x + w / 2, y: Y(r.v) - 4, 'text-anchor': 'middle'}, fmt.format(r.v));
+    if (rows.length <= 7 || i % 2 === rows.length % 2 || i === rows.length - 1) svgEl(svg, 'text', {x: x + w / 2, y: H - 6, 'text-anchor': 'middle'}, r.d.slice(5).replace('-', '/'));
+  });
 }
 
 function drawCurve(hist) {
-  const svg = $('curve');
-  const W = svg.clientWidth || 600, H = 180, pl = 44, pr = 8, pt = 10, pb = 20;
-  svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
-  svg.replaceChildren();
-  const ns = 'http://www.w3.org/2000/svg';
-  const el = (n, a) => { const e = document.createElementNS(ns, n); for (const k in a) e.setAttribute(k, a[k]); svg.append(e); return e; };
-  if (hist.length < 2) {
-    const t = el('text', {x: W / 2, y: H / 2, 'text-anchor': 'middle'}); t.textContent = 'المنحنى يظهر بعد أول تحديثين'; return;
-  }
+  const svg = $('curve'); const W = svg.clientWidth || 440, H = 190, pl = 44, pr = 10, pt = 10, pb = 22;
+  svg.setAttribute('viewBox', `0 0 ${W} ${H}`); svg.replaceChildren();
+  if (hist.length < 2) { svgEl(svg, 'text', {x: W / 2, y: H / 2, 'text-anchor': 'middle'}, 'المنحنى يظهر بعد أول تحديثين'); return; }
   const xs = hist.map((p) => +new Date(p.t)), ys = hist.map((p) => p.views);
-  const x0 = Math.min(...xs), x1 = Math.max(...xs), y0 = 0, y1 = Math.max(...ys) * 1.08 || 1;
+  const x0 = Math.min(...xs), x1 = Math.max(...xs), y1 = Math.max(...ys) * 1.08 || 1;
   const X = (v) => pl + (v - x0) / (x1 - x0 || 1) * (W - pl - pr);
-  const Y = (v) => H - pb - (v - y0) / (y1 - y0) * (H - pt - pb);
-  for (let i = 0; i <= 3; i++) {
-    const v = y1 * i / 3, y = Y(v);
-    el('line', {x1: pl, x2: W - pr, y1: y, y2: y, stroke: '#22304f'});
-    const t = el('text', {x: pl - 6, y: y + 3, 'text-anchor': 'end'}); t.textContent = fmt.format(Math.round(v));
-  }
+  const Y = (v) => H - pb - v / y1 * (H - pt - pb);
+  for (let i = 0; i <= 3; i++) { const v = y1 * i / 3; svgEl(svg, 'line', {x1: pl, x2: W - pr, y1: Y(v), y2: Y(v), stroke: css('--line')}); svgEl(svg, 'text', {x: pl - 6, y: Y(v) + 3, 'text-anchor': 'end'}, fmt.format(Math.round(v))); }
   const pts = hist.map((p) => `${X(+new Date(p.t)).toFixed(1)},${Y(p.views).toFixed(1)}`);
-  el('path', {d: `M${pl},${Y(0)} L${pts.join(' L')} L${X(x1)},${Y(0)} Z`, fill: 'rgba(58,134,255,.15)'});
-  el('polyline', {points: pts.join(' '), fill: 'none', stroke: '#3a86ff', 'stroke-width': 2, 'stroke-linejoin': 'round'});
-  const lp = hist[hist.length - 1];
-  el('circle', {cx: X(x1), cy: Y(lp.views), r: 4, fill: '#1fd14a'});
+  svgEl(svg, 'path', {d: `M${pl},${Y(0)} L${pts.join(' L')} L${X(x1)},${Y(0)} Z`, fill: css('--blue'), 'fill-opacity': '.15'});
+  svgEl(svg, 'polyline', {points: pts.join(' '), fill: 'none', stroke: css('--blue'), 'stroke-width': 2, 'stroke-linejoin': 'round'});
+  svgEl(svg, 'circle', {cx: X(x1), cy: Y(ys[ys.length - 1]), r: 4, fill: css('--green')});
   const fd = (v) => new Date(v).toLocaleString('ar-LB', {day: 'numeric', month: 'numeric', hour: '2-digit', minute: '2-digit', timeZone: 'Asia/Beirut'});
-  const a = el('text', {x: pl, y: H - 4, 'text-anchor': 'start'}); a.textContent = fd(x0);
-  const b = el('text', {x: W - pr, y: H - 4, 'text-anchor': 'end'}); b.textContent = fd(x1);
+  svgEl(svg, 'text', {x: pl, y: H - 5, 'text-anchor': 'start'}, fd(x0));
+  svgEl(svg, 'text', {x: W - pr, y: H - 5, 'text-anchor': 'end'}, fd(x1));
 }
 
-function render(stats, hist) {
+function cell(tr, text, cls) { const td = document.createElement('td'); if (cls) td.className = cls; td.textContent = text; tr.append(td); return td; }
+function emptyRow(tb, cols, text) { const tr = document.createElement('tr'); const td = cell(tr, text, 'empty'); td.colSpan = cols; tb.append(tr); }
+
+function render(stats, hist, reqs, queue) {
   const v = stats.videos;
   const sum = (k) => v.reduce((s, x) => s + x[k], 0);
-  $('subs').textContent = fmt.format(stats.channel.subscribers);
-  $('views').textContent = fmt.format(sum('views'));
+  const views = sum('views'), subs = stats.channel.subscribers;
+  $('subs').textContent = fmt.format(subs);
+  $('views').textContent = fmt.format(views);
   $('likes').textContent = fmt.format(sum('likes'));
   $('comments').textContent = fmt.format(sum('comments'));
-  for (const [id, k] of [['subs-chg', 'subs'], ['views-chg', 'views'], ['likes-chg', 'likes'], ['comments-chg', 'comments']]) {
-    const c = change(hist, k); $(id).textContent = c; $(id).classList.toggle('up', !!c);
-  }
-  const max = Math.max(1, ...v.map((x) => x.views));
-  const box = $('vids'); box.replaceChildren();
-  if (!v.length) { const p = document.createElement('p'); p.className = 'err'; p.textContent = 'لا فيديوهات منشورة بعد.'; box.append(p); }
+  $('count').textContent = fmt.format(v.length);
+  setChg('subs-chg', change(hist, 'subs')); setChg('views-chg', change(hist, 'views'));
+  setChg('likes-chg', change(hist, 'likes')); setChg('comments-chg', change(hist, 'comments'));
+  setChg('count-chg', v.filter((x) => Date.now() - new Date(x.published) < 864e5).length);
+
+  const myReqs = ch ? [] : reqs;
+  $('reqs').textContent = ch ? '—' : fmt.format(myReqs.length);
+  setChg('reqs-chg', myReqs.filter((r) => Date.now() - new Date(r.t) < 864e5).length);
+
+  // money + goals (channel is younger than 90 days, so lifetime Shorts views stand in for the 90-day window)
+  $('est').textContent = `${usd(views / 1000 * 0.02)} – ${usd(views / 1000 * 0.07)}`;
+  const g = (id, val, goal) => { $(id).style.width = Math.min(100, val / goal * 100).toFixed(2) + '%'; };
+  g('g-subs', subs, 1000); $('g-subs-t').textContent = `${fmt.format(subs)} / 1,000`;
+  g('g-views', views, 10e6); $('g-views-t').textContent = `${fmt.format(views)} / 10M`;
+  g('g-fan', Math.min(subs / 500, views / 3e6), 1); $('g-fan-t').textContent = `${fmt.format(subs)}/500 · ${fmt.format(views)}/3M`;
+
+  // videos
+  const tb = $('vids'); tb.replaceChildren();
+  if (!v.length) emptyRow(tb, 7, 'لا فيديوهات منشورة بعد.');
   for (const x of [...v].sort((a, b) => b.views - a.views)) {
-    const a = document.createElement('a');
-    a.className = 'vid'; a.href = 'https://youtube.com/shorts/' + x.id; a.target = '_blank'; a.rel = 'noopener';
-    const t = document.createElement('span'); t.className = 'ttl'; t.textContent = x.title.replace(/\s*#shorts\s*$/i, '');
-    const n = document.createElement('span'); n.className = 'v'; n.textContent = fmt.format(x.views);
-    const bar = document.createElement('span'); bar.className = 'bar';
-    const i = document.createElement('i'); i.style.width = (x.views / max * 100).toFixed(1) + '%'; bar.append(i);
-    const meta = document.createElement('span'); meta.className = 'meta';
-    meta.innerHTML = '<b>👍 <span></span></b><b>💬 <span></span></b><b><span></span></b>';
-    const s = meta.querySelectorAll('span');
-    s[0].textContent = fmt.format(x.likes); s[1].textContent = fmt.format(x.comments); s[2].textContent = ago(x.published);
-    a.append(t, n, bar, meta); box.append(a);
+    const tr = document.createElement('tr');
+    const td = document.createElement('td'); td.className = 't';
+    const a = document.createElement('a'); a.href = 'https://youtube.com/shorts/' + x.id; a.target = '_blank'; a.rel = 'noopener';
+    a.textContent = x.title.replace(/\s*#shorts\s*$/i, ''); a.title = x.title; td.append(a); tr.append(td);
+    const hrs = Math.max(1, (Date.now() - new Date(x.published)) / 36e5);
+    cell(tr, fmt.format(x.views), 'n');
+    cell(tr, fmt.format(Math.round(x.views / hrs)), 'n');
+    cell(tr, fmt.format(x.likes), 'n');
+    cell(tr, x.views ? (x.likes / x.views * 100).toFixed(1) + '%' : '—', 'n');
+    cell(tr, fmt.format(x.comments), 'n');
+    cell(tr, ago(x.published));
+    tb.append(tr);
   }
-  drawCurve(hist);
+  $('vids-note').textContent = v.length ? `${fmt.format(v.length)} فيديو، مرتّبة حسب المشاهدات` : '';
+
+  // file requests
+  const rl = $('reqlist'); rl.replaceChildren();
+  if (!myReqs.length) emptyRow(rl, 3, 'ما حدا طلب ملف لهلّق.');
+  for (const r of [...myReqs].reverse().slice(0, 30)) {
+    const tr = document.createElement('tr');
+    cell(tr, r.who); cell(tr, (r.file || '').replace('files/', ''), 'n'); cell(tr, ago(r.t));
+    rl.append(tr);
+  }
+
+  // queue
+  const q = $('queue'); q.replaceChildren();
+  const want = ch ? ['horror'] : ['excel', 'family'];
+  const rows = queue.filter((e) => want.includes(e.series) && ['ready', 'scheduled'].includes(e.status))
+    .sort((a, b) => (a.publish_at || 'z').localeCompare(b.publish_at || 'z'));
+  if (!rows.length) emptyRow(q, 4, 'الدور فاضي — المهمة اليومية بتعبّيه كل صبح.');
+  for (const e of rows.slice(0, 12)) {
+    const tr = document.createElement('tr');
+    const t = cell(tr, (e.title || e.id).replace(/\s*#shorts\s*$/i, ''), 't');
+    const s1 = document.createElement('span'); s1.className = 'pill ' + e.series; s1.textContent = SERIES[e.series] || e.series;
+    const td1 = document.createElement('td'); td1.append(s1); tr.append(td1);
+    const s2 = document.createElement('span'); s2.className = 'pill ' + e.status; s2.textContent = STATUS[e.status] || e.status;
+    const td2 = document.createElement('td'); td2.append(s2); tr.append(td2);
+    cell(tr, e.publish_at ? fdate(e.publish_at) : 'الصبح الجاي');
+    q.append(tr);
+  }
+
+  drawDaily(hist); drawCurve(hist);
 }
 
 function tickStatus() {
@@ -190,21 +340,16 @@ function tickStatus() {
 }
 
 async function load() {
-  try {
-    const bust = '?t=' + Date.now();
-    const [s, h] = await Promise.all([
-      fetch('stats' + ch + '.json' + bust, {cache: 'no-store'}).then((r) => { if (!r.ok) throw new Error(r.status); return r.json(); }),
-      fetch('history' + ch + '.json' + bust, {cache: 'no-store'}).then((r) => (r.ok ? r.json() : [])).catch(() => []),
-    ]);
-    last = s.updated; render(s, h); tickStatus();
-  } catch (e) {
-    if (!last) { $('updated').innerHTML = '<span class="err">لا توجد أرقام بعد — تظهر بعد أول تحديث من GitHub.</span>'; }
-  }
+  const bust = '?t=' + Date.now();
+  const get = (f, fallback) => fetch(f + bust, {cache: 'no-store'}).then((r) => (r.ok ? r.json() : fallback)).catch(() => fallback);
+  const [s, h, r, q] = await Promise.all([get('stats' + ch + '.json', null), get('history' + ch + '.json', []), get('requests.json', []), get('queue.json', [])]);
+  if (!s) { $('updated').textContent = 'لا توجد أرقام بعد — تظهر بعد أول تحديث من GitHub.'; return; }
+  last = s.updated; render(s, h, r, q); tickStatus();
 }
 load();
 setInterval(load, 60000);
 setInterval(tickStatus, 15000);
-window.addEventListener('resize', () => last && load());
+let rt; window.addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(() => last && load(), 200); });
 </script>
 </body>
 </html>

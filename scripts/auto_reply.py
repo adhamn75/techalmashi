@@ -58,6 +58,18 @@ def owner_replied(yt, thread, owner: str) -> bool:
     return any(r["snippet"].get("authorChannelId", {}).get("value") == owner for r in replies)
 
 
+LOG = Path(__file__).resolve().parent.parent / "docs" / "requests.json"
+
+
+def log_request(e: dict, who: str, text: str) -> None:
+    from datetime import datetime, timezone
+    rows = json.loads(LOG.read_text(encoding="utf-8")) if LOG.exists() else []
+    rows.append({"t": datetime.now(timezone.utc).replace(microsecond=0).isoformat(), "episode": e["episode"],
+                 "videoId": e["videoId"], "file": e.get("file", ""), "who": who, "text": text[:80]})
+    LOG.parent.mkdir(exist_ok=True)
+    LOG.write_text(json.dumps(rows, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+
+
 def main() -> int:
     if not os.environ.get("YT_REFRESH_TOKEN"):
         print("YouTube token not available; nothing to do.")
@@ -89,6 +101,7 @@ def main() -> int:
                     part="snippet", body={"snippet": {"parentId": th["id"], "textOriginal": e["reply"]}}
                 ).execute()
                 print(f"[{e['episode']}] replied to {who}: {top.get('textDisplay','')[:60]!r}")
+                log_request(e, who, top.get("textDisplay", ""))
             sent += 1
     print(f"Done: {sent} {'would-be ' if DRY_RUN else ''}replies across {len(entries)} videos.")
     return 0

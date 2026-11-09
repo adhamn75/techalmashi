@@ -48,6 +48,11 @@ def main(account: str = "tech", suffix: str = "") -> None:
     hist.append({"t": now, "subs": stats["channel"]["subscribers"], "views": sum(v["views"] for v in videos),
                  "likes": sum(v["likes"] for v in videos), "comments": sum(v["comments"] for v in videos)})
     hp.write_text(json.dumps(hist[-KEEP:], separators=(",", ":")) + "\n", encoding="utf-8")
+    if account == "tech":
+        q = json.loads((DOCS.parent / "episodes.json").read_text(encoding="utf-8"))
+        keep = ("id", "series", "title", "status", "publish_at", "youtube_id", "video_id")
+        (DOCS / "queue.json").write_text(json.dumps([{k: e.get(k) for k in keep} for e in q["episodes"]],
+                                                    ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
     print(f"{len(videos)} public videos, {stats['channel']['subscribers']} subscribers")
 
 
