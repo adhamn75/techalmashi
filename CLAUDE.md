@@ -115,3 +115,9 @@ Next ideas, roughly hardest first (build only what can really be made and shippe
 - QR code generator with formulas only
 - Music sequencer: cells as a piano roll that plays with Beep (VBA)
 - Live analog clock drawn by a scatter chart + NOW() with iterative recalculation
+
+## Horror channel look (owner's decision, 2026-11-09)
+Heavy, dark horror that matches the channel logo (hooded pale face, glowing red eyes, red ring on black):
+black and blood-red palette, deep shadows, fog, flicker, slow push-ins, sudden silence before the scare.
+Dark anime-horror drawing style is fine; cute/chibi is NOT. Never gore, blood splatter or self-harm,
+never aimed at children, always "not made for kids". Scary through atmosphere, sound and the last-second reveal.
