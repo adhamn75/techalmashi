@@ -135,15 +135,15 @@ export const H02Frame481: React.FC = () => {
       <Caption f={f} from={576} to={594} text="لا ترجّع الفيديو…" y={1360} size={88} />
 
       {/* sound: drone bed (cut for the silence), rain-like wind, flicker, creak, heartbeat, sting */}
-      <Sequence from={0} durationInFrames={482} layout="none"><Audio src={staticFile('sfx/horror/drone.wav')} volume={0.35} loop /></Sequence>
-      <Sequence from={0} durationInFrames={482} layout="none"><Audio src={staticFile('sfx/horror/wind.wav')} volume={0.18} loop /></Sequence>
-      <Sfx name="flicker" at={2} vol={0.5} />
-      <Sfx name="sting" at={0} dur={40} vol={0.35} />
-      <Sfx name="flicker" at={150} vol={0.55} />
-      <Sfx name="flicker" at={298} vol={0.7} />
-      <Sfx name="creak" at={330} vol={0.45} />
-      <Sfx name="heartbeat" at={384} dur={98} vol={0.6} />
-      <Sfx name="sting" at={500} dur={94} vol={1} />
+      <Sequence from={0} durationInFrames={482} layout="none"><Audio src={staticFile('sfx/horror/drone.wav')} volume={0.07} loop /></Sequence>
+      <Sequence from={0} durationInFrames={482} layout="none"><Audio src={staticFile('sfx/horror/wind.wav')} volume={0.05} loop /></Sequence>
+      <Sfx name="flicker" at={2} vol={0.2} />
+      <Sfx name="sting" at={0} dur={40} vol={0.3} />
+      <Sfx name="flicker" at={150} vol={0.2} />
+      <Sfx name="flicker" at={298} vol={0.25} />
+      <Sfx name="creak" at={330} vol={0.2} />
+      <Sequence from={384} durationInFrames={98} layout="none"><Audio src={staticFile('sfx/horror/heartbeat.wav')} volume={0.3} loop /></Sequence>
+      <Sfx name="sting" at={500} dur={94} vol={0.9} />
       {L.map((l) => (
         <Sequence key={l.src} from={l.at} durationInFrames={l.dur + 6} layout="none"><Audio src={staticFile(l.src)} volume={1} /></Sequence>
       ))}

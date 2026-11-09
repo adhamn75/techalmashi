@@ -140,9 +140,10 @@
         "الإطار 481",
         "creepypasta"
       ],
-      "status": "scheduled",
+      "status": "redo",
       "youtube_id": "dIupMNHksc4",
-      "publish_at": "2026-11-09T22:00:00+02:00"
+      "publish_at": "2026-11-09T22:00:00+02:00",
+      "note": "owner: too static + muddy audio; rebuild as real animation"
     }
   ]
 }
