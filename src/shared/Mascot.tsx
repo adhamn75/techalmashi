@@ -3,6 +3,7 @@ import {useVideoConfig} from 'remotion';
 import {ThreeCanvas} from '@remotion/three';
 import {AbuKhalye} from './AbuKhalye';
 import {ShieldHost, ShieldLights} from './ShieldHost';
+import {ShieldBuddy} from './ShieldBuddy';
 
 export const GREEN = '#21c46b';
 export const BG = '#0b1410';
@@ -108,9 +109,13 @@ export const Mokaab: React.FC<Props & {legacy?: boolean; rings?: boolean}> = (pr
   }
   return (
     <ThreeCanvas width={width} height={height} camera={{position: [0, 0, 10], fov: 40}}>
-      <ShieldLights />
-      <group scale={(props.scale ?? 1) * 0.92} position={[0, (props.y ?? 0) + 0.15, 0]}>
-        <ShieldHost {...props} />
+      <ambientLight intensity={0.5} />
+      <directionalLight position={[3, 5, 8]} intensity={1.5} />
+      <pointLight position={[4, 3, 3]} intensity={50} color="#3a86ff" />
+      <pointLight position={[-4, -3, 3]} intensity={35} color="#ff7a00" />
+      <group scale={(props.scale ?? 1) * 0.85} position={[0, (props.y ?? 0) + 0.1, 0]}>
+        <ShieldBuddy frame={props.frame} mood={props.mood as any} wave={props.wave} talk={props.talk}
+          wink={props.wink} lookX={props.lookX} rings={props.rings ?? true} legs />
       </group>
     </ThreeCanvas>
   );
