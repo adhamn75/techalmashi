@@ -32,8 +32,10 @@
         "snake game",
         "أسرار Excel"
       ],
-      "status": "ready",
-      "series": "excel"
+      "status": "published",
+      "series": "excel",
+      "video_id": "rbvYJoA0FbY",
+      "published_by": "owner (manual upload 2026-11-09)"
     },
     {
       "id": "fam01-scam",
@@ -48,7 +50,9 @@
         "phishing",
         "تك عالماشي"
       ],
-      "status": "ready"
+      "status": "published",
+      "video_id": "75k-UDnbTi0",
+      "published_by": "owner (manual upload 2026-11-09)"
     },
     {
       "id": "ep02-cube",
