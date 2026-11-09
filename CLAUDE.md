@@ -65,9 +65,12 @@ workflow (`scripts/auto_reply.py`, every 5 min, YouTube API, no vidIQ credits) r
 comments like «اريده» — an entry needs its `videoId` to be answered. Because the file exists, the Excel CTA may say the file is in the comments.
 
 ## Publishing mode (current)
-The YouTube key is not set up (the `YT_CLIENT_SECRET` GitHub secret could not be saved), so publishing is MANUAL:
-each day render the two new episodes, then send the owner the MP4s plus copy-ready title, description and schedule
-time (Excel 13:00, family 20:00 Beirut). Once `youtube_token.enc` exists, `publish.yml` uploads by itself.
+Fully automatic on GitHub, free, no vidIQ, no browser. youtube_token.enc (encrypted with YT_CLIENT_SECRET) holds a
+permanent token with youtube + youtube.force-ssl, granted 2026-11-09 with the OAuth app In production.
+- publish.yml uploads one "ready" episode per series each morning and schedules 13:00 / 20:00 Beirut.
+- auto_reply.yml answers file requests under each video in files/files_map.json with its link.
+- live_stats.yml refreshes docs/stats.json + history.json for https://adhamn75.github.io/techalmashi/live.html
+Never mark an episode "ready" if it is already on the channel (check docs/stats.json), or it is uploaded twice.
 
 ## Adopted third-party skills (`.claude/skills/`, MIT — see `third_party/LICENSES.txt`)
 Copied unmodified from their repos, so read these notes where our repo differs from theirs.
