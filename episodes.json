@@ -120,7 +120,9 @@
         "قواعد جدتي",
         "rules horror"
       ],
-      "status": "ready"
+      "status": "scheduled",
+      "youtube_id": "_LRkBD01Mog",
+      "publish_at": "2026-11-09T22:00:00+02:00"
     }
   ]
 }
