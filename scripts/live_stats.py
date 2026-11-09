@@ -14,8 +14,8 @@ DOCS = Path(__file__).resolve().parent.parent / "docs"
 KEEP = 3000  # history points (~3 weeks at one per 10 minutes)
 
 
-def main() -> None:
-    yt = youtube_client()
+def main(account: str = "tech", suffix: str = "") -> None:
+    yt = youtube_client(account)
     ch = yt.channels().list(part="statistics,snippet,contentDetails", mine=True).execute()["items"][0]
     uploads = ch["contentDetails"]["relatedPlaylists"]["uploads"]
     ids, token = [], None
@@ -42,8 +42,8 @@ def main() -> None:
              "subscribers": int(cs.get("subscriberCount", 0)), "views": int(cs.get("viewCount", 0)),
              "videos": int(cs.get("videoCount", 0))}, "videos": videos}
     DOCS.mkdir(exist_ok=True)
-    (DOCS / "stats.json").write_text(json.dumps(stats, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
-    hp = DOCS / "history.json"
+    (DOCS / f"stats{suffix}.json").write_text(json.dumps(stats, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+    hp = DOCS / f"history{suffix}.json"
     hist = json.loads(hp.read_text(encoding="utf-8")) if hp.exists() else []
     hist.append({"t": now, "subs": stats["channel"]["subscribers"], "views": sum(v["views"] for v in videos),
                  "likes": sum(v["likes"] for v in videos), "comments": sum(v["comments"] for v in videos)})
@@ -52,4 +52,6 @@ def main() -> None:
 
 
 if __name__ == "__main__":
-    main()
+    import sys
+    acc = sys.argv[1] if len(sys.argv) > 1 else "tech"
+    main(acc, "" if acc == "tech" else f"_{acc}")

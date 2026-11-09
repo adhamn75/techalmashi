@@ -24,13 +24,25 @@ OUT = ROOT / "out"
 DRY_RUN = os.environ.get("DRY_RUN") == "1"
 
 
-def youtube_client():
+def refresh_token(account: str = "tech") -> str:
+    """Decrypt the account's token file (youtube_token.enc for tech3almashi, youtube_token_<account>.enc otherwise)."""
+    if account == "tech" and os.environ.get("YT_REFRESH_TOKEN"):
+        return os.environ["YT_REFRESH_TOKEN"]
+    f = ROOT / ("youtube_token.enc" if account == "tech" else f"youtube_token_{account}.enc")
+    if not f.exists():
+        raise FileNotFoundError(f"{f.name} missing: run the Connect YouTube workflow for account '{account}'")
+    out = subprocess.run(["openssl", "enc", "-d", "-aes-256-cbc", "-pbkdf2", "-a", "-A", "-pass", "env:YT_CLIENT_SECRET",
+                          "-in", str(f)], capture_output=True, text=True, check=True)
+    return out.stdout.strip()
+
+
+def youtube_client(account: str = "tech"):
     from google.oauth2.credentials import Credentials
     from googleapiclient.discovery import build
 
     creds = Credentials(
         token=None,
-        refresh_token=os.environ["YT_REFRESH_TOKEN"],
+        refresh_token=refresh_token(account),
         client_id="1098334853097-svmse3o063e65tfumg0q23u3cml9mttt.apps.googleusercontent.com",
         client_secret=os.environ["YT_CLIENT_SECRET"].strip(),
         token_uri="https://oauth2.googleapis.com/token",
@@ -57,7 +69,7 @@ def upload(yt, path: Path, ep: dict, settings: dict, publish_at: datetime) -> st
             "title": ep["title"][:100],
             "description": ep["description"],
             "tags": ep.get("tags", []),
-            "categoryId": settings.get("category_id", "27"),
+            "categoryId": (settings.get("categories") or {}).get(ep.get("series") or "", settings.get("category_id", "27")),
             "defaultLanguage": settings.get("language", "ar"),
             "defaultAudioLanguage": settings.get("language", "ar"),
         },
@@ -127,7 +139,16 @@ def main() -> int:
     data = json.loads(QUEUE.read_text(encoding="utf-8"))
     settings = data["settings"]
     slots = publish_slots(settings, datetime.now(ZoneInfo("UTC")))
-    yt = None if DRY_RUN else youtube_client()
+    accounts = settings.get("accounts") or {}
+    clients: dict[str, object] = {}
+
+    def yt_for(series):
+        acc = accounts.get(series or "", "tech")
+        if acc not in clients:
+            clients[acc] = youtube_client(acc)
+        return clients[acc]
+
+    yt = None if DRY_RUN else yt_for(None)
     taken: set[str] = set()
     for series, when in slots:
         ep = pick(data["episodes"], series, taken)
@@ -141,10 +162,15 @@ def main() -> int:
         if DRY_RUN:
             print(f"[dry run] would schedule {ep['id']} ({series}) for {when.isoformat()}")
             continue
-        vid = upload(yt, path, ep, settings, when)
+        try:
+            yt_ep = yt_for(ep.get("series"))
+        except FileNotFoundError as err:
+            print(f"::warning::{err}")
+            continue
+        vid = upload(yt_ep, path, ep, settings, when)
         playlist = (settings.get("playlists") or {}).get(ep.get("series") or "")
         if playlist:
-            add_to_playlist(yt, playlist, vid)
+            add_to_playlist(yt_ep, playlist, vid)
         ep.update(status="scheduled", youtube_id=vid, publish_at=when.isoformat())
         print(f"Scheduled {ep['id']} as https://youtu.be/{vid} for {when.isoformat()}")
         QUEUE.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")

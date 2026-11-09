@@ -9,14 +9,25 @@
       {
         "series": "family",
         "time": "20:00"
+      },
+      {
+        "series": "horror",
+        "time": "22:00"
       }
     ],
     "playlists": {
       "excel": "",
-      "family": ""
+      "family": "",
+      "horror": ""
     },
     "category_id": "27",
-    "language": "ar"
+    "language": "ar",
+    "accounts": {
+      "horror": "horror"
+    },
+    "categories": {
+      "horror": "24"
+    }
   },
   "episodes": [
     {
