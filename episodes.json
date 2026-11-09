@@ -140,9 +140,11 @@
         "الإطار 481",
         "creepypasta"
       ],
-      "status": "ready",
+      "status": "scheduled",
       "note": "anime stills by Adham, animated 2026-11-09",
-      "old_youtube_id": "dIupMNHksc4"
+      "old_youtube_id": "dIupMNHksc4",
+      "youtube_id": "PnLmt9-khbk",
+      "publish_at": "2026-11-09T22:00:00+02:00"
     }
   ]
 }
