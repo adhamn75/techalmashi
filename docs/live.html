@@ -85,6 +85,7 @@ td.t a:hover { text-decoration: underline; }
 .pill.ready { color: var(--gold); } .pill.scheduled { color: var(--blue); } .pill.published { color: var(--green); }
 .empty { color: var(--muted); font-size: .9rem; padding: 6px 0; }
 .costs td:last-child { font-family: var(--num); direction: ltr; text-align: left; color: var(--green); }
+@media (max-width: 600px) { #vids-table th:nth-child(3), #vids-table td:nth-child(3), #vids-table th:nth-child(5), #vids-table td:nth-child(5), #vids-table th:nth-child(7), #vids-table td:nth-child(7) { display: none; } td.t a { max-width: 22ch; } }
 footer { font-size: .75rem; color: var(--muted); line-height: 1.7; }
 [hidden] { display: none !important; }
 </style>
@@ -140,7 +141,7 @@ footer { font-size: .75rem; color: var(--muted); line-height: 1.7; }
   <section class="card">
     <h2>الفيديوهات <small id="vids-note"></small></h2>
     <div class="tablewrap">
-      <table>
+      <table id="vids-table">
         <thead><tr><th>الفيديو</th><th>مشاهدات</th><th>بالساعة</th><th>إعجابات</th><th>نسبة الإعجاب</th><th>تعليقات</th><th>نُشر</th></tr></thead>
         <tbody id="vids"></tbody>
       </table>
