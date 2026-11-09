@@ -31,8 +31,8 @@ def youtube_client():
     creds = Credentials(
         token=None,
         refresh_token=os.environ["YT_REFRESH_TOKEN"],
-        client_id=os.environ["YT_CLIENT_ID"],
-        client_secret=os.environ["YT_CLIENT_SECRET"],
+        client_id="1098334853097-svmse3o063e65tfumg0q23u3cml9mttt.apps.googleusercontent.com",
+        client_secret=os.environ["YT_CLIENT_SECRET"].strip(),
         token_uri="https://oauth2.googleapis.com/token",
         scopes=["https://www.googleapis.com/auth/youtube"],
     )

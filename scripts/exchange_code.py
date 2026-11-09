@@ -10,6 +10,10 @@ import sys
 import urllib.parse
 import urllib.request
 
+# The client ID is public (it appears in every sign-in URL), so it lives here instead of a secret.
+CLIENT_ID = "1098334853097-svmse3o063e65tfumg0q23u3cml9mttt.apps.googleusercontent.com"
+os.environ["YT_CLIENT_ID"] = CLIENT_ID
+
 missing = [k for k in ("YT_CLIENT_ID", "YT_CLIENT_SECRET") if not os.environ.get(k, "").strip()]
 if missing:
     print("Missing GitHub secrets:", ", ".join(missing))
@@ -20,8 +24,8 @@ if "code=" in code:  # the whole redirect URL was pasted
 
 body = urllib.parse.urlencode({
     "code": code,
-    "client_id": os.environ["YT_CLIENT_ID"],
-    "client_secret": os.environ["YT_CLIENT_SECRET"],
+    "client_id": CLIENT_ID,
+    "client_secret": os.environ["YT_CLIENT_SECRET"].strip(),
     "redirect_uri": os.environ.get("REDIRECT_URI", "http://localhost"),
     "grant_type": "authorization_code",
 }).encode()
