@@ -19,29 +19,35 @@ concurrency:
 
 jobs:
   publish:
-    # Only runs on schedule once YouTube is connected (youtube_token.enc exists); manual runs always work.
-    if: github.event_name == 'workflow_dispatch' || hashFiles('youtube_token.enc') != ''
     runs-on: ubuntu-latest
     timeout-minutes: 60
     steps:
       - uses: actions/checkout@v4
 
+      - name: Is YouTube connected?
+        id: gate
+        run: |
+          if [ -f youtube_token.enc ] || [ "${{ github.event_name }}" = "workflow_dispatch" ]; then echo "go=true" >> "$GITHUB_OUTPUT"; else echo "YouTube not connected yet; skipping."; fi
       - uses: actions/setup-node@v4
+        if: steps.gate.outputs.go == 'true'
         with:
           node-version: 22
           cache: npm
 
       - uses: actions/setup-python@v5
+        if: steps.gate.outputs.go == 'true'
         with:
           python-version: "3.12"
 
       - name: Install
+        if: steps.gate.outputs.go == 'true'
         run: |
           npm ci
           npx remotion browser ensure
           pip install google-api-python-client google-auth
 
       - name: Load YouTube token
+        if: steps.gate.outputs.go == 'true'
         env:
           YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
         run: |
@@ -52,6 +58,7 @@ jobs:
           fi
 
       - name: Render and schedule today's episodes
+        if: steps.gate.outputs.go == 'true'
         env:
           YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
           YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
@@ -59,6 +66,7 @@ jobs:
         run: python scripts/publish.py
 
       - name: Keep rendered videos for review
+        if: steps.gate.outputs.go == 'true'
         uses: actions/upload-artifact@v4
         with:
           name: videos
@@ -67,6 +75,7 @@ jobs:
           if-no-files-found: ignore
 
       - name: Save queue status
+        if: steps.gate.outputs.go == 'true'
         run: |
           git config user.name "shorts-bot"
           git config user.email "shorts-bot@users.noreply.github.com"
