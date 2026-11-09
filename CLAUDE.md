@@ -98,3 +98,20 @@ Not adopted (checked, not a fit): howseen-ai/claude-motion-design (HTML+Playwrig
 use Remotion), AgriciDaniel/claude-youtube (overlaps yt-*, parts need YouTube/Gemini keys),
 mohitagw15856/pm-claude-skills youtube-script-writer (long-form), cdeistopened/content-os (newsletter/
 podcast writing, needs Gemini/Anthropic keys), agamm/video-agent (edits real footage; Grok part is paid).
+
+## Excel bar: "impossible in Excel" (owner's standing request, 2026-11-09)
+Every «أسرار Excel» episode must look heavy and jaw-dropping, never a basic shortcut or a known trick.
+The hook is "this can't be Excel" in the first second, then a 2-second reveal of how (one formula, LAMBDA,
+iterative calculation or a small VBA loop), and a real working file in files/ for «أريده».
+Next ideas, roughly hardest first (build only what can really be made and shipped as a file):
+- 3D first-person maze (Wolfenstein-style raycaster) drawn in cells with VBA, arrow keys to walk
+- Tetris with rotation, line clears and score, in cells (VBA)
+- Mandelbrot / Julia fractal from ONE dynamic-array formula + colour scale, zoom by changing a cell
+- Conway's Game of Life with iterative calculation (no VBA), press F9 to step
+- Sudoku solved by ONE recursive LAMBDA
+- A tiny neural network that recognises a digit you draw in an 8x8 grid (weights in a sheet)
+- Flappy Bird / Pac-Man in cells (VBA)
+- Raytraced sphere with lighting computed per cell by formulas
+- QR code generator with formulas only
+- Music sequencer: cells as a piano roll that plays with Beep (VBA)
+- Live analog clock drawn by a scatter chart + NOW() with iterative recalculation
