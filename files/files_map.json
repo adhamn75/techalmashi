@@ -1,0 +1,19 @@
+{
+  "_note": "One entry per Excel episode that has a real downloadable file. The comment-reply task matches a comment's videoId (or videoTitle) here and replies with `reply`.",
+  "files": [
+    {
+      "episode": "ep01-snake",
+      "videoId": "rbvYJoA0FbY",
+      "title": "لعبة الثعبان داخل Excel؟! 🐍 #shorts",
+      "file": "files/snake.xlsm",
+      "reply": "تفضّل 🐍 حمّل اللعبة من هنا:\nhttps://github.com/adhamn75/techalmashi/raw/main/files/snake.xlsm\nافتح الملف واضغط Enable Content ثم Play، والعب بالأسهم! خلّيك ذكي 💚"
+    },
+    {
+      "episode": "ep02-cube",
+      "videoId": "H1vlM8GvZIs",
+      "title": "مكعّب ثلاثي الأبعاد يدور داخل Excel… بلا أي كود! 🧊 #shorts",
+      "file": "files/cube3d.xlsx",
+      "reply": "تفضّل 🧊 حمّل المكعّب من هنا:\nhttps://github.com/adhamn75/techalmashi/raw/main/files/cube3d.xlsx\nغيّر الرقم في الخلية H4 وشاهد المكعّب يدور، بلا أي كود! خلّيك ذكي 💚"
+    }
+  ]
+}

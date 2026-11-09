@@ -57,6 +57,12 @@ pattern level, never graphic) · location sharing left on · in-app purchase tra
 QR code scam · "send me the code you got" · public Wi-Fi · oversharing school uniform in photos ·
 deepfake voice of a relative asking for money.
 
+## Excel files for every Excel episode
+Every Excel episode ships with its real file in `files/` (built by a script in `scripts/files/`, e.g. `make_cube3d.py`,
+or VBA via pyOpenVBA like `snake.xlsm`), so commenters who ask can get it. Add an entry to `files/files_map.json`
+(episode, title, file, reply text with the raw GitHub link; `videoId` once the video is on the channel). The comment-reply
+task reads that map. Because the file exists, the Excel CTA may say the file is in the comments.
+
 ## Publishing mode (current)
 The YouTube key is not set up (the `YT_CLIENT_SECRET` GitHub secret could not be saved), so publishing is MANUAL:
 each day render the two new episodes, then send the owner the MP4s plus copy-ready title, description and schedule
