@@ -53,6 +53,10 @@ h2 { font-size: 1rem; margin: 0 0 8px; font-weight: 700; }
 .vid .meta span { direction: ltr; unicode-bidi: isolate; font-family: var(--num); }
 .vid:focus-visible { outline: 2px solid var(--blue); outline-offset: 4px; border-radius: 6px; }
 .err { color: var(--orange); font-size: .9rem; }
+.tabs { display: flex; gap: 8px; }
+.tabs button { font: inherit; font-weight: 700; color: var(--muted); background: var(--panel); border: 1px solid var(--line); border-radius: 999px; padding: 6px 16px; cursor: pointer; }
+.tabs button[aria-pressed="true"] { color: var(--bg); background: var(--green); border-color: var(--green); }
+.tabs button:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
 footer { font-size: .75rem; color: var(--muted); line-height: 1.6; }
 </style>
 </head>
@@ -65,6 +69,11 @@ footer { font-size: .75rem; color: var(--muted); line-height: 1.6; }
       <div class="status"><span class="dot" id="dot"></span><span id="updated">جارٍ التحميل…</span></div>
     </div>
   </header>
+
+  <nav class="tabs" aria-label="القناة">
+    <button type="button" id="tab-tech" data-ch="">تك عالماشي</button>
+    <button type="button" id="tab-horror" data-ch="_horror">قناة الرعب</button>
+  </nav>
 
   <section class="tiles" aria-label="أرقام القناة">
     <div class="tile subs"><span class="lbl">المشتركون</span><span class="num" id="subs">—</span><span class="chg" id="subs-chg"></span></div>
@@ -97,6 +106,14 @@ const ago = (iso) => {
   return h < 24 ? `قبل ${h} ساعة` : `قبل ${Math.round(h / 24)} يوم`;
 };
 let last = null;
+let ch = location.hash === '#horror' ? '_horror' : '';
+function setTabs() { document.querySelectorAll('.tabs button').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.ch === ch))); }
+document.querySelectorAll('.tabs button').forEach((b) => b.addEventListener('click', () => {
+  ch = b.dataset.ch; history.replaceState(null, '', ch ? '#horror' : '#'); setTabs(); last = null;
+  $('vids').replaceChildren(); ['subs','views','likes','comments'].forEach((k) => { $(k).textContent = '—'; $(k + '-chg').textContent = ''; });
+  load();
+}));
+setTabs();
 
 function change(hist, key) {
   if (!hist.length) return '';
@@ -148,6 +165,7 @@ function render(stats, hist) {
   }
   const max = Math.max(1, ...v.map((x) => x.views));
   const box = $('vids'); box.replaceChildren();
+  if (!v.length) { const p = document.createElement('p'); p.className = 'err'; p.textContent = 'لا فيديوهات منشورة بعد.'; box.append(p); }
   for (const x of [...v].sort((a, b) => b.views - a.views)) {
     const a = document.createElement('a');
     a.className = 'vid'; a.href = 'https://youtube.com/shorts/' + x.id; a.target = '_blank'; a.rel = 'noopener';
@@ -175,12 +193,12 @@ async function load() {
   try {
     const bust = '?t=' + Date.now();
     const [s, h] = await Promise.all([
-      fetch('stats.json' + bust, {cache: 'no-store'}).then((r) => { if (!r.ok) throw new Error(r.status); return r.json(); }),
-      fetch('history.json' + bust, {cache: 'no-store'}).then((r) => (r.ok ? r.json() : [])).catch(() => []),
+      fetch('stats' + ch + '.json' + bust, {cache: 'no-store'}).then((r) => { if (!r.ok) throw new Error(r.status); return r.json(); }),
+      fetch('history' + ch + '.json' + bust, {cache: 'no-store'}).then((r) => (r.ok ? r.json() : [])).catch(() => []),
     ]);
     last = s.updated; render(s, h); tickStatus();
   } catch (e) {
-    if (!last) $('updated').innerHTML = '<span class="err">لا توجد أرقام بعد — تظهر بعد أول تحديث من GitHub.</span>';
+    if (!last) { $('updated').innerHTML = '<span class="err">لا توجد أرقام بعد — تظهر بعد أول تحديث من GitHub.</span>'; }
   }
 }
 load();
