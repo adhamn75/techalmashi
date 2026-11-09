@@ -4,6 +4,10 @@ import '@fontsource/cairo/arabic-700.css';
 import '@fontsource/cairo/arabic-900.css';
 import {FONT, Mokaab} from '../shared/Mascot';
 import {Sfx} from '../shared/Sfx';
+import {VoiceTrack, speaking, Line} from '../shared/Voice';
+
+const V = (i: number, at: number, sec: number): Line => ({at, dur: Math.round(sec * 30), src: `voice/family01/${i}.wav`});
+const LINES: Line[] = [V(0, 5, 1.77), V(1, 64, 0.62), V(2, 114, 0.77), V(3, 155, 2.03), V(4, 232, 2.53), V(5, 310, 2.63), V(6, 392, 4.09)];
 
 // Family-safety series palette (distinct from the Excel series)
 const NAVY = '#0b1324';
@@ -13,16 +17,16 @@ const YELLOW = '#ffd166';
 const clamp = {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'} as const;
 
 const MSGS = [
-  {text: 'مبروووك!! ربحت آيفون', at: 14},
-  {text: 'العرض بس لليوم!', at: 34},
+  {text: 'مبروك!! ربحت آيفون', at: 14},
+  {text: 'العرض لليوم فقط!', at: 34},
   {text: 'win-now.prize/gift', at: 54, link: true},
-  {text: 'دخّل رقم بطاقة ماما لنبعتلك ياه', at: 74},
+  {text: 'أدخل رقم بطاقة والدتك لنرسله لك', at: 74},
 ];
 // which message each warning sign points at
 const SIGNS = [
-  {n: 1, title: 'مستعجلة', sub: '"بس لليوم" حتى ما تفكّر', msg: 1},
-  {n: 2, title: 'أحلى من إنها تكون حقيقية', sub: 'ما حدا بيوزّع آيفونات ببلاش', msg: 0},
-  {n: 3, title: 'بدها رابط أو معلومات', sub: 'كلمة سر، بطاقة، عنوان', msg: 3},
+  {n: 1, title: 'الاستعجال', sub: '"لليوم فقط" كي لا تفكّر', msg: 1},
+  {n: 2, title: 'أجمل من أن تكون حقيقية', sub: 'لا أحد يوزّع هواتف مجانًا', msg: 0},
+  {n: 3, title: 'تطلب رابطًا أو معلومات', sub: 'كلمة سر، بطاقة، عنوان', msg: 3},
 ];
 
 const Phone: React.FC<{f: number; highlight: number | null; scale: number}> = ({f, highlight, scale}) => (
@@ -66,7 +70,7 @@ const Arrive: React.FC = () => {
   const f = useCurrentFrame();
   const {fps} = useVideoConfig();
   const ph = spring({frame: f, fps, config: {damping: 14}});
-  const cap = f < 60 ? 'ابنك وصلتو هالرسالة...' : 'وكبس؟ 😬'.replace(' 😬', '');
+  const cap = f < 60 ? 'وصلت هذه الرسالة لابنك...' : 'هل سيضغط؟';
   const capIn = interpolate(f % 60, [0, 8], [0, 1], clamp);
   // the child's finger moving toward the link
   const finger = interpolate(f, [86, 112], [0, 1], clamp);
@@ -83,10 +87,10 @@ const Arrive: React.FC = () => {
       {f >= 112 && (
         <div style={{position: 'absolute', top: 760, left: '50%', transform: `translateX(-50%) rotate(-12deg) scale(${stamp})`,
           border: `12px solid ${RED}`, color: RED, fontFamily: FONT, fontWeight: 900, fontSize: 150, padding: '0 50px',
-          borderRadius: 30, background: 'rgba(11,19,36,0.85)', direction: 'rtl'}}>نصب!</div>
+          borderRadius: 30, background: 'rgba(11,19,36,0.85)', direction: 'rtl'}}>احتيال!</div>
       )}
       <AbsoluteFill>
-        <Mokaab frame={f} scale={0.4} y={-2.85} mood={f < 112 ? 'happy' : 'shock'} talk={f >= 112 ? 1 : 0} outfit="shield" />
+        <Mokaab frame={f} scale={0.4} y={-2.85} mood={f < 112 ? 'happy' : 'shock'} talk={speaking(LINES, f)} outfit="shield" />
       </AbsoluteFill>
     </AbsoluteFill>
   );
@@ -96,7 +100,7 @@ const Arrive: React.FC = () => {
 const Signs: React.FC = () => {
   const f = useCurrentFrame();
   const {fps} = useVideoConfig();
-  const per = 55;
+  const per = 78;
   const idx = Math.min(SIGNS.length - 1, Math.floor(f / per));
   const s = SIGNS[idx];
   const cardIn = spring({frame: f - idx * per, fps, config: {damping: 12}});
@@ -104,7 +108,7 @@ const Signs: React.FC = () => {
     <AbsoluteFill>
       <div style={{position: 'absolute', top: 110, width: '100%', textAlign: 'center', direction: 'rtl',
         fontFamily: FONT, fontWeight: 900, fontSize: 84, color: 'white'}}>
-        3 علامات <span style={{color: RED}}>النصب</span>
+        3 علامات <span style={{color: RED}}>للاحتيال</span>
       </div>
       <Phone f={200} highlight={s.msg} scale={0.72} />
       <div style={{position: 'absolute', top: 1110, left: 60, right: 60, background: 'white', borderRadius: 40,
@@ -135,16 +139,16 @@ const Rule: React.FC = () => {
   const c = spring({frame: f - 50, fps, config: {damping: 13}});
   return (
     <AbsoluteFill>
-      <AbsoluteFill><Mokaab frame={f} scale={a * 0.7} y={1.55} mood="happy" wave={1} talk={f < 45 ? 1 : 0} outfit="shield" /></AbsoluteFill>
+      <AbsoluteFill><Mokaab frame={f} scale={a * 0.7} y={1.55} mood="happy" wave={1} talk={speaking(LINES, f + 384)} outfit="shield" /></AbsoluteFill>
       <div style={{position: 'absolute', top: 960, width: '100%', textAlign: 'center', direction: 'rtl', fontFamily: FONT, fontWeight: 900}}>
         <div style={{fontSize: 56, color: YELLOW, transform: `scale(${a})`}}>قاعدة البيت</div>
         <div style={{fontSize: 64, color: 'white', marginTop: 16, lineHeight: 1.4, opacity: b,
           transform: `translateY(${(1 - b) * 40}px)`, padding: '0 60px'}}>
-          أي جائزة أو رابط؟<br />فرجيه لماما أو بابا <span style={{color: BLUE}}>قبل</span> ما تكبس
+          أي جائزة أو رابط؟<br />أرِه لأمك أو أبيك <span style={{color: BLUE}}>قبل</span> أن تضغط
         </div>
         <div style={{marginTop: 70, display: 'inline-block', background: BLUE, color: 'white', fontSize: 52,
           padding: '18px 46px', borderRadius: 60, opacity: c, transform: `scale(${0.8 + 0.2 * c})`}}>
-          ابعتو لغروب العيلة
+          أرسله لمجموعة العائلة
         </div>
         <div style={{marginTop: 34, fontSize: 44, color: '#c7d2e3', direction: 'ltr', opacity: c}}>@tech3almashi</div>
       </div>
@@ -152,18 +156,19 @@ const Rule: React.FC = () => {
   );
 };
 
-export const FAMILY01_FRAMES = 150 + 165 + 110;
+export const FAMILY01_FRAMES = 150 + 234 + 140;
 
 export const Family01Scam: React.FC = () => (
   <AbsoluteFill style={{background: `radial-gradient(circle at 50% 30%, #16233f 0%, ${NAVY} 70%)`}}>
     <Sequence durationInFrames={150}><Arrive /></Sequence>
-    <Sequence from={150} durationInFrames={165}><Signs /></Sequence>
-    <Sequence from={315} durationInFrames={110}><Rule /></Sequence>
+    <Sequence from={150} durationInFrames={234}><Signs /></Sequence>
+    <Sequence from={384} durationInFrames={140}><Rule /></Sequence>
+    <VoiceTrack lines={LINES} />
     {MSGS.map((m) => <Sfx key={m.at} name="blip" at={m.at} />)}
     <Sfx name="buzz" at={112} volume={1.2} />
     <Sfx name="whoosh" at={148} />
-    {SIGNS.map((_, i) => <Sfx key={i} name="pop" at={150 + i * 55} />)}
-    <Sfx name="whoosh" at={313} />
-    <Sfx name="ding" at={333} />
+    {SIGNS.map((_, i) => <Sfx key={i} name="pop" at={150 + i * 78} volume={0.6} />)}
+    <Sfx name="whoosh" at={382} />
+    <Sfx name="ding" at={400} volume={0.6} />
   </AbsoluteFill>
 );

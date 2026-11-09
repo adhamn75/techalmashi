@@ -4,6 +4,10 @@ import '@fontsource/cairo/arabic-700.css';
 import '@fontsource/cairo/arabic-900.css';
 import {BG, FONT, GREEN, Mokaab} from '../shared/Mascot';
 import {Sfx} from '../shared/Sfx';
+import {VoiceTrack, speaking, Line} from '../shared/Voice';
+
+const V = (i: number, at: number, sec: number): Line => ({at, dur: Math.round(sec * 30), src: `voice/excel01/${i}.wav`});
+const LINES: Line[] = [V(0, 8, 0.91), V(1, 75, 2.8), V(2, 162, 1.7), V(3, 245, 2.23), V(4, 315, 2.16), V(5, 392, 4.14)];
 
 const clamp = {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'} as const;
 
@@ -122,7 +126,7 @@ const Game: React.FC = () => {
   const winIn = spring({frame: f, fps, config: {damping: 14}});
   const mk = spring({frame: f - 10, fps, config: {damping: 10}});
 
-  const caps: [number, string][] = [[0, 'هيدا... Excel؟؟'], [75, 'مش فيديو. لعبة حقيقية'], [150, 'كل خلية = بكسل']];
+  const caps: [number, string][] = [[0, 'هل هذا... Excel؟؟'], [75, 'ليست فيديو. لعبة حقيقية'], [160, 'كل خلية = بكسل']];
   const cap = [...caps].reverse().find(([t]) => f >= t)!;
   const capIn = interpolate(f - cap[0], [0, 8], [0, 1], clamp);
 
@@ -135,7 +139,7 @@ const Game: React.FC = () => {
         <ExcelWindow state={state} pulse={pulse} />
       </div>
       <AbsoluteFill>
-        <Mokaab frame={f} scale={mk * 0.4} y={-2.8} mood={f < 120 ? 'shock' : 'happy'} lookX={Math.sin(f / 12)} talk={f < 120 ? 1 : 0} wave={f >= 120 ? 1 : 0} />
+        <Mokaab frame={f} scale={mk * 0.4} y={-2.8} mood={f < 120 ? 'shock' : 'happy'} lookX={Math.sin(f / 12)} talk={speaking(LINES, f)} wave={f >= 120 ? 1 : 0} />
       </AbsoluteFill>
     </AbsoluteFill>
   );
@@ -159,7 +163,7 @@ const Reveal: React.FC = () => {
   return (
     <AbsoluteFill style={{alignItems: 'center'}}>
       <div style={{position: 'absolute', top: 220, fontFamily: FONT, fontWeight: 900, fontSize: 88, color: 'white', direction: 'rtl', opacity: p}}>
-        السر؟ شوية <span style={{color: GREEN}}>VBA</span>
+        السر؟ قليل من <span style={{color: GREEN}}>VBA</span>
       </div>
       <div style={{position: 'absolute', top: 470, width: 940, background: '#0f1a15', border: `3px solid #24352c`,
         borderRadius: 24, padding: '40px 44px', transform: `scale(${0.9 + 0.1 * p})`, opacity: p, direction: 'ltr'}}>
@@ -175,7 +179,7 @@ const Reveal: React.FC = () => {
       </div>
       <div style={{position: 'absolute', top: 1260, fontFamily: FONT, fontWeight: 700, fontSize: 56, color: '#9fb8ab', direction: 'rtl',
         opacity: interpolate(f, [55, 65], [0, 1], clamp)}}>
-        لوب بيلوّن الخلايا 10 مرات بالثانية
+        حلقة تلوّن الخلايا 10 مرات في الثانية
       </div>
     </AbsoluteFill>
   );
@@ -189,11 +193,11 @@ const Outro: React.FC = () => {
   const b = spring({frame: f - 14, fps, config: {damping: 13}});
   return (
     <AbsoluteFill>
-      <AbsoluteFill><Mokaab frame={f} scale={a * 0.72} y={1.45} mood="smirk" wave={1} wink={interpolate(f, [30, 34, 42, 46], [0, 1, 1, 0], clamp)} /></AbsoluteFill>
+      <AbsoluteFill><Mokaab frame={f} scale={a * 0.72} y={1.45} mood="smirk" wave={1} talk={speaking(LINES, f + 385)} wink={interpolate(f, [30, 34, 42, 46], [0, 1, 1, 0], clamp)} /></AbsoluteFill>
       <div style={{position: 'absolute', top: 1080, width: '100%', textAlign: 'center', fontFamily: FONT, fontWeight: 900, color: 'white', direction: 'rtl'}}>
-        <div style={{fontSize: 96, transform: `scale(${a})`}}>بدك الملف؟</div>
+        <div style={{fontSize: 96, transform: `scale(${a})`}}>تريد الملف؟</div>
         <div style={{fontSize: 66, marginTop: 30, opacity: b, transform: `translateY(${(1 - b) * 40}px)`}}>
-          اكتب <span style={{color: GREEN}}>«بدي»</span> بالكومنتات
+          اكتب <span style={{color: GREEN}}>«أريده»</span> في التعليقات
         </div>
         <div style={{fontSize: 40, marginTop: 70, color: '#9fb8ab', fontWeight: 700, opacity: b}}>أسرار Excel · الحلقة 1</div>
         <div style={{fontSize: 44, marginTop: 14, color: '#ffffff', fontWeight: 900, direction: 'ltr', opacity: b}}>@tech3almashi</div>
@@ -202,21 +206,22 @@ const Outro: React.FC = () => {
   );
 };
 
-export const EP01_FRAMES = 240 + 90 + 80;
-
-const EAT_FRAMES = STATES.map((s, i) => (i > 0 && s.score > STATES[i - 1].score ? i * STEP : -1)).filter((x) => x >= 0 && x < 240);
+export const EP01_FRAMES = 240 + 145 + 135;
 
 export const Ep01Snake: React.FC = () => (
   <AbsoluteFill style={{background: `radial-gradient(circle at 50% 35%, #12261c 0%, ${BG} 70%)`}}>
     <Sequence durationInFrames={240}><Game /></Sequence>
-    <Sequence from={240} durationInFrames={90}><Reveal /></Sequence>
-    <Sequence from={330} durationInFrames={80}><Outro /></Sequence>
-    {EAT_FRAMES.map((f) => <Sfx key={f} name="blip" at={f} />)}
-    <Sfx name="whoosh" at={240} />
-    {CODE.map((_, i) => <Sfx key={`t${i}`} name="tick" at={246 + i * 6} />)}
-    <Sfx name="whoosh" at={328} />
-    <Sfx name="pop" at={332} />
+    <Sequence from={240} durationInFrames={145}><Reveal /></Sequence>
+    <Sequence from={385} durationInFrames={135}><Outro /></Sequence>
+    <VoiceTrack lines={LINES} />
+    {EAT_FRAMES.map((f) => <Sfx key={f} name="blip" at={f} volume={0.5} />)}
+    <Sfx name="whoosh" at={240} volume={0.6} />
+    {CODE.map((_, i) => <Sfx key={`t${i}`} name="tick" at={246 + i * 6} volume={0.4} />)}
+    <Sfx name="whoosh" at={383} volume={0.6} />
+    <Sfx name="pop" at={387} volume={0.6} />
   </AbsoluteFill>
 );
 
+export const SNAKE_EAT_FRAMES = STATES.map((s, i) => (i > 0 && s.score > STATES[i - 1].score ? i * STEP : -1)).filter((x) => x >= 0 && x < 240);
 
+const EAT_FRAMES = SNAKE_EAT_FRAMES;
