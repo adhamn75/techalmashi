@@ -16,7 +16,7 @@ async def main():
         out = pathlib.Path("voice") / ep
         out.mkdir(parents=True, exist_ok=True)
         for i, line in enumerate(cfg["lines"]):
-            c = edge_tts.Communicate(line, cfg.get("voice", "ar-LB-RamiNeural"), rate=cfg.get("rate", "+0%"))
+            c = edge_tts.Communicate(line, cfg.get("voice", "ar-LB-RamiNeural"), rate=cfg.get("rate", "+0%"), pitch=cfg.get("pitch", "+0Hz"))
             await c.save(str(out / f"{i}.mp3"))
             print(ep, i, "ok")
 
