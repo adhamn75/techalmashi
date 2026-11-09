@@ -120,9 +120,10 @@
         "قواعد جدتي",
         "rules horror"
       ],
-      "status": "scheduled",
+      "status": "cancelled",
       "youtube_id": "_LRkBD01Mog",
-      "publish_at": "2026-11-09T22:00:00+02:00"
+      "publish_at": "2026-11-09T22:00:00+02:00",
+      "note": "owner cancelled 2026-11-09: old cute style; channel moved to dark horror"
     }
   ]
 }

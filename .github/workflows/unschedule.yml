@@ -1,0 +1,22 @@
+name: Cancel a scheduled video
+
+on:
+  workflow_dispatch:
+    inputs:
+      video_id:
+        description: "YouTube video id"
+        required: true
+      account:
+        type: choice
+        options: [tech, horror]
+        default: tech
+
+jobs:
+  cancel:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: pip install -q google-api-python-client google-auth
+      - env:
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+        run: cd scripts && python unschedule.py "${{ inputs.video_id }}" "${{ inputs.account }}"
