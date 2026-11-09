@@ -19,6 +19,8 @@ concurrency:
 
 jobs:
   publish:
+    # Only runs on schedule once YouTube is connected (youtube_token.enc exists); manual runs always work.
+    if: github.event_name == 'workflow_dispatch' || hashFiles('youtube_token.enc') != ''
     runs-on: ubuntu-latest
     timeout-minutes: 60
     steps:
