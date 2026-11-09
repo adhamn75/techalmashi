@@ -15,15 +15,23 @@ jobs:
       - uses: actions/setup-python@v5
         with: {python-version: "3.12"}
       - run: sudo apt-get update -qq && sudo apt-get install -y -qq xvfb libegl1 libgl1-mesa-dri ffmpeg
-      - run: pip -q install depthflow
+      - run: pip -q install depthflow && pip -q install transformers pillow
       - name: Render clips
         env: {LIBGL_ALWAYS_SOFTWARE: "1"}
         run: |
           D="${{ inputs.folder }}"; mkdir -p "$D/clips"
+          python3 - "$D" <<'PY'
+          import sys,glob,os
+          from transformers import pipeline
+          d=sys.argv[1]; os.makedirs(d+"/depth",exist_ok=True)
+          pipe=pipeline("depth-estimation",model="depth-anything/Depth-Anything-V2-Small-hf",device=-1)
+          for f in glob.glob(d+"/*.png"):
+              pipe(f)["depth"].save(d+"/depth/"+os.path.basename(f))
+          PY
           for f in "$D"/*.png; do
             n=$(basename "$f" .png)
             case $n in lunge|near|hook) A="dolly";; behind|fear) A="zoom";; *) A="orbital";; esac
-            xvfb-run -a depthflow input -i "$f" da2 $A main -w 1080 -h 1920 -t ${{ inputs.seconds }} -f 30 -o "$D/clips/$n.mp4" || echo "fail $n"
+            xvfb-run -a depthflow input -i "$f" -d "$D/depth/$n.png" $A main -w 1080 -h 1920 -t ${{ inputs.seconds }} -f 30 -o "$D/clips/$n.mp4" || echo "fail $n"
           done
           ls -la "$D/clips"
       - run: |
