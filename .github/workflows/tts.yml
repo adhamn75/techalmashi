@@ -1,0 +1,19 @@
+name: Voice-over (TTS)
+
+on:
+  workflow_dispatch:
+  push:
+    paths: ["voice/lines.json"]
+
+jobs:
+  tts:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: pip install edge-tts
+      - run: python scripts/tts.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: voice
+          path: voice/
+          retention-days: 7
