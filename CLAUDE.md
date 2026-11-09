@@ -60,8 +60,9 @@ deepfake voice of a relative asking for money.
 ## Excel files for every Excel episode
 Every Excel episode ships with its real file in `files/` (built by a script in `scripts/files/`, e.g. `make_cube3d.py`,
 or VBA via pyOpenVBA like `snake.xlsm`), so commenters who ask can get it. Add an entry to `files/files_map.json`
-(episode, title, file, reply text with the raw GitHub link; `videoId` once the video is on the channel). The comment-reply
-task reads that map. Because the file exists, the Excel CTA may say the file is in the comments.
+(episode, title, file, reply text with the raw GitHub link; `videoId` once the video is on the channel). The `Auto-reply to file requests`
+workflow (`scripts/auto_reply.py`, every 5 min, YouTube API, no vidIQ credits) reads that map and replies by itself to
+comments like «اريده» — an entry needs its `videoId` to be answered. Because the file exists, the Excel CTA may say the file is in the comments.
 
 ## Publishing mode (current)
 The YouTube key is not set up (the `YT_CLIENT_SECRET` GitHub secret could not be saved), so publishing is MANUAL:

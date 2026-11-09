@@ -1,5 +1,5 @@
 {
-  "_note": "One entry per Excel episode that has a real downloadable file. The comment-reply task matches a comment's videoId (or videoTitle) here and replies with `reply`.",
+  "_note": "One entry per Excel episode that has a real downloadable file. The Auto-reply workflow (scripts/auto_reply.py) replies with `reply` under file requests on each entry's videoId; add videoId as soon as the video is live.",
   "files": [
     {
       "episode": "ep01-snake",

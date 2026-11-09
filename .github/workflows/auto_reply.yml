@@ -1,0 +1,47 @@
+name: Auto-reply to file requests
+
+# Every 5 minutes (GitHub's shortest schedule; runs can start a few minutes late).
+# Replies under comments like "اريده" on Excel videos with the file link from files/files_map.json.
+on:
+  schedule:
+    - cron: "*/5 * * * *"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Only list what it would reply to"
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+concurrency:
+  group: auto-reply
+  cancel-in-progress: false
+
+jobs:
+  reply:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: .github/workflows/auto_reply.yml
+      - run: pip install google-api-python-client google-auth
+      - name: Load YouTube token
+        env:
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+        run: |
+          if [ -f youtube_token.enc ] && [ -n "$YT_CLIENT_SECRET" ]; then
+            T=$(openssl enc -d -aes-256-cbc -pbkdf2 -a -A -pass env:YT_CLIENT_SECRET -in youtube_token.enc)
+            echo "::add-mask::$T"
+            echo "YT_REFRESH_TOKEN=$T" >> "$GITHUB_ENV"
+          fi
+      - name: Reply
+        env:
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          DRY_RUN: ${{ inputs.dry_run && '1' || '0' }}
+        run: python scripts/auto_reply.py
