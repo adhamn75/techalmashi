@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>tech3almashi Live</title>
 <link rel="manifest" href="manifest.json">
-<meta name="theme-color" content="#0b1324">
+<meta name="theme-color" content="#f4f7fc">
 <link rel="icon" href="icon-192.png">
 <link rel="apple-touch-icon" href="icon-192.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,12 +14,12 @@
 /* Layout: a phone-first control room. Money and the monetisation goal first, then the pulse, the trend,
    the videos, who asked for files, what is queued, and what it all costs. */
 :root {
-  --bg: #0b1324; --panel: #121c33; --panel2: #18243f; --line: #22304f; --fg: #eef2fb; --muted: #93a2c2;
-  --green: #1fd14a; --blue: #3a86ff; --orange: #ff8a1f; --red: #ff5a5f; --gold: #ffc93a;
+  --bg: #f4f7fc; --panel: #ffffff; --panel2: #eef3fb; --line: #dbe3ef; --fg: #0f1a2e; --muted: #5a6782;
+  --green: #0f9a3a; --blue: #1f6bff; --orange: #e0680a; --red: #d6334f; --gold: #a87900;
   --display: "Cairo", system-ui, sans-serif; --num: "JetBrains Mono", ui-monospace, monospace;
-  color-scheme: dark;
+  color-scheme: light;
 }
-body.horror { --green: #b06cff; --blue: #ff4d6d; --orange: #ff4d6d; --bg: #0d0a14; --panel: #17111f; --panel2: #1f1729; --line: #2e2340; }
+body.horror { --green: #7b3fe4; --blue: #d6334f; --orange: #d6334f; --bg: #f8f4fc; --panel: #ffffff; --panel2: #f3ecfb; --line: #e6dcf2; }
 * { box-sizing: border-box; }
 html, body { margin: 0; background: var(--bg); color: var(--fg); font-family: var(--display); }
 body { padding: max(12px, env(safe-area-inset-top)) max(16px, env(safe-area-inset-right)) 40px max(16px, env(safe-area-inset-left)); transition: background .3s; }
@@ -36,10 +36,10 @@ header h1 .t { color: var(--orange); } header h1 .m { color: var(--green); }
 .dot.stale { background: var(--orange); }
 .tabs { display: flex; gap: 6px; }
 .tabs button { font: inherit; font-weight: 700; font-size: .9rem; color: var(--muted); background: var(--panel); border: 1px solid var(--line); border-radius: 999px; padding: 6px 14px; cursor: pointer; }
-.tabs button[aria-pressed="true"] { color: var(--bg); background: var(--green); border-color: var(--green); }
+.tabs button[aria-pressed="true"] { color: #fff; background: var(--green); border-color: var(--green); }
 .tabs button:focus-visible, a:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
 
-.card { background: var(--panel); border: 1px solid var(--line); border-radius: 16px; padding: 16px; min-width: 0; }
+.card { background: var(--panel); border: 1px solid var(--line); border-radius: 16px; padding: 16px; min-width: 0; box-shadow: 0 1px 2px rgba(15,26,46,.05); }
 h2 { font-size: 1rem; margin: 0 0 10px; font-weight: 700; display: flex; justify-content: space-between; gap: 8px; align-items: baseline; }
 h2 small { font-weight: 400; color: var(--muted); font-size: .75rem; }
 .mono { font-family: var(--num); direction: ltr; unicode-bidi: isolate; font-variant-numeric: tabular-nums; }
@@ -61,8 +61,8 @@ h2 small { font-weight: 400; color: var(--muted); font-size: .75rem; }
 .tiles { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
 @media (min-width: 760px) { .tiles { grid-template-columns: repeat(6, minmax(0, 1fr)); } }
 @media (max-width: 380px) { .tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-.tile { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 12px; display: flex; flex-direction: column; gap: 2px; min-width: 0; }
-.tile .lbl { font-size: .75rem; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.tile { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 12px; box-shadow: 0 1px 2px rgba(15,26,46,.05); display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.tile .lbl { font-size: .8rem; font-weight: 600; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .tile .num { font-family: var(--num); font-size: 1.45rem; direction: ltr; text-align: right; font-variant-numeric: tabular-nums; }
 .tile .chg { font-family: var(--num); font-size: .75rem; direction: ltr; text-align: right; color: var(--muted); min-height: 1em; }
 .tile .chg.up { color: var(--green); }
@@ -81,7 +81,7 @@ td.n { font-family: var(--num); direction: ltr; text-align: left; white-space: n
 td.t a { color: var(--fg); text-decoration: none; display: block; max-width: 34ch; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 td.t a:hover { text-decoration: underline; }
 .pill { display: inline-block; font-size: .7rem; padding: 2px 8px; border-radius: 999px; background: var(--panel2); color: var(--muted); white-space: nowrap; }
-.pill.excel { color: #7ee2a0; } .pill.family { color: #8fb8ff; } .pill.horror { color: #d3a6ff; }
+.pill.excel { color: #0f7a32; } .pill.family { color: #1f55c7; } .pill.horror { color: #6a2fcc; }
 .pill.ready { color: var(--gold); } .pill.scheduled { color: var(--blue); } .pill.published { color: var(--green); }
 .empty { color: var(--muted); font-size: .9rem; padding: 6px 0; }
 .costs td:last-child { font-family: var(--num); direction: ltr; text-align: left; color: var(--green); }
@@ -253,15 +253,15 @@ function drawCurve(hist) {
   svgEl(svg, 'path', {d: `M${pl},${Y(0)} L${pts.join(' L')} L${X(x1)},${Y(0)} Z`, fill: css('--blue'), 'fill-opacity': '.15'});
   svgEl(svg, 'polyline', {points: pts.join(' '), fill: 'none', stroke: css('--blue'), 'stroke-width': 2, 'stroke-linejoin': 'round'});
   svgEl(svg, 'circle', {cx: X(x1), cy: Y(ys[ys.length - 1]), r: 4, fill: css('--green')});
-  const fd = (v) => new Date(v).toLocaleString('ar-LB', {day: 'numeric', month: 'numeric', hour: '2-digit', minute: '2-digit', timeZone: 'Asia/Beirut'});
-  svgEl(svg, 'text', {x: pl, y: H - 5, 'text-anchor': 'start'}, fd(x0));
+  const fd = (v) => new Date(v).toLocaleString('en-GB', {day: 'numeric', month: 'numeric', hour: '2-digit', minute: '2-digit', timeZone: 'Asia/Beirut'});
+  svgEl(svg, 'text', {x: pl + 2, y: H - 5, 'text-anchor': 'end'}, fd(x0));
   svgEl(svg, 'text', {x: W - pr, y: H - 5, 'text-anchor': 'end'}, fd(x1));
 }
 
 function cell(tr, text, cls) { const td = document.createElement('td'); if (cls) td.className = cls; td.textContent = text; tr.append(td); return td; }
 function emptyRow(tb, cols, text) { const tr = document.createElement('tr'); const td = cell(tr, text, 'empty'); td.colSpan = cols; tb.append(tr); }
 
-function render(stats, hist, reqs, queue) {
+function render(stats, hist, reqs, queue, earn) {
   const v = stats.videos;
   const sum = (k) => v.reduce((s, x) => s + x[k], 0);
   const views = sum('views'), subs = stats.channel.subscribers;
@@ -279,6 +279,10 @@ function render(stats, hist, reqs, queue) {
   setChg('reqs-chg', myReqs.filter((r) => Date.now() - new Date(r.t) < 864e5).length);
 
   // money + goals (channel is younger than 90 days, so lifetime Shorts views stand in for the 90-day window)
+  if (earn && typeof earn.total === 'number') {
+    $('earned').textContent = usd(earn.total);
+    $('earned-sub').textContent = `هالشهر ${usd(earn.month || 0)} · من YouTube Analytics`;
+  }
   $('est').textContent = `${usd(views / 1000 * 0.02)} – ${usd(views / 1000 * 0.07)}`;
   const g = (id, val, goal) => { $(id).style.width = Math.min(100, val / goal * 100).toFixed(2) + '%'; };
   g('g-subs', subs, 1000); $('g-subs-t').textContent = `${fmt.format(subs)} / 1,000`;
@@ -343,9 +347,9 @@ function tickStatus() {
 async function load() {
   const bust = '?t=' + Date.now();
   const get = (f, fallback) => fetch(f + bust, {cache: 'no-store'}).then((r) => (r.ok ? r.json() : fallback)).catch(() => fallback);
-  const [s, h, r, q] = await Promise.all([get('stats' + ch + '.json', null), get('history' + ch + '.json', []), get('requests.json', []), get('queue.json', [])]);
+  const [s, h, r, q, e] = await Promise.all([get('stats' + ch + '.json', null), get('history' + ch + '.json', []), get('requests.json', []), get('queue.json', []), get('earnings' + ch + '.json', null)]);
   if (!s) { $('updated').textContent = 'لا توجد أرقام بعد — تظهر بعد أول تحديث من GitHub.'; return; }
-  last = s.updated; render(s, h, r, q); tickStatus();
+  last = s.updated; render(s, h, r, q, e); tickStatus();
 }
 load();
 setInterval(load, 60000);
