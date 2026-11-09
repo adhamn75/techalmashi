@@ -1,13 +1,13 @@
 # تك عالماشي — how to make a new episode
 
-Two series on one channel: **Excel ما بتعرفو** (`series: excel`) and **احمي ولادك أونلاين** (`series: family`, aimed at PARENTS, never marked made-for-kids).
+Two series on one channel: **أسرار Excel** (`series: excel`) and **احمِ أطفالك على الإنترنت** (`series: family`, aimed at PARENTS, never marked made-for-kids).
 
 This repo is a YouTube Shorts channel built entirely in code. GitHub Actions renders and
 schedules whatever is `"ready"` in `episodes.json` every morning. Your job, when asked to
 make episodes, is to keep that queue full with good, *different* episodes.
 
 ## The series
-- Name: **Excel ما بتعرفو** ("the Excel you don't know"). Audience: Arabic speakers, Lebanese dialect.
+- Name: **أسرار Excel** ("the Excel you don't know"). Audience: Arabic speakers, Lebanese dialect.
 - Every episode shows something people don't believe Excel can do, then reveals how (VBA, formulas,
   Power Query, LAMBDA, Python in Excel…). It must be **real**: if the episode claims Excel does it,
   it has to be doable.

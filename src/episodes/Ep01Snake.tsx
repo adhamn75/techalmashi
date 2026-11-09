@@ -195,7 +195,7 @@ const Outro: React.FC = () => {
         <div style={{fontSize: 66, marginTop: 30, opacity: b, transform: `translateY(${(1 - b) * 40}px)`}}>
           اكتب <span style={{color: GREEN}}>«بدي»</span> بالكومنتات
         </div>
-        <div style={{fontSize: 40, marginTop: 70, color: '#9fb8ab', fontWeight: 700, opacity: b}}>Excel ما بتعرفو · الحلقة 1</div>
+        <div style={{fontSize: 40, marginTop: 70, color: '#9fb8ab', fontWeight: 700, opacity: b}}>أسرار Excel · الحلقة 1</div>
         <div style={{fontSize: 44, marginTop: 14, color: '#ffffff', fontWeight: 900, direction: 'ltr', opacity: b}}>@tech3almashi</div>
       </div>
     </AbsoluteFill>
