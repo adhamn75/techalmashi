@@ -1,5 +1,5 @@
 import React from 'react';
-import {AbsoluteFill, Audio, Img, Sequence, interpolate, staticFile, useCurrentFrame, Easing} from 'remotion';
+import {AbsoluteFill, Audio, OffthreadVideo, Sequence, interpolate, staticFile, useCurrentFrame, Easing} from 'remotion';
 import '@fontsource/cairo/arabic-700.css';
 import '@fontsource/cairo/arabic-900.css';
 
@@ -28,9 +28,9 @@ type Shot = {img: string; from: number; to: number; a: [number, number, number];
 const SHOTS: Shot[] = [
   {img: 'hook', from: 0, to: 40, a: [1.25, 70, 45], b: [1.4, 72, 42], glitch: true, shake: 3},
   {img: 'room', from: 40, to: 150, a: [1.05, 45, 55], b: [1.45, 66, 40], rain: true},
-  {img: 'far', from: 150, to: 250, a: [1.0, 50, 50], b: [1.35, 50, 45], glitch: true, eyes: [[50, 36]]},
-  {img: 'near', from: 250, to: 388, a: [1.05, 50, 50], b: [1.5, 50, 48], glitch: true, eyes: [[42.5, 51.5], [57.5, 51.5]]},
-  {img: 'behind', from: 388, to: 440, a: [1.05, 50, 60], b: [1.6, 32, 22], eyes: [[29.5, 13.2], [37.8, 13.2]]},
+  {img: 'far', from: 150, to: 250, a: [1.0, 50, 50], b: [1.35, 50, 45], glitch: true},
+  {img: 'near', from: 250, to: 388, a: [1.05, 50, 50], b: [1.5, 50, 48], glitch: true},
+  {img: 'behind', from: 388, to: 440, a: [1.05, 50, 60], b: [1.6, 32, 22]},
   {img: 'fear', from: 440, to: 482, a: [1.05, 50, 45], b: [1.25, 52, 38], rain: true, shake: 5},
   {img: 'lunge', from: 500, to: 576, a: [0.6, 50, 50], b: [1.35, 50, 45], shake: 16, eyes: [[25.8, 40.7], [74.5, 40.7]]},
   {img: 'hook', from: 572, to: 594, a: [1.25, 70, 45], b: [1.3, 70, 45], glitch: true},
@@ -58,7 +58,7 @@ const Glitch: React.FC<{f: number; strong: boolean}> = ({f, strong}) => (
 
 const ShotView: React.FC<{s: Shot; f: number; rewinding: boolean}> = ({s, f, rewinding}) => {
   const t = interpolate(f, [s.from, s.to], [0, 1], {...clamp, easing: s.img === 'lunge' ? Easing.out(Easing.back(1.4)) : Easing.inOut(Easing.cubic)});
-  const sc = s.a[0] + (s.b[0] - s.a[0]) * t;
+  const sc = 1 + ((s.a[0] + (s.b[0] - s.a[0]) * t) - 1) * 0.35;
   const fx = s.a[1] + (s.b[1] - s.a[1]) * t, fy = s.a[2] + (s.b[2] - s.a[2]) * t;
   const k = s.shake ? (s.img === 'lunge' ? Math.max(0, 1 - (f - s.from) / 40) : 1) * s.shake : 0;
   const sx = (rnd(f * 1.3) - 0.5) * k * 2, sy = (rnd(f * 2.1) - 0.5) * k * 2;
@@ -72,8 +72,10 @@ const ShotView: React.FC<{s: Shot; f: number; rewinding: boolean}> = ({s, f, rew
     <AbsoluteFill style={{opacity: fade}}>
       <div style={{position: 'absolute', width: W, height: H, transformOrigin: '0 0',
         transform: `translate(${tx + sx}px, ${ty + sy}px) scale(${sc * breathe})`}}>
-        <Img src={staticFile(`horror/h02/${s.img}.png`)} style={{width: W, height: H, objectFit: 'cover',
-          filter: `brightness(${1.12 + (rewinding ? 0.25 : 0)}) contrast(1.05)`}} />
+        <Sequence from={s.from} layout="none">
+          <OffthreadVideo muted src={staticFile(`horror/h02/clips/${s.img}.mp4`)} style={{width: W, height: H, objectFit: 'cover',
+            filter: `brightness(${1.12 + (rewinding ? 0.25 : 0)}) contrast(1.05)`}} />
+        </Sequence>
         {s.eyes?.map(([x, y], i) => (
           <div key={i} style={{position: 'absolute', left: `${x}%`, top: `${y}%`, width: 60, height: 60, marginLeft: -30, marginTop: -30,
             borderRadius: '50%', background: 'radial-gradient(circle, rgba(255,40,60,.95) 0%, rgba(255,20,40,.4) 35%, rgba(255,0,0,0) 70%)',
