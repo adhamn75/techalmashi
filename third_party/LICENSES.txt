@@ -76,3 +76,11 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
+
+================================================================
+https://github.com/remotion-dev/skills  (1af7e69)
+Used here: .claude/skills/remotion-markup, remotion-render, remotion-multimedia, remotion-captions
+Official Remotion Agent Skills, published by Remotion to be installed into projects
+("npx skills add remotion-dev/skills"). The repository carries no separate licence file;
+Remotion's own licence applies (https://www.remotion.dev/docs/license): free for individuals
+and companies of up to 3 people, which covers this channel.

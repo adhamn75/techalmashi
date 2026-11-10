@@ -78,7 +78,7 @@ Never mark an episode "ready" if it is already on the channel (check docs/stats.
   stays, whatever it is, and the new one is not uploaded. To remove a stray copy by hand: Actions → "Cancel a scheduled
   video" (unschedule.yml, makes it private).
 
-## Adopted third-party skills (`.claude/skills/`, MIT — see `third_party/LICENSES.txt`)
+## Adopted third-party skills (`.claude/skills/`, MIT or Remotion licence — see `third_party/LICENSES.txt`)
 Copied unmodified from their repos, so read these notes where our repo differs from theirs.
 
 | Skill | From | Use it for |
@@ -90,6 +90,7 @@ Copied unmodified from their repos, so read these notes where our repo differs f
 | `yt-script`, `yt-package`, `yt-seo` | Jakeschincariol/youtube-agent-skill | Hook scoring (21 formulas), Arabic titles/descriptions, tags. |
 | `yt-viral`, `yt-plan` | same | Rank what is working in the niche; plan the next batch. Needs public channel listings (yt-dlp), which run in GitHub Actions, not in the cloud sandbox. |
 | `yt-comment`, `yt-audit`, `yt-retention` | same | Once the channel has comments/analytics exports to feed them. |
+| `remotion-markup`, `remotion-render`, `remotion-multimedia`, `remotion-captions` | remotion-dev/skills (official) | Remotion's own best practices. Read `remotion-markup/arabic-text.md` before animating Arabic captions word by word (keeps letters joined, `dir="rtl"`). |
 
 Differences from the source repos:
 - claude-motion assumes `timeline.json` + `src/lib.ts`. Here, older episodes keep beats inline. For NEW
