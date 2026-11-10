@@ -15,7 +15,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
-        with: {python-version: "3.12", cache: pip}
+        with: {python-version: "3.12"}
       - run: pip -q install torch --index-url https://download.pytorch.org/whl/cpu
       - run: pip -q install diffusers transformers accelerate huggingface_hub pillow
       - uses: actions/cache@v4
