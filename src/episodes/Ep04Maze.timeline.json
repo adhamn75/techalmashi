@@ -1,0 +1,12 @@
+{
+  "fps": 30,
+  "frames": 470,
+  "voice": [
+    {"src": "voice/excel04/0.wav", "at": 4, "sec": 3.4},
+    {"src": "voice/excel04/1.wav", "at": 112, "sec": 1.64},
+    {"src": "voice/excel04/2.wav", "at": 168, "sec": 1.9},
+    {"src": "voice/excel04/3.wav", "at": 232, "sec": 2.32},
+    {"src": "voice/excel04/4.wav", "at": 316, "sec": 4.26}
+  ],
+  "beats": {"walk2": 108, "rays": 164, "depth": 228, "outro": 306}
+}

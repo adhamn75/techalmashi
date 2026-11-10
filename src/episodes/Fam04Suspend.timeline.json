@@ -1,0 +1,12 @@
+{
+  "fps": 30,
+  "frames": 455,
+  "voice": [
+    {"src": "voice/family04/0.wav", "at": 4, "sec": 3.08},
+    {"src": "voice/family04/1.wav", "at": 104, "sec": 2.22},
+    {"src": "voice/family04/2.wav", "at": 178, "sec": 1.71},
+    {"src": "voice/family04/3.wav", "at": 236, "sec": 1.78},
+    {"src": "voice/family04/4.wav", "at": 298, "sec": 4.21}
+  ],
+  "beats": {"fear": 100, "link": 174, "steal": 232, "rule": 294}
+}

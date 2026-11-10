@@ -1,0 +1,12 @@
+{
+  "fps": 30,
+  "frames": 540,
+  "voice": [
+    {"src": "voice/h04-camera/0.wav", "at": 4, "sec": 4.23},
+    {"src": "voice/h04-camera/1.wav", "at": 138, "sec": 3.23},
+    {"src": "voice/h04-camera/2.wav", "at": 242, "sec": 4.36},
+    {"src": "voice/h04-camera/3.wav", "at": 380, "sec": 2.53},
+    {"src": "voice/h04-whisper/0.wav", "at": 474, "sec": 2.05}
+  ],
+  "beats": {"motion": 134, "close": 238, "bedroom": 376, "silence": 456, "scare": 470}
+}
