@@ -228,7 +228,9 @@
         "أسرار Excel",
         "تك عالماشي"
       ],
-      "status": "ready"
+      "status": "scheduled",
+      "youtube_id": "K-jLrdmkQsM",
+      "publish_at": "2026-11-11T13:00:00+02:00"
     },
     {
       "id": "fam04-suspended",
@@ -246,7 +248,9 @@
         "سرقة الحسابات",
         "تك عالماشي"
       ],
-      "status": "ready"
+      "status": "scheduled",
+      "youtube_id": "lJ7ppDQ0CDQ",
+      "publish_at": "2026-11-10T20:00:00+02:00"
     },
     {
       "id": "h04-camera",
@@ -265,7 +269,9 @@
         "creepypasta",
         "قصة رعب قصيرة"
       ],
-      "status": "ready"
+      "status": "scheduled",
+      "youtube_id": "d3qbYTS3GGQ",
+      "publish_at": "2026-11-10T22:00:00+02:00"
     },
     {
       "id": "h05-mirror",
