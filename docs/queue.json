@@ -79,5 +79,32 @@
   "publish_at": "2026-11-10T22:00:00+02:00",
   "youtube_id": "hr7ktiJJLsE",
   "video_id": null
+ },
+ {
+  "id": "ep04-maze3d",
+  "series": "excel",
+  "title": "لعبة ثلاثية الأبعاد داخل Excel؟! 🕹️ متاهة تمشي فيها بالأسهم #shorts",
+  "status": "ready",
+  "publish_at": null,
+  "youtube_id": null,
+  "video_id": null
+ },
+ {
+  "id": "fam04-suspended",
+  "series": "family",
+  "title": "«تمّ إيقاف حسابك!» ⚠️ رسالة مزيّفة تسرق كلمة سر ابنك #shorts",
+  "status": "ready",
+  "publish_at": null,
+  "youtube_id": null,
+  "video_id": null
+ },
+ {
+  "id": "h04-camera",
+  "series": "horror",
+  "title": "كاميرا البيت 📷 أعيش وحدي… فمن يتحرّك في الممرّ الساعة 3؟ #shorts",
+  "status": "ready",
+  "publish_at": null,
+  "youtube_id": null,
+  "video_id": null
  }
 ]
