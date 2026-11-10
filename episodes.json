@@ -166,7 +166,9 @@
         "excel tricks",
         "تك عالماشي"
       ],
-      "status": "ready"
+      "status": "scheduled",
+      "youtube_id": "LENXUU_sCvk",
+      "publish_at": "2026-11-10T13:00:00+02:00"
     },
     {
       "id": "fam03-code",
@@ -184,7 +186,9 @@
         "WhatsApp scam",
         "تك عالماشي"
       ],
-      "status": "ready"
+      "status": "scheduled",
+      "youtube_id": "VLsYD24ePwc",
+      "publish_at": "2026-11-10T20:00:00+02:00"
     },
     {
       "id": "h03-elevator",
@@ -203,7 +207,9 @@
         "creepypasta",
         "قصة رعب قصيرة"
       ],
-      "status": "ready"
+      "status": "scheduled",
+      "youtube_id": "hr7ktiJJLsE",
+      "publish_at": "2026-11-10T22:00:00+02:00"
     }
   ]
 }
