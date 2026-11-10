@@ -1,0 +1,12 @@
+{
+  "fps": 30,
+  "frames": 540,
+  "voice": [
+    {"src": "voice/h05-mirror/0.wav", "at": 40, "sec": 4.17},
+    {"src": "voice/h05-mirror/1.wav", "at": 172, "sec": 4.14},
+    {"src": "voice/h05-mirror/2.wav", "at": 300, "sec": 3.13},
+    {"src": "voice/h05-mirror/3.wav", "at": 400, "sec": 1.06},
+    {"src": "voice/h05-whisper/0.wav", "at": 428, "sec": 3.6}
+  ],
+  "beats": {"room": 36, "lag": 168, "smile": 296, "off": 396, "silence": 410, "scare": 424, "end": 540}
+}

@@ -266,6 +266,26 @@
         "قصة رعب قصيرة"
       ],
       "status": "ready"
+    },
+    {
+      "id": "h05-mirror",
+      "series": "horror",
+      "channel": "UC9lU_G718LC15JQSMQpcbog",
+      "composition": "H05Mirror",
+      "title": "المرآة | لا تنظر فيها الساعة 3… انعكاسك لم يتحرّك 🪞 #shorts",
+      "description": "الساعة الثالثة… دخلتُ لأغسل وجهي.\nرفعتُ رأسي… فلم يرفع انعكاسي رأسه. كان ينظر إليّ… ويبتسم.\nثمّ انطفأ الضوء.\n\nإذا قرأتَ هذا أمام مرآة… لا تلتفت. اكتب: 🪞\n\n#رعب #قصص_رعب #horror #shorts",
+      "tags": [
+        "رعب",
+        "قصص رعب",
+        "المرآة",
+        "الساعة 3",
+        "horror shorts",
+        "anime horror",
+        "creepypasta",
+        "قصة رعب قصيرة"
+      ],
+      "status": "ready",
+      "note": "stills made free on GitHub (Horror stills workflow, LCM Dreamshaper v7, MIT)"
     }
   ]
 }
