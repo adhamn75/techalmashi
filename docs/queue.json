@@ -57,27 +57,27 @@
   "id": "ep03-tetris",
   "series": "excel",
   "title": "لعبة تتريس حقيقية داخل Excel؟! 🎮 الملف مجاني #shorts",
-  "status": "ready",
-  "publish_at": null,
-  "youtube_id": null,
+  "status": "scheduled",
+  "publish_at": "2026-11-10T13:00:00+02:00",
+  "youtube_id": "LENXUU_sCvk",
   "video_id": null
  },
  {
   "id": "fam03-code",
   "series": "family",
   "title": "«أرسل لي الكود الذي وصلك» 🚨 هكذا يُسرق واتساب ابنك #shorts",
-  "status": "ready",
-  "publish_at": null,
-  "youtube_id": null,
+  "status": "scheduled",
+  "publish_at": "2026-11-10T20:00:00+02:00",
+  "youtube_id": "VLsYD24ePwc",
   "video_id": null
  },
  {
   "id": "h03-elevator",
   "series": "horror",
   "title": "الطابق 13 | المبنى فيه 12 طابقًا فقط… فمن أوقف المصعد؟ 🛗 #shorts",
-  "status": "ready",
-  "publish_at": null,
-  "youtube_id": null,
+  "status": "scheduled",
+  "publish_at": "2026-11-10T22:00:00+02:00",
+  "youtube_id": "hr7ktiJJLsE",
   "video_id": null
  }
 ]
