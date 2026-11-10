@@ -1,0 +1,16 @@
+{
+  "_note": "Edit and push: the 'Horror stills' workflow renders every shot of every episode that has no images yet into public/horror/<episode>/stills/<shot>_<seed>.png. {C} = CHARACTER, {S} = STYLE from horror/CHARACTER.md.",
+  "character": "a tall hooded figure in a long black cloak, the hood deep and pointed, a pale grey-white face with sunken cheeks, thin dark lips, long black hair strands falling over the face, two glowing blood-red eyes, a thin red rim light along the edge of the hood",
+  "style": "dark anime horror illustration, black and blood-red palette, low-key lighting, deep shadows, thin fog, film grain, cinematic, highly detailed",
+  "seeds": [11, 42],
+  "episodes": {
+    "h05-mirror": {
+      "shots": {
+        "bathroom": "a dim small bathroom at night, one weak bulb above a mirror, a young man in a dark hoodie leaning over the sink, seen from behind, his reflection in the mirror staring at the viewer, {S}",
+        "reflection": "close-up of a bathroom mirror at night, the reflection of a young man in a dark hoodie with a pale blank face slightly smiling, the real man out of focus in the foreground, {S}",
+        "dark": "a pitch black bathroom, only two small glowing red eyes visible inside the mirror, faint red reflection on the sink, {S}",
+        "reveal": "{C}, leaning out of a bathroom mirror toward the viewer, face filling the frame, a red ring of light behind the head, pure black background, {S}"
+      }
+    }
+  }
+}

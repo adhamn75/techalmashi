@@ -1,0 +1,28 @@
+name: Horror stills (free open model)
+# Renders the shots in horror/stills.json on the runner's CPU with an open model. Free: no keys, no credits.
+on:
+  workflow_dispatch:
+    inputs:
+      episode: {description: "only this episode id (empty = all missing)", required: false, default: ""}
+  push:
+    paths: ["horror/stills.json"]
+permissions: {contents: write}
+concurrency: {group: stills, cancel-in-progress: false}
+jobs:
+  stills:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12", cache: pip}
+      - run: pip -q install torch --index-url https://download.pytorch.org/whl/cpu
+      - run: pip -q install diffusers transformers accelerate huggingface_hub pillow
+      - uses: actions/cache@v4
+        with: {path: ~/.cache/huggingface, key: hf-lcm-dreamshaper-v7}
+      - run: python scripts/horror/gen_stills.py "${{ inputs.episode }}"
+      - run: |
+          git config user.name shorts-bot; git config user.email shorts-bot@users.noreply.github.com
+          git add public/horror
+          git diff --cached --quiet || git commit -m "Horror stills [skip ci]"
+          git pull --rebase -q && git push
