@@ -52,5 +52,32 @@
   "publish_at": "2026-11-09T22:00:00+02:00",
   "youtube_id": "PnLmt9-khbk",
   "video_id": null
+ },
+ {
+  "id": "ep03-tetris",
+  "series": "excel",
+  "title": "لعبة تتريس حقيقية داخل Excel؟! 🎮 الملف مجاني #shorts",
+  "status": "ready",
+  "publish_at": null,
+  "youtube_id": null,
+  "video_id": null
+ },
+ {
+  "id": "fam03-code",
+  "series": "family",
+  "title": "«أرسل لي الكود الذي وصلك» 🚨 هكذا يُسرق واتساب ابنك #shorts",
+  "status": "ready",
+  "publish_at": null,
+  "youtube_id": null,
+  "video_id": null
+ },
+ {
+  "id": "h03-elevator",
+  "series": "horror",
+  "title": "الطابق 13 | المبنى فيه 12 طابقًا فقط… فمن أوقف المصعد؟ 🛗 #shorts",
+  "status": "ready",
+  "publish_at": null,
+  "youtube_id": null,
+  "video_id": null
  }
 ]
