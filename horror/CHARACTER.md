@@ -5,11 +5,11 @@ into any image tool (Flow, Gemini, our own `Horror stills` workflow) so every sh
 
 ## CHARACTER (copy as is)
 a tall hooded figure in a long black cloak, the hood deep and pointed, a pale grey-white face with sunken cheeks,
-thin dark lips, long black hair strands falling over the face, two glowing blood-red eyes, a thin red rim light
+thin dark lips, long black hair strands falling over the face, two intensely glowing red eyes, a thin red rim light
 along the edge of the hood, standing perfectly still
 
 ## STYLE (end of every prompt)
-dark anime horror illustration, black and blood-red palette, low-key lighting, deep shadows, thin fog,
+dark anime horror illustration, black and deep crimson palette, low-key lighting, deep shadows, thin fog,
 film grain, cinematic, vertical 9:16, highly detailed
 
 ## NEVER

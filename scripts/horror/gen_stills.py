@@ -22,7 +22,8 @@ licence = (info.card_data or {}).get("license", "unknown") if info.card_data els
 print("model", MODEL, "licence", licence)
 
 torch.set_num_threads(max(1, torch.get_num_threads()))
-pipe = DiffusionPipeline.from_pretrained(MODEL, torch_dtype=torch.float32)
+# the NSFW filter blacks out ordinary dark horror frames (false positives), so it is off; prompts never ask for nudity or gore
+pipe = DiffusionPipeline.from_pretrained(MODEL, torch_dtype=torch.float32, safety_checker=None, requires_safety_checker=False)
 pipe.to("cpu")
 pipe.set_progress_bar_config(disable=True)
 

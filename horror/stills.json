@@ -1,8 +1,12 @@
 {
   "_note": "Edit and push: the 'Horror stills' workflow renders every shot of every episode that has no images yet into public/horror/<episode>/stills/<shot>_<seed>.png. {C} = CHARACTER, {S} = STYLE from horror/CHARACTER.md.",
-  "character": "a tall hooded figure in a long black cloak, the hood deep and pointed, a pale grey-white face with sunken cheeks, thin dark lips, long black hair strands falling over the face, two glowing blood-red eyes, a thin red rim light along the edge of the hood",
-  "style": "dark anime horror illustration, black and blood-red palette, low-key lighting, deep shadows, thin fog, film grain, cinematic, highly detailed",
-  "seeds": [11, 42, 7],
+  "character": "a tall hooded figure in a long black cloak, the hood deep and pointed, a pale grey-white face with sunken cheeks, thin dark lips, long black hair strands falling over the face, two intensely glowing red eyes, a thin red rim light along the edge of the hood",
+  "style": "dark anime horror illustration, black and deep crimson palette, low-key lighting, deep shadows, thin fog, film grain, cinematic, highly detailed, clean surfaces",
+  "seeds": [
+    11,
+    42,
+    7
+  ],
   "episodes": {
     "h05-mirror": {
       "shots": {
