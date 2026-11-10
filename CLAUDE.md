@@ -71,6 +71,12 @@ permanent token with youtube + youtube.force-ssl, granted 2026-11-09 with the OA
 - auto_reply.yml answers file requests under each video in files/files_map.json with its link.
 - live_stats.yml refreshes docs/stats.json + history.json for https://adhamn75.github.io/techalmashi/live.html
 Never mark an episode "ready" if it is already on the channel (check docs/stats.json), or it is uploaded twice.
+- No double uploads (owner's rule, 2026-11-10). publish.py checks the channel's uploads (same title or a recorded
+  youtube_id) before rendering and skips an episode that is already live or scheduled, moving on to the next ready one.
+  Re-upload only for a big improvement: set `"replace": true` on the episode. Then the new copy goes up and the old one
+  is made private, unless the old one already has ≥ `settings.keep_if_views_at_least` views (1000): then the old one
+  stays, whatever it is, and the new one is not uploaded. To remove a stray copy by hand: Actions → "Cancel a scheduled
+  video" (unschedule.yml, makes it private).
 
 ## Adopted third-party skills (`.claude/skills/`, MIT — see `third_party/LICENSES.txt`)
 Copied unmodified from their repos, so read these notes where our repo differs from theirs.

@@ -27,7 +27,8 @@
     },
     "categories": {
       "horror": "24"
-    }
+    },
+    "keep_if_views_at_least": 1000
   },
   "episodes": [
     {
@@ -140,11 +141,13 @@
         "الإطار 481",
         "creepypasta"
       ],
-      "status": "scheduled",
-      "note": "anime stills by Adham, animated 2026-11-09",
-      "old_youtube_id": "dIupMNHksc4",
-      "youtube_id": "PnLmt9-khbk",
-      "publish_at": "2026-11-09T22:00:00+02:00"
+      "status": "published",
+      "note": "anime stills by Adham, animated 2026-11-09; duplicate PnLmt9-khbk (5 views) made private 2026-11-10, kept dIupMNHksc4 (61 views)",
+      "youtube_id": "dIupMNHksc4",
+      "publish_at": "2026-11-09T22:00:00+02:00",
+      "removed_youtube_ids": [
+        "PnLmt9-khbk"
+      ]
     },
     {
       "id": "ep03-tetris",

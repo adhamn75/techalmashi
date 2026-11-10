@@ -88,6 +88,46 @@ def upload(yt, path: Path, ep: dict, settings: dict, publish_at: datetime) -> st
     return resp["id"]
 
 
+def _norm(title: str) -> str:
+    return " ".join(title.replace("#shorts", "").split()).strip().lower()
+
+
+def channel_uploads(yt) -> list[dict]:
+    """Every video on the account's channel (public, private or scheduled) with its title and views."""
+    ch = yt.channels().list(part="contentDetails", mine=True).execute()["items"][0]
+    pl = ch["contentDetails"]["relatedPlaylists"]["uploads"]
+    ids, token = [], None
+    while True:
+        r = yt.playlistItems().list(part="contentDetails", playlistId=pl, maxResults=50, pageToken=token).execute()
+        ids += [i["contentDetails"]["videoId"] for i in r.get("items", [])]
+        token = r.get("nextPageToken")
+        if not token:
+            break
+    out = []
+    for i in range(0, len(ids), 50):
+        r = yt.videos().list(part="snippet,status,statistics", id=",".join(ids[i:i + 50])).execute()
+        for v in r.get("items", []):
+            out.append({"id": v["id"], "title": v["snippet"]["title"], "privacy": v["status"]["privacyStatus"],
+                        "scheduled": bool(v["status"].get("publishAt")),
+                        "views": int(v.get("statistics", {}).get("viewCount", 0))})
+    return out
+
+
+def already_on_channel(ep: dict, uploads: list[dict]) -> list[dict]:
+    """Copies of this episode that are live (public, unlisted or scheduled): same title or an id the queue recorded."""
+    known = {ep.get("youtube_id"), ep.get("old_youtube_id"), ep.get("video_id")} - {None}
+    same = [u for u in uploads if u["id"] in known or _norm(u["title"]) == _norm(ep["title"])]
+    # a plain private video with no schedule is already taken down; a scheduled one is private *with* publishAt
+    return [u for u in same if u["privacy"] != "private" or u.get("scheduled")]
+
+
+def take_down(yt, vid: str) -> None:
+    """Make a video plain private (reversible: it can be made public again from YouTube Studio)."""
+    st = yt.videos().list(part="status", id=vid).execute()["items"][0]["status"]
+    yt.videos().update(part="status", body={"id": vid, "status": {
+        "privacyStatus": "private", "selfDeclaredMadeForKids": st.get("selfDeclaredMadeForKids", False)}}).execute()
+
+
 def publish_slots(settings: dict, now: datetime) -> list[tuple[str | None, datetime]]:
     """(series, local publish time) for today's slots; a slot that is <30 min away or past moves to tomorrow."""
     tz = ZoneInfo(settings["timezone"])
@@ -151,29 +191,57 @@ def main() -> int:
     yt = None if DRY_RUN else yt_for(None)
     taken: set[str] = set()
     for series, when in slots:
+      while True:  # a duplicate is skipped and the next ready episode of the series takes the slot
         ep = pick(data["episodes"], series, taken)
         if ep is None:
             print(f"::warning::No ready episode for series '{series}' — slot {when.isoformat()} stays empty.")
-            continue
+            break
         taken.add(ep["id"])
+        yt_ep = None
+        if not DRY_RUN:
+            try:
+                yt_ep = yt_for(ep.get("series"))
+            except FileNotFoundError as err:
+                print(f"::warning::{err}")
+                break
+        # Never upload an episode twice (owner's rule, 2026-11-10). A re-upload only happens when the episode is
+        # marked "replace": true (a big improvement), and then the old copy is taken down, unless it already has
+        # many views (settings.keep_if_views_at_least, default 1000): then the old one stays and the new is skipped.
+        uploads = channel_uploads(yt_ep) if yt_ep is not None else []
+        existing = already_on_channel(ep, uploads)
+        if existing and not ep.get("replace"):
+            print(f"::warning::{ep['id']} is already on the channel ({', '.join(u['id'] for u in existing)}); not uploading again.")
+            ep.update(status="scheduled" if all(u["scheduled"] for u in existing) else "published",
+                      youtube_id=existing[0]["id"])
+            QUEUE.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+            continue
+        keep_at = int(settings.get("keep_if_views_at_least", 1000))
+        if existing and max(u["views"] for u in existing) >= keep_at:
+            best = max(existing, key=lambda u: u["views"])
+            print(f"::warning::{ep['id']}: old copy {best['id']} has {best['views']} views (>= {keep_at}); keeping it, skipping the re-upload.")
+            ep.pop("replace", None)
+            ep.update(status="published", youtube_id=best["id"])
+            QUEUE.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+            continue
         path = OUT / f"{ep['id']}.mp4"
         print(f"Rendering {ep['composition']} → {path.name}")
         render(ep["composition"], path)
         if DRY_RUN:
             print(f"[dry run] would schedule {ep['id']} ({series}) for {when.isoformat()}")
-            continue
-        try:
-            yt_ep = yt_for(ep.get("series"))
-        except FileNotFoundError as err:
-            print(f"::warning::{err}")
-            continue
+            break
         vid = upload(yt_ep, path, ep, settings, when)
+        for u in existing:
+            take_down(yt_ep, u["id"])
+            ep.setdefault("removed_youtube_ids", []).append(u["id"])
+            print(f"Replaced: old copy {u['id']} ({u['views']} views) is now private.")
+        ep.pop("replace", None)
         playlist = (settings.get("playlists") or {}).get(ep.get("series") or "")
         if playlist:
             add_to_playlist(yt_ep, playlist, vid)
         ep.update(status="scheduled", youtube_id=vid, publish_at=when.isoformat())
         print(f"Scheduled {ep['id']} as https://youtu.be/{vid} for {when.isoformat()}")
         QUEUE.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        break
 
     if yt is not None:
         write_stats(yt, data)
