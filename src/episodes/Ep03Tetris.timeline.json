@@ -1,0 +1,12 @@
+{
+  "fps": 30,
+  "frames": 530,
+  "voice": [
+    {"src": "voice/excel03/0.wav", "at": 4, "sec": 2.77},
+    {"src": "voice/excel03/1.wav", "at": 92, "sec": 2.9},
+    {"src": "voice/excel03/2.wav", "at": 186, "sec": 3.39},
+    {"src": "voice/excel03/3.wav", "at": 294, "sec": 2.79},
+    {"src": "voice/excel03/4.wav", "at": 384, "sec": 4.26}
+  ],
+  "beats": {"game": 0, "matrix": 182, "code": 290, "outro": 380}
+}

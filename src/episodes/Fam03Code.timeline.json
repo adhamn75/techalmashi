@@ -1,0 +1,12 @@
+{
+  "fps": 30,
+  "frames": 530,
+  "voice": [
+    {"src": "voice/family03/0.wav", "at": 4, "sec": 3.23},
+    {"src": "voice/family03/1.wav", "at": 108, "sec": 3.07},
+    {"src": "voice/family03/2.wav", "at": 206, "sec": 2.24},
+    {"src": "voice/family03/3.wav", "at": 279, "sec": 3.42},
+    {"src": "voice/family03/4.wav", "at": 389, "sec": 3.73}
+  ],
+  "beats": {"hook": 0, "nothim": 104, "key": 202, "spread": 275, "rule": 385}
+}
