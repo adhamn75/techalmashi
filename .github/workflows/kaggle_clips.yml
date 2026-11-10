@@ -1,0 +1,28 @@
+name: Horror clips (Kaggle free GPU)
+# Animates the stills of one horror episode into short AI clips on Kaggle's free T4 GPU, then commits them.
+# Needs repo secrets: KAGGLE_USERNAME + KAGGLE_KEY (from kaggle.json) or KAGGLE_API_TOKEN (new KGAT_ token).
+on:
+  workflow_dispatch:
+    inputs:
+      episode: {description: "episode id whose stills are already in public/horror/<id>/stills", required: true, default: "h05-mirror"}
+permissions: {contents: write}
+concurrency: {group: kaggle-clips, cancel-in-progress: false}
+jobs:
+  clips:
+    runs-on: ubuntu-latest
+    timeout-minutes: 150
+    env:
+      KAGGLE_USERNAME: ${{ secrets.KAGGLE_USERNAME }}
+      KAGGLE_KEY: ${{ secrets.KAGGLE_KEY }}
+      KAGGLE_API_TOKEN: ${{ secrets.KAGGLE_API_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - run: pip -q install kaggle
+      - run: python scripts/horror/kaggle_run.py "${{ inputs.episode }}"
+      - run: |
+          git config user.name shorts-bot; git config user.email shorts-bot@users.noreply.github.com
+          git add public/horror
+          git diff --cached --quiet || git commit -m "Kaggle clips ${{ inputs.episode }} [skip ci]"
+          git pull --rebase -q && git push
