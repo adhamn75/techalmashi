@@ -124,5 +124,32 @@
   "publish_at": null,
   "youtube_id": null,
   "video_id": null
+ },
+ {
+  "id": "ep05-mandelbrot",
+  "series": "excel",
+  "title": "لوحة لا نهائية داخل Excel؟! 🌀 كسورية ماندلبروت تغوص فيها بنقرتين #shorts",
+  "status": "ready",
+  "publish_at": null,
+  "youtube_id": null,
+  "video_id": null
+ },
+ {
+  "id": "fam06-gems",
+  "series": "family",
+  "title": "«جواهر مجانية» لابنك؟ 💎 هكذا يُسرق حساب لعبته في ثانية #shorts",
+  "status": "ready",
+  "publish_at": null,
+  "youtube_id": null,
+  "video_id": null
+ },
+ {
+  "id": "h06-ownnumber",
+  "series": "horror",
+  "title": "رقمي أنا 📞 اتصل بي الساعة 3: «افتح الباب… أنا في الخارج» #shorts",
+  "status": "ready",
+  "publish_at": null,
+  "youtube_id": null,
+  "video_id": null
  }
 ]
