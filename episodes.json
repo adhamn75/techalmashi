@@ -290,8 +290,10 @@
         "creepypasta",
         "قصة رعب قصيرة"
       ],
-      "status": "ready",
-      "note": "stills made free on GitHub (Horror stills workflow, LCM Dreamshaper v7, MIT)"
+      "status": "scheduled",
+      "note": "stills made free on GitHub (Horror stills workflow, LCM Dreamshaper v7, MIT)",
+      "youtube_id": "2HCAEVfQRoE",
+      "publish_at": "2026-11-11T22:00:00+02:00"
     },
     {
       "id": "fam05-voice",
@@ -309,7 +311,9 @@
         "كلمة سر العائلة",
         "تك عالماشي"
       ],
-      "status": "ready"
+      "status": "scheduled",
+      "youtube_id": "TGKpLTdMBo0",
+      "publish_at": "2026-11-11T20:00:00+02:00"
     },
     {
       "id": "ep05-mandelbrot",
@@ -328,7 +332,9 @@
         "أسرار Excel",
         "تك عالماشي"
       ],
-      "status": "ready"
+      "status": "scheduled",
+      "youtube_id": "PIFMRt0CHbk",
+      "publish_at": "2026-11-12T13:00:00+02:00"
     },
     {
       "id": "fam06-gems",

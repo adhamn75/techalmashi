@@ -1,22 +1,55 @@
 {
-  "updated": "2026-11-10T13:55:51.433778+00:00",
+  "updated": "2026-11-11T13:07:53.263557+00:00",
   "videos": [
+    {
+      "youtube_id": "lJ7ppDQ0CDQ",
+      "title": "«تمّ إيقاف حسابك!» ⚠️ رسالة مزيّفة تسرق كلمة سر ابنك #shorts",
+      "privacy": "public",
+      "views": 1040,
+      "likes": 10,
+      "comments": 1,
+      "id": "fam04-suspended",
+      "series": "family",
+      "publish_at": "2026-11-10T20:00:00+02:00"
+    },
     {
       "youtube_id": "LENXUU_sCvk",
       "title": "لعبة تتريس حقيقية داخل Excel؟! 🎮 الملف مجاني #shorts",
       "privacy": "public",
-      "views": 160,
-      "likes": 2,
-      "comments": 0,
+      "views": 336,
+      "likes": 3,
+      "comments": 1,
       "id": "ep03-tetris",
       "series": "excel",
       "publish_at": "2026-11-10T13:00:00+02:00"
     },
     {
+      "youtube_id": "d3qbYTS3GGQ",
+      "title": "كاميرا البيت 📷 أعيش وحدي… فمن يتحرّك في الممرّ الساعة 3؟ #shorts",
+      "privacy": "public",
+      "views": 176,
+      "likes": 0,
+      "comments": 0,
+      "id": "h04-camera",
+      "series": "horror",
+      "publish_at": "2026-11-10T22:00:00+02:00"
+    },
+    {
+      "youtube_id": "VLsYD24ePwc",
+      "title": "«أرسل لي الكود الذي وصلك» 🚨 هكذا يُسرق واتساب ابنك #shorts",
+      "privacy": "public",
+      "views": 84,
+      "likes": 2,
+      "comments": 0,
+      "id": "fam03-code",
+      "series": "family",
+      "publish_at": "2026-11-10T20:00:00+02:00"
+    },
+    {
       "youtube_id": "dIupMNHksc4",
       "title": "الإطار 481 | لا ترجّع الفيديو… هي تقترب 👁️ #shorts",
       "privacy": "public",
-      "views": 65,
+      "views": 79,
       "likes": 2,
       "comments": 0,
       "id": "h02-frame481",
@@ -24,33 +57,11 @@
       "publish_at": "2026-11-09T22:00:00+02:00"
     },
     {
-      "youtube_id": "_LRkBD01Mog",
-      "title": "قواعد جدّتي 👵 إذا ناداك صوتها من العليّة… لا تصعد! #shorts",
-      "privacy": "private",
-      "views": 0,
-      "likes": 0,
-      "comments": 0,
-      "id": "h01-rules",
-      "series": "horror",
-      "publish_at": "2026-11-09T22:00:00+02:00"
-    },
-    {
-      "youtube_id": "VLsYD24ePwc",
-      "title": "«أرسل لي الكود الذي وصلك» 🚨 هكذا يُسرق واتساب ابنك #shorts",
-      "privacy": "private",
-      "views": 0,
-      "likes": 0,
-      "comments": 0,
-      "id": "fam03-code",
-      "series": "family",
-      "publish_at": "2026-11-10T20:00:00+02:00"
-    },
-    {
       "youtube_id": "hr7ktiJJLsE",
       "title": "الطابق 13 | المبنى فيه 12 طابقًا فقط… فمن أوقف المصعد؟ 🛗 #shorts",
-      "privacy": "private",
-      "views": 0,
-      "likes": 0,
+      "privacy": "public",
+      "views": 37,
+      "likes": 1,
       "comments": 0,
       "id": "h03-elevator",
       "series": "horror",
@@ -59,8 +70,8 @@
     {
       "youtube_id": "K-jLrdmkQsM",
       "title": "لعبة ثلاثية الأبعاد داخل Excel؟! 🕹️ متاهة تمشي فيها بالأسهم #shorts",
-      "privacy": "private",
-      "views": 0,
+      "privacy": "public",
+      "views": 6,
       "likes": 0,
       "comments": 0,
       "id": "ep04-maze3d",
@@ -68,26 +79,26 @@
       "publish_at": "2026-11-11T13:00:00+02:00"
     },
     {
-      "youtube_id": "lJ7ppDQ0CDQ",
-      "title": "«تمّ إيقاف حسابك!» ⚠️ رسالة مزيّفة تسرق كلمة سر ابنك #shorts",
+      "youtube_id": "TGKpLTdMBo0",
+      "title": "اتصل بك ابنك يطلب مالًا؟ 📞 قد لا يكون صوته! #shorts",
       "privacy": "private",
       "views": 0,
       "likes": 0,
       "comments": 0,
-      "id": "fam04-suspended",
+      "id": "fam05-voice",
       "series": "family",
-      "publish_at": "2026-11-10T20:00:00+02:00"
+      "publish_at": "2026-11-11T20:00:00+02:00"
     },
     {
-      "youtube_id": "d3qbYTS3GGQ",
-      "title": "كاميرا البيت 📷 أعيش وحدي… فمن يتحرّك في الممرّ الساعة 3؟ #shorts",
+      "youtube_id": "PIFMRt0CHbk",
+      "title": "لوحة لا نهائية داخل Excel؟! 🌀 كسورية ماندلبروت تغوص فيها بنقرتين #shorts",
       "privacy": "private",
       "views": 0,
       "likes": 0,
       "comments": 0,
-      "id": "h04-camera",
-      "series": "horror",
-      "publish_at": "2026-11-10T22:00:00+02:00"
+      "id": "ep05-mandelbrot",
+      "series": "excel",
+      "publish_at": "2026-11-12T13:00:00+02:00"
     }
   ]
 }
