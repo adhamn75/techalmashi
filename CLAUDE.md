@@ -142,3 +142,25 @@ Heavy, dark horror that matches the channel logo (hooded pale face, glowing red 
 black and blood-red palette, deep shadows, fog, flicker, slow push-ins, sudden silence before the scare.
 Dark anime-horror drawing style is fine; cute/chibi is NOT. Never gore, blood splatter or self-harm,
 never aimed at children, always "not made for kids". Scary through atmosphere, sound and the last-second reveal.
+
+
+## Production sequence & schedule (owner's decisions, 2026-11-12) — follow this every time
+**Slots (episodes.json → settings.slots, Asia/Beirut):** Excel daily 13:00 (famous heavy games, free file) · Family Tue + Fri 20:00
+(explainers like «ابنك اتصل يطلب مالًا») · Horror daily 22:00 (motion-comic series «دفتر الجارة», one episode a day).
+Playlists: Excel `PLYdOHth1Xago`, Family `PLfUdrVKeKj4Y`. Every video (any series) ends with a teaser for the next one + a subscribe reason.
+
+**Always keep TWO unpublished episodes ahead** (owner's rule): whenever the ready queue of a series is below 2, make more before
+anything else. Check `episodes.json` ready count first, then produce until each daily series has 2 ready.
+
+**دفتر الجارة recipe** (episodes are pre-rendered mp4 in `videos/horror/`, queue entry has `"video": "videos/horror/<file>.mp4"`, no composition):
+1. Write 6 narration lines in MSA with full tashkeel (Layla, 12, short black bob, yellow jacket; notebook that writes the future; each ep ends on a hook).
+2. TTS on the owner's PC (desktop-commander PowerShell): `ar-SA-HamedNeural`, rate +0%, pitch -2Hz, script `tts34.py` pattern in `...\kamera-bayt\out\layla_epN`;
+   captions = same text without tashkeel (`lines.json`) so they match the voice exactly. Stage mp3s with device_stage_files.
+3. Scenes: Colab T4 + Animagine XL 4.0 (notebook layla_test.ipynb), 6 images per episode 768x1344. Move images ONLY through GitHub
+   (never Google Drive; the owner forbade it): print JPEG-base64 in a cell, put it in `window.name`, navigate the same tab to
+   `github.com/adhamn75/techalmashi/new/main?filename=work/...` (owner is signed in), paste via a synthetic ClipboardEvent, commit; pull and decode in the sandbox.
+   Then Runtime → Disconnect and delete runtime. Never click OAuth/consent dialogs; ask the owner.
+4. Build: `work/layla` scripts (build.py/audio.py, env EP=N; PIL + ffmpeg, Ken-Burns, grain, vignette, drone + heartbeat + sting, loudnorm I=-15),
+   check contact sheet, mux crf 27. Copy to `videos/horror/daftar-aljara-epN.mp4`, add the episode to `episodes.json` (status ready, title ends #shorts, description with teaser), push.
+5. Send the owner the preview only for new styles; otherwise just report.
+Colab/tts steps need his computer on (built-in browser + desktop-commander). Do not use Google Drive for anything.
