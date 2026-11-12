@@ -123,6 +123,17 @@ Next ideas, roughly hardest first (build only what can really be made and shippe
 - Music sequencer: cells as a piano roll that plays with Beep (VBA)
 - Live analog clock drawn by a scatter chart + NOW() with iterative recalculation
 
+## Focus after the first 4 days (owner's decision, 2026-11-12)
+Numbers on day 4: family series = 3 of the top 4 videos (~700–1,200 views each); Excel only lands with famous
+games (Snake 1,287 views, 9 comments) while abstract demos stall (3D maze 30); horror 315 views total, 0 subs.
+Subscriber conversion is the bottleneck (3 subs from ~5k views).
+- **Family first.** Keep the family queue the fullest; build new family episodes before anything else.
+- **Excel = famous games only** (Snake, Tetris, Flappy, Pac-Man, Mario-style…) with the free file. Skip abstract demos.
+- **Horror every other day**: its slot in episodes.json has `"every_days": 2, "anchor": "2026-11-13"`
+  (publish.py skips the other days). Remove those two keys to go back to daily.
+- **Every outro gives a reason to subscribe**: a yellow pill «🔔 اشترك ليصلك الدرس التالي» (family) /
+  «🔔 اشترك لتصلك اللعبة التالية» (Excel) next to the main CTA, and the same line in the description.
+
 ## Horror channel look (owner's decision, 2026-11-09)
 Heavy, dark horror that matches the channel logo (hooded pale face, glowing red eyes, red ring on black):
 black and blood-red palette, deep shadows, fog, flicker, slow push-ins, sudden silence before the scare.

@@ -250,7 +250,8 @@ export const Ep06Flappy: React.FC = () => {
 
       {/* outro: file CTA */}
       {outro && (
-        <div dir="rtl" style={{position: 'absolute', top: 1270, width: '100%', textAlign: 'center', fontFamily: FONT, fontWeight: 900, opacity: so}}>
+        <div dir="rtl" style={{position: 'absolute', top: 1196, width: '100%', textAlign: 'center', fontFamily: FONT, fontWeight: 900, opacity: so}}>
+          <div style={{display: 'inline-block', fontSize: 42, color: '#1a1020', background: '#ffd35a', borderRadius: 24, padding: '4px 30px', marginBottom: 16}}>🔔 اشترك لتصلك اللعبة التالية</div><br />
           <div style={{display: 'inline-flex', alignItems: 'center', gap: 22, background: '#fff', borderRadius: 30, padding: '18px 36px', boxShadow: '0 20px 50px rgba(0,0,0,.35)'}}>
             <div style={{width: 76, height: 92, borderRadius: 10, background: XL, color: '#fff', fontSize: 30, display: 'flex', alignItems: 'flex-end', justifyContent: 'center', paddingBottom: 8, fontFamily: 'Segoe UI, Arial'}}>xlsm</div>
             <div style={{textAlign: 'right'}}>

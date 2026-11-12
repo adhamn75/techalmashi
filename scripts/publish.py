@@ -14,7 +14,7 @@ import json
 import os
 import subprocess
 import sys
-from datetime import datetime, timedelta
+from datetime import date, datetime, timedelta
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
@@ -139,6 +139,13 @@ def publish_slots(settings: dict, now: datetime) -> list[tuple[str | None, datet
         t = local_now.replace(hour=h, minute=m, second=0, microsecond=0)
         if t - local_now < timedelta(minutes=30):
             t += timedelta(days=1)
+        # optional cadence: {"every_days": 2, "anchor": "2026-11-13"} → only on days anchor + k*every_days
+        every = int(slot.get("every_days", 1) or 1)
+        if every > 1:
+            anchor = date.fromisoformat(slot.get("anchor", "2026-01-01"))
+            if (t.date() - anchor).days % every:
+                print(f"Slot {slot.get('series')} {slot['time']} skipped on {t.date()} (every {every} days).")
+                continue
         out.append((slot.get("series"), t))
     return sorted(out, key=lambda x: x[1])
 

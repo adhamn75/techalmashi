@@ -190,6 +190,7 @@ const Outro: React.FC = () => {
   return (
     <div dir="rtl" style={{position: 'absolute', top: 1290, width: '100%', textAlign: 'center', fontFamily: FONT, fontWeight: 900, color: '#fff', opacity: a}}>
       <div style={{fontSize: 66}}>📲 أرسله لمجموعة العائلة</div>
+      <div style={{display: 'inline-block', fontSize: 46, color: '#1a1530', background: '#ffd35a', borderRadius: 26, padding: '6px 34px', marginTop: 22, opacity: interpolate(frame, [14, 24], [0, 1], clamp)}}>🔔 اشترك ليصلك الدرس التالي</div>
       <div style={{fontSize: 34, color: '#8f98c8', fontWeight: 700, marginTop: 24}}>احمِ أطفالك على الإنترنت · الحلقة 6 · <span style={{direction: 'ltr', display: 'inline-block'}}>@tech3almashi</span></div>
     </div>
   );

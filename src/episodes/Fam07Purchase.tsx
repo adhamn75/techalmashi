@@ -214,6 +214,7 @@ const Outro: React.FC = () => {
   return (
     <div dir="rtl" style={{position: 'absolute', top: 950, width: '100%', textAlign: 'center', fontFamily: FONT, fontWeight: 900, color: INK, opacity: a, translate: `0 ${(1 - a) * 40}px`}}>
       <div style={{display: 'inline-block', fontSize: 58, background: INK, color: '#fff', borderRadius: 30, padding: '8px 40px'}}>📲 أرسله لمجموعة العائلة</div>
+      <div><div style={{display: 'inline-block', fontSize: 44, color: INK, background: '#ffd35a', borderRadius: 26, padding: '6px 32px', marginTop: 18, opacity: interpolate(frame, [14, 24], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'})}}>🔔 اشترك ليصلك الدرس التالي</div></div>
       <div style={{fontSize: 32, color: '#7a7466', fontWeight: 700, marginTop: 18}}>احمِ أطفالك على الإنترنت · الحلقة 7 · <span style={ltr}>@tech3almashi</span></div>
     </div>
   );
