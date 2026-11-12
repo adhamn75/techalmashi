@@ -17,6 +17,9 @@ import {H02Frame481, H02_FRAMES} from './horror/H02Frame481';
 import {Ep05Mandel, EP05_FRAMES} from './episodes/Ep05Mandel';
 import {Family06Gems, FAMILY06_FRAMES} from './episodes/Fam06Gems';
 import {H06OwnNumber, H06_FRAMES} from './horror/H06OwnNumber';
+import {Ep06Flappy, EP06_FRAMES} from './episodes/Ep06Flappy';
+import {Family07Purchase, FAMILY07_FRAMES} from './episodes/Fam07Purchase';
+import {H07Closet, H07_FRAMES} from './horror/H07Closet';
 
 // Every episode is one Composition. Its id must match "composition" in episodes.json.
 export const Root: React.FC = () => (
@@ -38,5 +41,8 @@ export const Root: React.FC = () => (
     <Composition id="Ep05Mandel" component={Ep05Mandel} durationInFrames={EP05_FRAMES} fps={30} width={1080} height={1920} />
     <Composition id="Family06Gems" component={Family06Gems} durationInFrames={FAMILY06_FRAMES} fps={30} width={1080} height={1920} />
     <Composition id="H06OwnNumber" component={H06OwnNumber} durationInFrames={H06_FRAMES} fps={30} width={1080} height={1920} />
+    <Composition id="Ep06Flappy" component={Ep06Flappy} durationInFrames={EP06_FRAMES} fps={30} width={1080} height={1920} />
+    <Composition id="Family07Purchase" component={Family07Purchase} durationInFrames={FAMILY07_FRAMES} fps={30} width={1080} height={1920} />
+    <Composition id="H07Closet" component={H07Closet} durationInFrames={H07_FRAMES} fps={30} width={1080} height={1920} />
   </>
 );

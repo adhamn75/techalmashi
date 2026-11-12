@@ -57,4 +57,9 @@ save("flicker", lowpass(fl.astype(float), 0.3))
 # clock tick-tock
 x = t(0.05); tick = rng.standard_normal(len(x))*np.exp(-x*200)
 save("clock", tick)
+# knock: a knuckle on a wooden door (low body thump + a dry click), one hit
+x = t(0.35)
+knock = 0.9*np.sin(2*np.pi*95*x*(1 - 0.6*x))*np.exp(-x*28) + 0.5*np.sin(2*np.pi*210*x)*np.exp(-x*45)
+knock += 0.35*lowpass(rng.standard_normal(len(x)), 0.35)*np.exp(-x*120)
+save("knock", knock)
 print("ok")
