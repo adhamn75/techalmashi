@@ -236,8 +236,15 @@ def main() -> int:
             QUEUE.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
             continue
         path = OUT / f"{ep['id']}.mp4"
-        print(f"Rendering {ep['composition']} → {path.name}")
-        render(ep["composition"], path)
+        if ep.get("video"):  # pre-rendered clip kept in the repo (motion-comic series): no Remotion render
+            path = ROOT / ep["video"]
+            if not path.exists():
+                print(f"::error::{ep['id']}: video file {ep['video']} is missing.")
+                return 1
+            print(f"Using pre-rendered {path.name}")
+        else:
+            print(f"Rendering {ep['composition']} → {path.name}")
+            render(ep["composition"], path)
         if DRY_RUN:
             print(f"[dry run] would schedule {ep['id']} ({series}) for {when.isoformat()}")
             break
