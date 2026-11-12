@@ -146,6 +146,11 @@ def publish_slots(settings: dict, now: datetime) -> list[tuple[str | None, datet
             if (t.date() - anchor).days % every:
                 print(f"Slot {slot.get('series')} {slot['time']} skipped on {t.date()} (every {every} days).")
                 continue
+        # optional weekdays: {"weekdays": [1, 4]} → only on those weekdays (Mon=0 … Sun=6)
+        wd = slot.get("weekdays")
+        if wd and t.weekday() not in wd:
+            print(f"Slot {slot.get('series')} {slot['time']} skipped on {t.date()} (weekday {t.weekday()} not in {wd}).")
+            continue
         out.append((slot.get("series"), t))
     return sorted(out, key=lambda x: x[1])
 

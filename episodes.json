@@ -8,7 +8,11 @@
       },
       {
         "series": "family",
-        "time": "20:00"
+        "time": "20:00",
+        "weekdays": [
+          1,
+          4
+        ]
       },
       {
         "series": "horror",
