@@ -151,5 +151,32 @@
   "publish_at": null,
   "youtube_id": null,
   "video_id": null
+ },
+ {
+  "id": "ep06-flappy",
+  "series": "excel",
+  "title": "Flappy Bird داخل Excel؟! 🐦 لعبة حقيقية تلعبها بالمسافة… الملف مجاني #shorts",
+  "status": "ready",
+  "publish_at": null,
+  "youtube_id": null,
+  "video_id": null
+ },
+ {
+  "id": "fam07-purchase",
+  "series": "family",
+  "title": "فاتورة 500$ من لعبة ابنك؟! 💳 أوقف الشراء داخل التطبيقات في 10 ثوانٍ #shorts",
+  "status": "ready",
+  "publish_at": null,
+  "youtube_id": null,
+  "video_id": null
+ },
+ {
+  "id": "h07-closet",
+  "series": "horror",
+  "title": "الخزانة 🚪 كل ليلة الساعة 3 تُطرق من الداخل… الليلة طرقتُ أنا أولًا #shorts",
+  "status": "ready",
+  "publish_at": null,
+  "youtube_id": null,
+  "video_id": null
  }
 ]
