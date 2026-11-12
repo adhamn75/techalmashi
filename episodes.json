@@ -16,9 +16,7 @@
       },
       {
         "series": "horror",
-        "time": "22:00",
-        "every_days": 2,
-        "anchor": "2026-11-13"
+        "time": "22:00"
       }
     ],
     "playlists": {
