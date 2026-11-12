@@ -34,6 +34,9 @@ make episodes, is to keep that queue full with good, *different* episodes.
   structure). Never copy an episode and swap the words — YouTube demonetises templated content.
 - MSA captions, short, big (Cairo 900). SFX only from `public/sfx` via `<Sfx>`.
 - End with a CTA that fits (file in comments, follow for part 2, "جرّبها").
+- **Always end with a teaser for the next episode** (owner's rule, 2026-11-12), in both series: «الحلقة القادمة…» / «الجزء الثاني غدًا…»
+  plus one line that makes the viewer want to come back (what the next game/scam will be, without spoiling it). Only tease an episode
+  that is really planned in the queue. Say it in the voice and show it in the last caption.
   Only promise a file if one actually exists in `files/`.
 
 ## Adding an episode
