@@ -11,11 +11,14 @@ import json
 import os
 import re
 import sys
+import time
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 MAP = ROOT / "files" / "files_map.json"
 DRY_RUN = os.environ.get("DRY_RUN") == "1"
+BLOCK = ROOT / ".reply_blocked"  # untracked marker, lives for one watcher job
+BLOCK_HOURS = 6
 MAX_REPLIES = 30  # per run, safety cap (each reply costs 50 of 10,000 daily quota units)
 
 ASK = re.compile(
@@ -97,9 +100,19 @@ def main() -> int:
             if DRY_RUN:
                 print(f"[{e['episode']}] WOULD reply to {who}: {top.get('textDisplay','')[:60]!r}")
             else:
-                yt.comments().insert(
-                    part="snippet", body={"snippet": {"parentId": th["id"], "textOriginal": e["reply"]}}
-                ).execute()
+                if BLOCK.exists() and time.time() - BLOCK.stat().st_mtime < BLOCK_HOURS * 3600:
+                    print(f"[{e['episode']}] pending request from {who}; replies paused after a refused reply (see {BLOCK.name}).")
+                    return 0
+                try:
+                    yt.comments().insert(
+                        part="snippet", body={"snippet": {"parentId": th["id"], "textOriginal": e["reply"]}}
+                    ).execute()
+                except Exception as err:
+                    # Each refused insert still costs 50 quota units; retrying every few minutes used up the
+                    # whole daily quota (2026-11-12) and blocked uploads. Pause replies for BLOCK_HOURS.
+                    BLOCK.write_text(str(err)[:500], encoding="utf-8")
+                    print(f"::warning::reply refused, pausing replies for {BLOCK_HOURS} h: {err}")
+                    return 0
                 print(f"[{e['episode']}] replied to {who}: {top.get('textDisplay','')[:60]!r}")
                 log_request(e, who, top.get("textDisplay", ""))
             sent += 1

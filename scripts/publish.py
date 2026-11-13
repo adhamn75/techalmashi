@@ -94,7 +94,11 @@ def _norm(title: str) -> str:
 
 def channel_uploads(yt) -> list[dict]:
     """Every video on the account's channel (public, private or scheduled) with its title and views."""
-    ch = yt.channels().list(part="contentDetails", mine=True).execute()["items"][0]
+    resp = yt.channels().list(part="contentDetails", mine=True).execute()
+    if not resp.get("items"):
+        raise RuntimeError("this YouTube token has no channel (channels.list mine=true returned no items): "
+                           "reconnect the channel with the 'Connect YouTube' workflow")
+    ch = resp["items"][0]
     pl = ch["contentDetails"]["relatedPlaylists"]["uploads"]
     ids, token = [], None
     while True:
@@ -202,6 +206,7 @@ def main() -> int:
 
     yt = None if DRY_RUN else yt_for(None)
     taken: set[str] = set()
+    failed: list[str] = []
     for series, when in slots:
       while True:  # a duplicate is skipped and the next ready episode of the series takes the slot
         ep = pick(data["episodes"], series, taken)
@@ -219,7 +224,12 @@ def main() -> int:
         # Never upload an episode twice (owner's rule, 2026-11-10). A re-upload only happens when the episode is
         # marked "replace": true (a big improvement), and then the old copy is taken down, unless it already has
         # many views (settings.keep_if_views_at_least, default 1000): then the old one stays and the new is skipped.
-        uploads = channel_uploads(yt_ep) if yt_ep is not None else []
+        try:
+            uploads = channel_uploads(yt_ep) if yt_ep is not None else []
+        except Exception as err:  # one broken account/quota must not stop the other channels' slots
+            print(f"::error::{ep['id']} ({series}): cannot list the channel's uploads, slot skipped: {err}")
+            failed.append(ep["id"])
+            break
         existing = already_on_channel(ep, uploads)
         if existing and not ep.get("replace"):
             print(f"::warning::{ep['id']} is already on the channel ({', '.join(u['id'] for u in existing)}); not uploading again.")
@@ -248,7 +258,12 @@ def main() -> int:
         if DRY_RUN:
             print(f"[dry run] would schedule {ep['id']} ({series}) for {when.isoformat()}")
             break
-        vid = upload(yt_ep, path, ep, settings, when)
+        try:
+            vid = upload(yt_ep, path, ep, settings, when)
+        except Exception as err:
+            print(f"::error::{ep['id']} ({series}): upload failed, slot skipped: {err}")
+            failed.append(ep["id"])
+            break
         for u in existing:
             take_down(yt_ep, u["id"])
             ep.setdefault("removed_youtube_ids", []).append(u["id"])
@@ -256,19 +271,25 @@ def main() -> int:
         ep.pop("replace", None)
         playlist = (settings.get("playlists") or {}).get(ep.get("series") or "")
         if playlist:
-            add_to_playlist(yt_ep, playlist, vid)
+            try:
+                add_to_playlist(yt_ep, playlist, vid)
+            except Exception as err:
+                print(f"::warning::{ep['id']}: not added to playlist {playlist}: {err}")
         ep.update(status="scheduled", youtube_id=vid, publish_at=when.isoformat())
         print(f"Scheduled {ep['id']} as https://youtu.be/{vid} for {when.isoformat()}")
         QUEUE.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
         break
 
     if yt is not None:
-        write_stats(yt, data)
+        try:
+            write_stats(yt, data)
+        except Exception as err:
+            print(f"::warning::stats.json not refreshed: {err}")
     for series in {s for s, _ in slots if s}:
         left = len([e for e in data["episodes"] if e.get("status") == "ready" and e.get("series") == series])
         if left < 3:
             print(f"::warning::Only {left} ready '{series}' episode(s) left in the queue.")
-    return 0
+    return 1 if failed else 0
 
 
 if __name__ == "__main__":

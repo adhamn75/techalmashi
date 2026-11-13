@@ -2,7 +2,8 @@ name: Publish Shorts
 
 on:
   schedule:
-    - cron: "0 6 * * *"   # 06:00 UTC = 08:00 Beirut (winter). Videos are scheduled for the times in episodes.json.
+    - cron: "20 8 * * *"  # 08:20 UTC = 10:20 Beirut, just after the YouTube API daily quota resets (midnight Pacific).
+                          # The watcher also dispatches this workflow after 08:15 UTC if GitHub's cron is late.
   workflow_dispatch:
     inputs:
       dry_run:
@@ -75,7 +76,7 @@ jobs:
           if-no-files-found: ignore
 
       - name: Save queue status
-        if: steps.gate.outputs.go == 'true'
+        if: always() && steps.gate.outputs.go == 'true'
         run: |
           git config user.name "shorts-bot"
           git config user.email "shorts-bot@users.noreply.github.com"

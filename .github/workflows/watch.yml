@@ -1,4 +1,4 @@
-name: Watcher (file replies every 2 min, stats every 10 min)
+name: Watcher (file replies every 6 min, stats every 10 min)
 
 # GitHub's cron is often hours late, so one job stays awake for ~5h45m, loops, then starts its own
 # next run. The hourly cron only restarts it if the chain ever breaks. Free on a public repo.
@@ -28,6 +28,7 @@ jobs:
       - name: Loop
         env:
           YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          GH_TOKEN: ${{ github.token }}
         run: |
           git config user.name "shorts-bot"
           git config user.email "shorts-bot@users.noreply.github.com"
@@ -36,7 +37,14 @@ jobs:
           end=$(( $(date +%s) + 345*60 )); i=0
           while [ "$(date +%s)" -lt "$end" ]; do
             git pull -q --rebase origin main || true
-            python scripts/auto_reply.py || echo "::warning::auto_reply failed"
+            # every 3rd loop (~6 min): reads cost 1 quota unit per video, and the daily quota is shared with uploads
+            if [ $(( i % 3 )) -eq 0 ]; then python scripts/auto_reply.py || echo "::warning::auto_reply failed"; fi
+            # GitHub's cron can be hours late: start today's publish after the quota reset (08:00 UTC) if it hasn't run
+            H=$(date -u +%H)
+            if [ "$H" -ge 8 ] && [ "$H" -lt 10 ] && [ $(( i % 5 )) -eq 0 ]; then
+              N=$(gh run list -R "$GITHUB_REPOSITORY" --workflow publish.yml --created ">=$(date -u +%F)T08:00:00Z" --json databaseId --jq length 2>/dev/null || echo 1)
+              if [ "$N" = "0" ] && [ "$(date -u +%H%M)" -ge 0815 ]; then gh workflow run publish.yml --ref main -R "$GITHUB_REPOSITORY" && echo "Dispatched today's publish."; fi
+            fi
             if [ $(( i % 5 )) -eq 0 ]; then
               (cd scripts && python live_stats.py tech) || echo "::warning::stats failed"
               if [ -f youtube_token_horror.enc ]; then (cd scripts && python live_stats.py horror) || echo "::warning::horror stats failed"; fi
