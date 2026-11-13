@@ -53,9 +53,11 @@ Excel draws your photo (pixel art from cells) · full attendance system with ove
 Excel sends WhatsApp messages · 3D cube spinning with formulas only · invoice that fills itself and
 exports PDF · AI inside a cell · live gold/dollar prices refreshing · Excel plays music ·
 Tetris in Excel · Excel as a calendar app · QR code generator in Excel.
+**Promised next Excel episode (ep 7 Pac-Man teaser «لعبة فضاء أسطورية»): Space Invaders in cells (VBA) — make it next.**
+Horror code-drawn eps made: rules, frame481, elevator, camera, mirror, own number, closet, gallery (h08).
 
-Family series (parents): fake "account suspended" message · stranger in a game chat asking for photos (handled at
-pattern level, never graphic) · location sharing left on · in-app purchase trap · weak password vs passphrase ·
+Family series (parents) — made: scam message, location, code, suspended, voice, gems, purchase, game-chat stranger (ep 8).
+**Promised next (ep 8 teaser): QR code scam — make it next.** Still open: weak password vs passphrase ·
 2-step verification in 10 s · fake Free-Fire/Roblox gem generator · screen-time setup on the phone ·
 QR code scam · "send me the code you got" · public Wi-Fi · oversharing school uniform in photos ·
 deepfake voice of a relative asking for money.
@@ -120,7 +122,7 @@ Next ideas, roughly hardest first (build only what can really be made and shippe
 - Conway's Game of Life with iterative calculation (no VBA), press F9 to step
 - Sudoku solved by ONE recursive LAMBDA
 - A tiny neural network that recognises a digit you draw in an 8x8 grid (weights in a sheet)
-- Flappy Bird / Pac-Man in cells (VBA)
+- Flappy Bird (done ep 6) / Pac-Man (done ep 7, BFS ghosts) / Space Invaders (next) in cells (VBA)
 - Raytraced sphere with lighting computed per cell by formulas
 - QR code generator with formulas only
 - Music sequencer: cells as a piano roll that plays with Beep (VBA)
@@ -164,3 +166,11 @@ anything else. Check `episodes.json` ready count first, then produce until each 
    check contact sheet, mux crf 27. Copy to `videos/horror/daftar-aljara-epN.mp4`, add the episode to `episodes.json` (status ready, title ends #shorts, description with teaser), push.
 5. Send the owner the preview only for new styles; otherwise just report.
 Colab/tts steps need his computer on (built-in browser + desktop-commander). Do not use Google Drive for anything.
+
+## Quota & publishing notes (2026-11-13)
+- Both channels share ONE YouTube API project quota (10,000 units/day, resets 08:00 UTC). An upload costs ~1,600.
+  publish.yml now runs at 08:20 UTC (and the watcher dispatches it after 08:15 UTC if GitHub's cron is late);
+  the watcher reads comments every ~6 min; a refused comment reply pauses replies for 6 h (`.reply_blocked`).
+- publish.py keeps going when one account fails and always saves the queue.
+- Local renders here need `--browser-executable=/opt/pw-browsers/chromium_headless_shell-1243/chrome-headless-shell-linux64/chrome-headless-shell`.
+- `scripts/voice_timeline.py <ep>` trims the TTS mp3s to wavs and prints timeline voice entries.
