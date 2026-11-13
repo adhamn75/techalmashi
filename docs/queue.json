@@ -144,6 +144,42 @@
   "video_id": null
  },
  {
+  "id": "h-daftar01",
+  "series": "horror",
+  "title": "دفتر الجارة 📓 الحلقة 1: الجارة سافرت… لكن بابها مفتوح #shorts",
+  "status": "scheduled",
+  "publish_at": "2026-11-12T22:00:00+02:00",
+  "youtube_id": "poCU-w1Dbks",
+  "video_id": null
+ },
+ {
+  "id": "h-daftar02",
+  "series": "horror",
+  "title": "دفتر الجارة 📓 الحلقة 2: السطر الثاني… «الذي يطرق يعرف اسمك» #shorts",
+  "status": "ready",
+  "publish_at": null,
+  "youtube_id": null,
+  "video_id": null
+ },
+ {
+  "id": "h-daftar03",
+  "series": "horror",
+  "title": "دفتر الجارة 📓 الحلقة 3: «افتحي يا ليلى… أنا جارتك» لكن الجارة سافرت #shorts",
+  "status": "ready",
+  "publish_at": null,
+  "youtube_id": null,
+  "video_id": null
+ },
+ {
+  "id": "h-daftar04",
+  "series": "horror",
+  "title": "دفتر الجارة 📓 الحلقة 4: امرأة في النافذة تحمل دفترًا… وفيه صورة ليلى #shorts",
+  "status": "ready",
+  "publish_at": null,
+  "youtube_id": null,
+  "video_id": null
+ },
+ {
   "id": "h06-ownnumber",
   "series": "horror",
   "title": "رقمي أنا 📞 اتصل بي الساعة 3: «افتح الباب… أنا في الخارج» #shorts",
@@ -174,6 +210,33 @@
   "id": "h07-closet",
   "series": "horror",
   "title": "الخزانة 🚪 كل ليلة الساعة 3 تُطرق من الداخل… الليلة طرقتُ أنا أولًا #shorts",
+  "status": "ready",
+  "publish_at": null,
+  "youtube_id": null,
+  "video_id": null
+ },
+ {
+  "id": "ep07-pacman",
+  "series": "excel",
+  "title": "باك مان داخل Excel؟! 👻 أشباح تطاردك بأقصر طريق… الملف مجاني #shorts",
+  "status": "ready",
+  "publish_at": null,
+  "youtube_id": null,
+  "video_id": null
+ },
+ {
+  "id": "fam08-stranger",
+  "series": "family",
+  "title": "«صديق» ابنك في اللعبة قد لا يكون طفلًا 🎮🚩 4 علامات خطر #shorts",
+  "status": "ready",
+  "publish_at": null,
+  "youtube_id": null,
+  "video_id": null
+ },
+ {
+  "id": "h08-gallery",
+  "series": "horror",
+  "title": "الاستوديو 📷 صورة في هاتفي لم ألتقطها… التُقطت الساعة 3 وأنا نائم #shorts",
   "status": "ready",
   "publish_at": null,
   "youtube_id": null,
