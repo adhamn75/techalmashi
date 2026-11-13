@@ -1,54 +1,54 @@
 {
- "_note": "One entry per Excel episode that has a real downloadable file. The Auto-reply workflow (scripts/auto_reply.py) replies with `reply` under file requests on each entry's videoId; add videoId as soon as the video is live.",
- "files": [
-  {
-   "episode": "ep01-snake",
-   "videoId": "rbvYJoA0FbY",
-   "title": "لعبة الثعبان داخل Excel؟! 🐍 #shorts",
-   "file": "files/snake.xlsm",
-   "reply": "تفضّل 🐍 حمّل اللعبة من هنا:\nhttps://github.com/adhamn75/techalmashi/raw/main/files/snake.xlsm\nافتح الملف واضغط Enable Content ثم Play، والعب بالأسهم! خلّيك ذكي 💚"
-  },
-  {
-   "episode": "ep02-cube",
-   "videoId": "H1vlM8GvZIs",
-   "title": "مكعّب ثلاثي الأبعاد يدور داخل Excel… بلا أي كود! 🧊 #shorts",
-   "file": "files/cube3d.xlsx",
-   "reply": "تفضّل 🧊 حمّل المكعّب من هنا:\nhttps://github.com/adhamn75/techalmashi/raw/main/files/cube3d.xlsx\nاسحب الشريط تحت الرسمة (أو غيّر الرقم في H4) وشاهد المكعّب يدور، بلا أي كود! خلّيك ذكي 💚"
-  },
-  {
-   "episode": "ep03-tetris",
-   "videoId": "LENXUU_sCvk",
-   "title": "لعبة تتريس حقيقية داخل Excel؟! 🎮 الملف مجاني #shorts",
-   "file": "files/tetris.xlsm",
-   "reply": "تفضّل 🎮 حمّل تتريس من هنا:\nhttps://github.com/adhamn75/techalmashi/raw/main/files/tetris.xlsm\nافتح الملف واضغط Enable Content ثم Play. الأسهم للحركة، الأعلى للتدوير، الأسفل للإسراع، Esc للإيقاف (Excel على ويندوز). خلّيك ذكي 💚"
-  },
-  {
-   "episode": "ep04-maze3d",
-   "videoId": "K-jLrdmkQsM",
-   "title": "لعبة ثلاثية الأبعاد داخل Excel؟! 🕹️ متاهة تمشي فيها بالأسهم #shorts",
-   "file": "files/maze3d.xlsm",
-   "reply": "تفضّل 🕹️ حمّل المتاهة من هنا:\nhttps://github.com/adhamn75/techalmashi/raw/main/files/maze3d.xlsm\nافتح الملف واضغط Enable Content ثم Play. الأعلى/الأسفل للمشي، يمين/يسار للالتفاف، ودوّر على الجدار الأخضر (Excel على ويندوز). خلّيك ذكي 💚"
-  },
-  {
-   "episode": "ep05-mandelbrot",
-   "videoId": "PIFMRt0CHbk",
-   "title": "لوحة لا نهائية داخل Excel؟! 🌀 كسورية ماندلبروت تغوص فيها بنقرتين #shorts",
-   "file": "files/mandelbrot.xlsm",
-   "reply": "تفضّل 🌀 حمّل الكسورية من هنا:\nhttps://github.com/adhamn75/techalmashi/raw/main/files/mandelbrot.xlsm\nافتح الملف واضغط Enable Content فتُرسم وحدها. انقر مرتين على أي خلية للتكبير، وزر الفأرة الأيمن للتصغير (Excel على ويندوز). خلّيك ذكي 💚"
-  },
-  {
-   "episode": "ep06-flappy",
-   "videoId": "",
-   "title": "Flappy Bird داخل Excel؟! 🐦 لعبة حقيقية تلعبها بالمسافة… الملف مجاني #shorts",
-   "file": "files/flappy.xlsm",
-   "reply": "تفضّل 🐦 حمّل اللعبة من هنا:\nhttps://github.com/adhamn75/techalmashi/raw/main/files/flappy.xlsm\nافتح الملف واضغط Enable Content ثم Play. المسافة (أو السهم للأعلى) للقفز، وEsc للإيقاف (Excel على ويندوز). خلّيك ذكي 💚"
-  },
-  {
-   "episode": "ep07-pacman",
-   "videoId": "",
-   "title": "باك مان داخل Excel؟! 👻 أشباح تطاردك بأقصر طريق… الملف مجاني #shorts",
-   "file": "files/pacman.xlsm",
-   "reply": "تفضّل 👻 حمّل اللعبة من هنا:\nhttps://github.com/adhamn75/techalmashi/raw/main/files/pacman.xlsm\nافتح الملف واضغط Enable Content ثم Play. الأسهم للحركة، وD لإظهار أرقام المسافة التي تتبعها الأشباح، وEsc للإيقاف (Excel على ويندوز). خلّيك ذكي 💚"
-  }
- ]
+  "_note": "One entry per Excel episode that has a real downloadable file. The Auto-reply workflow (scripts/auto_reply.py) replies with `reply` under file requests on each entry's videoId; add videoId as soon as the video is live.",
+  "files": [
+    {
+      "episode": "ep01-snake",
+      "videoId": "rbvYJoA0FbY",
+      "title": "لعبة الثعبان داخل Excel؟! 🐍 #shorts",
+      "file": "files/snake.xlsm",
+      "reply": "تفضّل 🐍 حمّل اللعبة من هنا:\nhttps://github.com/adhamn75/techalmashi/raw/main/files/snake.xlsm\nافتح الملف واضغط Enable Content ثم Play، والعب بالأسهم! خلّيك ذكي 💚"
+    },
+    {
+      "episode": "ep02-cube",
+      "videoId": "H1vlM8GvZIs",
+      "title": "مكعّب ثلاثي الأبعاد يدور داخل Excel… بلا أي كود! 🧊 #shorts",
+      "file": "files/cube3d.xlsx",
+      "reply": "تفضّل 🧊 حمّل المكعّب من هنا:\nhttps://github.com/adhamn75/techalmashi/raw/main/files/cube3d.xlsx\nاسحب الشريط تحت الرسمة (أو غيّر الرقم في H4) وشاهد المكعّب يدور، بلا أي كود! خلّيك ذكي 💚"
+    },
+    {
+      "episode": "ep03-tetris",
+      "videoId": "LENXUU_sCvk",
+      "title": "لعبة تتريس حقيقية داخل Excel؟! 🎮 الملف مجاني #shorts",
+      "file": "files/tetris.xlsm",
+      "reply": "تفضّل 🎮 حمّل تتريس من هنا:\nhttps://github.com/adhamn75/techalmashi/raw/main/files/tetris.xlsm\nافتح الملف واضغط Enable Content ثم Play. الأسهم للحركة، الأعلى للتدوير، الأسفل للإسراع، Esc للإيقاف (Excel على ويندوز). خلّيك ذكي 💚"
+    },
+    {
+      "episode": "ep04-maze3d",
+      "videoId": "K-jLrdmkQsM",
+      "title": "لعبة ثلاثية الأبعاد داخل Excel؟! 🕹️ متاهة تمشي فيها بالأسهم #shorts",
+      "file": "files/maze3d.xlsm",
+      "reply": "تفضّل 🕹️ حمّل المتاهة من هنا:\nhttps://github.com/adhamn75/techalmashi/raw/main/files/maze3d.xlsm\nافتح الملف واضغط Enable Content ثم Play. الأعلى/الأسفل للمشي، يمين/يسار للالتفاف، ودوّر على الجدار الأخضر (Excel على ويندوز). خلّيك ذكي 💚"
+    },
+    {
+      "episode": "ep05-mandelbrot",
+      "videoId": "PIFMRt0CHbk",
+      "title": "لوحة لا نهائية داخل Excel؟! 🌀 كسورية ماندلبروت تغوص فيها بنقرتين #shorts",
+      "file": "files/mandelbrot.xlsm",
+      "reply": "تفضّل 🌀 حمّل الكسورية من هنا:\nhttps://github.com/adhamn75/techalmashi/raw/main/files/mandelbrot.xlsm\nافتح الملف واضغط Enable Content فتُرسم وحدها. انقر مرتين على أي خلية للتكبير، وزر الفأرة الأيمن للتصغير (Excel على ويندوز). خلّيك ذكي 💚"
+    },
+    {
+      "episode": "ep06-flappy",
+      "videoId": "R7UcfkD_gjU",
+      "title": "Flappy Bird داخل Excel؟! 🐦 لعبة حقيقية تلعبها بالمسافة… الملف مجاني #shorts",
+      "file": "files/flappy.xlsm",
+      "reply": "تفضّل 🐦 حمّل اللعبة من هنا:\nhttps://github.com/adhamn75/techalmashi/raw/main/files/flappy.xlsm\nافتح الملف واضغط Enable Content ثم Play. المسافة (أو السهم للأعلى) للقفز، وEsc للإيقاف (Excel على ويندوز). خلّيك ذكي 💚"
+    },
+    {
+      "episode": "ep07-pacman",
+      "videoId": "",
+      "title": "باك مان داخل Excel؟! 👻 أشباح تطاردك بأقصر طريق… الملف مجاني #shorts",
+      "file": "files/pacman.xlsm",
+      "reply": "تفضّل 👻 حمّل اللعبة من هنا:\nhttps://github.com/adhamn75/techalmashi/raw/main/files/pacman.xlsm\nافتح الملف واضغط Enable Content ثم Play. الأسهم للحركة، وD لإظهار أرقام المسافة التي تتبعها الأشباح، وEsc للإيقاف (Excel على ويندوز). خلّيك ذكي 💚"
+    }
+  ]
 }
