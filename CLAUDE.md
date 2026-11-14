@@ -53,11 +53,12 @@ Excel draws your photo (pixel art from cells) · full attendance system with ove
 Excel sends WhatsApp messages · 3D cube spinning with formulas only · invoice that fills itself and
 exports PDF · AI inside a cell · live gold/dollar prices refreshing · Excel plays music ·
 Tetris in Excel · Excel as a calendar app · QR code generator in Excel.
-**Promised next Excel episode (ep 7 Pac-Man teaser «لعبة فضاء أسطورية»): Space Invaders in cells (VBA) — make it next.**
-Horror code-drawn eps made: rules, frame481, elevator, camera, mirror, own number, closet, gallery (h08).
+Space Invaders made (ep 8, files/invaders.xlsm). **Promised next Excel episode (ep 8 teaser «كرةٌ تحطّم الطوب»): Breakout / brick breaker in cells (VBA) — make it next.**
+Horror code-drawn eps made: rules, frame481, elevator, camera, mirror, own number, closet, gallery (h08), ceiling (h09).
+**Promised next horror (h09 teaser «راديو ينطق اسمك»): an old radio that says your name — make it next.**
 
-Family series (parents) — made: scam message, location, code, suspended, voice, gems, purchase, game-chat stranger (ep 8).
-**Promised next (ep 8 teaser): QR code scam — make it next.** Still open: weak password vs passphrase ·
+Family series (parents) — made: scam message, location, code, suspended, voice, gems, purchase, game-chat stranger (ep 8), QR scam (ep 9).
+**Promised next (ep 9 teaser): free public Wi-Fi trap — make it next.** Still open: weak password vs passphrase ·
 2-step verification in 10 s · fake Free-Fire/Roblox gem generator · screen-time setup on the phone ·
 QR code scam · "send me the code you got" · public Wi-Fi · oversharing school uniform in photos ·
 deepfake voice of a relative asking for money.
