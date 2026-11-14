@@ -70,6 +70,11 @@ or VBA via pyOpenVBA like `snake.xlsm`), so commenters who ask can get it. Add a
 workflow (`scripts/auto_reply.py`, every 5 min, YouTube API, no vidIQ credits) reads that map and replies by itself to
 comments like «اريده» — an entry needs its `videoId` to be answered. Because the file exists, the Excel CTA may say the file is in the comments.
 
+## ON HOLD (owner's decision, 2026-11-14)
+tech3almashi (excel + family) is paused: its stats reset to 0 subs / 2 videos on 2026-11-13 and its playlists return 403,
+so the token may point to a different channel. Ready excel/family episodes are `"status": "hold"` (publish.py skips them);
+Pac-Man (yX9duW1rfTo) was unscheduled/made private. Horror keeps publishing. Do not set them back to "ready" until the owner says so.
+
 ## Publishing mode (current)
 Fully automatic on GitHub, free, no vidIQ, no browser. youtube_token.enc (encrypted with YT_CLIENT_SECRET) holds a
 permanent token with youtube + youtube.force-ssl, granted 2026-11-09 with the OAuth app In production.

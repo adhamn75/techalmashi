@@ -537,9 +537,9 @@
         "أسرار Excel",
         "تك عالماشي"
       ],
-      "status": "scheduled",
+      "status": "hold",
       "youtube_id": "yX9duW1rfTo",
-      "publish_at": "2026-11-14T13:00:00+02:00"
+      "note": "unscheduled 2026-11-14 (made private) while the tech channel is checked; youtube_id kept"
     },
     {
       "id": "fam08-stranger",
@@ -557,7 +557,7 @@
         "الرقابة الأبوية",
         "تك عالماشي"
       ],
-      "status": "ready"
+      "status": "hold"
     },
     {
       "id": "h08-gallery",
@@ -595,7 +595,7 @@
         "أسرار Excel",
         "تك عالماشي"
       ],
-      "status": "ready"
+      "status": "hold"
     },
     {
       "id": "fam09-qr",
@@ -613,7 +613,7 @@
         "الرقابة الأبوية",
         "تك عالماشي"
       ],
-      "status": "ready"
+      "status": "hold"
     },
     {
       "id": "h09-ceiling",
