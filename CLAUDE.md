@@ -70,6 +70,13 @@ or VBA via pyOpenVBA like `snake.xlsm`), so commenters who ask can get it. Add a
 workflow (`scripts/auto_reply.py`, every 5 min, YouTube API, no vidIQ credits) reads that map and replies by itself to
 comments like «اريده» — an entry needs its `videoId` to be answered. Because the file exists, the Excel CTA may say the file is in the comments.
 
+## One reply per person (owner's rule, 2026-11-14) — never break this
+The bot once replied 156 times to one comment (the owner check missed its own replies). Now: a person gets ONE reply
+per video, ever. auto_reply.py remembers answered threads (docs/replied.json) and (video, author) pairs
+(docs/requests.json); scripts/dedupe_replies.py (dedupe_replies.yml + hourly in the watcher) deletes any extra reply
+we posted to the same person, keeping the first, within a quota cap (100 deletes/day, none 08–10 UTC).
+Any change to replying must keep both guards. Kill switch: a file `.replies_off` in the repo root.
+
 ## ON HOLD (owner's decision, 2026-11-14)
 tech3almashi (excel + family) is paused: its stats reset to 0 subs / 2 videos on 2026-11-13 and its playlists return 403,
 so the token may point to a different channel. Ready excel/family episodes are `"status": "hold"` (publish.py skips them);

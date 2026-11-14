@@ -39,6 +39,8 @@ jobs:
             git pull -q --rebase origin main || true
             # every 3rd loop (~6 min): reads cost 1 quota unit per video, and the daily quota is shared with uploads
             if [ $(( i % 3 )) -eq 0 ]; then python scripts/auto_reply.py || echo "::warning::auto_reply failed"; fi
+            # every ~hour: delete any second reply to the same person (owner's rule: one reply per person per video)
+            if [ $(( i % 25 )) -eq 0 ]; then python scripts/dedupe_replies.py || echo "::warning::dedupe failed"; fi
             # GitHub's cron can be hours late: start today's publish after the quota reset (08:00 UTC) if it hasn't run
             H=$(date -u +%H)
             if [ "$H" -ge 8 ] && [ "$H" -lt 10 ] && [ $(( i % 5 )) -eq 0 ]; then
@@ -49,7 +51,7 @@ jobs:
               (cd scripts && python live_stats.py tech) || echo "::warning::stats failed"
               if [ -f youtube_token_horror.enc ]; then (cd scripts && python live_stats.py horror) || echo "::warning::horror stats failed"; fi
             fi
-            git add docs/stats*.json docs/history*.json docs/queue.json docs/requests.json docs/replied.json 2>/dev/null || true
+            git add docs/stats*.json docs/history*.json docs/queue.json docs/requests.json docs/replied.json docs/dedupe_state.json 2>/dev/null || true
             if ! git diff --cached --quiet; then
               git commit -q -m "Watcher: stats / file requests"
               for t in 1 2 3; do git pull -q --rebase origin main && git push -q && break; sleep 5; done
