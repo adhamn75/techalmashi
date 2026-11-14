@@ -1,11 +1,11 @@
 {
-  "updated": "2026-11-14T08:24:22.060109+00:00",
+  "updated": "2026-11-14T15:11:15.877559+00:00",
   "videos": [
     {
       "youtube_id": "TGKpLTdMBo0",
       "title": "اتصل بك ابنك يطلب مالًا؟ 📞 قد لا يكون صوته! #shorts",
       "privacy": "public",
-      "views": 1397,
+      "views": 1401,
       "likes": 18,
       "comments": 0,
       "id": "fam05-voice",
@@ -16,7 +16,7 @@
       "youtube_id": "PIFMRt0CHbk",
       "title": "لوحة لا نهائية داخل Excel؟! 🌀 كسورية ماندلبروت تغوص فيها بنقرتين #shorts",
       "privacy": "public",
-      "views": 1317,
+      "views": 1318,
       "likes": 14,
       "comments": 1,
       "id": "ep05-mandelbrot",
@@ -27,7 +27,7 @@
       "youtube_id": "lJ7ppDQ0CDQ",
       "title": "«تمّ إيقاف حسابك!» ⚠️ رسالة مزيّفة تسرق كلمة سر ابنك #shorts",
       "privacy": "public",
-      "views": 1222,
+      "views": 1223,
       "likes": 12,
       "comments": 1,
       "id": "fam04-suspended",
@@ -38,7 +38,7 @@
       "youtube_id": "poCU-w1Dbks",
       "title": "دفتر الجارة 📓 الحلقة 1: الجارة سافرت… لكن بابها مفتوح #shorts",
       "privacy": "public",
-      "views": 554,
+      "views": 559,
       "likes": 9,
       "comments": 0,
       "id": "h-daftar01",
@@ -46,10 +46,21 @@
       "publish_at": "2026-11-12T22:00:00+02:00"
     },
     {
+      "youtube_id": "W6DO3XHqRbU",
+      "title": "دفتر الجارة 📓 الحلقة 3: «افتحي يا ليلى… أنا جارتك» لكن الجارة سافرت #shorts",
+      "privacy": "public",
+      "views": 448,
+      "likes": 8,
+      "comments": 0,
+      "id": "h-daftar03",
+      "series": "horror",
+      "publish_at": "2026-11-13T22:00:00+02:00"
+    },
+    {
       "youtube_id": "61LvasOkMjc",
       "title": "فاتورة 500$ من لعبة ابنك؟! 💳 أوقف الشراء داخل التطبيقات في 10 ثوانٍ #shorts",
       "privacy": "public",
-      "views": 401,
+      "views": 406,
       "likes": 3,
       "comments": 0,
       "id": "fam07-purchase",
@@ -68,10 +79,21 @@
       "publish_at": "2026-11-10T13:00:00+02:00"
     },
     {
+      "youtube_id": "tCiSvZIEuXQ",
+      "title": "دفتر الجارة 📓 الحلقة 2: السطر الثاني… «الذي يطرق يعرف اسمك» #shorts",
+      "privacy": "public",
+      "views": 367,
+      "likes": 5,
+      "comments": 0,
+      "id": "h-daftar02",
+      "series": "horror",
+      "publish_at": "2026-11-13T22:00:00+02:00"
+    },
+    {
       "youtube_id": "VLsYD24ePwc",
       "title": "«أرسل لي الكود الذي وصلك» 🚨 هكذا يُسرق واتساب ابنك #shorts",
       "privacy": "public",
-      "views": 317,
+      "views": 318,
       "likes": 4,
       "comments": 0,
       "id": "fam03-code",
@@ -101,17 +123,6 @@
       "publish_at": "2026-11-10T22:00:00+02:00"
     },
     {
-      "youtube_id": "tCiSvZIEuXQ",
-      "title": "دفتر الجارة 📓 الحلقة 2: السطر الثاني… «الذي يطرق يعرف اسمك» #shorts",
-      "privacy": "public",
-      "views": 89,
-      "likes": 2,
-      "comments": 0,
-      "id": "h-daftar02",
-      "series": "horror",
-      "publish_at": "2026-11-13T22:00:00+02:00"
-    },
-    {
       "youtube_id": "dIupMNHksc4",
       "title": "الإطار 481 | لا ترجّع الفيديو… هي تقترب 👁️ #shorts",
       "privacy": "public",
@@ -134,17 +145,6 @@
       "publish_at": "2026-11-11T13:00:00+02:00"
     },
     {
-      "youtube_id": "W6DO3XHqRbU",
-      "title": "دفتر الجارة 📓 الحلقة 3: «افتحي يا ليلى… أنا جارتك» لكن الجارة سافرت #shorts",
-      "privacy": "public",
-      "views": 21,
-      "likes": 0,
-      "comments": 0,
-      "id": "h-daftar03",
-      "series": "horror",
-      "publish_at": "2026-11-13T22:00:00+02:00"
-    },
-    {
       "youtube_id": "2HCAEVfQRoE",
       "title": "المرآة | لا تنظر فيها الساعة 3… انعكاسك لم يتحرّك 🪞 #shorts",
       "privacy": "public",
@@ -159,7 +159,7 @@
       "youtube_id": "R7UcfkD_gjU",
       "title": "Flappy Bird داخل Excel؟! 🐦 لعبة حقيقية تلعبها بالمسافة… الملف مجاني #shorts",
       "privacy": "public",
-      "views": 1,
+      "views": 3,
       "likes": 0,
       "comments": 0,
       "id": "ep06-flappy",
