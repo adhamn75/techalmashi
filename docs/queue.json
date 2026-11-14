@@ -138,9 +138,9 @@
   "id": "fam06-gems",
   "series": "family",
   "title": "«جواهر مجانية» لابنك؟ 💎 هكذا يُسرق حساب لعبته في ثانية #shorts",
-  "status": "ready",
-  "publish_at": null,
-  "youtube_id": null,
+  "status": "scheduled",
+  "publish_at": "2026-11-13T20:00:00+02:00",
+  "youtube_id": "-k7FPmqMiyk",
   "video_id": null
  },
  {
@@ -156,27 +156,27 @@
   "id": "h-daftar02",
   "series": "horror",
   "title": "دفتر الجارة 📓 الحلقة 2: السطر الثاني… «الذي يطرق يعرف اسمك» #shorts",
-  "status": "ready",
-  "publish_at": null,
-  "youtube_id": null,
+  "status": "scheduled",
+  "publish_at": "2026-11-13T22:00:00+02:00",
+  "youtube_id": "tCiSvZIEuXQ",
   "video_id": null
  },
  {
   "id": "h-daftar03",
   "series": "horror",
   "title": "دفتر الجارة 📓 الحلقة 3: «افتحي يا ليلى… أنا جارتك» لكن الجارة سافرت #shorts",
-  "status": "ready",
-  "publish_at": null,
-  "youtube_id": null,
+  "status": "scheduled",
+  "publish_at": "2026-11-13T22:00:00+02:00",
+  "youtube_id": "W6DO3XHqRbU",
   "video_id": null
  },
  {
   "id": "h-daftar04",
   "series": "horror",
   "title": "دفتر الجارة 📓 الحلقة 4: امرأة في النافذة تحمل دفترًا… وفيه صورة ليلى #shorts",
-  "status": "ready",
-  "publish_at": null,
-  "youtube_id": null,
+  "status": "scheduled",
+  "publish_at": "2026-11-14T22:00:00+02:00",
+  "youtube_id": "BIsYtmc2XyI",
   "video_id": null
  },
  {
@@ -192,18 +192,18 @@
   "id": "ep06-flappy",
   "series": "excel",
   "title": "Flappy Bird داخل Excel؟! 🐦 لعبة حقيقية تلعبها بالمسافة… الملف مجاني #shorts",
-  "status": "ready",
-  "publish_at": null,
-  "youtube_id": null,
+  "status": "scheduled",
+  "publish_at": "2026-11-13T13:00:00+02:00",
+  "youtube_id": "R7UcfkD_gjU",
   "video_id": null
  },
  {
   "id": "fam07-purchase",
   "series": "family",
   "title": "فاتورة 500$ من لعبة ابنك؟! 💳 أوقف الشراء داخل التطبيقات في 10 ثوانٍ #shorts",
-  "status": "ready",
-  "publish_at": null,
-  "youtube_id": null,
+  "status": "scheduled",
+  "publish_at": "2026-11-13T20:00:00+02:00",
+  "youtube_id": "61LvasOkMjc",
   "video_id": null
  },
  {
@@ -219,16 +219,16 @@
   "id": "ep07-pacman",
   "series": "excel",
   "title": "باك مان داخل Excel؟! 👻 أشباح تطاردك بأقصر طريق… الملف مجاني #shorts",
-  "status": "ready",
+  "status": "hold",
   "publish_at": null,
-  "youtube_id": null,
+  "youtube_id": "yX9duW1rfTo",
   "video_id": null
  },
  {
   "id": "fam08-stranger",
   "series": "family",
   "title": "«صديق» ابنك في اللعبة قد لا يكون طفلًا 🎮🚩 4 علامات خطر #shorts",
-  "status": "ready",
+  "status": "hold",
   "publish_at": null,
   "youtube_id": null,
   "video_id": null
@@ -237,6 +237,33 @@
   "id": "h08-gallery",
   "series": "horror",
   "title": "الاستوديو 📷 صورة في هاتفي لم ألتقطها… التُقطت الساعة 3 وأنا نائم #shorts",
+  "status": "ready",
+  "publish_at": null,
+  "youtube_id": null,
+  "video_id": null
+ },
+ {
+  "id": "ep08-invaders",
+  "series": "excel",
+  "title": "Space Invaders داخل Excel؟! 👾 أسطول غزاة من الخلايا… الملف مجاني #shorts",
+  "status": "hold",
+  "publish_at": null,
+  "youtube_id": null,
+  "video_id": null
+ },
+ {
+  "id": "fam09-qr",
+  "series": "family",
+  "title": "رمز QR «جواهر مجانية» قد يسرق حساب ابنك 📷🚨 افعل هذا قبل المسح #shorts",
+  "status": "hold",
+  "publish_at": null,
+  "youtube_id": null,
+  "video_id": null
+ },
+ {
+  "id": "h09-ceiling",
+  "series": "horror",
+  "title": "السقف 🏚️ أسكن في الطابق الأخير… فمن يمشي فوق سريري الساعة 3؟ #shorts",
   "status": "ready",
   "publish_at": null,
   "youtube_id": null,
