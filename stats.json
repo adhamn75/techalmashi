@@ -1,27 +1,82 @@
 {
-  "updated": "2026-11-11T13:07:53.263557+00:00",
+  "updated": "2026-11-14T08:24:22.060109+00:00",
   "videos": [
+    {
+      "youtube_id": "TGKpLTdMBo0",
+      "title": "اتصل بك ابنك يطلب مالًا؟ 📞 قد لا يكون صوته! #shorts",
+      "privacy": "public",
+      "views": 1397,
+      "likes": 18,
+      "comments": 0,
+      "id": "fam05-voice",
+      "series": "family",
+      "publish_at": "2026-11-11T20:00:00+02:00"
+    },
+    {
+      "youtube_id": "PIFMRt0CHbk",
+      "title": "لوحة لا نهائية داخل Excel؟! 🌀 كسورية ماندلبروت تغوص فيها بنقرتين #shorts",
+      "privacy": "public",
+      "views": 1317,
+      "likes": 14,
+      "comments": 1,
+      "id": "ep05-mandelbrot",
+      "series": "excel",
+      "publish_at": "2026-11-12T13:00:00+02:00"
+    },
     {
       "youtube_id": "lJ7ppDQ0CDQ",
       "title": "«تمّ إيقاف حسابك!» ⚠️ رسالة مزيّفة تسرق كلمة سر ابنك #shorts",
       "privacy": "public",
-      "views": 1040,
-      "likes": 10,
+      "views": 1222,
+      "likes": 12,
       "comments": 1,
       "id": "fam04-suspended",
       "series": "family",
       "publish_at": "2026-11-10T20:00:00+02:00"
     },
     {
+      "youtube_id": "poCU-w1Dbks",
+      "title": "دفتر الجارة 📓 الحلقة 1: الجارة سافرت… لكن بابها مفتوح #shorts",
+      "privacy": "public",
+      "views": 554,
+      "likes": 9,
+      "comments": 0,
+      "id": "h-daftar01",
+      "series": "horror",
+      "publish_at": "2026-11-12T22:00:00+02:00"
+    },
+    {
+      "youtube_id": "61LvasOkMjc",
+      "title": "فاتورة 500$ من لعبة ابنك؟! 💳 أوقف الشراء داخل التطبيقات في 10 ثوانٍ #shorts",
+      "privacy": "public",
+      "views": 401,
+      "likes": 3,
+      "comments": 0,
+      "id": "fam07-purchase",
+      "series": "family",
+      "publish_at": "2026-11-13T20:00:00+02:00"
+    },
+    {
       "youtube_id": "LENXUU_sCvk",
       "title": "لعبة تتريس حقيقية داخل Excel؟! 🎮 الملف مجاني #shorts",
       "privacy": "public",
-      "views": 336,
+      "views": 391,
       "likes": 3,
       "comments": 1,
       "id": "ep03-tetris",
       "series": "excel",
       "publish_at": "2026-11-10T13:00:00+02:00"
+    },
+    {
+      "youtube_id": "VLsYD24ePwc",
+      "title": "«أرسل لي الكود الذي وصلك» 🚨 هكذا يُسرق واتساب ابنك #shorts",
+      "privacy": "public",
+      "views": 317,
+      "likes": 4,
+      "comments": 0,
+      "id": "fam03-code",
+      "series": "family",
+      "publish_at": "2026-11-10T20:00:00+02:00"
     },
     {
       "youtube_id": "d3qbYTS3GGQ",
@@ -35,32 +90,10 @@
       "publish_at": "2026-11-10T22:00:00+02:00"
     },
     {
-      "youtube_id": "VLsYD24ePwc",
-      "title": "«أرسل لي الكود الذي وصلك» 🚨 هكذا يُسرق واتساب ابنك #shorts",
-      "privacy": "public",
-      "views": 84,
-      "likes": 2,
-      "comments": 0,
-      "id": "fam03-code",
-      "series": "family",
-      "publish_at": "2026-11-10T20:00:00+02:00"
-    },
-    {
-      "youtube_id": "dIupMNHksc4",
-      "title": "الإطار 481 | لا ترجّع الفيديو… هي تقترب 👁️ #shorts",
-      "privacy": "public",
-      "views": 79,
-      "likes": 2,
-      "comments": 0,
-      "id": "h02-frame481",
-      "series": "horror",
-      "publish_at": "2026-11-09T22:00:00+02:00"
-    },
-    {
       "youtube_id": "hr7ktiJJLsE",
       "title": "الطابق 13 | المبنى فيه 12 طابقًا فقط… فمن أوقف المصعد؟ 🛗 #shorts",
       "privacy": "public",
-      "views": 37,
+      "views": 113,
       "likes": 1,
       "comments": 0,
       "id": "h03-elevator",
@@ -68,10 +101,32 @@
       "publish_at": "2026-11-10T22:00:00+02:00"
     },
     {
+      "youtube_id": "tCiSvZIEuXQ",
+      "title": "دفتر الجارة 📓 الحلقة 2: السطر الثاني… «الذي يطرق يعرف اسمك» #shorts",
+      "privacy": "public",
+      "views": 89,
+      "likes": 2,
+      "comments": 0,
+      "id": "h-daftar02",
+      "series": "horror",
+      "publish_at": "2026-11-13T22:00:00+02:00"
+    },
+    {
+      "youtube_id": "dIupMNHksc4",
+      "title": "الإطار 481 | لا ترجّع الفيديو… هي تقترب 👁️ #shorts",
+      "privacy": "public",
+      "views": 84,
+      "likes": 2,
+      "comments": 0,
+      "id": "h02-frame481",
+      "series": "horror",
+      "publish_at": "2026-11-09T22:00:00+02:00"
+    },
+    {
       "youtube_id": "K-jLrdmkQsM",
       "title": "لعبة ثلاثية الأبعاد داخل Excel؟! 🕹️ متاهة تمشي فيها بالأسهم #shorts",
       "privacy": "public",
-      "views": 6,
+      "views": 62,
       "likes": 0,
       "comments": 0,
       "id": "ep04-maze3d",
@@ -79,26 +134,59 @@
       "publish_at": "2026-11-11T13:00:00+02:00"
     },
     {
-      "youtube_id": "TGKpLTdMBo0",
-      "title": "اتصل بك ابنك يطلب مالًا؟ 📞 قد لا يكون صوته! #shorts",
-      "privacy": "private",
-      "views": 0,
+      "youtube_id": "W6DO3XHqRbU",
+      "title": "دفتر الجارة 📓 الحلقة 3: «افتحي يا ليلى… أنا جارتك» لكن الجارة سافرت #shorts",
+      "privacy": "public",
+      "views": 21,
       "likes": 0,
       "comments": 0,
-      "id": "fam05-voice",
-      "series": "family",
-      "publish_at": "2026-11-11T20:00:00+02:00"
+      "id": "h-daftar03",
+      "series": "horror",
+      "publish_at": "2026-11-13T22:00:00+02:00"
     },
     {
-      "youtube_id": "PIFMRt0CHbk",
-      "title": "لوحة لا نهائية داخل Excel؟! 🌀 كسورية ماندلبروت تغوص فيها بنقرتين #shorts",
+      "youtube_id": "2HCAEVfQRoE",
+      "title": "المرآة | لا تنظر فيها الساعة 3… انعكاسك لم يتحرّك 🪞 #shorts",
+      "privacy": "public",
+      "views": 6,
+      "likes": 0,
+      "comments": 0,
+      "id": "h05-mirror",
+      "series": "horror",
+      "publish_at": "2026-11-11T22:00:00+02:00"
+    },
+    {
+      "youtube_id": "R7UcfkD_gjU",
+      "title": "Flappy Bird داخل Excel؟! 🐦 لعبة حقيقية تلعبها بالمسافة… الملف مجاني #shorts",
+      "privacy": "public",
+      "views": 1,
+      "likes": 0,
+      "comments": 0,
+      "id": "ep06-flappy",
+      "series": "excel",
+      "publish_at": "2026-11-13T13:00:00+02:00"
+    },
+    {
+      "youtube_id": "-k7FPmqMiyk",
+      "title": "«جواهر مجانية» لابنك؟ 💎 هكذا يُسرق حساب لعبته في ثانية #shorts",
+      "privacy": "public",
+      "views": 0,
+      "likes": 0,
+      "comments": 0,
+      "id": "fam06-gems",
+      "series": "family",
+      "publish_at": "2026-11-13T20:00:00+02:00"
+    },
+    {
+      "youtube_id": "yX9duW1rfTo",
+      "title": "باك مان داخل Excel؟! 👻 أشباح تطاردك بأقصر طريق… الملف مجاني #shorts",
       "privacy": "private",
       "views": 0,
       "likes": 0,
       "comments": 0,
-      "id": "ep05-mandelbrot",
+      "id": "ep07-pacman",
       "series": "excel",
-      "publish_at": "2026-11-12T13:00:00+02:00"
+      "publish_at": null
     }
   ]
 }

@@ -440,7 +440,9 @@
         "قصة رعب قصيرة",
         "مسلسل رعب"
       ],
-      "status": "ready"
+      "status": "scheduled",
+      "youtube_id": "BIsYtmc2XyI",
+      "publish_at": "2026-11-14T22:00:00+02:00"
     },
     {
       "id": "h06-ownnumber",
