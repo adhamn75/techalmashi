@@ -44,6 +44,16 @@ def pages(call, **kw):
 
 
 def main() -> int:
+    try:
+        return run()
+    except Exception as err:
+        if "quotaExceeded" in str(err) or "quota" in str(err).lower():
+            print("::warning::YouTube quota used up; duplicates will be deleted after the 08:00 UTC reset.")
+            return 0
+        raise
+
+
+def run() -> int:
     if not os.environ.get("YT_REFRESH_TOKEN"):
         print("YouTube token not available; nothing to do.")
         return 0
