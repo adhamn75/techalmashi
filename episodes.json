@@ -356,7 +356,9 @@
         "احتيال الألعاب",
         "تك عالماشي"
       ],
-      "status": "ready"
+      "status": "scheduled",
+      "youtube_id": "-k7FPmqMiyk",
+      "publish_at": "2026-11-13T20:00:00+02:00"
     },
     {
       "id": "h-daftar01",
@@ -396,7 +398,9 @@
         "قصة رعب قصيرة",
         "مسلسل رعب"
       ],
-      "status": "ready"
+      "status": "scheduled",
+      "youtube_id": "tCiSvZIEuXQ",
+      "publish_at": "2026-11-13T22:00:00+02:00"
     },
     {
       "id": "h-daftar03",
@@ -415,7 +419,9 @@
         "قصة رعب قصيرة",
         "مسلسل رعب"
       ],
-      "status": "ready"
+      "status": "scheduled",
+      "youtube_id": "W6DO3XHqRbU",
+      "publish_at": "2026-11-13T22:00:00+02:00"
     },
     {
       "id": "h-daftar04",
@@ -471,7 +477,9 @@
         "أسرار Excel",
         "تك عالماشي"
       ],
-      "status": "ready"
+      "status": "scheduled",
+      "youtube_id": "R7UcfkD_gjU",
+      "publish_at": "2026-11-13T13:00:00+02:00"
     },
     {
       "id": "fam07-purchase",
@@ -489,7 +497,9 @@
         "الرقابة الأبوية",
         "تك عالماشي"
       ],
-      "status": "ready"
+      "status": "scheduled",
+      "youtube_id": "61LvasOkMjc",
+      "publish_at": "2026-11-13T20:00:00+02:00"
     },
     {
       "id": "h07-closet",
@@ -527,7 +537,9 @@
         "أسرار Excel",
         "تك عالماشي"
       ],
-      "status": "ready"
+      "status": "scheduled",
+      "youtube_id": "yX9duW1rfTo",
+      "publish_at": "2026-11-14T13:00:00+02:00"
     },
     {
       "id": "fam08-stranger",
