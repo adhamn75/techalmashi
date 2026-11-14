@@ -4,6 +4,10 @@ Every few minutes: for each Excel video in files/files_map.json that has a video
 comment threads (YouTube Data API, 1 quota unit per video) and, when a top-level comment asks for
 the file (اريد / بدي / الملف / رابط / send / file ...), reply under it with that entry's "reply" text.
 A thread is skipped when the channel already replied in it, so nobody gets two replies.
+Every answered thread id is also kept in docs/replied.json (and every (video, author) in docs/requests.json),
+so a comment is answered once even when the token's channel is not the video's owner (2026-11-14: one
+comment got 156 replies because the owner check never saw the bot's own replies).
+Kill switch: create the file .replies_off in the repo root and no reply is posted.
 
 Env: YT_REFRESH_TOKEN, YT_CLIENT_SECRET.  DRY_RUN=1 lists what it would reply to without posting.
 """
@@ -62,6 +66,27 @@ def owner_replied(yt, thread, owner: str) -> bool:
 
 
 LOG = Path(__file__).resolve().parent.parent / "docs" / "requests.json"
+REPLIED = ROOT / "docs" / "replied.json"
+OFF = ROOT / ".replies_off"
+
+
+def load_replied() -> set:
+    try:
+        return set(json.loads(REPLIED.read_text(encoding="utf-8")))
+    except Exception:
+        return set()
+
+
+def save_replied(ids: set) -> None:
+    REPLIED.parent.mkdir(exist_ok=True)
+    REPLIED.write_text(json.dumps(sorted(ids), ensure_ascii=False, indent=0) + "\n", encoding="utf-8")
+
+
+def logged_pairs() -> set:
+    try:
+        return {(r.get("videoId"), r.get("who")) for r in json.loads(LOG.read_text(encoding="utf-8"))}
+    except Exception:
+        return set()
 
 
 def log_request(e: dict, who: str, text: str) -> None:
@@ -77,9 +102,18 @@ def main() -> int:
     if not os.environ.get("YT_REFRESH_TOKEN"):
         print("YouTube token not available; nothing to do.")
         return 0
+    if OFF.exists():
+        print(f"Replies are switched off ({OFF.name} exists).")
+        return 0
     entries = [e for e in json.loads(MAP.read_text())["files"] if e.get("videoId") and e.get("reply")]
     yt = client()
     sent = 0
+    replied = load_replied()
+    pairs = logged_pairs()
+    try:
+        me = yt.channels().list(part="id", mine=True).execute()["items"][0]["id"]
+    except Exception:
+        me = None
     for e in entries:
         try:
             resp = yt.commentThreads().list(
@@ -91,9 +125,15 @@ def main() -> int:
         for th in resp.get("items", []):
             top = th["snippet"]["topLevelComment"]["snippet"]
             owner = th["snippet"]["channelId"]
-            if not is_request(top.get("textDisplay", "")) or owner_replied(yt, th, owner):
-                continue
             who = top.get("authorDisplayName", "?")
+            if th["id"] in replied or (e["videoId"], who) in pairs:
+                continue
+            if not is_request(top.get("textDisplay", "")):
+                continue
+            if owner_replied(yt, th, owner) or (me and me != owner and owner_replied(yt, th, me)):
+                replied.add(th["id"])
+                save_replied(replied)
+                continue
             if sent >= MAX_REPLIES:
                 print("Reached the per-run cap; the rest will be answered next run.")
                 return 0
@@ -113,6 +153,9 @@ def main() -> int:
                     BLOCK.write_text(str(err)[:500], encoding="utf-8")
                     print(f"::warning::reply refused, pausing replies for {BLOCK_HOURS} h: {err}")
                     return 0
+                replied.add(th["id"])
+                pairs.add((e["videoId"], who))
+                save_replied(replied)
                 print(f"[{e['episode']}] replied to {who}: {top.get('textDisplay','')[:60]!r}")
                 log_request(e, who, top.get("textDisplay", ""))
             sent += 1

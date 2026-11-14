@@ -49,7 +49,7 @@ jobs:
               (cd scripts && python live_stats.py tech) || echo "::warning::stats failed"
               if [ -f youtube_token_horror.enc ]; then (cd scripts && python live_stats.py horror) || echo "::warning::horror stats failed"; fi
             fi
-            git add docs/stats*.json docs/history*.json docs/queue.json docs/requests.json 2>/dev/null || true
+            git add docs/stats*.json docs/history*.json docs/queue.json docs/requests.json docs/replied.json 2>/dev/null || true
             if ! git diff --cached --quiet; then
               git commit -q -m "Watcher: stats / file requests"
               for t in 1 2 3; do git pull -q --rebase origin main && git push -q && break; sleep 5; done
