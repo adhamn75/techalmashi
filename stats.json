@@ -1,11 +1,11 @@
 {
-  "updated": "2026-11-15T08:22:17.497132+00:00",
+  "updated": "2026-11-15T15:43:02.962744+00:00",
   "videos": [
     {
       "youtube_id": "TGKpLTdMBo0",
       "title": "اتصل بك ابنك يطلب مالًا؟ 📞 قد لا يكون صوته! #shorts",
       "privacy": "public",
-      "views": 1400,
+      "views": 1404,
       "likes": 18,
       "comments": 0,
       "id": "fam05-voice",
@@ -16,12 +16,23 @@
       "youtube_id": "PIFMRt0CHbk",
       "title": "لوحة لا نهائية داخل Excel؟! 🌀 كسورية ماندلبروت تغوص فيها بنقرتين #shorts",
       "privacy": "public",
-      "views": 1320,
+      "views": 1321,
       "likes": 14,
       "comments": 1,
       "id": "ep05-mandelbrot",
       "series": "excel",
       "publish_at": "2026-11-12T13:00:00+02:00"
+    },
+    {
+      "youtube_id": "rzHoB0MhhgA",
+      "title": "رقمي أنا 📞 اتصل بي الساعة 3: «افتح الباب… أنا في الخارج» #shorts",
+      "privacy": "public",
+      "views": 1276,
+      "likes": 10,
+      "comments": 0,
+      "id": "h06-ownnumber",
+      "series": "horror",
+      "publish_at": "2026-11-14T22:00:00+02:00"
     },
     {
       "youtube_id": "lJ7ppDQ0CDQ",
@@ -38,7 +49,7 @@
       "youtube_id": "tCiSvZIEuXQ",
       "title": "دفتر الجارة 📓 الحلقة 2: السطر الثاني… «الذي يطرق يعرف اسمك» #shorts",
       "privacy": "public",
-      "views": 762,
+      "views": 776,
       "likes": 7,
       "comments": 0,
       "id": "h-daftar02",
@@ -46,21 +57,10 @@
       "publish_at": "2026-11-13T22:00:00+02:00"
     },
     {
-      "youtube_id": "rzHoB0MhhgA",
-      "title": "رقمي أنا 📞 اتصل بي الساعة 3: «افتح الباب… أنا في الخارج» #shorts",
-      "privacy": "public",
-      "views": 679,
-      "likes": 6,
-      "comments": 0,
-      "id": "h06-ownnumber",
-      "series": "horror",
-      "publish_at": "2026-11-14T22:00:00+02:00"
-    },
-    {
       "youtube_id": "poCU-w1Dbks",
       "title": "دفتر الجارة 📓 الحلقة 1: الجارة سافرت… لكن بابها مفتوح #shorts",
       "privacy": "public",
-      "views": 562,
+      "views": 564,
       "likes": 9,
       "comments": 0,
       "id": "h-daftar01",
@@ -71,8 +71,8 @@
       "youtube_id": "W6DO3XHqRbU",
       "title": "دفتر الجارة 📓 الحلقة 3: «افتحي يا ليلى… أنا جارتك» لكن الجارة سافرت #shorts",
       "privacy": "public",
-      "views": 550,
-      "likes": 8,
+      "views": 554,
+      "likes": 9,
       "comments": 0,
       "id": "h-daftar03",
       "series": "horror",
@@ -126,8 +126,8 @@
       "youtube_id": "hr7ktiJJLsE",
       "title": "الطابق 13 | المبنى فيه 12 طابقًا فقط… فمن أوقف المصعد؟ 🛗 #shorts",
       "privacy": "public",
-      "views": 115,
-      "likes": 1,
+      "views": 119,
+      "likes": 2,
       "comments": 0,
       "id": "h03-elevator",
       "series": "horror",
@@ -156,6 +156,17 @@
       "publish_at": "2026-11-11T13:00:00+02:00"
     },
     {
+      "youtube_id": "BIsYtmc2XyI",
+      "title": "دفتر الجارة 📓 الحلقة 4: امرأة في النافذة تحمل دفترًا… وفيه صورة ليلى #shorts",
+      "privacy": "public",
+      "views": 11,
+      "likes": 1,
+      "comments": 0,
+      "id": "h-daftar04",
+      "series": "horror",
+      "publish_at": "2026-11-14T22:00:00+02:00"
+    },
+    {
       "youtube_id": "2HCAEVfQRoE",
       "title": "المرآة | لا تنظر فيها الساعة 3… انعكاسك لم يتحرّك 🪞 #shorts",
       "privacy": "public",
@@ -167,6 +178,17 @@
       "publish_at": "2026-11-11T22:00:00+02:00"
     },
     {
+      "youtube_id": "R7UcfkD_gjU",
+      "title": "Flappy Bird داخل Excel؟! 🐦 لعبة حقيقية تلعبها بالمسافة… الملف مجاني #shorts",
+      "privacy": "public",
+      "views": 5,
+      "likes": 0,
+      "comments": 0,
+      "id": "ep06-flappy",
+      "series": "excel",
+      "publish_at": "2026-11-13T13:00:00+02:00"
+    },
+    {
       "youtube_id": "-k7FPmqMiyk",
       "title": "«جواهر مجانية» لابنك؟ 💎 هكذا يُسرق حساب لعبته في ثانية #shorts",
       "privacy": "public",
@@ -176,28 +198,6 @@
       "id": "fam06-gems",
       "series": "family",
       "publish_at": "2026-11-13T20:00:00+02:00"
-    },
-    {
-      "youtube_id": "R7UcfkD_gjU",
-      "title": "Flappy Bird داخل Excel؟! 🐦 لعبة حقيقية تلعبها بالمسافة… الملف مجاني #shorts",
-      "privacy": "public",
-      "views": 4,
-      "likes": 0,
-      "comments": 0,
-      "id": "ep06-flappy",
-      "series": "excel",
-      "publish_at": "2026-11-13T13:00:00+02:00"
-    },
-    {
-      "youtube_id": "BIsYtmc2XyI",
-      "title": "دفتر الجارة 📓 الحلقة 4: امرأة في النافذة تحمل دفترًا… وفيه صورة ليلى #shorts",
-      "privacy": "public",
-      "views": 3,
-      "likes": 0,
-      "comments": 0,
-      "id": "h-daftar04",
-      "series": "horror",
-      "publish_at": "2026-11-14T22:00:00+02:00"
     },
     {
       "youtube_id": "yX9duW1rfTo",

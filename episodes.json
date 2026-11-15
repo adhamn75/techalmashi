@@ -582,7 +582,9 @@
         "creepypasta",
         "قصة رعب قصيرة"
       ],
-      "status": "ready"
+      "status": "scheduled",
+      "youtube_id": "Q5NcGrwPK-c",
+      "publish_at": "2026-11-15T22:00:00+02:00"
     },
     {
       "id": "ep08-invaders",
