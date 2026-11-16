@@ -54,8 +54,8 @@ Excel sends WhatsApp messages · 3D cube spinning with formulas only · invoice 
 exports PDF · AI inside a cell · live gold/dollar prices refreshing · Excel plays music ·
 Tetris in Excel · Excel as a calendar app · QR code generator in Excel.
 Space Invaders made (ep 8, files/invaders.xlsm). **Promised next Excel episode (ep 8 teaser «كرةٌ تحطّم الطوب»): Breakout / brick breaker in cells (VBA) — make it next.**
-Horror code-drawn eps made: rules, frame481, elevator, camera, mirror, own number, closet, gallery (h08), ceiling (h09).
-**Promised next horror (h09 teaser «راديو ينطق اسمك»): an old radio that says your name — make it next.**
+Horror code-drawn eps made: rules, frame481, elevator, camera, mirror, own number, closet, gallery (h08), ceiling (h09), radio (h10).
+**Promised next horror (h10 teaser «طرقٌ على نافذة الطابق العاشر»): knocking on a 10th-floor window — make it next.**
 
 Family series (parents) — made: scam message, location, code, suspended, voice, gems, purchase, game-chat stranger (ep 8), QR scam (ep 9).
 **Promised next (ep 9 teaser): free public Wi-Fi trap — make it next.** Still open: weak password vs passphrase ·

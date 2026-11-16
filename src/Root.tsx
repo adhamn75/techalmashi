@@ -26,6 +26,7 @@ import {H08Gallery, H08_FRAMES} from './horror/H08Gallery';
 import {Ep08Invaders, EP08_FRAMES} from './episodes/Ep08Invaders';
 import {Family09Qr, FAMILY09_FRAMES} from './episodes/Fam09Qr';
 import {H09Ceiling, H09_FRAMES} from './horror/H09Ceiling';
+import {H10Radio, H10_FRAMES} from './horror/H10Radio';
 
 // Every episode is one Composition. Its id must match "composition" in episodes.json.
 export const Root: React.FC = () => (
@@ -56,5 +57,6 @@ export const Root: React.FC = () => (
     <Composition id="Ep08Invaders" component={Ep08Invaders} durationInFrames={EP08_FRAMES} fps={30} width={1080} height={1920} />
     <Composition id="Family09Qr" component={Family09Qr} durationInFrames={FAMILY09_FRAMES} fps={30} width={1080} height={1920} />
     <Composition id="H09Ceiling" component={H09Ceiling} durationInFrames={H09_FRAMES} fps={30} width={1080} height={1920} />
+    <Composition id="H10Radio" component={H10Radio} durationInFrames={H10_FRAMES} fps={30} width={1080} height={1920} />
   </>
 );
