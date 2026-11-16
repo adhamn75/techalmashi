@@ -640,7 +640,9 @@
         "creepypasta",
         "قصة رعب قصيرة"
       ],
-      "status": "ready"
+      "status": "scheduled",
+      "youtube_id": "JfCuML4SWZc",
+      "publish_at": "2026-11-16T22:00:00+02:00"
     },
     {
       "id": "h10-radio",
