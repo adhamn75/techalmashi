@@ -711,7 +711,7 @@
       "id": "h13-streetlamp",
       "series": "horror",
       "channel": "UC9lU_G718LC15JQSMQpcbog",
-      "status": "ready",
+      "status": "scheduled",
       "composition": "H13StreetLamp",
       "title": "عمود الإنارة 🏮 كل ليلة يقترب خطوة… الليلة العمود فارغ #shorts",
       "description": "كل ليلة… رجلٌ تحت عمود الإنارة أمام بيتي.\nوكل ليلة أقرب بخطوة.\nالليلة… العمود فارغ.\nثمّ طرق أحدٌ بابي.\n\nلو طُرق بابك الساعة 3… هل تنظر من العين السحرية؟ 🚪\nالليلة القادمة… صوت أمّي يناديني من المطبخ 🔔 اشترك لتصلك قصة الليلة القادمة.\n\n#رعب #قصص_رعب #horror #shorts",
@@ -724,7 +724,9 @@
         "creepypasta",
         "قصة رعب قصيرة",
         "رعب منتصف الليل"
-      ]
+      ],
+      "youtube_id": "ELCIwxks4bU",
+      "publish_at": "2026-11-18T22:00:00+02:00"
     },
     {
       "id": "h14-kitchen",
