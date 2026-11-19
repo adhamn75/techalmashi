@@ -356,8 +356,7 @@
         "احتيال الألعاب",
         "تك عالماشي"
       ],
-      "status": "hold",
-      "note": "2026-11-19: only a copy on the wrong channel (@tech3almashi-n) existed; upload to the ORIGINAL @tech3almashi after the token is reconnected. Set status ready when the owner says."
+      "status": "ready"
     },
     {
       "id": "h-daftar01",
@@ -484,8 +483,7 @@
         "أسرار Excel",
         "تك عالماشي"
       ],
-      "status": "hold",
-      "note": "2026-11-19: only a copy on the wrong channel (@tech3almashi-n) existed; upload to the ORIGINAL @tech3almashi after the token is reconnected. Set status ready when the owner says."
+      "status": "ready"
     },
     {
       "id": "fam07-purchase",
