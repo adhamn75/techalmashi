@@ -55,6 +55,8 @@ h2 small { font-weight: 400; color: var(--muted); font-size: .75rem; }
 .money .sub { font-size: .75rem; color: var(--muted); line-height: 1.5; }
 .goals { display: flex; flex-direction: column; gap: 12px; margin-top: 14px; }
 .goal .row { display: flex; justify-content: space-between; gap: 8px; font-size: .85rem; }
+.eta { font-size: .75rem; color: var(--muted); line-height: 1.6; margin-top: 3px; }
+.eta.ok { color: var(--green); font-weight: 700; }
 .goal .bar { height: 8px; border-radius: 4px; background: var(--line); overflow: hidden; margin-top: 4px; }
 .goal .bar i { display: block; height: 100%; background: linear-gradient(90deg, var(--gold), var(--orange)); margin-inline-start: auto; border-radius: 4px; min-width: 2px; }
 
@@ -112,9 +114,11 @@ footer { font-size: .75rem; color: var(--muted); line-height: 1.7; }
       <div class="m"><span class="lbl">لو كانت مفعّلة (تقدير)</span><span class="val" id="est">—</span><span class="sub">على أساس $0.02–$0.07 لكل 1,000 مشاهدة Shorts</span></div>
     </div>
     <div class="goals">
-      <div class="goal"><div class="row"><span>مشتركين لشراكة يوتيوب</span><span class="mono" id="g-subs-t">—</span></div><div class="bar"><i id="g-subs"></i></div></div>
-      <div class="goal"><div class="row"><span>مشاهدات Shorts (آخر 90 يوم)</span><span class="mono" id="g-views-t">—</span></div><div class="bar"><i id="g-views"></i></div></div>
-      <div class="goal"><div class="row"><span>أول مرحلة: دعم المعجبين (500 مشترك + 3M مشاهدة)</span><span class="mono" id="g-fan-t">—</span></div><div class="bar"><i id="g-fan"></i></div></div>
+      <div class="goal"><div class="row"><span>مشتركين للإعلانات (1,000)</span><span class="mono" id="g-subs-t">—</span></div><div class="bar"><i id="g-subs"></i></div><div class="eta" id="g-subs-eta"></div></div>
+      <div class="goal"><div class="row"><span>مشاهدات Shorts للإعلانات (10M)</span><span class="mono" id="g-views-t">—</span></div><div class="bar"><i id="g-views"></i></div><div class="eta" id="g-views-eta"></div></div>
+      <div class="goal"><div class="row"><span>أول مرحلة: دعم المعجبين (500 مشترك + 3M مشاهدة)</span><span class="mono" id="g-fan-t">—</span></div><div class="bar"><i id="g-fan"></i></div><div class="eta" id="g-fan-eta"></div></div>
+      <div class="goal"><div class="row"><span>3 فيديوهات علنية آخر 90 يوم (شرط المرحلة الأولى)</span><span class="mono" id="g-up-t">—</span></div><div class="bar"><i id="g-up"></i></div></div>
+      <p class="eta" id="g-note"></p>
     </div>
   </section>
 
@@ -137,6 +141,11 @@ footer { font-size: .75rem; color: var(--muted); line-height: 1.7; }
       <svg class="chart" id="curve" role="img" aria-label="مجموع المشاهدات مع الوقت"></svg>
     </section>
   </div>
+
+  <section class="card">
+    <h2>المشتركون مع الوقت <small>هيدا العنق الأساسي للربح</small></h2>
+    <svg class="chart" id="subs-curve" role="img" aria-label="عدد المشتركين مع الوقت"></svg>
+  </section>
 
   <section class="card">
     <h2>الفيديوهات <small id="vids-note"></small></h2>
@@ -240,16 +249,16 @@ function drawDaily(hist) {
   });
 }
 
-function drawCurve(hist) {
-  const svg = $('curve'); const W = svg.clientWidth || 440, H = 190, pl = 44, pr = 10, pt = 10, pb = 22;
+function drawCurve(hist, id = 'curve', key = 'views') {
+  const svg = $(id); const W = svg.clientWidth || 440, H = 190, pl = 44, pr = 10, pt = 10, pb = 22;
   svg.setAttribute('viewBox', `0 0 ${W} ${H}`); svg.replaceChildren();
   if (hist.length < 2) { svgEl(svg, 'text', {x: W / 2, y: H / 2, 'text-anchor': 'middle'}, 'المنحنى يظهر بعد أول تحديثين'); return; }
-  const xs = hist.map((p) => +new Date(p.t)), ys = hist.map((p) => p.views);
+  const xs = hist.map((p) => +new Date(p.t)), ys = hist.map((p) => p[key] ?? 0);
   const x0 = Math.min(...xs), x1 = Math.max(...xs), y1 = Math.max(...ys) * 1.08 || 1;
   const X = (v) => pl + (v - x0) / (x1 - x0 || 1) * (W - pl - pr);
   const Y = (v) => H - pb - v / y1 * (H - pt - pb);
   for (let i = 0; i <= 3; i++) { const v = y1 * i / 3; svgEl(svg, 'line', {x1: pl, x2: W - pr, y1: Y(v), y2: Y(v), stroke: css('--line')}); svgEl(svg, 'text', {x: pl - 6, y: Y(v) + 3, 'text-anchor': 'end'}, fmt.format(Math.round(v))); }
-  const pts = hist.map((p) => `${X(+new Date(p.t)).toFixed(1)},${Y(p.views).toFixed(1)}`);
+  const pts = hist.map((p) => `${X(+new Date(p.t)).toFixed(1)},${Y(p[key] ?? 0).toFixed(1)}`);
   svgEl(svg, 'path', {d: `M${pl},${Y(0)} L${pts.join(' L')} L${X(x1)},${Y(0)} Z`, fill: css('--blue'), 'fill-opacity': '.15'});
   svgEl(svg, 'polyline', {points: pts.join(' '), fill: 'none', stroke: css('--blue'), 'stroke-width': 2, 'stroke-linejoin': 'round'});
   svgEl(svg, 'circle', {cx: X(x1), cy: Y(ys[ys.length - 1]), r: 4, fill: css('--green')});
@@ -257,6 +266,16 @@ function drawCurve(hist) {
   svgEl(svg, 'text', {x: pl + 2, y: H - 5, 'text-anchor': 'end'}, fd(x0));
   svgEl(svg, 'text', {x: W - pr, y: H - 5, 'text-anchor': 'end'}, fd(x1));
 }
+
+function pace(hist, key) {
+  if (hist.length < 2) return 0;
+  const now = hist[hist.length - 1], cutoff = new Date(now.t) - 3 * 864e5;
+  const base = hist.find((p) => new Date(p.t) >= cutoff) || hist[0];
+  const days = (new Date(now.t) - new Date(base.t)) / 864e5;
+  return days > 0.2 ? ((now[key] || 0) - (base[key] || 0)) / days : 0;
+}
+const fmtDays = (d) => d < 1 ? 'أقل من يوم' : d < 60 ? `${Math.ceil(d)} يوم` : d < 730 ? `${(d / 30).toFixed(1)} شهر` : `${(d / 365).toFixed(1)} سنة`;
+const etaText = (left, perDay) => left <= 0 ? 'تحقق ✅' : perDay > 0 ? `باقي ${fmt.format(Math.ceil(left))} · بوتيرة آخر 3 أيام (${fmt.format(Math.round(perDay))}/يوم) حوالي ${fmtDays(left / perDay)}` : `باقي ${fmt.format(Math.ceil(left))} · ما في نمو بآخر 3 أيام`;
 
 function cell(tr, text, cls) { const td = document.createElement('td'); if (cls) td.className = cls; td.textContent = text; tr.append(td); return td; }
 function emptyRow(tb, cols, text) { const tr = document.createElement('tr'); const td = cell(tr, text, 'empty'); td.colSpan = cols; tb.append(tr); }
@@ -285,9 +304,19 @@ function render(stats, hist, reqs, queue, earn) {
   }
   $('est').textContent = `${usd(views / 1000 * 0.02)} – ${usd(views / 1000 * 0.07)}`;
   const g = (id, val, goal) => { $(id).style.width = Math.min(100, val / goal * 100).toFixed(2) + '%'; };
-  g('g-subs', subs, 1000); $('g-subs-t').textContent = `${fmt.format(subs)} / 1,000`;
-  g('g-views', views, 10e6); $('g-views-t').textContent = `${fmt.format(views)} / 10M`;
+  const pSubs = pace(hist, 'subs'), pViews = pace(hist, 'views');
+  const eta = (id, left, perDay) => { const el = $(id); el.className = 'eta' + (left <= 0 ? ' ok' : ''); el.textContent = etaText(left, perDay); };
+  g('g-subs', subs, 1000); $('g-subs-t').textContent = `${fmt.format(subs)} / 1,000`; eta('g-subs-eta', 1000 - subs, pSubs);
+  g('g-views', views, 10e6); $('g-views-t').textContent = `${fmt.format(views)} / 10M`; eta('g-views-eta', 10e6 - views, pViews);
   g('g-fan', Math.min(subs / 500, views / 3e6), 1); $('g-fan-t').textContent = `${fmt.format(subs)}/500 · ${fmt.format(views)}/3M`;
+  const fanDays = Math.max((500 - subs) / (pSubs || 1e-9), (3e6 - views) / (pViews || 1e-9));
+  $('g-fan-eta').className = 'eta' + (subs >= 500 && views >= 3e6 ? ' ok' : '');
+  $('g-fan-eta').textContent = subs >= 500 && views >= 3e6 ? 'تحقق ✅' : (pSubs > 0 && pViews > 0 ? `بهالوتيرة حوالي ${fmtDays(fanDays)} (الأبطأ بين المشتركين والمشاهدات)` : `باقي ${fmt.format(Math.max(0, 500 - subs))} مشترك و${fmt.format(Math.max(0, 3e6 - views))} مشاهدة`);
+  const recent = v.filter((x) => Date.now() - new Date(x.published) < 90 * 864e5).length;
+  g('g-up', recent, 3); $('g-up-t').textContent = `${fmt.format(recent)} / 3`;
+  const left = Math.ceil((Date.UTC(2027, 1, 1) - Date.now()) / 864e5);
+  $('g-note').textContent = (left > 0 ? `⏳ باقي ${left} يوم على 1 شباط 2027: بعدها القنوات الجديدة بتحتاج 20M مشاهدة Shorts (بدل 10M) للإعلانات، ودعم المعجبين بيضل 500 مشترك. ` : '')
+    + 'الأرقام هون من العدّاد العام؛ القبول بيعتمد على «المشاهدات المؤهّلة» (بتبويب Earn بالستوديو) وغالباً أقل.';
 
   // videos
   const tb = $('vids'); tb.replaceChildren();
@@ -334,7 +363,7 @@ function render(stats, hist, reqs, queue, earn) {
     q.append(tr);
   }
 
-  drawDaily(hist); drawCurve(hist);
+  drawDaily(hist); drawCurve(hist); drawCurve(hist, 'subs-curve', 'subs');
 }
 
 function tickStatus() {
