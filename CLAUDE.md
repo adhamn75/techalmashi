@@ -175,6 +175,8 @@ Playlists (original @tech3almashi, 2026-11-19): Excel `PLYdOHth1Xago`, Family `P
 **Always keep TWO unpublished episodes ahead** (owner's rule): whenever the ready queue of a series is below 2, make more before
 anything else. Check `episodes.json` ready count first, then produce until each daily series has 2 ready.
 
+**دفتر الجارة titles & pacing (owner's decision, 2026-11-19):** each episode's title is its own, drawn from what happens inside THAT episode's story (a suspenseful line about its content), ends with a teaser for the next one («انتظروا الحلقة القادمة…» / what comes next without spoiling), then «دفتر الجارة 📓 N»; ≤100 chars, ends #shorts. Not the old «دفتر الجارة 📓 الحلقة N: …» shape. First second of the video starts on the scary line. One episode per day at 22:00, never two the same day. Produce 4 episodes per PC session and keep 2 ready ahead. First two new episodes: compare their views against eps 1-4 before generalising.
+
 **دفتر الجارة recipe** (episodes are pre-rendered mp4 in `videos/horror/`, queue entry has `"video": "videos/horror/<file>.mp4"`, no composition):
 1. Write 6 narration lines in MSA with full tashkeel (Layla, 12, short black bob, yellow jacket; notebook that writes the future; each ep ends on a hook).
 2. TTS on the owner's PC (desktop-commander PowerShell): `ar-SA-HamedNeural`, rate +0%, pitch -2Hz, script `tts34.py` pattern in `...\kamera-bayt\out\layla_epN`;
