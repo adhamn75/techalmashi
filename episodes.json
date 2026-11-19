@@ -483,7 +483,9 @@
         "أسرار Excel",
         "تك عالماشي"
       ],
-      "status": "ready"
+      "status": "scheduled",
+      "youtube_id": "GeHgTtuz6k8",
+      "publish_at": "2026-11-20T13:00:00+02:00"
     },
     {
       "id": "fam07-purchase",
@@ -772,7 +774,7 @@
       "id": "h16-monitor",
       "series": "horror",
       "channel": "UC9lU_G718LC15JQSMQpcbog",
-      "status": "ready",
+      "status": "scheduled",
       "composition": "H16Monitor",
       "title": "جهاز مراقبة الطفل 📟 يبثّ بكاءً من غرفتنا… ونحن لا طفل لدينا #shorts",
       "description": "جهاز مراقبة الطفل اشتغل وحده.\nبكاء… ونحن لا طفل لدينا.\nعلى الشاشة مهد في غرفتنا نحن… ثم سكت البكاء والتفت نحو الكاميرا.\n\nماذا تفعل لو اشتغل جهاز كهذا في بيتك الساعة 3؟ 👁️\nالليلة القادمة… رسالة بخط يدك، مؤرّخة غدًا 🔔 اشترك لتصلك قصة الليلة القادمة.\n\n#رعب #قصص_رعب #horror #shorts",
@@ -785,7 +787,9 @@
         "creepypasta",
         "قصة رعب قصيرة",
         "رعب منتصف الليل"
-      ]
+      ],
+      "youtube_id": "kxydgL2xrzo",
+      "publish_at": "2026-11-19T22:00:00+02:00"
     }
   ]
 }
