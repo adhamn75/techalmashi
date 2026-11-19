@@ -138,9 +138,9 @@
   "id": "fam06-gems",
   "series": "family",
   "title": "«جواهر مجانية» لابنك؟ 💎 هكذا يُسرق حساب لعبته في ثانية #shorts",
-  "status": "scheduled",
-  "publish_at": "2026-11-13T20:00:00+02:00",
-  "youtube_id": "-k7FPmqMiyk",
+  "status": "hold",
+  "publish_at": null,
+  "youtube_id": null,
   "video_id": null
  },
  {
@@ -192,18 +192,18 @@
   "id": "ep06-flappy",
   "series": "excel",
   "title": "Flappy Bird داخل Excel؟! 🐦 لعبة حقيقية تلعبها بالمسافة… الملف مجاني #shorts",
-  "status": "scheduled",
-  "publish_at": "2026-11-13T13:00:00+02:00",
-  "youtube_id": "R7UcfkD_gjU",
+  "status": "hold",
+  "publish_at": null,
+  "youtube_id": null,
   "video_id": null
  },
  {
   "id": "fam07-purchase",
   "series": "family",
   "title": "فاتورة 500$ من لعبة ابنك؟! 💳 أوقف الشراء داخل التطبيقات في 10 ثوانٍ #shorts",
-  "status": "scheduled",
-  "publish_at": "2026-11-13T20:00:00+02:00",
-  "youtube_id": "61LvasOkMjc",
+  "status": "hold",
+  "publish_at": null,
+  "youtube_id": null,
   "video_id": null
  },
  {
@@ -221,7 +221,7 @@
   "title": "باك مان داخل Excel؟! 👻 أشباح تطاردك بأقصر طريق… الملف مجاني #shorts",
   "status": "hold",
   "publish_at": null,
-  "youtube_id": "yX9duW1rfTo",
+  "youtube_id": null,
   "video_id": null
  },
  {
