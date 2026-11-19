@@ -87,7 +87,6 @@ Playlists on the original: Excel `PLYdOHth1Xago`, Family `PLfUdrVKeKj4Y` (in set
 TODO until the token is reconnected to the ORIGINAL channel (Connect YouTube workflow, account=tech, pick @tech3almashi not -n): excel/family stay `"status": "hold"`.
 ep06-flappy, fam06-gems, fam07-purchase, ep07-pacman exist only on -n and are `hold` with their youtube_id cleared; they upload to the original once set to ready.
 Do not set excel/family back to "ready" until the owner says. Horror keeps publishing.
-**2026-11-19 13:45: owner said STOP tech3almashi.** No excel/family publishing (none is "ready") and `.replies_off` exists (no comment replies). Remove `.replies_off` only when the owner says resume. Stats reading stays on (read-only).
 
 ## Paid Excel packs — DORMANT (owner's decision, 2026-11-19)
 Prepared in `monetization/` (plan, reply texts, listing copy, checklist). Files stay FREE; nothing in it is read by any
