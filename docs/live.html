@@ -294,7 +294,7 @@ function render(stats, hist, reqs, queue, earn) {
   setChg('count-chg', v.filter((x) => Date.now() - new Date(x.published) < 864e5).length);
 
   const myReqs = ch ? [] : reqs;
-  $('reqs').textContent = ch ? '—' : fmt.format(myReqs.length);
+  $('reqs').textContent = ch ? '—' : fmt.format(new Set(myReqs.map((r) => r.videoId + '|' + r.who)).size);
   setChg('reqs-chg', myReqs.filter((r) => Date.now() - new Date(r.t) < 864e5).length);
 
   // money + goals (channel is younger than 90 days, so lifetime Shorts views stand in for the 90-day window)
@@ -340,9 +340,17 @@ function render(stats, hist, reqs, queue, earn) {
   // file requests
   const rl = $('reqlist'); rl.replaceChildren();
   if (!myReqs.length) emptyRow(rl, 3, 'ما حدا طلب ملف لهلّق.');
-  for (const r of [...myReqs].reverse().slice(0, 30)) {
+  const seen = new Set();
+  for (const r of [...myReqs].reverse()) {
+    const key = r.videoId + '|' + r.who; if (seen.has(key)) continue; seen.add(key);
+    if (seen.size > 30) break;
     const tr = document.createElement('tr');
-    cell(tr, r.who); cell(tr, (r.file || '').replace('files/', ''), 'n'); cell(tr, ago(r.t));
+    const td = document.createElement('td');
+    const a = document.createElement('a');
+    a.href = `https://www.youtube.com/watch?v=${r.videoId}` + (r.thread ? `&lc=${r.thread}` : '');
+    a.target = '_blank'; a.rel = 'noopener'; a.textContent = r.who + ' ↗';
+    td.append(a); tr.append(td);
+    cell(tr, (r.file || '').replace('files/', ''), 'n'); cell(tr, ago(r.t));
     rl.append(tr);
   }
 

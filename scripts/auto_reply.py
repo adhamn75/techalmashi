@@ -89,11 +89,11 @@ def logged_pairs() -> set:
         return set()
 
 
-def log_request(e: dict, who: str, text: str) -> None:
+def log_request(e: dict, who: str, text: str, thread_id: str = "") -> None:
     from datetime import datetime, timezone
     rows = json.loads(LOG.read_text(encoding="utf-8")) if LOG.exists() else []
     rows.append({"t": datetime.now(timezone.utc).replace(microsecond=0).isoformat(), "episode": e["episode"],
-                 "videoId": e["videoId"], "file": e.get("file", ""), "who": who, "text": text[:80]})
+                 "videoId": e["videoId"], "file": e.get("file", ""), "who": who, "text": text[:80], "thread": thread_id})
     LOG.parent.mkdir(exist_ok=True)
     LOG.write_text(json.dumps(rows, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
 
@@ -157,7 +157,7 @@ def main() -> int:
                 pairs.add((e["videoId"], who))
                 save_replied(replied)
                 print(f"[{e['episode']}] replied to {who}: {top.get('textDisplay','')[:60]!r}")
-                log_request(e, who, top.get("textDisplay", ""))
+                log_request(e, who, top.get("textDisplay", ""), th["id"])
             sent += 1
     print(f"Done: {sent} {'would-be ' if DRY_RUN else ''}replies across {len(entries)} videos.")
     return 0
