@@ -77,16 +77,14 @@ per video, ever. auto_reply.py remembers answered threads (docs/replied.json) an
 we posted to the same person, keeping the first, within a quota cap (100 deletes/day, none 08–10 UTC).
 Any change to replying must keep both guards. Kill switch: a file `.replies_off` in the repo root.
 
-## ON HOLD (owner's decision, 2026-11-14; updated 2026-11-19)
-Cause found 2026-11-19: the original channel **@tech3almashi** (UC089ZB6HkdbJhATBrddL7oQ, 5 subs, 10 Shorts, ~7.5K views) lived in the Brand Account
-«almashi temp», which the owner deleted on ~11-13. The token was then re-granted on the new, empty **@tech3almashi-n** (UCAo35INP2CMim87ZrqF3jJw),
-so stats showed 0 subs / 3 videos. «almashi temp» was restored on 2026-11-19 (Google Account → Brand Accounts → Deleted accounts). NEVER delete
-«almashi temp» or the Brand Accounts again. One Google login (tech3almashi@gmail.com) owns both channels: tech3almashi (excel+family) and Horror shorts.
-**Official channel = @tech3almashi (UC089ZB6HkdbJhATBrddL7oQ).** `-n` is to be abandoned (owner deletes it himself after the re-upload).
-Playlists on the original: Excel `PLYdOHth1Xago`, Family `PLfUdrVKeKj4Y` (in settings.playlists). Horror playlist unchanged.
-Token reconnected to the ORIGINAL channel on 2026-11-19 (at the Google chooser pick tech3almashi@gmail.com, then the Brand Account «almashi temp»; the plain account gives -n). Verified: stats show 5 subs / 10 videos / ~7.5K views. excel/family stay `"status": "hold"` until the owner says.
-ep06-flappy, fam06-gems, fam07-purchase, ep07-pacman exist only on -n and are `hold` with their youtube_id cleared; they upload to the original once set to ready.
-Do not set excel/family back to "ready" until the owner says. Horror keeps publishing.
+## Channels recovered — hold LIFTED (2026-11-19)
+Owner's decision 2026-11-19: excel and family publish again (daily Excel 13:00, Family Tue+Fri 20:00, Horror daily 22:00).
+Official channel = **@tech3almashi (UC089ZB6HkdbJhATBrddL7oQ)**, a Brand Account «almashi temp». The wrong channel @tech3almashi-n (UCAo35INP2CMim87ZrqF3jJw) was DELETED by the owner on 2026-11-19.
+One Google login (tech3almashi@gmail.com) owns: tech3almashi (Brand «almashi temp») and Horror shorts (@Horrorshorts-l9i, a Brand Account).
+Token: youtube_token.enc points at the ORIGINAL channel (at the Google chooser: tech3almashi@gmail.com, then Brand «almashi temp»; the plain account gives the wrong channel).
+Playlists: Excel `PLYdOHth1Xago`, Family `PLfUdrVKeKj4Y` (settings.playlists).
+**NEVER delete a channel, "Remove YouTube content", or a Brand Account again.** On 2026-11-19 «Remove YouTube content» on the plain account also deleted the Horror Brand Account (restored the same day from Google Account → Brand Accounts → Deleted accounts). «almashi hold» stays deleted.
+Re-uploaded from -n: ep06-flappy, fam06-gems, fam07-purchase, ep07-pacman (one per series per day by the slot rule). Learnings accumulate in `docs/learnings.md`.
 
 ## Paid Excel packs — DORMANT (owner's decision, 2026-11-19)
 Prepared in `monetization/` (plan, reply texts, listing copy, checklist). Files stay FREE; nothing in it is read by any
