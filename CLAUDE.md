@@ -82,6 +82,10 @@ tech3almashi (excel + family) is paused: its stats reset to 0 subs / 2 videos on
 so the token may point to a different channel. Ready excel/family episodes are `"status": "hold"` (publish.py skips them);
 Pac-Man (yX9duW1rfTo) was unscheduled/made private. Horror keeps publishing. Do not set them back to "ready" until the owner says so.
 
+## Paid Excel packs — DORMANT (owner's decision, 2026-11-19)
+Prepared in `monetization/` (plan, reply texts, listing copy, checklist). Files stay FREE; nothing in it is read by any
+script or shown on the channel. Do NOT activate until the owner says «فعّلها» (gate: ~500 subs or steady requests + stable views).
+
 ## Publishing mode (current)
 Fully automatic on GitHub, free, no vidIQ, no browser. youtube_token.enc (encrypted with YT_CLIENT_SECRET) holds a
 permanent token with youtube + youtube.force-ssl, granted 2026-11-09 with the OAuth app In production.

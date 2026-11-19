@@ -1,0 +1,8 @@
+{
+  "active": false,
+  "note": "Dormant. Not read by any script. Keep the one-reply-per-person rule if ever wired into auto_reply.py.",
+  "replies": {
+    "free_plus_pro": "أهلًا! الملف المجاني هنا: {FREE_LINK} 🎁\nوإذا بدك النسخة الكاملة (مستويات إضافية + شرح الكود خطوة بخطوة + تحديثات مجانية): {PRO_LINK}",
+    "bundle": "حزمة ألعاب Excel الكاملة (كل الألعاب + الشرح): {BUNDLE_LINK}"
+  }
+}
