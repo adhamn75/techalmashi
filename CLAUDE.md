@@ -77,10 +77,16 @@ per video, ever. auto_reply.py remembers answered threads (docs/replied.json) an
 we posted to the same person, keeping the first, within a quota cap (100 deletes/day, none 08–10 UTC).
 Any change to replying must keep both guards. Kill switch: a file `.replies_off` in the repo root.
 
-## ON HOLD (owner's decision, 2026-11-14)
-tech3almashi (excel + family) is paused: its stats reset to 0 subs / 2 videos on 2026-11-13 and its playlists return 403,
-so the token may point to a different channel. Ready excel/family episodes are `"status": "hold"` (publish.py skips them);
-Pac-Man (yX9duW1rfTo) was unscheduled/made private. Horror keeps publishing. Do not set them back to "ready" until the owner says so.
+## ON HOLD (owner's decision, 2026-11-14; updated 2026-11-19)
+Cause found 2026-11-19: the original channel **@tech3almashi** (UC089ZB6HkdbJhATBrddL7oQ, 5 subs, 10 Shorts, ~7.5K views) lived in the Brand Account
+«almashi temp», which the owner deleted on ~11-13. The token was then re-granted on the new, empty **@tech3almashi-n** (UCAo35INP2CMim87ZrqF3jJw),
+so stats showed 0 subs / 3 videos. «almashi temp» was restored on 2026-11-19 (Google Account → Brand Accounts → Deleted accounts). NEVER delete
+«almashi temp» or the Brand Accounts again. One Google login (tech3almashi@gmail.com) owns both channels: tech3almashi (excel+family) and Horror shorts.
+**Official channel = @tech3almashi (UC089ZB6HkdbJhATBrddL7oQ).** `-n` is to be abandoned (owner deletes it himself after the re-upload).
+Playlists on the original: Excel `PLYdOHth1Xago`, Family `PLfUdrVKeKj4Y` (in settings.playlists). Horror playlist unchanged.
+TODO until the token is reconnected to the ORIGINAL channel (Connect YouTube workflow, account=tech, pick @tech3almashi not -n): excel/family stay `"status": "hold"`.
+ep06-flappy, fam06-gems, fam07-purchase, ep07-pacman exist only on -n and are `hold` with their youtube_id cleared; they upload to the original once set to ready.
+Do not set excel/family back to "ready" until the owner says. Horror keeps publishing.
 
 ## Paid Excel packs — DORMANT (owner's decision, 2026-11-19)
 Prepared in `monetization/` (plan, reply texts, listing copy, checklist). Files stay FREE; nothing in it is read by any
@@ -166,7 +172,7 @@ never aimed at children, always "not made for kids". Scary through atmosphere, s
 ## Production sequence & schedule (owner's decisions, 2026-11-12) — follow this every time
 **Slots (episodes.json → settings.slots, Asia/Beirut):** Excel daily 13:00 (famous heavy games, free file) · Family Tue + Fri 20:00
 (explainers like «ابنك اتصل يطلب مالًا») · Horror daily 22:00 (motion-comic series «دفتر الجارة», one episode a day).
-Playlists (new channels, 2026-11-19): Excel `PLJJiuEYwekvg`, Family `PLI7jafWS7Mqo`, دفتر الجارة (horror channel) `PLcR-LdebtVbI`. An episode's own `"playlist"` field overrides the series playlist in `settings.playlists`; every دفتر الجارة episode gets `"playlist": "PLcR-LdebtVbI"` and other horror stories stay outside it. Every video (any series) ends with a teaser for the next one + a subscribe reason.
+Playlists (original @tech3almashi, 2026-11-19): Excel `PLYdOHth1Xago`, Family `PLfUdrVKeKj4Y`, دفتر الجارة (horror channel) `PLcR-LdebtVbI`. An episode's own `"playlist"` field overrides the series playlist in `settings.playlists`; every دفتر الجارة episode gets `"playlist": "PLcR-LdebtVbI"` and other horror stories stay outside it. Every video (any series) ends with a teaser for the next one + a subscribe reason.
 
 **Always keep TWO unpublished episodes ahead** (owner's rule): whenever the ready queue of a series is below 2, make more before
 anything else. Check `episodes.json` ready count first, then produce until each daily series has 2 ready.

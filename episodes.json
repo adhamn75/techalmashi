@@ -20,8 +20,8 @@
       }
     ],
     "playlists": {
-      "excel": "PLJJiuEYwekvg",
-      "family": "PLI7jafWS7Mqo",
+      "excel": "PLYdOHth1Xago",
+      "family": "PLfUdrVKeKj4Y",
       "horror": ""
     },
     "category_id": "27",
@@ -356,9 +356,8 @@
         "احتيال الألعاب",
         "تك عالماشي"
       ],
-      "status": "scheduled",
-      "youtube_id": "-k7FPmqMiyk",
-      "publish_at": "2026-11-13T20:00:00+02:00"
+      "status": "hold",
+      "note": "2026-11-19: only a copy on the wrong channel (@tech3almashi-n) existed; upload to the ORIGINAL @tech3almashi after the token is reconnected. Set status ready when the owner says."
     },
     {
       "id": "h-daftar01",
@@ -485,9 +484,8 @@
         "أسرار Excel",
         "تك عالماشي"
       ],
-      "status": "scheduled",
-      "youtube_id": "R7UcfkD_gjU",
-      "publish_at": "2026-11-13T13:00:00+02:00"
+      "status": "hold",
+      "note": "2026-11-19: only a copy on the wrong channel (@tech3almashi-n) existed; upload to the ORIGINAL @tech3almashi after the token is reconnected. Set status ready when the owner says."
     },
     {
       "id": "fam07-purchase",
@@ -505,9 +503,8 @@
         "الرقابة الأبوية",
         "تك عالماشي"
       ],
-      "status": "scheduled",
-      "youtube_id": "61LvasOkMjc",
-      "publish_at": "2026-11-13T20:00:00+02:00"
+      "status": "hold",
+      "note": "2026-11-19: only a copy on the wrong channel (@tech3almashi-n) existed; upload to the ORIGINAL @tech3almashi after the token is reconnected. Set status ready when the owner says."
     },
     {
       "id": "h07-closet",
@@ -548,8 +545,7 @@
         "تك عالماشي"
       ],
       "status": "hold",
-      "youtube_id": "yX9duW1rfTo",
-      "note": "unscheduled 2026-11-14 (made private) while the tech channel is checked; youtube_id kept"
+      "note": "2026-11-19: only a copy on the wrong channel (@tech3almashi-n) existed; upload to the ORIGINAL @tech3almashi after the token is reconnected. Set status ready when the owner says."
     },
     {
       "id": "fam08-stranger",
