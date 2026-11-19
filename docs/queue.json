@@ -138,7 +138,7 @@
   "id": "fam06-gems",
   "series": "family",
   "title": "«جواهر مجانية» لابنك؟ 💎 هكذا يُسرق حساب لعبته في ثانية #shorts",
-  "status": "hold",
+  "status": "ready",
   "publish_at": null,
   "youtube_id": null,
   "video_id": null
@@ -192,16 +192,16 @@
   "id": "ep06-flappy",
   "series": "excel",
   "title": "Flappy Bird داخل Excel؟! 🐦 لعبة حقيقية تلعبها بالمسافة… الملف مجاني #shorts",
-  "status": "hold",
-  "publish_at": null,
-  "youtube_id": null,
+  "status": "scheduled",
+  "publish_at": "2026-11-20T13:00:00+02:00",
+  "youtube_id": "GeHgTtuz6k8",
   "video_id": null
  },
  {
   "id": "fam07-purchase",
   "series": "family",
   "title": "فاتورة 500$ من لعبة ابنك؟! 💳 أوقف الشراء داخل التطبيقات في 10 ثوانٍ #shorts",
-  "status": "hold",
+  "status": "ready",
   "publish_at": null,
   "youtube_id": null,
   "video_id": null
@@ -219,7 +219,7 @@
   "id": "ep07-pacman",
   "series": "excel",
   "title": "باك مان داخل Excel؟! 👻 أشباح تطاردك بأقصر طريق… الملف مجاني #shorts",
-  "status": "hold",
+  "status": "ready",
   "publish_at": null,
   "youtube_id": null,
   "video_id": null
@@ -327,9 +327,9 @@
   "id": "h16-monitor",
   "series": "horror",
   "title": "جهاز مراقبة الطفل 📟 يبثّ بكاءً من غرفتنا… ونحن لا طفل لدينا #shorts",
-  "status": "ready",
-  "publish_at": null,
-  "youtube_id": null,
+  "status": "scheduled",
+  "publish_at": "2026-11-19T22:00:00+02:00",
+  "youtube_id": "kxydgL2xrzo",
   "video_id": null
  }
 ]
