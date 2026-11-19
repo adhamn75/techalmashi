@@ -84,7 +84,7 @@ so stats showed 0 subs / 3 videos. «almashi temp» was restored on 2026-11-19 (
 «almashi temp» or the Brand Accounts again. One Google login (tech3almashi@gmail.com) owns both channels: tech3almashi (excel+family) and Horror shorts.
 **Official channel = @tech3almashi (UC089ZB6HkdbJhATBrddL7oQ).** `-n` is to be abandoned (owner deletes it himself after the re-upload).
 Playlists on the original: Excel `PLYdOHth1Xago`, Family `PLfUdrVKeKj4Y` (in settings.playlists). Horror playlist unchanged.
-TODO until the token is reconnected to the ORIGINAL channel (Connect YouTube workflow, account=tech, pick @tech3almashi not -n): excel/family stay `"status": "hold"`.
+Token reconnected to the ORIGINAL channel on 2026-11-19 (at the Google chooser pick tech3almashi@gmail.com, then the Brand Account «almashi temp»; the plain account gives -n). Verified: stats show 5 subs / 10 videos / ~7.5K views. excel/family stay `"status": "hold"` until the owner says.
 ep06-flappy, fam06-gems, fam07-purchase, ep07-pacman exist only on -n and are `hold` with their youtube_id cleared; they upload to the original once set to ready.
 Do not set excel/family back to "ready" until the owner says. Horror keeps publishing.
 
