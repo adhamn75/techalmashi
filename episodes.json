@@ -20,8 +20,8 @@
       }
     ],
     "playlists": {
-      "excel": "PLYdOHth1Xago",
-      "family": "PLfUdrVKeKj4Y",
+      "excel": "PLJJiuEYwekvg",
+      "family": "PLI7jafWS7Mqo",
       "horror": ""
     },
     "category_id": "27",
@@ -379,7 +379,8 @@
       ],
       "status": "scheduled",
       "youtube_id": "poCU-w1Dbks",
-      "publish_at": "2026-11-12T22:00:00+02:00"
+      "publish_at": "2026-11-12T22:00:00+02:00",
+      "playlist": "PLcR-LdebtVbI"
     },
     {
       "id": "h-daftar02",
@@ -400,7 +401,8 @@
       ],
       "status": "scheduled",
       "youtube_id": "tCiSvZIEuXQ",
-      "publish_at": "2026-11-13T22:00:00+02:00"
+      "publish_at": "2026-11-13T22:00:00+02:00",
+      "playlist": "PLcR-LdebtVbI"
     },
     {
       "id": "h-daftar03",
@@ -421,7 +423,8 @@
       ],
       "status": "scheduled",
       "youtube_id": "W6DO3XHqRbU",
-      "publish_at": "2026-11-13T22:00:00+02:00"
+      "publish_at": "2026-11-13T22:00:00+02:00",
+      "playlist": "PLcR-LdebtVbI"
     },
     {
       "id": "h-daftar04",
@@ -442,7 +445,8 @@
       ],
       "status": "scheduled",
       "youtube_id": "BIsYtmc2XyI",
-      "publish_at": "2026-11-14T22:00:00+02:00"
+      "publish_at": "2026-11-14T22:00:00+02:00",
+      "playlist": "PLcR-LdebtVbI"
     },
     {
       "id": "h06-ownnumber",

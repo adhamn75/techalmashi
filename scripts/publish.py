@@ -269,7 +269,7 @@ def main() -> int:
             ep.setdefault("removed_youtube_ids", []).append(u["id"])
             print(f"Replaced: old copy {u['id']} ({u['views']} views) is now private.")
         ep.pop("replace", None)
-        playlist = (settings.get("playlists") or {}).get(ep.get("series") or "")
+        playlist = ep.get("playlist") or (settings.get("playlists") or {}).get(ep.get("series") or "")  # per-episode override wins (دفتر الجارة has its own playlist)
         if playlist:
             try:
                 add_to_playlist(yt_ep, playlist, vid)

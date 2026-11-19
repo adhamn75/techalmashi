@@ -162,7 +162,7 @@ never aimed at children, always "not made for kids". Scary through atmosphere, s
 ## Production sequence & schedule (owner's decisions, 2026-11-12) — follow this every time
 **Slots (episodes.json → settings.slots, Asia/Beirut):** Excel daily 13:00 (famous heavy games, free file) · Family Tue + Fri 20:00
 (explainers like «ابنك اتصل يطلب مالًا») · Horror daily 22:00 (motion-comic series «دفتر الجارة», one episode a day).
-Playlists: Excel `PLYdOHth1Xago`, Family `PLfUdrVKeKj4Y`. Every video (any series) ends with a teaser for the next one + a subscribe reason.
+Playlists (new channels, 2026-11-19): Excel `PLJJiuEYwekvg`, Family `PLI7jafWS7Mqo`, دفتر الجارة (horror channel) `PLcR-LdebtVbI`. An episode's own `"playlist"` field overrides the series playlist in `settings.playlists`; every دفتر الجارة episode gets `"playlist": "PLcR-LdebtVbI"` and other horror stories stay outside it. Every video (any series) ends with a teaser for the next one + a subscribe reason.
 
 **Always keep TWO unpublished episodes ahead** (owner's rule): whenever the ready queue of a series is below 2, make more before
 anything else. Check `episodes.json` ready count first, then produce until each daily series has 2 ready.
@@ -176,7 +176,7 @@ anything else. Check `episodes.json` ready count first, then produce until each 
    `github.com/adhamn75/techalmashi/new/main?filename=work/...` (owner is signed in), paste via a synthetic ClipboardEvent, commit; pull and decode in the sandbox.
    Then Runtime → Disconnect and delete runtime. Never click OAuth/consent dialogs; ask the owner.
 4. Build: `work/layla` scripts (build.py/audio.py, env EP=N; PIL + ffmpeg, Ken-Burns, grain, vignette, drone + heartbeat + sting, loudnorm I=-15),
-   check contact sheet, mux crf 27. Copy to `videos/horror/daftar-aljara-epN.mp4`, add the episode to `episodes.json` (status ready, title ends #shorts, description with teaser), push.
+   check contact sheet, mux crf 27. Copy to `videos/horror/daftar-aljara-epN.mp4`, add the episode to `episodes.json` (status ready, `"playlist": "PLcR-LdebtVbI"`, title ends #shorts, description with teaser), push.
 5. Send the owner the preview only for new styles; otherwise just report.
 Colab/tts steps need his computer on (built-in browser + desktop-commander). Do not use Google Drive for anything.
 
