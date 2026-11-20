@@ -356,7 +356,9 @@
         "احتيال الألعاب",
         "تك عالماشي"
       ],
-      "status": "ready"
+      "status": "scheduled",
+      "youtube_id": "5HpH56EBC4Q",
+      "publish_at": "2026-11-20T20:00:00+02:00"
     },
     {
       "id": "h-daftar01",
@@ -463,8 +465,10 @@
         "قصة رعب قصيرة",
         "مسلسل رعب"
       ],
-      "status": "ready",
-      "playlist": "PLcR-LdebtVbI"
+      "status": "scheduled",
+      "playlist": "PLcR-LdebtVbI",
+      "youtube_id": "AmyUcLRSgrY",
+      "publish_at": "2026-11-20T18:00:00+02:00"
     },
     {
       "id": "h-daftar06",
@@ -483,8 +487,10 @@
         "قصة رعب قصيرة",
         "مسلسل رعب"
       ],
-      "status": "ready",
-      "playlist": "PLcR-LdebtVbI"
+      "status": "scheduled",
+      "playlist": "PLcR-LdebtVbI",
+      "youtube_id": "tBhK0JOOhp0",
+      "publish_at": "2026-11-20T22:00:00+02:00"
     },
     {
       "id": "h-daftar07",
