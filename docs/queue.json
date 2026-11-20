@@ -138,9 +138,9 @@
   "id": "fam06-gems",
   "series": "family",
   "title": "«جواهر مجانية» لابنك؟ 💎 هكذا يُسرق حساب لعبته في ثانية #shorts",
-  "status": "ready",
-  "publish_at": null,
-  "youtube_id": null,
+  "status": "scheduled",
+  "publish_at": "2026-11-20T20:00:00+02:00",
+  "youtube_id": "5HpH56EBC4Q",
   "video_id": null
  },
  {
@@ -183,18 +183,18 @@
   "id": "h-daftar05",
   "series": "horror",
   "title": "ليلى ربطت الباب بحبل… فاستيقظت واقفة عنده! انتظروا الحلقة القادمة · دفتر الجارة 📓 5 #shorts",
-  "status": "ready",
-  "publish_at": null,
-  "youtube_id": null,
+  "status": "scheduled",
+  "publish_at": "2026-11-20T18:00:00+02:00",
+  "youtube_id": "AmyUcLRSgrY",
   "video_id": null
  },
  {
   "id": "h-daftar06",
   "series": "horror",
   "title": "خلف الباب: «كنتُ ليلى مثلك»… والجارة لم تسافر! انتظروا الحلقة القادمة · دفتر الجارة 📓 6 #shorts",
-  "status": "ready",
-  "publish_at": null,
-  "youtube_id": null,
+  "status": "scheduled",
+  "publish_at": "2026-11-20T22:00:00+02:00",
+  "youtube_id": "tBhK0JOOhp0",
   "video_id": null
  },
  {
@@ -399,6 +399,33 @@
   "id": "fam10-hacker",
   "series": "family",
   "title": "هاكر جرّب 4 حيل على حساب طفلك… وفشل في كلها! 🛡️ #shorts",
+  "status": "ready",
+  "publish_at": null,
+  "youtube_id": null,
+  "video_id": null
+ },
+ {
+  "id": "fam11-wifi",
+  "series": "family",
+  "title": "📶 «Cafe_Free_Guest»: الواي فاي المجاني الذي قد يقرأ رسائل ابنك! #shorts",
+  "status": "ready",
+  "publish_at": null,
+  "youtube_id": null,
+  "video_id": null
+ },
+ {
+  "id": "fam12-passphrase",
+  "series": "family",
+  "title": "🔑 «ahmad2015»… كلمة سرّ ابنك يخمّنها الحاسوب فورًا! #shorts",
+  "status": "ready",
+  "publish_at": null,
+  "youtube_id": null,
+  "video_id": null
+ },
+ {
+  "id": "fam13-screentime",
+  "series": "family",
+  "title": "⏰ الساعة ٣ فجرًا وابنك ما زال يلعب! هذا الإعداد يحلّ المشكلة #shorts",
   "status": "ready",
   "publish_at": null,
   "youtube_id": null,
