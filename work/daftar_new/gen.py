@@ -2,7 +2,7 @@ import json, urllib.request, torch, os
 from diffusers import StableDiffusionXLPipeline
 P = json.loads(urllib.request.urlopen('https://raw.githubusercontent.com/adhamn75/techalmashi/main/work/daftar_new/prompts.json').read())
 pipe = StableDiffusionXLPipeline.from_pretrained('cagliostrolab/animagine-xl-4.0', torch_dtype=torch.float16, use_safetensors=True).to('cuda')
-pipe.enable_vae_tiling()
+pipe.vae.enable_tiling()
 os.makedirs('out', exist_ok=True)
 for ep, ps in P['prompts'].items():
     for i, p in enumerate(ps, 1):
