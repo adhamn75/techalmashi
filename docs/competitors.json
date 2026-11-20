@@ -1,0 +1,27 @@
+{
+ "updated": "2026-11-20",
+ "note": "Target 6-8 per niche; max 3 added per run. Only channels whose numbers were read from a public page are listed. Excel and family niches still empty: search/fetch tools found no Arabic channel with readable stats (see report).",
+ "channels": [
+  {
+   "name": "YH Horror رعب",
+   "handle": "@yhro3b",
+   "url": "https://www.youtube.com/@yhro3b",
+   "niche": "horror",
+   "why": "Arabic (Egypt) animated horror stories, 593K subs, 506 videos; mostly long-form, a reference for title style and cadence (vidIQ stats page)"
+  },
+  {
+   "name": "قصص بابل",
+   "handle": "@babelstories08",
+   "url": "https://www.youtube.com/@babelstories08",
+   "niche": "horror",
+   "why": "Arabic animated horror/story channel, 1.12M subs, 594 videos; titles with emoji + topic + series tags (vidIQ stats page)"
+  },
+  {
+   "name": "Horror Shorts Party",
+   "handle": "@horrorshortsparty",
+   "url": "https://www.youtube.com/@horrorshortsparty",
+   "niche": "horror",
+   "why": "English, not Arabic: 1.7M subs, posts #shorts of animated horror daily; used only as a Shorts-format reference"
+  }
+ ]
+}
