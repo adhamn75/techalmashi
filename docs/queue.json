@@ -331,5 +331,32 @@
   "publish_at": "2026-11-19T22:00:00+02:00",
   "youtube_id": "kxydgL2xrzo",
   "video_id": null
+ },
+ {
+  "id": "ep09-breakout",
+  "series": "excel",
+  "title": "لعبة تحطيم الطوب داخل Excel؟! 🧱 كرة ترتدّ حقًّا بين الخلايا… الملف مجاني #shorts",
+  "status": "ready",
+  "publish_at": null,
+  "youtube_id": null,
+  "video_id": null
+ },
+ {
+  "id": "h17-letter",
+  "series": "horror",
+  "title": "رسالة بخط يدي ✉️ لا أذكر أني كتبتها… وتاريخها غدًا #shorts",
+  "status": "ready",
+  "publish_at": null,
+  "youtube_id": null,
+  "video_id": null
+ },
+ {
+  "id": "h18-stairs",
+  "series": "horror",
+  "title": "الدرج 🪜 أعدّه كل ليلة 12 درجة… الليلة صار 13 #shorts",
+  "status": "ready",
+  "publish_at": null,
+  "youtube_id": null,
+  "video_id": null
  }
 ]
