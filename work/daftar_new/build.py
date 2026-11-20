@@ -10,35 +10,36 @@ root = os.path.dirname(os.path.abspath(__file__))
 imgd = os.environ.get("IMG", f"{root}/img"); vd = os.environ.get("VOICE", f"{root}/voice/layla_ep{EP}")
 tmp = f"{root}/tmp{EP}"; os.makedirs(tmp, exist_ok=True)
 caps = json.load(open(f"{root}/lines.json", encoding="utf-8"))[f"layla_ep{EP}"]
-caps = [c[1] if isinstance(c, list) else c for c in caps]
+caps = [caps[k] for k in sorted(caps, key=lambda x: int(x.lstrip("n")))] if isinstance(caps, dict) else [c[1] if isinstance(c, list) else c for c in caps]
 def dur(p): return float(subprocess.check_output(["ffprobe","-v","error","-show_entries","format=duration","-of","csv=p=0",p]).decode())
 voices = [f"{vd}/n{i+1}.mp3" for i in range(len(caps))]
+img_of = [1,2,3,4,5,6,6][:len(caps)]
+COLD = int(os.environ.get("COLD", "0"))
+if COLD:  # cold open: the scariest line first, then the story from the start
+    caps = [caps[COLD-1]] + caps; voices = [voices[COLD-1]] + voices; img_of = [img_of[COLD-1]] + img_of
 ds = [dur(v) for v in voices]; GAP = 0.18; LEAD = 0.05
 starts = []; t = LEAD
 for d in ds: starts.append(t); t += d + GAP
 total = t + 0.6
-img_of = [1,2,3,4,5,6,6][:len(caps)]
 font = ImageFont.truetype(f"{root}/fonts/Cairo.ttf", 66)
-try: font.set_variation_by_axes([0, 900])
+try: font.set_variation_by_axes([900, 0])
 except Exception: pass
-try:
-    from arabic_reshaper import reshape; from bidi.algorithm import get_display
-    sh = lambda s: get_display(reshape(s))
-except Exception: sh = lambda s: s
+sh = lambda s: s
+RT = dict(direction="rtl", language="ar")
 def wrap(s, maxw, d):
     words, lines, cur = s.split(), [], ""
     for w in words:
         n = (cur + " " + w).strip()
-        if d.textlength(sh(n), font=font) <= maxw: cur = n
+        if d.textlength(n, font=font, **RT) <= maxw: cur = n
         else: lines.append(cur); cur = w
     lines.append(cur); return lines
 def frame_text(idx):
     im = Image.new("RGBA", (W, H), (0,0,0,0)); d = ImageDraw.Draw(im)
     ls = wrap(caps[idx], W-160, d); y = 1380
     for l in ls:
-        tw = d.textlength(sh(l), font=font)
-        for ox,oy in [(-3,0),(3,0),(0,-3),(0,3),(0,6)]: d.text(((W-tw)/2+ox, y+oy), sh(l), font=font, fill=(0,0,0,255))
-        d.text(((W-tw)/2, y), sh(l), font=font, fill=(255,235,120,255)); y += 90
+        tw = d.textlength(l, font=font, **RT)
+        for ox,oy in [(-3,0),(3,0),(0,-3),(0,3),(0,6)]: d.text(((W-tw)/2+ox, y+oy), sh(l), font=font, fill=(0,0,0,255), **RT)
+        d.text(((W-tw)/2, y), sh(l), font=font, fill=(255,235,120,255), **RT); y += 90
     p = f"{tmp}/cap{idx}.png"; im.save(p); return p
 # vignette
 vg = Image.new("L", (W, H), 0); dd = ImageDraw.Draw(vg)
