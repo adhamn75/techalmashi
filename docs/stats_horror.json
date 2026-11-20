@@ -1,17 +1,25 @@
 {
- "updated": "2026-11-20T19:59:47+00:00",
+ "updated": "2026-11-20T20:09:52+00:00",
  "channel": {
   "title": "Horror shorts",
   "subscribers": 14,
   "views": 0,
-  "videos": 20
+  "videos": 21
  },
  "videos": [
+  {
+   "id": "tBhK0JOOhp0",
+   "title": "خلف الباب: «كنتُ ليلى مثلك»… والجارة لم تسافر! انتظروا الحلقة القادمة · دفتر الجارة 📓 6 #shorts",
+   "published": "2026-11-20T20:00:06Z",
+   "views": 0,
+   "likes": 0,
+   "comments": 0
+  },
   {
    "id": "AmyUcLRSgrY",
    "title": "ليلى ربطت الباب بحبل… فاستيقظت واقفة عنده! انتظروا الحلقة القادمة · دفتر الجارة 📓 5 #shorts",
    "published": "2026-11-20T16:00:13Z",
-   "views": 56,
+   "views": 45,
    "likes": 1,
    "comments": 0
   },
@@ -67,7 +75,7 @@
    "id": "dr6SqHP9MWM",
    "title": "الراديو 📻 لا بطارية فيه… لكنّه اشتغل وحده ونطق اسمي #shorts",
    "published": "2026-11-16T20:00:37Z",
-   "views": 419,
+   "views": 418,
    "likes": 4,
    "comments": 0
   },
