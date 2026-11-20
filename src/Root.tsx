@@ -33,6 +33,9 @@ import {H13StreetLamp, H13_FRAMES} from './horror/H13StreetLamp';
 import {H14Kitchen, H14_FRAMES} from './horror/H14Kitchen';
 import {H15Bus, H15_FRAMES} from './horror/H15Bus';
 import {H16Monitor, H16_FRAMES} from './horror/H16Monitor';
+import {H17Letter, H17_FRAMES} from './horror/H17Letter';
+import {H18Stairs, H18_FRAMES} from './horror/H18Stairs';
+import {Ep09Breakout, EP09_FRAMES} from './episodes/Ep09Breakout';
 
 // Every episode is one Composition. Its id must match "composition" in episodes.json.
 export const Root: React.FC = () => (
@@ -70,5 +73,8 @@ export const Root: React.FC = () => (
     <Composition id="H14Kitchen" component={H14Kitchen} durationInFrames={H14_FRAMES} fps={30} width={1080} height={1920} />
     <Composition id="H15Bus" component={H15Bus} durationInFrames={H15_FRAMES} fps={30} width={1080} height={1920} />
     <Composition id="H16Monitor" component={H16Monitor} durationInFrames={H16_FRAMES} fps={30} width={1080} height={1920} />
+    <Composition id="H17Letter" component={H17Letter} durationInFrames={H17_FRAMES} fps={30} width={1080} height={1920} />
+    <Composition id="H18Stairs" component={H18Stairs} durationInFrames={H18_FRAMES} fps={30} width={1080} height={1920} />
+    <Composition id="Ep09Breakout" component={Ep09Breakout} durationInFrames={EP09_FRAMES} fps={30} width={1080} height={1920} />
   </>
 );
