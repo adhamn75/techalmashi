@@ -207,7 +207,15 @@ def main() -> int:
     yt = None if DRY_RUN else yt_for(None)
     taken: set[str] = set()
     failed: list[str] = []
+    tz = ZoneInfo(settings["timezone"])
     for series, when in slots:
+      # one video per series per day: a slot whose day already holds a scheduled episode of that series stays empty
+      # (two manual runs on 2026-11-19 both scheduled an Excel episode for 2026-11-20 13:00)
+      busy = [e["id"] for e in data["episodes"] if series and e.get("series") == series and e.get("status") == "scheduled"
+              and e.get("publish_at") and datetime.fromisoformat(e["publish_at"]).astimezone(tz).date() == when.astimezone(tz).date()]
+      if busy:
+          print(f"Slot {series} {when.isoformat()} already taken by {', '.join(busy)}; nothing new for that day.")
+          continue
       while True:  # a duplicate is skipped and the next ready episode of the series takes the slot
         ep = pick(data["episodes"], series, taken)
         if ep is None:
