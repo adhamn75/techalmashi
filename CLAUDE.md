@@ -172,8 +172,11 @@ never aimed at children, always "not made for kids". Scary through atmosphere, s
 (explainers like «ابنك اتصل يطلب مالًا») · Horror daily 22:00 (motion-comic series «دفتر الجارة», one episode a day).
 Playlists (original @tech3almashi, 2026-11-19): Excel `PLYdOHth1Xago`, Family `PLfUdrVKeKj4Y`, دفتر الجارة (horror channel) `PLcR-LdebtVbI`. An episode's own `"playlist"` field overrides the series playlist in `settings.playlists`; every دفتر الجارة episode gets `"playlist": "PLcR-LdebtVbI"` and other horror stories stay outside it. Every video (any series) ends with a teaser for the next one + a subscribe reason.
 
-**Always keep TWO unpublished episodes ahead** (owner's rule): whenever the ready queue of a series is below 2, make more before
-anything else. Check `episodes.json` ready count first, then produce until each daily series has 2 ready.
+**Always keep episodes ahead** (owner's rule, updated 2026-11-20): never fewer than TWO ready in any series, and for the DAILY series
+(Excel, Horror) aim for THREE, because a batch takes hours and needs the owner's PC. Check `episodes.json` ready count first and produce
+until every series is at its target before anything else. Next Excel episode: Minesweeper (promised teaser) — Excel is the thinnest queue.
+Horror دفتر الجارة: eps 5–6 open with a cold-open of the scariest line (`COLD=<line> EP=<n> python3 work/daftar_new/build.py`), 7–8 open calmly,
+as an A/B test — compare views after a few days.
 
 **دفتر الجارة titles & pacing (owner's decision, 2026-11-19):** each episode's title is its own, drawn from what happens inside THAT episode's story (a suspenseful line about its content), ends with a teaser for the next one («انتظروا الحلقة القادمة…» / what comes next without spoiling), then «دفتر الجارة 📓 N»; ≤100 chars, ends #shorts. Not the old «دفتر الجارة 📓 الحلقة N: …» shape. First second of the video starts on the scary line. One episode per day at 22:00, never two the same day. Produce 4 episodes per PC session and keep 2 ready ahead. First two new episodes: compare their views against eps 1-4 before generalising.
 
