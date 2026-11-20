@@ -25,6 +25,9 @@ import {Family08Stranger, FAMILY08_FRAMES} from './episodes/Fam08Stranger';
 import {H08Gallery, H08_FRAMES} from './horror/H08Gallery';
 import {Ep08Invaders, EP08_FRAMES} from './episodes/Ep08Invaders';
 import {Family09Qr, FAMILY09_FRAMES} from './episodes/Fam09Qr';
+import {Family11Wifi, FAMILY11_FRAMES} from './episodes/Fam11Wifi';
+import {Family12Pass, FAMILY12_FRAMES} from './episodes/Fam12Pass';
+import {Family13Screen, FAMILY13_FRAMES} from './episodes/Fam13Screen';
 import {H09Ceiling, H09_FRAMES} from './horror/H09Ceiling';
 import {H10Radio, H10_FRAMES} from './horror/H10Radio';
 import {H11Window, H11_FRAMES} from './horror/H11Window';
@@ -65,6 +68,9 @@ export const Root: React.FC = () => (
     <Composition id="H08Gallery" component={H08Gallery} durationInFrames={H08_FRAMES} fps={30} width={1080} height={1920} />
     <Composition id="Ep08Invaders" component={Ep08Invaders} durationInFrames={EP08_FRAMES} fps={30} width={1080} height={1920} />
     <Composition id="Family09Qr" component={Family09Qr} durationInFrames={FAMILY09_FRAMES} fps={30} width={1080} height={1920} />
+    <Composition id="Family11Wifi" component={Family11Wifi} durationInFrames={FAMILY11_FRAMES} fps={30} width={1080} height={1920} />
+    <Composition id="Family12Pass" component={Family12Pass} durationInFrames={FAMILY12_FRAMES} fps={30} width={1080} height={1920} />
+    <Composition id="Family13Screen" component={Family13Screen} durationInFrames={FAMILY13_FRAMES} fps={30} width={1080} height={1920} />
     <Composition id="H09Ceiling" component={H09Ceiling} durationInFrames={H09_FRAMES} fps={30} width={1080} height={1920} />
     <Composition id="H10Radio" component={H10Radio} durationInFrames={H10_FRAMES} fps={30} width={1080} height={1920} />
     <Composition id="H11Window" component={H11Window} durationInFrames={H11_FRAMES} fps={30} width={1080} height={1920} />

@@ -57,8 +57,8 @@ Space Invaders made (ep 8, files/invaders.xlsm). Breakout made (ep 9, files/brea
 Horror code-drawn eps made: rules, frame481, elevator, camera, mirror, own number, closet, gallery (h08), ceiling (h09), radio (h10), window (h11), footprints (h12), street lamp (h13, peephole), kitchen (h14, mother's voice), last bus (h15, one-point aisle + window reflection), baby monitor (h16, device on nightstand + LEDs), letter (h17, floor-level door gap + phone-torch reading), stairs (h18, side cut-away + step counter, 13th step opens its eyes).
 **Promised next horror (h18 teaser «هاتفٌ مقطوعُ السلك… يرنّ»): a landline whose cord is cut, ringing — make it next.**
 
-Family series (parents) — made: scam message, location, code, suspended, voice, gems, purchase, game-chat stranger (ep 8), QR scam (ep 9).
-**Promised next (ep 9 teaser): free public Wi-Fi trap — make it next.** Still open: weak password vs passphrase ·
+Family series (parents) — made: scam message, location, code, suspended, voice, gems, purchase, game-chat stranger (ep 8), QR scam (ep 9), failed-strategies-of-hacker (fam10, pre-rendered video), public Wi-Fi (fam11), passphrase (fam12), screen time (fam13).
+**Promised next (fam13 teaser «صورة الزيّ المدرسيّ تكشف مدرسته»): oversharing school uniform in photos — make it next (fam14).** Still open: weak password vs passphrase ·
 2-step verification in 10 s · fake Free-Fire/Roblox gem generator · screen-time setup on the phone ·
 QR code scam · "send me the code you got" · public Wi-Fi · oversharing school uniform in photos ·
 deepfake voice of a relative asking for money.
