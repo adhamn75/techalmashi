@@ -1,0 +1,38 @@
+{
+ "style": "masterpiece, high score, great score, absurdres, anime horror illustration, dark moody atmosphere, cinematic lighting, deep blue shadows, faint warm yellow window light, film grain, vertical composition, sfx-free",
+ "neg": "lowres, bad anatomy, bad hands, text, error, missing fingers, extra digit, jpeg artifacts, signature, watermark, username, blurry, nsfw, gore, blood, cute, chibi",
+ "prompts": {
+  "layla_ep5": [
+   "1girl, 12 year old child, short black bob haircut, yellow jacket, brown eyes, seen from behind, closing a rain-streaked window in a dark apartment bedroom at night, small lamp, tense",
+   "close-up of an old brown notebook open on a wooden desk, a fresh handwritten line in ink on the page, child's hand touching the paper, dim lamp",
+   "a wooden apartment door at night with a thick rope tied around the doorknob and a chair wedged under it, dark hallway, eerie",
+   "1girl, 12 year old child, short black bob haircut, yellow jacket, brown eyes, sitting on the floor hugging her knees, staring up at a wall clock almost at three o'clock, worried face, dim lamp light",
+   "1girl, 12 year old child, short black bob haircut, yellow jacket, brown eyes, standing frozen right in front of the door, loose rope hanging from her hand, shocked wide eyes, dark room",
+   "extreme close-up of a brass doorknob slowly turning, thin yellow light under the door, shadows, horror"
+  ],
+  "layla_ep6": [
+   "close-up of a child's hand gripping a doorknob that is turning by itself, dark, tense, cold blue light",
+   "a dark wooden door with a keyhole glowing faintly yellow, shadow of a person standing behind, horror",
+   "hands of an unseen woman holding an old brown notebook with a broken lock, dusty, old photograph feel, dim light",
+   "an empty abandoned apartment door ajar, dust, faded floral wallpaper, ghostly silence, night hallway",
+   "a dusty bookshelf holding a row of identical old brown notebooks with broken locks, moody light",
+   "1girl, 12 year old child, short black bob haircut, yellow jacket, brown eyes, wide frightened eyes reflected in a glass window, an open notebook glowing slightly in her hands, night"
+  ],
+  "layla_ep7": [
+   "a child's hand holding a pen hovering over a blank notebook page, trembling, dim lamp",
+   "1girl, 12 year old child, short black bob haircut, yellow jacket, brown eyes, thinking sadly, faint silhouettes of different people shadowed on the wall behind her, moody blue light",
+   "a wooden door at night with a long shadow beneath it, old wall clock ticking at one minute before three, tension",
+   "1girl, 12 year old child, short black bob haircut, yellow jacket, brown eyes, writing determinedly in a notebook, tears in her eyes, lamp light, close-up",
+   "black ink spreading and bleeding across a white notebook page, macabre, close-up, dim light",
+   "an entirely black notebook page with one single glowing handwritten word in white ink, eerie"
+  ],
+  "layla_ep8": [
+   "a long dark apartment hallway at night, a door swinging open by itself, nobody there, eerie light",
+   "an old brown notebook with a broken lock lying on a doorstep, a paper tag on it, moody light, close-up",
+   "1girl, 12 year old child, short black bob haircut, yellow jacket, brown eyes, closing a heavy door from inside, shadows of feet moving away under the door gap, dark",
+   "a dark apartment door in a hallway with no light under it, a faded nameplate, eerie silence",
+   "a small 8 year old girl with a long braid and red sweater standing at an open apartment door, curious face, dim hallway light",
+   "a wooden table in an empty living room with an old brown notebook with a broken lock on it, dusty window light"
+  ]
+ }
+}
