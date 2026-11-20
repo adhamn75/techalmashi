@@ -19,7 +19,7 @@ const A = VOICE.map((v) => v.at);
 const YEL = '#ffd23f', GRN = '#22d27a', RED = '#ff4d4d', BLUE = '#4b8bff', INK = '#1d1d2b';
 const clamp = {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'} as const;
 
-const Stick: React.FC<{x: number; y: number; s?: number; hat?: boolean; bag?: boolean; shirt?: string; walk?: number; arm?: number; flip?: boolean}> = ({x, y, s = 1, hat, bag, shirt, walk = 0, arm = 0, flip}) => {
+export const Stick: React.FC<{x: number; y: number; s?: number; hat?: boolean; bag?: boolean; shirt?: string; walk?: number; arm?: number; flip?: boolean}> = ({x, y, s = 1, hat, bag, shirt, walk = 0, arm = 0, flip}) => {
   const sw = Math.sin(walk) * 22;
   return (
     <svg width={260} height={420} viewBox="0 0 260 420" style={{position: 'absolute', left: x, top: y, scale: `${flip ? -s : s} ${s}`, transformOrigin: '130px 210px', overflow: 'visible'}}>
