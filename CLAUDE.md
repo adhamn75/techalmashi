@@ -168,8 +168,9 @@ never aimed at children, always "not made for kids". Scary through atmosphere, s
 
 
 ## Production sequence & schedule (owner's decisions, 2026-11-12) — follow this every time
-**Slots (episodes.json → settings.slots, Asia/Beirut):** Excel daily 13:00 (famous heavy games, free file) · Family Tue + Fri 20:00
-(explainers like «ابنك اتصل يطلب مالًا») · Horror daily 22:00 (motion-comic series «دفتر الجارة», one episode a day).
+**Slots (episodes.json → settings.slots, Asia/Beirut) — UPDATED 2026-11-20 by the owner:** Excel daily 13:00 · Family DAILY 20:00 (was Tue+Fri) ·
+Horror TWICE a day 18:00 + 22:00 (publish.py now guards per slot time, not per day, so re-runs never fill a slot twice).
+Tell the owner when any series drops below 3 ready episodes. Local renders here: `--browser-executable=/usr/bin/google-chrome --concurrency=2`.
 Playlists (original @tech3almashi, 2026-11-19): Excel `PLYdOHth1Xago`, Family `PLfUdrVKeKj4Y`, دفتر الجارة (horror channel) `PLcR-LdebtVbI`. An episode's own `"playlist"` field overrides the series playlist in `settings.playlists`; every دفتر الجارة episode gets `"playlist": "PLcR-LdebtVbI"` and other horror stories stay outside it. Every video (any series) ends with a teaser for the next one + a subscribe reason.
 
 **Always keep episodes ahead** (owner's rule, updated 2026-11-20): never fewer than TWO ready in any series, and for the DAILY series
