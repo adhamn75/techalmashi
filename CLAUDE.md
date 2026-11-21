@@ -173,6 +173,8 @@ Horror TWICE a day 18:00 + 22:00 (publish.py now guards per slot time, not per d
 Tell the owner when any series drops below 3 ready episodes. Local renders here: `--browser-executable=/usr/bin/google-chrome --concurrency=2`.
 Playlists (original @tech3almashi, 2026-11-19): Excel `PLYdOHth1Xago`, Family `PLfUdrVKeKj4Y`, دفتر الجارة (horror channel) `PLcR-LdebtVbI`. An episode's own `"playlist"` field overrides the series playlist in `settings.playlists`; every دفتر الجارة episode gets `"playlist": "PLcR-LdebtVbI"` and other horror stories stay outside it. Every video (any series) ends with a teaser for the next one + a subscribe reason.
 
+**Excel every other day (owner's decision, 2026-11-21):** the excel slot has `"every_days": 2, "anchor": "2026-11-21"` (13:00 on 21, 23, 25…). Remove both keys to go back to daily. Excel target stays 3 ready. The same day the owner asked to see the stickman look sooner: fam14-uniform → fam15-2fa → fam16-stranger moved to the front of the family queue (keeps their teaser chain), then the rest.
+
 **Always keep episodes ahead** (owner's rule, updated 2026-11-20): never fewer than TWO ready in any series, and for the DAILY series
 (Excel, Horror) aim for THREE, because a batch takes hours and needs the owner's PC. Check `episodes.json` ready count first and produce
 until every series is at its target before anything else. Next Excel episode: the platformer (ep12, promised by ep11).
