@@ -507,8 +507,10 @@
         "قصة رعب قصيرة",
         "مسلسل رعب"
       ],
-      "status": "ready",
-      "playlist": "PLcR-LdebtVbI"
+      "status": "scheduled",
+      "playlist": "PLcR-LdebtVbI",
+      "youtube_id": "4EJuUe4zabo",
+      "publish_at": "2026-11-21T22:00:00+02:00"
     },
     {
       "id": "h-daftar08",
@@ -585,7 +587,9 @@
         "حماية الأطفال",
         "تك عالماشي"
       ],
-      "status": "ready"
+      "status": "scheduled",
+      "youtube_id": "BVA2Rx0d_5E",
+      "publish_at": "2026-11-21T20:00:00+02:00"
     },
     {
       "id": "fam15-2fa",
