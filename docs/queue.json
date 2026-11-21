@@ -457,5 +457,23 @@
   "publish_at": null,
   "youtube_id": null,
   "video_id": null
+ },
+ {
+  "id": "ep10-minesweeper",
+  "series": "excel",
+  "title": "كاسحة الألغام داخل Excel؟! 💣 اضغط خلية… وتنفتح الخلايا الفارغة وحدها… الملف مجاني #shorts",
+  "status": "ready",
+  "publish_at": null,
+  "youtube_id": null,
+  "video_id": null
+ },
+ {
+  "id": "ep11-2048",
+  "series": "excel",
+  "title": "لعبة 2048 داخل Excel؟! 🟨 اضغط سهمًا… فتندمج الخلايا حتى 2048… الملف مجاني #shorts",
+  "status": "ready",
+  "publish_at": null,
+  "youtube_id": null,
+  "video_id": null
  }
 ]
