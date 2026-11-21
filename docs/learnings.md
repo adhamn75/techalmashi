@@ -11,3 +11,9 @@
 - Public YouTube pages are not readable from the sandbox; only vidIQ stats pages work. Found 3 horror channels with real numbers; no Arabic Excel/family channel had readable stats → fill via yt-dlp in Actions.
 - Big Arabic horror channels (593K, 1.12M subs) get their spikes (25–87×) from one trending object (Labubu) + a part 2; their normal videos are 1–8K. Our ~1k consistency is comparable; we lack a trend-riding episode.
 - Gap is subscriber conversion (~6 subs per ~5k views), not views. Test: one trend episode per series, part-2 titles, spoken subscribe line.
+
+## 2026-11-21 (scheduled production run)
+- Excel game episodes keep paying off: Pac-Man reached ~760 views within a day of going up (11-20) while Flappy sits at ~130 on the same day — the chase/AI angle hooks harder than "you can play it"; show the trick (BFS ghosts, flood-fill, merge rule) on screen, not just gameplay.
+- Mandelbrot (1,330) proves one striking visual beats a dull game; for games the first second must already be in motion (ep10 opens a flood-fill ripple at frame 10, ep11 slides tiles at frame 14).
+- Excel queue was the bottleneck (1 ready vs target 3) while Family had 10 ready: production effort should go to Excel until it holds 3, Family needs nothing for ~10 days.
+- TTS at +20% ran 18–20 s for 5 lines; captions that read a number aloud («ألفين وثمانية وأربعين») cost ~1.5 s — keep scripts to 4–5 short lines and show the number as digits in the caption.

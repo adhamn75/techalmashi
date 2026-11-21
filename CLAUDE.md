@@ -53,7 +53,7 @@ Excel draws your photo (pixel art from cells) · full attendance system with ove
 Excel sends WhatsApp messages · 3D cube spinning with formulas only · invoice that fills itself and
 exports PDF · AI inside a cell · live gold/dollar prices refreshing · Excel plays music ·
 Tetris in Excel · Excel as a calendar app · QR code generator in Excel.
-Space Invaders made (ep 8, files/invaders.xlsm). Breakout made (ep 9, files/breakout.xlsm). **Promised next Excel episode (ep 9 teaser «كاسحة الألغام»): Minesweeper in cells (VBA, click to open, flood-fill zeros, flags) — make it next.**
+Space Invaders made (ep 8, files/invaders.xlsm). Breakout made (ep 9, files/breakout.xlsm). Minesweeper made (ep 10, files/minesweeper.xlsm). 2048 made (ep 11, files/game2048.xlsm, OnKey arrows). **Promised next Excel episode (ep 11 teaser «بطلٌ يقفز بين المنصّات»): an original-character platformer (run + jump, gravity, platforms, coins) in cells (VBA) — make it next (ep12). No Nintendo/Mario characters or art.**
 Horror code-drawn eps made: rules, frame481, elevator, camera, mirror, own number, closet, gallery (h08), ceiling (h09), radio (h10), window (h11), footprints (h12), street lamp (h13, peephole), kitchen (h14, mother's voice), last bus (h15, one-point aisle + window reflection), baby monitor (h16, device on nightstand + LEDs), letter (h17, floor-level door gap + phone-torch reading), stairs (h18, side cut-away + step counter, 13th step opens its eyes).
 **Promised next horror (h18 teaser «هاتفٌ مقطوعُ السلك… يرنّ»): a landline whose cord is cut, ringing — make it next.**
 
@@ -175,7 +175,7 @@ Playlists (original @tech3almashi, 2026-11-19): Excel `PLYdOHth1Xago`, Family `P
 
 **Always keep episodes ahead** (owner's rule, updated 2026-11-20): never fewer than TWO ready in any series, and for the DAILY series
 (Excel, Horror) aim for THREE, because a batch takes hours and needs the owner's PC. Check `episodes.json` ready count first and produce
-until every series is at its target before anything else. Next Excel episode: Minesweeper (promised teaser) — Excel is the thinnest queue.
+until every series is at its target before anything else. Next Excel episode: the platformer (ep12, promised by ep11).
 Horror دفتر الجارة: eps 5–6 open with a cold-open of the scariest line (`COLD=<line> EP=<n> python3 work/daftar_new/build.py`), 7–8 open calmly,
 as an A/B test — compare views after a few days.
 
