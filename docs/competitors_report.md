@@ -1,32 +1,40 @@
-# Competitor watch — 2026-11-20 (first run)
+# Competitor watch — 2026-11-22 (2nd run)
 
-**Limit of this run:** public YouTube pages were not readable from the sandbox; only vidIQ stats pages and search snippets were. So the data below is thin. Nothing is guessed except where marked *(guess)*.
+**Limit:** no WebFetch of youtube.com; only vidIQ stats pages (via fetch agent) and search snippets are readable. No Arabic Excel/office-tricks or parents-online-safety Shorts channel with readable stats was found (again). Excel/family niches stay empty in the watchlist; I added two *adjacent* format references. Guesses are marked *(guess)*.
 
-## Watched channels (verified numbers)
-| Channel | Niche | Subs | Videos | What the page shows |
-|---|---|---|---|---|
-| YH Horror رعب (@yhro3b) | Arabic horror | 593K | 506 (6 yrs) | Top video 1.71M; one 1.16M video = 87× its norm; latest video 1.68K views. Hits are tied to a *trending object* («لابوبو المسكونة», a jingle ad, a game) |
-| قصص بابل (@babelstories08) | Arabic horror | 1.12M | 594 | Best 1.65M = «دمية لابوبو المسكونة» (25× outlier), part 2 got 575K; latest only 8K → one trend hit carries the channel |
-| Horror Shorts Party (@horrorshortsparty) | English horror Shorts | 1.7M | 572 | Latest #shorts 18.9K views; its big wins (23.6M, 8M) are long-form compilations, not Shorts |
+## New channels read (vidIQ, 2026-11-20/21)
+| Channel | Niche | Subs | Videos | Total views | Mean/video | Top video | Latest |
+|---|---|---|---|---|---|---|---|
+| Aboud Shorts @ad6y6 | Arabic "is it real? / test it" curiosity | 1.05M | 67 | 76.1M | ~1.14M | 16.5M (14×) «هذا الحذاء مستحيل ينزلق حتى على الزلج» | 17K (Oct 2026), 0 sub change in 28 d |
+| Miao Arabic Shorts @sngabaishorts | Arabic animated cat-story Shorts, cliffhanger titles | 1.14M | 94 | 57.6M | ~613K | 3.6M (5.9×) «مياو وحورية البحر» | Arabic uploads stopped Oct 2025; latest are Russian/English long-form (255 views) |
+| مستر شورت @mr0short | Arabic curiosity facts | 1.59M | 17 | 0.70M | ~41K | 145K | 6K — subs far exceed views, not a model *(guess: bought/old subs)*; not added |
+| محتوى قصير @mohtawa-shorts | Arabic news clips | 71.7K | 231 | 233M | ~1M | 10M | 1.65K; not our niche, not added |
+| @uruq27 | Gulf vlogs | 24.9K | 49 | 4.6M | ~93K | 324K | not our niche, not added |
+| @horrorx | — | page unreadable | | | | | |
 
-Excel and parents' safety: **no Arabic channel with readable stats found** (Feedspot lists: none qualifies). Needs a yt-dlp run in GitHub Actions (CLAUDE.md note) to fill these two niches.
+Previously watched (unchanged, see 2026-11-20 report): YH Horror, قصص بابل, Horror Shorts Party.
 
-## Patterns (from titles/outliers only)
-- Horror outliers = a **currently viral real-world object/event + "haunted/scary story"** (Labubu, a diaper jingle). Our code-drawn horror uses invented objects (lamp, radio, baby monitor) and still gets ~1k — good, but never rides a trend.
-- Titles: emoji + concrete topic + hook, series/part numbering («الجزء 2») lifts follow-ups (Labubu pt 2 = 575K).
-- Cadence: ~1 video every 3–4 days on both big channels; we post daily — not the gap.
+## Outliers and what they share
+- **Aboud Shorts**: the 5 biggest videos (4.9–16.5M) are all a *yes/no physical-world claim* phrased as a question or "لن تصدق" («هل فعلاً الشيبس يحتوي حشرات؟»), shown by doing the thing on camera. Title = claim + emoji + "لن تصدق". The channel then decays hard (latest 17K, subs flat): hits came from a few topics, not from cadence.
+- **Miao**: peak videos are the same character in a *named situation* (mermaid, orphan, cruel teacher): "character + situation + sad/dramatic emoji". Cadence was a burst (Aug–Oct 2025) then stopped; shows a recurring character is what carries subs, not the single story.
+- **Common to both:** a very concrete first-line claim; a big spike on a few videos (6–14× the mean); trailing off when topic variety or cadence drops. Length/first-second hook not readable from vidIQ *(guess: both open on the payoff image/claim in 1 s)*.
 
 ## Us vs them
-- Our Shorts: 250–1,400 views each; ~6 subs (official), 14 (horror) → conversion is the gap, not reach. Competitor data cannot say more.
-- Peaks vs. average: ours are consistent ~1k, theirs spike 25–87× on a trend hit. We have no trend-riding episode.
+| | Official (@tech3almashi) | Horror |
+|---|---|---|
+| Subs / views / videos | 7 / 7,561 / 15 | 15 / 13,621 / 22 |
+| Median views | ~730 | ~870 |
+| Subs per 1k views | ~0.9 | ~1.1 |
+| Hits | 1.0–1.4K (voice-clone call 1,412; Mandelbrot 1,330; scam msg 1,236; Pac-Man 1,097) | 1.1–1.4K code-drawn; دفتر الجارة eps 4–7 at 84–289 |
+Gaps: (1) our ceiling is ~1.4K while theirs is 1M+ — the hits above are *broad "is it real?" claims*, ours are niche; (2) subscriber conversion ~1/1000 views; (3) duds are 10× below hits (3D maze 62, gems re-upload 9, دفتر الجارة serial 84–289): the title/hook shape decides, not effort.
 
 ## 4 testable changes for next week
-1. **One trend-riding episode per series** (horror: a viral object/game/challenge people are searching this week — verify via Google Trends; family: a trending game or app). Compare against our ~1k baseline.
-2. **Part 2 titles**: the «دفتر الجارة»/best family episodes get a «الجزء 2» follow-up (voice-clone call 1,405 → part 2 with a different scam call).
-3. **Title formula for Excel**: keep «لعبة X داخل Excel؟!» (Snake 1.29K) but add the *named famous thing* — hits are named things, not abstract demos.
-4. **Subscribe line**: test the CTA spoken in the voice once («اشترك لتصلك الحلقة القادمة») vs only on screen; track subs per 1k views.
+1. **"هل فعلاً…؟" Excel titles**: one week of Excel titles in the Aboud form — yes/no claim + proof («هل فعلاً Excel يرسم وجهك؟ 🤯 جرّبتُها»), instead of «X داخل Excel؟!». Compare with Pac-Man 1.1K / Space Invaders 172.
+2. **Family "is it real?" myth-test**: «هل فعلاً صورة بالزيّ المدرسي تكشف مدرسة ابنك؟» style for fam15/16 titles (fam14 already 729 day-one, the best proof that concrete-reveal works).
+3. **Recurring character in horror**: keep Layla *standalone but named in the title* («ليلى و…») like Miao's "مياو و…"; test 3 episodes and compare against the 84–289 serial baseline.
+4. **Spoken subscribe line + pin comment** once per series (carried over from last week; still untested). Track subs per 1k views, target >2.
 
-## 5 episode ideas per series (real, code-drawn, MSA)
-**Excel:** Minesweeper (queued) · Wordle clone with a 5-letter word list + conditional formatting · 2048 in cells (VBA) · Excel Pong with the mouse-free keyboard · Typing-speed test with a live timer.
-**Family:** public Wi-Fi trap (promised) · «ابنك يشارك صورته بالزي المدرسي» · fake gem generator for Roblox/Free Fire · deepfake voice of a relative (part 2 of the voice-call hit) · 2-step verification in 10 seconds.
-**Horror:** cut-cord landline ringing (promised) · a "trending" cursed-toy story with an invented toy (rides the Labubu pattern without copying) · elevator that stops at a floor not on the panel (part 2 of elevator) · voice-message from a number saved as "me" · night-vision camera shows an extra person.
+## 5 new episode ideas per series (real, code-drawn, MSA, different look)
+**Excel:** هل فعلاً Excel يرسم وجهك؟ (pixel art from cells) · Wordle بقائمة كلمات وتنسيق شرطي · Conway's Game of Life بالحساب التكراري (F9) · هل فعلاً Excel يحلّ سودوكو بمعادلة واحدة (LAMBDA)? · ساعة تناظرية حيّة بمخطط انتشار.
+**Family:** هل فعلاً رمز QR في المطعم قد يسرق حساب ابنك؟ · «هل يمكن لغريب معرفة حيّك من لعبة ابنك؟» (location in game chat) · مولّد جواهر Roblox المزيّف (new angle, not the gems re-upload) · اختبار: كم ثانية يحتاج مخترق لكسر كلمة سر ابنك؟ · هل يرى المعلّم/الغريب ما يكتبه ابنك على Wi-Fi المقهى؟
+**Horror:** ليلى والمصعد الذي توقف في طابق غير موجود · ليلى والهاتف الأرضي المقطوع السلك (promised) · ليلى ودمية في صندوق البريد (invented toy, no real brand) · ليلى وصوت أمها في المطبخ · ليلى وصورة لم تلتقطها.

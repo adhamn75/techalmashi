@@ -1,6 +1,6 @@
 {
- "updated": "2026-11-20",
- "note": "Target 6-8 per niche; max 3 added per run. Only channels whose numbers were read from a public page are listed. Excel and family niches still empty: search/fetch tools found no Arabic channel with readable stats (see report).",
+ "updated": "2026-11-22",
+ "note": "Target 6-8 per niche; max 3 added per run. Only channels whose numbers were read from a public (vidIQ) page are listed. Excel and family niches still have NO readable Arabic channel; 'adjacent' entries are format references only.",
  "channels": [
   {
    "name": "YH Horror رعب",
@@ -22,6 +22,20 @@
    "url": "https://www.youtube.com/@horrorshortsparty",
    "niche": "horror",
    "why": "English, not Arabic: 1.7M subs, posts #shorts of animated horror daily; used only as a Shorts-format reference"
+  },
+  {
+   "name": "Aboud Shorts",
+   "handle": "@ad6y6",
+   "url": "https://www.youtube.com/@ad6y6",
+   "niche": "excel-adjacent (Arabic curiosity 'is it real?' Shorts)",
+   "why": "1.05M subs, 67 videos, 76M views; hits are «هل فعلاً X؟» / «لن تصدق…» test-it-yourself clips (up to 16.5M). Same promise as our Excel hook: 'you won't believe it's real'. Read 2026-11-21 on vidIQ."
+  },
+  {
+   "name": "Miao Arabic Shorts",
+   "handle": "@sngabaishorts",
+   "url": "https://www.youtube.com/@sngabaishorts",
+   "niche": "horror-adjacent (Arabic animated story Shorts, one recurring character)",
+   "why": "1.14M subs, 94 videos, 57.6M views; one recurring character + dramatic cliffhanger titles, best 3.6M. Reference for a recurring-character story format (like Layla). Read 2026-11-21 on vidIQ."
   }
  ]
 }
