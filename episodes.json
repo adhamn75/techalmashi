@@ -951,7 +951,9 @@
         "أسرار Excel",
         "تك عالماشي"
       ],
-      "status": "ready"
+      "status": "scheduled",
+      "youtube_id": "Ip71KGZh3a0",
+      "publish_at": "2026-11-23T13:00:00+02:00"
     },
     {
       "id": "h17-letter",
