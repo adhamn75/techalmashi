@@ -17,3 +17,9 @@
 - Mandelbrot (1,330) proves one striking visual beats a dull game; for games the first second must already be in motion (ep10 opens a flood-fill ripple at frame 10, ep11 slides tiles at frame 14).
 - Excel queue was the bottleneck (1 ready vs target 3) while Family had 10 ready: production effort should go to Excel until it holds 3, Family needs nothing for ~10 days.
 - TTS at +20% ran 18–20 s for 5 lines; captions that read a number aloud («ألفين وثمانية وأربعين») cost ~1.5 s — keep scripts to 4–5 short lines and show the number as digits in the caption.
+
+## 2026-11-22 (scheduled production run)
+- All queues at target: Excel 3 ready (Breakout, Minesweeper, 2048), Family 9, code-drawn horror 2 (letter, stairs). No new episode needed; next Excel to build is still the ep12 platformer promised by ep11.
+- Family school-uniform stickman (fam14) hit 728 views in its first day vs 9 for the re-uploaded gems video the same slot a day earlier — new, concrete "photo reveals X" hooks beat re-uploads by far.
+- Space Invaders sits at ~170 after a day vs Pac-Man ~1.1k: a shooter alone is weaker than a game with a visible "brain" (BFS ghosts). For Breakout/Minesweeper/2048 lead the caption with the trick (bounce physics, flood-fill, merge rule), not "you can play it".
+- Family has ~9 days of stock at one per day; production time is better spent on the Excel platformer (ep12) so it is ready before 2048 airs (~11-27).
