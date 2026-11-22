@@ -28,3 +28,4 @@
 - Still no readable Arabic Excel/family channels; read two adjacent ones: Aboud Shorts (1.05M subs, hits 5–16M = «هل فعلاً X؟/لن تصدق» physical-claim clips) and Miao Arabic Shorts (1.14M, recurring character + situation titles). Both decayed hard when topic variety/cadence dropped.
 - Our hits (~1.0–1.4K) are 10×+ below theirs, and our subs/1k views is ~1. Ceiling is set by how broad the "is it real?" claim is.
 - Tests for next week: «هل فعلاً…؟» title form on Excel + family; Layla named in title as recurring character; spoken subscribe line. Details: docs/competitors_report.md.
+- A/B title test (started 2026-11-22, owner OK'd): «هل فعلاً…؟» titles on ep09-breakout, ep10-minesweeper, fam09-qr; controls with the old shape: ep11-2048, fam07/08. Compare views after ~3 days; keep the winner shape.
