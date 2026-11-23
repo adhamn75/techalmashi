@@ -198,6 +198,13 @@ as an A/B test — compare views after a few days.
 5. Send the owner the preview only for new styles; otherwise just report.
 Colab/tts steps need his computer on (built-in browser + desktop-commander). Do not use Google Drive for anything.
 
+## Spoken subscribe phrase (2026-11-23, small test, no look change)
+Subs run ~1 per 1,000 views and the outro only shows a written pill. From the NEXT NEW episode of each series (ep13, fam17, next horror)
+say a subscribe phrase of at most 4 words INSIDE the last voice line (e.g. «اشترك لتصلك اللعبة التالية»), not as an extra line, so length
+and pacing stay the same. Already-ready episodes are NOT re-voiced. Measure subs per 1k views from `docs/history.json` before/after (baseline 2026-11-23: ~8 subs, ~11.9k views).
+Retention data needs the `yt-analytics.readonly` scope, which the current token lacks: do not re-grant the token (risk to publishing); ask the owner for Studio
+retention screenshots of 3 top + 3 bottom videos and feed them to the `yt-retention` skill. Planning skeleton: `docs/master_prompt.md`.
+
 ## Quota & publishing notes (2026-11-13)
 - Both channels share ONE YouTube API project quota (10,000 units/day, resets 08:00 UTC). An upload costs ~1,600.
   publish.yml now runs at 08:20 UTC (and the watcher dispatches it after 08:15 UTC if GitHub's cron is late);

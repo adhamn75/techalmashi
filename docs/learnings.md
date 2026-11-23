@@ -35,3 +35,8 @@
 - Family keeps landing ~1.05k per video (passphrase 1,058 and school-uniform 1,062 in a day) while Space Invaders sits at 175 and Flappy at ~950: concrete "danger to your child" hooks are the channel's floor, Excel games swing with how famous + how visible the trick is.
 - 5 TTS lines at +20% came to 18.2 s of voice; dropping one line kept ep12 at 16.5 s. Budget 4 lines (≈ 15 s of voice) for Excel episodes and show the rest on screen.
 - Platformer tuning: with gravity 0.22 a jump of -1.5 could not reach a platform 5 cells up and made the hero bonk on it; -1.8 gives a 6.5-cell jump. Simulate the level (same rules in a .sim.ts) before filming, so the autopilot never dies on camera and the file is beatable.
+
+## 2026-11-23 (owner review session)
+- Channel totals: 8 subs / ~11.9k views; subs per 1k views ≈ 1. Official channel floor ≈ 1k views; family stickman episodes (fam14 1,074, fam15 1,060) match the best older hits, so the stickman look stays.
+- Added docs/master_prompt.md (shared planning skeleton + per-series look blocks, no look change) and the spoken-subscribe-phrase rule in CLAUDE.md for new episodes only.
+- Retention analysis blocked: token has no analytics scope. Plan: owner sends Studio retention screenshots (3 top, 3 bottom) → yt-retention.
