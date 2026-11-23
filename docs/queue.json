@@ -264,9 +264,9 @@
   "id": "fam07-purchase",
   "series": "family",
   "title": "فاتورة 500$ من لعبة ابنك؟! 💳 أوقف الشراء داخل التطبيقات في 10 ثوانٍ #shorts",
-  "status": "ready",
-  "publish_at": null,
-  "youtube_id": null,
+  "status": "scheduled",
+  "publish_at": "2026-11-24T20:00:00+02:00",
+  "youtube_id": "7FFnoiugE10",
   "video_id": null
  },
  {
@@ -417,9 +417,9 @@
   "id": "h18-stairs",
   "series": "horror",
   "title": "الدرج 🪜 أعدّه كل ليلة 12 درجة… الليلة صار 13 #shorts",
-  "status": "ready",
-  "publish_at": null,
-  "youtube_id": null,
+  "status": "scheduled",
+  "publish_at": "2026-11-24T22:00:00+02:00",
+  "youtube_id": "OOg_rt2pI_8",
   "video_id": null
  },
  {
