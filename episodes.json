@@ -645,7 +645,9 @@
         "الرقابة الأبوية",
         "تك عالماشي"
       ],
-      "status": "ready"
+      "status": "scheduled",
+      "youtube_id": "7FFnoiugE10",
+      "publish_at": "2026-11-24T20:00:00+02:00"
     },
     {
       "id": "h07-closet",
@@ -982,7 +984,7 @@
       "id": "h18-stairs",
       "series": "horror",
       "channel": "UC9lU_G718LC15JQSMQpcbog",
-      "status": "ready",
+      "status": "scheduled",
       "composition": "H18Stairs",
       "title": "الدرج 🪜 أعدّه كل ليلة 12 درجة… الليلة صار 13 #shorts",
       "description": "أعدّ درج بيتي كل ليلة: اثنتا عشرة درجة.\nالليلة عددتها… ثلاث عشرة.\nالدرجة الزائدة في الأسفل، في الظلام… وحين وقفت عليها، تنفّست.\n\nهل عددت درج بيتك الليلة؟ 👁️\nالليلة القادمة… هاتف مقطوع السلك يرنّ 🔔 اشترك لتصلك قصة الليلة القادمة.\n\n#رعب #قصص_رعب #horror #shorts",
@@ -995,7 +997,9 @@
         "creepypasta",
         "قصة رعب قصيرة",
         "رعب منتصف الليل"
-      ]
+      ],
+      "youtube_id": "OOg_rt2pI_8",
+      "publish_at": "2026-11-24T22:00:00+02:00"
     },
     {
       "id": "fam10-hacker",

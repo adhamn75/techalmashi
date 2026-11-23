@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-23T08:19:40.446655+00:00",
+  "updated": "2026-11-23T20:19:41.120439+00:00",
   "videos": [
     {
       "youtube_id": "TGKpLTdMBo0",
@@ -38,7 +38,7 @@
       "youtube_id": "Q5NcGrwPK-c",
       "title": "الاستوديو 📷 صورة في هاتفي لم ألتقطها… التُقطت الساعة 3 وأنا نائم #shorts",
       "privacy": "public",
-      "views": 1244,
+      "views": 1245,
       "likes": 14,
       "comments": 0,
       "id": "h08-gallery",
@@ -49,12 +49,23 @@
       "youtube_id": "lJ7ppDQ0CDQ",
       "title": "«تمّ إيقاف حسابك!» ⚠️ رسالة مزيّفة تسرق كلمة سر ابنك #shorts",
       "privacy": "public",
-      "views": 1237,
+      "views": 1239,
       "likes": 12,
       "comments": 1,
       "id": "fam04-suspended",
       "series": "family",
       "publish_at": "2026-11-10T20:00:00+02:00"
+    },
+    {
+      "youtube_id": "BVA2Rx0d_5E",
+      "title": "📸 صورةٌ بالزيّ المدرسيّ تكشف مدرسة ابنك لأي غريب! #shorts",
+      "privacy": "public",
+      "views": 1163,
+      "likes": 4,
+      "comments": 0,
+      "id": "fam14-uniform",
+      "series": "family",
+      "publish_at": "2026-11-21T20:00:00+02:00"
     },
     {
       "youtube_id": "kxydgL2xrzo",
@@ -93,7 +104,7 @@
       "youtube_id": "OIPcgh7VX_c",
       "title": "الخزانة 🚪 كل ليلة الساعة 3 تُطرق من الداخل… الليلة طرقتُ أنا أولًا #shorts",
       "privacy": "public",
-      "views": 1130,
+      "views": 1131,
       "likes": 13,
       "comments": 0,
       "id": "h07-closet",
@@ -112,21 +123,10 @@
       "publish_at": "2026-11-20T13:00:00+02:00"
     },
     {
-      "youtube_id": "BVA2Rx0d_5E",
-      "title": "📸 صورةٌ بالزيّ المدرسيّ تكشف مدرسة ابنك لأي غريب! #shorts",
-      "privacy": "public",
-      "views": 1074,
-      "likes": 4,
-      "comments": 0,
-      "id": "fam14-uniform",
-      "series": "family",
-      "publish_at": "2026-11-21T20:00:00+02:00"
-    },
-    {
       "youtube_id": "cmowwJ3_gco",
       "title": "🔐 اللصّ عرف كلمة المرور… وبقي خارج الباب! فعّل هذا الآن #shorts",
       "privacy": "public",
-      "views": 1060,
+      "views": 1072,
       "likes": 6,
       "comments": 0,
       "id": "fam15-2fa",
@@ -148,7 +148,7 @@
       "youtube_id": "GeHgTtuz6k8",
       "title": "Flappy Bird داخل Excel؟! 🐦 لعبة حقيقية تلعبها بالمسافة… الملف مجاني #shorts",
       "privacy": "public",
-      "views": 947,
+      "views": 948,
       "likes": 3,
       "comments": 2,
       "id": "ep06-flappy",
@@ -159,7 +159,7 @@
       "youtube_id": "HyitleBUxOc",
       "title": "الحافلة الأخيرة 🚌 مقعدٌ محجوز باسمي… وفي الزجاج رأيتني جالسًا عليه #shorts",
       "privacy": "public",
-      "views": 900,
+      "views": 901,
       "likes": 10,
       "comments": 0,
       "id": "h15-bus",
@@ -222,6 +222,17 @@
       "publish_at": "2026-11-13T22:00:00+02:00"
     },
     {
+      "youtube_id": "Ip71KGZh3a0",
+      "title": "هل فعلاً Excel يشغّل لعبة تحطيم الطوب؟ 🧱 كرة ترتدّ بين الخلايا… الملف مجاني #shorts",
+      "privacy": "public",
+      "views": 454,
+      "likes": 5,
+      "comments": 0,
+      "id": "ep09-breakout",
+      "series": "excel",
+      "publish_at": "2026-11-23T13:00:00+02:00"
+    },
+    {
       "youtube_id": "dr6SqHP9MWM",
       "title": "الراديو 📻 لا بطارية فيه… لكنّه اشتغل وحده ونطق اسمي #shorts",
       "privacy": "public",
@@ -236,7 +247,7 @@
       "youtube_id": "LENXUU_sCvk",
       "title": "لعبة تتريس حقيقية داخل Excel؟! 🎮 الملف مجاني #shorts",
       "privacy": "public",
-      "views": 394,
+      "views": 395,
       "likes": 3,
       "comments": 1,
       "id": "ep03-tetris",
@@ -275,6 +286,28 @@
       "id": "h-daftar06",
       "series": "horror",
       "publish_at": "2026-11-20T22:00:00+02:00"
+    },
+    {
+      "youtube_id": "QVIaPVuItns",
+      "title": "ليلى نجت… لكن الدفتر وجد صاحبة جديدة اسمها مريم! انتظروا الحلقة القادمة · دفتر الجارة 📓 8 #shorts",
+      "privacy": "public",
+      "views": 225,
+      "likes": 7,
+      "comments": 0,
+      "id": "h-daftar08",
+      "series": "horror",
+      "publish_at": "2026-11-22T22:00:00+02:00"
+    },
+    {
+      "youtube_id": "JC3bXtlIdUo",
+      "title": "⚠️ غريب في لعبة طفلك سأله: أين تسكن؟ هذا ما يجب فعله #shorts",
+      "privacy": "public",
+      "views": 196,
+      "likes": 1,
+      "comments": 0,
+      "id": "fam16-stranger",
+      "series": "family",
+      "publish_at": "2026-11-23T20:00:00+02:00"
     },
     {
       "youtube_id": "d3qbYTS3GGQ",
@@ -343,17 +376,6 @@
       "publish_at": "2026-11-14T22:00:00+02:00"
     },
     {
-      "youtube_id": "QVIaPVuItns",
-      "title": "ليلى نجت… لكن الدفتر وجد صاحبة جديدة اسمها مريم! انتظروا الحلقة القادمة · دفتر الجارة 📓 8 #shorts",
-      "privacy": "public",
-      "views": 66,
-      "likes": 2,
-      "comments": 0,
-      "id": "h-daftar08",
-      "series": "horror",
-      "publish_at": "2026-11-22T22:00:00+02:00"
-    },
-    {
       "youtube_id": "K-jLrdmkQsM",
       "title": "لعبة ثلاثية الأبعاد داخل Excel؟! 🕹️ متاهة تمشي فيها بالأسهم #shorts",
       "privacy": "public",
@@ -387,26 +409,26 @@
       "publish_at": "2026-11-20T20:00:00+02:00"
     },
     {
-      "youtube_id": "JC3bXtlIdUo",
-      "title": "⚠️ غريب في لعبة طفلك سأله: أين تسكن؟ هذا ما يجب فعله #shorts",
-      "privacy": "private",
-      "views": 0,
+      "youtube_id": "B0GRfWzPGzY",
+      "title": "رسالة بخط يدي ✉️ لا أذكر أني كتبتها… وتاريخها غدًا #shorts",
+      "privacy": "public",
+      "views": 1,
       "likes": 0,
       "comments": 0,
-      "id": "fam16-stranger",
-      "series": "family",
-      "publish_at": "2026-11-23T20:00:00+02:00"
+      "id": "h17-letter",
+      "series": "horror",
+      "publish_at": "2026-11-23T22:00:00+02:00"
     },
     {
-      "youtube_id": "Ip71KGZh3a0",
-      "title": "هل فعلاً Excel يشغّل لعبة تحطيم الطوب؟ 🧱 كرة ترتدّ بين الخلايا… الملف مجاني #shorts",
+      "youtube_id": "7FFnoiugE10",
+      "title": "فاتورة 500$ من لعبة ابنك؟! 💳 أوقف الشراء داخل التطبيقات في 10 ثوانٍ #shorts",
       "privacy": "private",
       "views": 0,
       "likes": 0,
       "comments": 0,
-      "id": "ep09-breakout",
-      "series": "excel",
-      "publish_at": "2026-11-23T13:00:00+02:00"
+      "id": "fam07-purchase",
+      "series": "family",
+      "publish_at": "2026-11-24T20:00:00+02:00"
     }
   ]
 }
