@@ -29,3 +29,9 @@
 - Our hits (~1.0–1.4K) are 10×+ below theirs, and our subs/1k views is ~1. Ceiling is set by how broad the "is it real?" claim is.
 - Tests for next week: «هل فعلاً…؟» title form on Excel + family; Layla named in title as recurring character; spoken subscribe line. Details: docs/competitors_report.md.
 - A/B title test (started 2026-11-22, owner OK'd): «هل فعلاً…؟» titles on ep09-breakout, ep10-minesweeper, fam09-qr; controls with the old shape: ep11-2048, fam07/08. Compare views after ~3 days; keep the winner shape.
+
+## 2026-11-23 (scheduled production run)
+- Excel dropped to 2 ready (Breakout went out); built ep12 platformer (Ep12Runner + files/platformer.xlsm). Family 8 ready, code-drawn horror 2 ready: no work needed there.
+- Family keeps landing ~1.05k per video (passphrase 1,058 and school-uniform 1,062 in a day) while Space Invaders sits at 175 and Flappy at ~950: concrete "danger to your child" hooks are the channel's floor, Excel games swing with how famous + how visible the trick is.
+- 5 TTS lines at +20% came to 18.2 s of voice; dropping one line kept ep12 at 16.5 s. Budget 4 lines (≈ 15 s of voice) for Excel episodes and show the rest on screen.
+- Platformer tuning: with gravity 0.22 a jump of -1.5 could not reach a platform 5 cells up and made the hero bonk on it; -1.8 gives a 6.5-cell jump. Simulate the level (same rules in a .sim.ts) before filming, so the autopilot never dies on camera and the file is beatable.
