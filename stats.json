@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-22T16:21:47.260795+00:00",
+  "updated": "2026-11-23T08:19:40.446655+00:00",
   "videos": [
     {
       "youtube_id": "TGKpLTdMBo0",
@@ -49,7 +49,7 @@
       "youtube_id": "lJ7ppDQ0CDQ",
       "title": "«تمّ إيقاف حسابك!» ⚠️ رسالة مزيّفة تسرق كلمة سر ابنك #shorts",
       "privacy": "public",
-      "views": 1236,
+      "views": 1237,
       "likes": 12,
       "comments": 1,
       "id": "fam04-suspended",
@@ -60,7 +60,7 @@
       "youtube_id": "kxydgL2xrzo",
       "title": "جهاز مراقبة الطفل 📟 يبثّ بكاءً من غرفتنا… ونحن لا طفل لدينا #shorts",
       "privacy": "public",
-      "views": 1152,
+      "views": 1145,
       "likes": 9,
       "comments": 0,
       "id": "h16-monitor",
@@ -79,10 +79,21 @@
       "publish_at": "2026-11-16T22:00:00+02:00"
     },
     {
+      "youtube_id": "Gd0iwfae9i4",
+      "title": "المطبخ 🔪 أمّي تناديني باسمي… لكنّ أمّي نائمة بجانبي #shorts",
+      "privacy": "public",
+      "views": 1133,
+      "likes": 21,
+      "comments": 0,
+      "id": "h14-kitchen",
+      "series": "horror",
+      "publish_at": "2026-11-18T22:00:00+02:00"
+    },
+    {
       "youtube_id": "OIPcgh7VX_c",
       "title": "الخزانة 🚪 كل ليلة الساعة 3 تُطرق من الداخل… الليلة طرقتُ أنا أولًا #shorts",
       "privacy": "public",
-      "views": 1128,
+      "views": 1130,
       "likes": 13,
       "comments": 0,
       "id": "h07-closet",
@@ -101,21 +112,32 @@
       "publish_at": "2026-11-20T13:00:00+02:00"
     },
     {
-      "youtube_id": "Gd0iwfae9i4",
-      "title": "المطبخ 🔪 أمّي تناديني باسمي… لكنّ أمّي نائمة بجانبي #shorts",
+      "youtube_id": "BVA2Rx0d_5E",
+      "title": "📸 صورةٌ بالزيّ المدرسيّ تكشف مدرسة ابنك لأي غريب! #shorts",
       "privacy": "public",
-      "views": 1085,
-      "likes": 21,
+      "views": 1074,
+      "likes": 4,
       "comments": 0,
-      "id": "h14-kitchen",
-      "series": "horror",
-      "publish_at": "2026-11-18T22:00:00+02:00"
+      "id": "fam14-uniform",
+      "series": "family",
+      "publish_at": "2026-11-21T20:00:00+02:00"
+    },
+    {
+      "youtube_id": "cmowwJ3_gco",
+      "title": "🔐 اللصّ عرف كلمة المرور… وبقي خارج الباب! فعّل هذا الآن #shorts",
+      "privacy": "public",
+      "views": 1060,
+      "likes": 6,
+      "comments": 0,
+      "id": "fam15-2fa",
+      "series": "family",
+      "publish_at": "2026-11-22T20:00:00+02:00"
     },
     {
       "youtube_id": "ELCIwxks4bU",
       "title": "عمود الإنارة 🏮 كل ليلة يقترب خطوة… الليلة العمود فارغ #shorts",
       "privacy": "public",
-      "views": 957,
+      "views": 958,
       "likes": 18,
       "comments": 1,
       "id": "h13-streetlamp",
@@ -126,7 +148,7 @@
       "youtube_id": "GeHgTtuz6k8",
       "title": "Flappy Bird داخل Excel؟! 🐦 لعبة حقيقية تلعبها بالمسافة… الملف مجاني #shorts",
       "privacy": "public",
-      "views": 946,
+      "views": 947,
       "likes": 3,
       "comments": 2,
       "id": "ep06-flappy",
@@ -137,7 +159,7 @@
       "youtube_id": "HyitleBUxOc",
       "title": "الحافلة الأخيرة 🚌 مقعدٌ محجوز باسمي… وفي الزجاج رأيتني جالسًا عليه #shorts",
       "privacy": "public",
-      "views": 906,
+      "views": 900,
       "likes": 10,
       "comments": 0,
       "id": "h15-bus",
@@ -159,7 +181,7 @@
       "youtube_id": "cD451ImVilE",
       "title": "آثار أقدام 👣 استيقظت على ماءٍ يقطر… والآثار تقف عند سريري #shorts",
       "privacy": "public",
-      "views": 869,
+      "views": 870,
       "likes": 12,
       "comments": 0,
       "id": "h12-footprints",
@@ -176,17 +198,6 @@
       "id": "h-daftar02",
       "series": "horror",
       "publish_at": "2026-11-13T22:00:00+02:00"
-    },
-    {
-      "youtube_id": "BVA2Rx0d_5E",
-      "title": "📸 صورةٌ بالزيّ المدرسيّ تكشف مدرسة ابنك لأي غريب! #shorts",
-      "privacy": "public",
-      "views": 732,
-      "likes": 3,
-      "comments": 0,
-      "id": "fam14-uniform",
-      "series": "family",
-      "publish_at": "2026-11-21T20:00:00+02:00"
     },
     {
       "youtube_id": "poCU-w1Dbks",
@@ -247,7 +258,7 @@
       "youtube_id": "4EJuUe4zabo",
       "title": "ليلى ترفض كتابة اسم أحد… فاسودّت الصفحة! انتظروا الحلقة القادمة · دفتر الجارة 📓 7 #shorts",
       "privacy": "public",
-      "views": 318,
+      "views": 309,
       "likes": 5,
       "comments": 0,
       "id": "h-daftar07",
@@ -258,7 +269,7 @@
       "youtube_id": "tBhK0JOOhp0",
       "title": "خلف الباب: «كنتُ ليلى مثلك»… والجارة لم تسافر! انتظروا الحلقة القادمة · دفتر الجارة 📓 6 #shorts",
       "privacy": "public",
-      "views": 231,
+      "views": 269,
       "likes": 6,
       "comments": 0,
       "id": "h-daftar06",
@@ -280,7 +291,7 @@
       "youtube_id": "LhuaYmGhfqA",
       "title": "Space Invaders داخل Excel؟! 👾 أسطول غزاة من الخلايا… الملف مجاني #shorts",
       "privacy": "public",
-      "views": 172,
+      "views": 175,
       "likes": 2,
       "comments": 0,
       "id": "ep08-invaders",
@@ -291,7 +302,7 @@
       "youtube_id": "AmyUcLRSgrY",
       "title": "ليلى ربطت الباب بحبل… فاستيقظت واقفة عنده! انتظروا الحلقة القادمة · دفتر الجارة 📓 5 #shorts",
       "privacy": "public",
-      "views": 150,
+      "views": 152,
       "likes": 1,
       "comments": 0,
       "id": "h-daftar05",
@@ -332,6 +343,17 @@
       "publish_at": "2026-11-14T22:00:00+02:00"
     },
     {
+      "youtube_id": "QVIaPVuItns",
+      "title": "ليلى نجت… لكن الدفتر وجد صاحبة جديدة اسمها مريم! انتظروا الحلقة القادمة · دفتر الجارة 📓 8 #shorts",
+      "privacy": "public",
+      "views": 66,
+      "likes": 2,
+      "comments": 0,
+      "id": "h-daftar08",
+      "series": "horror",
+      "publish_at": "2026-11-22T22:00:00+02:00"
+    },
+    {
       "youtube_id": "K-jLrdmkQsM",
       "title": "لعبة ثلاثية الأبعاد داخل Excel؟! 🕹️ متاهة تمشي فيها بالأسهم #shorts",
       "privacy": "public",
@@ -365,15 +387,15 @@
       "publish_at": "2026-11-20T20:00:00+02:00"
     },
     {
-      "youtube_id": "cmowwJ3_gco",
-      "title": "🔐 اللصّ عرف كلمة المرور… وبقي خارج الباب! فعّل هذا الآن #shorts",
+      "youtube_id": "JC3bXtlIdUo",
+      "title": "⚠️ غريب في لعبة طفلك سأله: أين تسكن؟ هذا ما يجب فعله #shorts",
       "privacy": "private",
       "views": 0,
       "likes": 0,
       "comments": 0,
-      "id": "fam15-2fa",
+      "id": "fam16-stranger",
       "series": "family",
-      "publish_at": "2026-11-22T20:00:00+02:00"
+      "publish_at": "2026-11-23T20:00:00+02:00"
     },
     {
       "youtube_id": "Ip71KGZh3a0",

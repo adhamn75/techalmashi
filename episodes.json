@@ -625,7 +625,9 @@
         "حماية الأطفال",
         "تك عالماشي"
       ],
-      "status": "ready"
+      "status": "scheduled",
+      "youtube_id": "JC3bXtlIdUo",
+      "publish_at": "2026-11-23T20:00:00+02:00"
     },
     {
       "id": "fam07-purchase",
@@ -959,7 +961,7 @@
       "id": "h17-letter",
       "series": "horror",
       "channel": "UC9lU_G718LC15JQSMQpcbog",
-      "status": "ready",
+      "status": "scheduled",
       "composition": "H17Letter",
       "title": "رسالة بخط يدي ✉️ لا أذكر أني كتبتها… وتاريخها غدًا #shorts",
       "description": "وجدت رسالة تحت بابي… بخط يدي.\nلا أذكر أني كتبتها، وتاريخها غدًا.\nآخر سطر فيها: «لا تفتح الباب حين تسمع صوتك»… ثم سمعت صوتي خلف الباب.\n\nلو وجدت رسالة كهذه، هل تفتح الباب؟ 👁️\nالليلة القادمة… درج يزيد درجة كل ليلة 🔔 اشترك لتصلك قصة الليلة القادمة.\n\n#رعب #قصص_رعب #horror #shorts",
@@ -972,7 +974,9 @@
         "creepypasta",
         "قصة رعب قصيرة",
         "رعب منتصف الليل"
-      ]
+      ],
+      "youtube_id": "B0GRfWzPGzY",
+      "publish_at": "2026-11-23T22:00:00+02:00"
     },
     {
       "id": "h18-stairs",
