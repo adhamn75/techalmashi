@@ -6,7 +6,7 @@ import {FONT, Mokaab} from '../shared/Mascot';
 import {Sfx} from '../shared/Sfx';
 import {VoiceTrack, speaking, Line} from '../shared/Voice';
 import {Caption, V} from '../shared/Caption';
-import {Stick} from './Fam14Uniform';
+import {StickPro} from '../shared/StickPro';
 import TL from './Fam15Lock.timeline.json';
 
 // Family ep 15: 2-step verification. Stickman on light-blue paper: a thief with the password key opens the door,
@@ -32,7 +32,7 @@ export const Family15Lock: React.FC = () => {
   const frame = useCurrentFrame();
   const {fps} = useVideoConfig();
   const sp = (f: number, d = 14) => spring({frame: frame - f, fps, config: {damping: d}});
-  const thiefX = interpolate(frame, [4, 70], [-200, 250], clamp);
+  const thiefX = interpolate(frame, [0, 66], [-30, 250], clamp);
   const open1 = frame < A[3] ? sp(A[0] + 50) : 0;
   const rows = [sp(A[2] + 4), sp(A[2] + 40), sp(A[2] + 84)];
   const toggle = sp(A[2] + 110, 20);
@@ -47,8 +47,8 @@ export const Family15Lock: React.FC = () => {
       {scene1 && (
         <>
           <Door open={open1} locked={frame < A[0] + 50} />
-          <Stick x={thiefX} y={520} s={1.1} hat walk={frame / 3} arm={frame > A[0] + 40 ? 1 : 0} />
-          <div dir="ltr" style={{position: 'absolute', left: thiefX + 60, top: 450, background: '#fff', border: `6px solid ${INK}`, borderRadius: 20, padding: '0 22px', fontFamily: FONT, fontWeight: 900, fontSize: 46, opacity: sp(A[0] + 20)}}>🔑 Ahmad2010</div>
+          <StickPro frame={frame} role="thief" mood={frame < A[0] + 50 ? 'smirk' : frame < A[1] + 30 ? 'smirk' : 'worry'} x={thiefX} y={520} s={1.1} walk={frame < 70 ? frame / 3 : 0} arm={frame > A[0] + 40 ? 1 : 0} look={0.8} />
+          <div dir="ltr" style={{position: 'absolute', left: thiefX + 60, top: 450, background: '#fff', border: `6px solid ${INK}`, borderRadius: 20, padding: '0 22px', fontFamily: FONT, fontWeight: 900, fontSize: 46, opacity: Math.min(1, 0.5 + frame / 6), scale: `${0.9 + 0.1 * sp(2)}`}}>🔑 Ahmad2010</div>
           {frame >= A[1] && <div dir="rtl" style={{position: 'absolute', left: 60, right: 60, top: 1110, textAlign: 'center', fontFamily: FONT, fontWeight: 900, fontSize: 56, color: INK, opacity: sp(A[1] + 4)}}>عرف كلمة المرور… 😈 لكن أين الهاتف؟ <span style={{fontSize: 80}}>📱❓</span></div>}
         </>
       )}
@@ -61,16 +61,19 @@ export const Family15Lock: React.FC = () => {
           </div>
         </div>
       )}
+      {frame >= A[2] && frame < A[3] && <StickPro frame={frame} role="kid" mood={toggle > 0.5 ? 'happy' : 'worry'} bag x={300} y={1010} s={1.0} arm={toggle > 0.5 ? 1 : 0} look={0.5} seed={3} />}
       {scene3 && (
         <>
           <Door open={0} locked />
-          <Stick x={120 + shake} y={520} s={1.1} hat arm={1} />
+          <StickPro frame={frame} role="thief" mood={frame > A[3] + 50 ? 'angry' : 'smirk'} x={120 + shake} y={520} s={1.1} arm={frame > A[3] + 50 ? 1 : 0} look={0.8} />
+          {frame > A[3] + 50 && <div style={{position: 'absolute', left: 250, top: 480, fontSize: 90, opacity: 0.4 + 0.6 * Math.abs(Math.sin(frame / 4))}}>💢</div>}
+          <StickPro frame={frame} role="kid" mood="happy" bag x={600} y={1000} s={1.0} arm={frame > A[3] + 30 ? 1 : 0} look={-0.5} seed={5} />
           <div style={{position: 'absolute', left: 430, top: 640, fontSize: 130, opacity: frame > A[3] + 50 ? 1 : 0}}>🚫</div>
           <div style={{position: 'absolute', left: 200, top: 1010, width: 260, height: 420, background: '#fff', border: `10px solid ${INK}`, borderRadius: 44, scale: `${code}`, textAlign: 'center', fontFamily: FONT, fontWeight: 900}}>
             <div style={{fontSize: 34, marginTop: 70}}>رمز التحقق</div>
             <div dir="ltr" style={{fontSize: 62, color: BLUE, marginTop: 20}}>482<br />913</div>
           </div>
-          <div dir="rtl" style={{position: 'absolute', left: 520, top: 1090, fontFamily: FONT, fontWeight: 900, fontSize: 52, color: INK, width: 480}}>الرمز عندك أنت فقط ✔</div>
+          <div dir="rtl" style={{position: 'absolute', left: 80, top: 1500, fontFamily: FONT, fontWeight: 900, fontSize: 56, color: INK, width: 920, textAlign: 'center'}}>الرمز عندك أنت فقط ✔</div>
         </>
       )}
       {frame >= A[4] && (

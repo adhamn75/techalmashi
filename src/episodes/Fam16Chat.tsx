@@ -6,7 +6,7 @@ import {FONT, Mokaab} from '../shared/Mascot';
 import {Sfx} from '../shared/Sfx';
 import {VoiceTrack, speaking, Line} from '../shared/Voice';
 import {Caption, V} from '../shared/Caption';
-import {Stick} from './Fam14Uniform';
+import {StickPro} from '../shared/StickPro';
 import TL from './Fam16Chat.timeline.json';
 
 // Family ep 16: a stranger in a game chat. Dark game-lobby look (not paper): chat bubbles escalate while a
@@ -41,6 +41,9 @@ export const Family16Chat: React.FC = () => {
             <div style={{fontFamily: FONT, fontWeight: 900, fontSize: 38, color: '#9aa4ff'}}>💬 دردشة اللعبة — «Pro_Gamer_77» 👤</div>
             {bubbles.map((b, i) => <div key={i} style={{alignSelf: 'flex-start', background: b.c, color: '#fff', fontFamily: FONT, fontWeight: 900, fontSize: 56, borderRadius: 34, padding: '10px 34px', opacity: sp(b.f), scale: `${0.6 + 0.4 * sp(b.f)}`, transformOrigin: 'right center'}}>{b.t}</div>)}
           </div>
+          <div style={{position: 'absolute', left: 40, top: 1280, width: 300, height: 390, background: '#fff4b8', border: `8px solid ${INK}`, borderRadius: 44}} /><div style={{position: 'absolute', left: 740, top: 1280, width: 300, height: 390, background: '#e6dcff', border: `8px solid ${INK}`, borderRadius: 44}} />
+          <StickPro frame={frame} role="kid" bag x={60} y={1255} s={0.8} mood={frame < A[0] + 40 ? 'happy' : frame < A[1] + 40 ? 'worry' : 'shock'} look={0.9} seed={2} />
+          <StickPro frame={frame} role="thief" x={760} y={1255} s={0.8} mood={frame < A[1] + 40 ? 'smirk' : 'angry'} look={-0.9} flip seed={7} />
           <div dir="rtl" style={{position: 'absolute', left: 90, right: 90, top: 1150, fontFamily: FONT, fontWeight: 900, fontSize: 46, color: '#fff'}}>
             مستوى الخطر ⚠️
             <div style={{height: 46, borderRadius: 23, background: '#ffffff30', marginTop: 12, overflow: 'hidden', border: '5px solid #fff'}}><div style={{height: '100%', width: `${danger * 100}%`, background: danger > 0.6 ? RED : YEL, float: 'right'}} /></div>
@@ -50,9 +53,10 @@ export const Family16Chat: React.FC = () => {
       {frame >= A[2] && frame < A[4] && (
         <>
           <div style={{position: 'absolute', left: 0, right: 0, top: 360, height: 600, background: '#fff4b8', borderRadius: 60, border: `10px solid ${INK}`, margin: '0 50px'}} />
-          <Stick x={140} y={420} s={1.15} bag arm={1} shirt="#fff6a8" />
+          <StickPro frame={frame} role="kid" bag x={120} y={420} s={1.15} arm={1} mood={frame < A[3] ? 'angry' : 'happy'} look={0.7} />
           <div style={{position: 'absolute', left: 330, top: 450, fontSize: 190, scale: `${stop}`}}>✋</div>
           <div dir="rtl" style={{position: 'absolute', left: 560, top: 520, width: 420, fontFamily: FONT, fontWeight: 900, fontSize: 58, color: INK, opacity: stop}}>لا معلومات<br />شخصية!<br /><span style={{color: RED}}>🏠 🏫 📍</span></div>
+          {frame >= A[3] && <><div style={{position: 'absolute', left: 720, top: 1200, width: 300, height: 390, background: '#d4f7e4', border: `8px solid ${INK}`, borderRadius: 44}} /><StickPro frame={frame} role="parent" x={740} y={1175} s={0.8} mood="happy" arm={0} look={-0.6} seed={4} talk={false} /></>}
           {frame >= A[3] && <>
             <div style={{position: 'absolute', left: 70, right: 70, top: 1010, display: 'flex', gap: 24, justifyContent: 'center', opacity: sp(A[3] + 4)}}>
               <div dir="rtl" style={{background: GRN, color: INK, fontFamily: FONT, fontWeight: 900, fontSize: 48, border: `6px solid ${INK}`, borderRadius: 28, padding: '10px 28px'}}>🗣️ أخبر أمك وأباك فورًا</div>
