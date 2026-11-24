@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-23T20:19:41.120439+00:00",
+  "updated": "2026-11-24T08:17:48.006443+00:00",
   "videos": [
     {
       "youtube_id": "TGKpLTdMBo0",
@@ -49,7 +49,7 @@
       "youtube_id": "lJ7ppDQ0CDQ",
       "title": "«تمّ إيقاف حسابك!» ⚠️ رسالة مزيّفة تسرق كلمة سر ابنك #shorts",
       "privacy": "public",
-      "views": 1239,
+      "views": 1241,
       "likes": 12,
       "comments": 1,
       "id": "fam04-suspended",
@@ -60,7 +60,7 @@
       "youtube_id": "BVA2Rx0d_5E",
       "title": "📸 صورةٌ بالزيّ المدرسيّ تكشف مدرسة ابنك لأي غريب! #shorts",
       "privacy": "public",
-      "views": 1163,
+      "views": 1165,
       "likes": 4,
       "comments": 0,
       "id": "fam14-uniform",
@@ -71,7 +71,7 @@
       "youtube_id": "kxydgL2xrzo",
       "title": "جهاز مراقبة الطفل 📟 يبثّ بكاءً من غرفتنا… ونحن لا طفل لدينا #shorts",
       "privacy": "public",
-      "views": 1145,
+      "views": 1146,
       "likes": 9,
       "comments": 0,
       "id": "h16-monitor",
@@ -112,6 +112,17 @@
       "publish_at": "2026-11-15T22:00:00+02:00"
     },
     {
+      "youtube_id": "cmowwJ3_gco",
+      "title": "🔐 اللصّ عرف كلمة المرور… وبقي خارج الباب! فعّل هذا الآن #shorts",
+      "privacy": "public",
+      "views": 1100,
+      "likes": 8,
+      "comments": 0,
+      "id": "fam15-2fa",
+      "series": "family",
+      "publish_at": "2026-11-22T20:00:00+02:00"
+    },
+    {
       "youtube_id": "asCGkWBQ2uI",
       "title": "باك مان داخل Excel؟! 👻 أشباح تطاردك بأقصر طريق… الملف مجاني #shorts",
       "privacy": "public",
@@ -121,17 +132,6 @@
       "id": "ep07-pacman",
       "series": "excel",
       "publish_at": "2026-11-20T13:00:00+02:00"
-    },
-    {
-      "youtube_id": "cmowwJ3_gco",
-      "title": "🔐 اللصّ عرف كلمة المرور… وبقي خارج الباب! فعّل هذا الآن #shorts",
-      "privacy": "public",
-      "views": 1072,
-      "likes": 6,
-      "comments": 0,
-      "id": "fam15-2fa",
-      "series": "family",
-      "publish_at": "2026-11-22T20:00:00+02:00"
     },
     {
       "youtube_id": "ELCIwxks4bU",
@@ -148,7 +148,7 @@
       "youtube_id": "GeHgTtuz6k8",
       "title": "Flappy Bird داخل Excel؟! 🐦 لعبة حقيقية تلعبها بالمسافة… الملف مجاني #shorts",
       "privacy": "public",
-      "views": 948,
+      "views": 947,
       "likes": 3,
       "comments": 2,
       "id": "ep06-flappy",
@@ -159,7 +159,7 @@
       "youtube_id": "HyitleBUxOc",
       "title": "الحافلة الأخيرة 🚌 مقعدٌ محجوز باسمي… وفي الزجاج رأيتني جالسًا عليه #shorts",
       "privacy": "public",
-      "views": 901,
+      "views": 900,
       "likes": 10,
       "comments": 0,
       "id": "h15-bus",
@@ -181,7 +181,7 @@
       "youtube_id": "cD451ImVilE",
       "title": "آثار أقدام 👣 استيقظت على ماءٍ يقطر… والآثار تقف عند سريري #shorts",
       "privacy": "public",
-      "views": 870,
+      "views": 873,
       "likes": 12,
       "comments": 0,
       "id": "h12-footprints",
@@ -198,6 +198,28 @@
       "id": "h-daftar02",
       "series": "horror",
       "publish_at": "2026-11-13T22:00:00+02:00"
+    },
+    {
+      "youtube_id": "JC3bXtlIdUo",
+      "title": "⚠️ غريب في لعبة طفلك سأله: أين تسكن؟ هذا ما يجب فعله #shorts",
+      "privacy": "public",
+      "views": 756,
+      "likes": 2,
+      "comments": 0,
+      "id": "fam16-stranger",
+      "series": "family",
+      "publish_at": "2026-11-23T20:00:00+02:00"
+    },
+    {
+      "youtube_id": "Ip71KGZh3a0",
+      "title": "هل فعلاً Excel يشغّل لعبة تحطيم الطوب؟ 🧱 كرة ترتدّ بين الخلايا… الملف مجاني #shorts",
+      "privacy": "public",
+      "views": 688,
+      "likes": 8,
+      "comments": 0,
+      "id": "ep09-breakout",
+      "series": "excel",
+      "publish_at": "2026-11-23T13:00:00+02:00"
     },
     {
       "youtube_id": "poCU-w1Dbks",
@@ -222,17 +244,6 @@
       "publish_at": "2026-11-13T22:00:00+02:00"
     },
     {
-      "youtube_id": "Ip71KGZh3a0",
-      "title": "هل فعلاً Excel يشغّل لعبة تحطيم الطوب؟ 🧱 كرة ترتدّ بين الخلايا… الملف مجاني #shorts",
-      "privacy": "public",
-      "views": 454,
-      "likes": 5,
-      "comments": 0,
-      "id": "ep09-breakout",
-      "series": "excel",
-      "publish_at": "2026-11-23T13:00:00+02:00"
-    },
-    {
       "youtube_id": "dr6SqHP9MWM",
       "title": "الراديو 📻 لا بطارية فيه… لكنّه اشتغل وحده ونطق اسمي #shorts",
       "privacy": "public",
@@ -247,12 +258,23 @@
       "youtube_id": "LENXUU_sCvk",
       "title": "لعبة تتريس حقيقية داخل Excel؟! 🎮 الملف مجاني #shorts",
       "privacy": "public",
-      "views": 395,
+      "views": 396,
       "likes": 3,
       "comments": 1,
       "id": "ep03-tetris",
       "series": "excel",
       "publish_at": "2026-11-10T13:00:00+02:00"
+    },
+    {
+      "youtube_id": "B0GRfWzPGzY",
+      "title": "رسالة بخط يدي ✉️ لا أذكر أني كتبتها… وتاريخها غدًا #shorts",
+      "privacy": "public",
+      "views": 357,
+      "likes": 5,
+      "comments": 0,
+      "id": "h17-letter",
+      "series": "horror",
+      "publish_at": "2026-11-23T22:00:00+02:00"
     },
     {
       "youtube_id": "VLsYD24ePwc",
@@ -264,6 +286,17 @@
       "id": "fam03-code",
       "series": "family",
       "publish_at": "2026-11-10T20:00:00+02:00"
+    },
+    {
+      "youtube_id": "QVIaPVuItns",
+      "title": "ليلى نجت… لكن الدفتر وجد صاحبة جديدة اسمها مريم! انتظروا الحلقة القادمة · دفتر الجارة 📓 8 #shorts",
+      "privacy": "public",
+      "views": 312,
+      "likes": 8,
+      "comments": 0,
+      "id": "h-daftar08",
+      "series": "horror",
+      "publish_at": "2026-11-22T22:00:00+02:00"
     },
     {
       "youtube_id": "4EJuUe4zabo",
@@ -286,28 +319,6 @@
       "id": "h-daftar06",
       "series": "horror",
       "publish_at": "2026-11-20T22:00:00+02:00"
-    },
-    {
-      "youtube_id": "QVIaPVuItns",
-      "title": "ليلى نجت… لكن الدفتر وجد صاحبة جديدة اسمها مريم! انتظروا الحلقة القادمة · دفتر الجارة 📓 8 #shorts",
-      "privacy": "public",
-      "views": 225,
-      "likes": 7,
-      "comments": 0,
-      "id": "h-daftar08",
-      "series": "horror",
-      "publish_at": "2026-11-22T22:00:00+02:00"
-    },
-    {
-      "youtube_id": "JC3bXtlIdUo",
-      "title": "⚠️ غريب في لعبة طفلك سأله: أين تسكن؟ هذا ما يجب فعله #shorts",
-      "privacy": "public",
-      "views": 196,
-      "likes": 1,
-      "comments": 0,
-      "id": "fam16-stranger",
-      "series": "family",
-      "publish_at": "2026-11-23T20:00:00+02:00"
     },
     {
       "youtube_id": "d3qbYTS3GGQ",
@@ -407,17 +418,6 @@
       "id": "fam06-gems",
       "series": "family",
       "publish_at": "2026-11-20T20:00:00+02:00"
-    },
-    {
-      "youtube_id": "B0GRfWzPGzY",
-      "title": "رسالة بخط يدي ✉️ لا أذكر أني كتبتها… وتاريخها غدًا #shorts",
-      "privacy": "public",
-      "views": 1,
-      "likes": 0,
-      "comments": 0,
-      "id": "h17-letter",
-      "series": "horror",
-      "publish_at": "2026-11-23T22:00:00+02:00"
     },
     {
       "youtube_id": "7FFnoiugE10",
