@@ -40,3 +40,10 @@
 - Channel totals: 8 subs / ~11.9k views; subs per 1k views ≈ 1. Official channel floor ≈ 1k views; family stickman episodes (fam14 1,074, fam15 1,060) match the best older hits, so the stickman look stays.
 - Added docs/master_prompt.md (shared planning skeleton + per-series look blocks, no look change) and the spoken-subscribe-phrase rule in CLAUDE.md for new episodes only.
 - Retention analysis blocked: token has no analytics scope. Plan: owner sends Studio retention screenshots (3 top, 3 bottom) → yt-retention.
+
+## 2026-11-24 (scheduled production run)
+- Queues: Excel 3 ready (Minesweeper, 2048, Platformer), Family 6, code-drawn horror 0 and دفتر الجارة 0 → built h19-phone and h20-clock (horror target 2 while دفتر الجارة has <3 ready).
+- Code-drawn standalone horror holds ~0.9–1.1k views per video (closet 1,131, ceiling 1,137, kitchen 1,133, monitor 1,146) while دفتر الجارة serial eps sit far lower — standalone "everyday object does the impossible at 3 AM" stays the horror formula.
+- Family «جواهر مجانية» re-upload got 9 views vs ~1k for new family topics the same week: re-uploads are not worth a slot; new concrete dangers are.
+- Horror voice at +18 %/−22 Hz: 5 lines incl. a teaser+subscribe last line came to ~14 s of voice; a 4.4–5.2 s teaser line is the longest, start it on the black cut to stay under 18 s.
+- New horror SFX made procedurally: public/sfx/horror/ring.wav (3 s loop, bell strikes for 1.6 s) and breath.wav (4 s loop); click.wav copied into horror/.

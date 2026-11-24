@@ -41,6 +41,8 @@ import {H15Bus, H15_FRAMES} from './horror/H15Bus';
 import {H16Monitor, H16_FRAMES} from './horror/H16Monitor';
 import {H17Letter, H17_FRAMES} from './horror/H17Letter';
 import {H18Stairs, H18_FRAMES} from './horror/H18Stairs';
+import {H19Phone, H19_FRAMES} from './horror/H19Phone';
+import {H20Clock, H20_FRAMES} from './horror/H20Clock';
 import {Ep09Breakout, EP09_FRAMES} from './episodes/Ep09Breakout';
 import {Ep10Mines, EP10_FRAMES} from './episodes/Ep10Mines';
 import {Ep11T2048, EP11_FRAMES} from './episodes/Ep11T2048';
@@ -90,6 +92,8 @@ export const Root: React.FC = () => (
     <Composition id="H16Monitor" component={H16Monitor} durationInFrames={H16_FRAMES} fps={30} width={1080} height={1920} />
     <Composition id="H17Letter" component={H17Letter} durationInFrames={H17_FRAMES} fps={30} width={1080} height={1920} />
     <Composition id="H18Stairs" component={H18Stairs} durationInFrames={H18_FRAMES} fps={30} width={1080} height={1920} />
+    <Composition id="H19Phone" component={H19Phone} durationInFrames={H19_FRAMES} fps={30} width={1080} height={1920} />
+    <Composition id="H20Clock" component={H20Clock} durationInFrames={H20_FRAMES} fps={30} width={1080} height={1920} />
     <Composition id="Ep09Breakout" component={Ep09Breakout} durationInFrames={EP09_FRAMES} fps={30} width={1080} height={1920} />
     <Composition id="Ep10Mines" component={Ep10Mines} durationInFrames={EP10_FRAMES} fps={30} width={1080} height={1920} />
     <Composition id="Ep11T2048" component={Ep11T2048} durationInFrames={EP11_FRAMES} fps={30} width={1080} height={1920} />
