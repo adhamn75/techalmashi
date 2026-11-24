@@ -551,8 +551,10 @@
         "قصة رعب قصيرة",
         "مسلسل رعب"
       ],
-      "status": "ready",
-      "playlist": "PLcR-LdebtVbI"
+      "status": "scheduled",
+      "playlist": "PLcR-LdebtVbI",
+      "youtube_id": "ALCzHcF3R_Y",
+      "publish_at": "2026-11-25T22:00:00+02:00"
     },
     {
       "id": "h-daftar10",
@@ -767,7 +769,9 @@
         "الرقابة الأبوية",
         "تك عالماشي"
       ],
-      "status": "ready"
+      "status": "scheduled",
+      "youtube_id": "r7GyZ5agXDM",
+      "publish_at": "2026-11-25T20:00:00+02:00"
     },
     {
       "id": "h08-gallery",
@@ -1142,7 +1146,9 @@
         "أسرار Excel",
         "تك عالماشي"
       ],
-      "status": "ready"
+      "status": "scheduled",
+      "youtube_id": "bUC36y4xgfk",
+      "publish_at": "2026-11-25T13:00:00+02:00"
     },
     {
       "id": "ep11-2048",
