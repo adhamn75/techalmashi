@@ -141,13 +141,29 @@ def video_record(yt, video: dict, today: str) -> dict:
     return rec
 
 
+def probe(yt, today: str) -> dict:
+    """Which channel does the token see? Channel totals and its top videos (ids), no per-video filter."""
+    out = {}
+    common = {"ids": "channel==MINE", "startDate": "2020-01-01", "endDate": today}
+    try:
+        rows = rows_as_dicts(yt.reports().query(metrics="views,subscribersGained", **common).execute())
+        out["channel_totals"] = rows[0] if rows else {}
+        top = rows_as_dicts(yt.reports().query(metrics="views", dimensions="video", sort="-views",
+                                               maxResults=5, **common).execute())
+        out["top_video_ids"] = [r.get("video") for r in top]
+    except Exception as e:
+        out["error"] = error_text(e)
+    return out
+
+
 def build_report(yt, account: str, videos: list[dict], now: datetime) -> dict:
     today = now.astimezone(PACIFIC).date().isoformat()
+    check = probe(yt, today)
     recs = [video_record(yt, v, today) for v in videos]
     views = sum(r["views"] for r in recs)
     subs = sum(r["subs_gained"] for r in recs)
     pcts = [r["avg_view_pct"] for r in recs if r["avg_view_pct"] is not None]
-    return {"updated": now.replace(microsecond=0).isoformat(), "account": account, "videos": recs,
+    return {"updated": now.replace(microsecond=0).isoformat(), "account": account, "probe": check, "videos": recs,
             "summary": {"videos": len(recs), "subs_gained": subs, "views": views,
                         "subs_per_1k_views": per_1k(subs, views),
                         "avg_view_pct_median": median(pcts) if pcts else None}}
