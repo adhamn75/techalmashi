@@ -99,6 +99,19 @@ def pacific_date(ts: str | None, fallback: str) -> str:
     return dt.astimezone(PACIFIC).date().isoformat()
 
 
+def error_text(e: Exception) -> str:
+    """Short error with Google's reason (HttpError text starts with a long URL that hid it)."""
+    resp = getattr(e, "resp", None)
+    if resp is not None and hasattr(e, "content"):
+        try:
+            err = json.loads(e.content.decode("utf-8", "replace")).get("error", {})
+            reasons = ",".join(d.get("reason", "") for d in err.get("errors", []) if isinstance(d, dict))
+            return f"HTTP {getattr(resp, 'status', '?')} {reasons}: {str(err.get('message', ''))[:200]}"
+        except (ValueError, AttributeError):
+            pass
+    return f"{type(e).__name__}: {str(e)[:200]}"
+
+
 def per_1k(subs: int, views: int):
     return round(1000 * subs / views, 2) if views else None
 
@@ -124,7 +137,7 @@ def video_record(yt, video: dict, today: str) -> dict:
         rec["first_segment_ratio"] = curve[0][1] if curve else None
         rec["biggest_drop"] = biggest_drop(curve)
     except Exception as e:  # one video must never stop the others
-        rec["error"] = f"{type(e).__name__}: {str(e)[:200]}"
+        rec["error"] = error_text(e)
     return rec
 
 
