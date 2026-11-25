@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-25T08:24:56.476336+00:00",
+  "updated": "2026-11-25T18:41:06.774754+00:00",
   "videos": [
     {
       "youtube_id": "TGKpLTdMBo0",
@@ -35,6 +35,17 @@
       "publish_at": "2026-11-12T13:00:00+02:00"
     },
     {
+      "youtube_id": "lJ7ppDQ0CDQ",
+      "title": "«تمّ إيقاف حسابك!» ⚠️ رسالة مزيّفة تسرق كلمة سر ابنك #shorts",
+      "privacy": "public",
+      "views": 1246,
+      "likes": 12,
+      "comments": 1,
+      "id": "fam04-suspended",
+      "series": "family",
+      "publish_at": "2026-11-10T20:00:00+02:00"
+    },
+    {
       "youtube_id": "Q5NcGrwPK-c",
       "title": "الاستوديو 📷 صورة في هاتفي لم ألتقطها… التُقطت الساعة 3 وأنا نائم #shorts",
       "privacy": "public",
@@ -46,21 +57,10 @@
       "publish_at": "2026-11-15T22:00:00+02:00"
     },
     {
-      "youtube_id": "lJ7ppDQ0CDQ",
-      "title": "«تمّ إيقاف حسابك!» ⚠️ رسالة مزيّفة تسرق كلمة سر ابنك #shorts",
-      "privacy": "public",
-      "views": 1242,
-      "likes": 12,
-      "comments": 1,
-      "id": "fam04-suspended",
-      "series": "family",
-      "publish_at": "2026-11-10T20:00:00+02:00"
-    },
-    {
       "youtube_id": "cmowwJ3_gco",
       "title": "🔐 اللصّ عرف كلمة المرور… وبقي خارج الباب! فعّل هذا الآن #shorts",
       "privacy": "public",
-      "views": 1200,
+      "views": 1203,
       "likes": 8,
       "comments": 0,
       "id": "fam15-2fa",
@@ -90,6 +90,17 @@
       "publish_at": "2026-11-19T22:00:00+02:00"
     },
     {
+      "youtube_id": "Gd0iwfae9i4",
+      "title": "المطبخ 🔪 أمّي تناديني باسمي… لكنّ أمّي نائمة بجانبي #shorts",
+      "privacy": "public",
+      "views": 1139,
+      "likes": 21,
+      "comments": 0,
+      "id": "h14-kitchen",
+      "series": "horror",
+      "publish_at": "2026-11-18T22:00:00+02:00"
+    },
+    {
       "youtube_id": "JfCuML4SWZc",
       "title": "السقف 🏚️ أسكن في الطابق الأخير… فمن يمشي فوق سريري الساعة 3؟ #shorts",
       "privacy": "public",
@@ -99,17 +110,6 @@
       "id": "h09-ceiling",
       "series": "horror",
       "publish_at": "2026-11-16T22:00:00+02:00"
-    },
-    {
-      "youtube_id": "Gd0iwfae9i4",
-      "title": "المطبخ 🔪 أمّي تناديني باسمي… لكنّ أمّي نائمة بجانبي #shorts",
-      "privacy": "public",
-      "views": 1137,
-      "likes": 21,
-      "comments": 0,
-      "id": "h14-kitchen",
-      "series": "horror",
-      "publish_at": "2026-11-18T22:00:00+02:00"
     },
     {
       "youtube_id": "OIPcgh7VX_c",
@@ -123,6 +123,17 @@
       "publish_at": "2026-11-15T22:00:00+02:00"
     },
     {
+      "youtube_id": "Ip71KGZh3a0",
+      "title": "هل فعلاً Excel يشغّل لعبة تحطيم الطوب؟ 🧱 كرة ترتدّ بين الخلايا… الملف مجاني #shorts",
+      "privacy": "public",
+      "views": 1108,
+      "likes": 9,
+      "comments": 0,
+      "id": "ep09-breakout",
+      "series": "excel",
+      "publish_at": "2026-11-23T13:00:00+02:00"
+    },
+    {
       "youtube_id": "asCGkWBQ2uI",
       "title": "باك مان داخل Excel؟! 👻 أشباح تطاردك بأقصر طريق… الملف مجاني #shorts",
       "privacy": "public",
@@ -134,21 +145,32 @@
       "publish_at": "2026-11-20T13:00:00+02:00"
     },
     {
-      "youtube_id": "Ip71KGZh3a0",
-      "title": "هل فعلاً Excel يشغّل لعبة تحطيم الطوب؟ 🧱 كرة ترتدّ بين الخلايا… الملف مجاني #shorts",
+      "youtube_id": "JC3bXtlIdUo",
+      "title": "⚠️ غريب في لعبة طفلك سأله: أين تسكن؟ هذا ما يجب فعله #shorts",
       "privacy": "public",
-      "views": 1062,
-      "likes": 9,
+      "views": 987,
+      "likes": 3,
       "comments": 0,
-      "id": "ep09-breakout",
-      "series": "excel",
-      "publish_at": "2026-11-23T13:00:00+02:00"
+      "id": "fam16-stranger",
+      "series": "family",
+      "publish_at": "2026-11-23T20:00:00+02:00"
+    },
+    {
+      "youtube_id": "OOg_rt2pI_8",
+      "title": "الدرج 🪜 أعدّه كل ليلة 12 درجة… الليلة صار 13 #shorts",
+      "privacy": "public",
+      "views": 976,
+      "likes": 11,
+      "comments": 0,
+      "id": "h18-stairs",
+      "series": "horror",
+      "publish_at": "2026-11-24T22:00:00+02:00"
     },
     {
       "youtube_id": "ELCIwxks4bU",
       "title": "عمود الإنارة 🏮 كل ليلة يقترب خطوة… الليلة العمود فارغ #shorts",
       "privacy": "public",
-      "views": 958,
+      "views": 961,
       "likes": 18,
       "comments": 1,
       "id": "h13-streetlamp",
@@ -170,7 +192,7 @@
       "youtube_id": "HyitleBUxOc",
       "title": "الحافلة الأخيرة 🚌 مقعدٌ محجوز باسمي… وفي الزجاج رأيتني جالسًا عليه #shorts",
       "privacy": "public",
-      "views": 902,
+      "views": 903,
       "likes": 10,
       "comments": 0,
       "id": "h15-bus",
@@ -178,35 +200,24 @@
       "publish_at": "2026-11-19T22:00:00+02:00"
     },
     {
-      "youtube_id": "JC3bXtlIdUo",
-      "title": "⚠️ غريب في لعبة طفلك سأله: أين تسكن؟ هذا ما يجب فعله #shorts",
+      "youtube_id": "nrxrZCthUZ0",
+      "title": "الطابق العاشر 🪟 طرقٌ على نافذتي منتصف الليل… ولا شرفة هنا #shorts",
       "privacy": "public",
-      "views": 899,
-      "likes": 3,
+      "views": 881,
+      "likes": 13,
       "comments": 0,
-      "id": "fam16-stranger",
-      "series": "family",
-      "publish_at": "2026-11-23T20:00:00+02:00"
+      "id": "h11-window",
+      "series": "horror",
+      "publish_at": "2026-11-17T22:00:00+02:00"
     },
     {
       "youtube_id": "cD451ImVilE",
       "title": "آثار أقدام 👣 استيقظت على ماءٍ يقطر… والآثار تقف عند سريري #shorts",
       "privacy": "public",
-      "views": 880,
+      "views": 881,
       "likes": 12,
       "comments": 0,
       "id": "h12-footprints",
-      "series": "horror",
-      "publish_at": "2026-11-17T22:00:00+02:00"
-    },
-    {
-      "youtube_id": "nrxrZCthUZ0",
-      "title": "الطابق العاشر 🪟 طرقٌ على نافذتي منتصف الليل… ولا شرفة هنا #shorts",
-      "privacy": "public",
-      "views": 879,
-      "likes": 13,
-      "comments": 0,
-      "id": "h11-window",
       "series": "horror",
       "publish_at": "2026-11-17T22:00:00+02:00"
     },
@@ -222,21 +233,10 @@
       "publish_at": "2026-11-13T22:00:00+02:00"
     },
     {
-      "youtube_id": "OOg_rt2pI_8",
-      "title": "الدرج 🪜 أعدّه كل ليلة 12 درجة… الليلة صار 13 #shorts",
-      "privacy": "public",
-      "views": 817,
-      "likes": 10,
-      "comments": 0,
-      "id": "h18-stairs",
-      "series": "horror",
-      "publish_at": "2026-11-24T22:00:00+02:00"
-    },
-    {
       "youtube_id": "poCU-w1Dbks",
       "title": "دفتر الجارة 📓 الحلقة 1: الجارة سافرت… لكن بابها مفتوح #shorts",
       "privacy": "public",
-      "views": 565,
+      "views": 566,
       "likes": 9,
       "comments": 0,
       "id": "h-daftar01",
@@ -247,7 +247,7 @@
       "youtube_id": "W6DO3XHqRbU",
       "title": "دفتر الجارة 📓 الحلقة 3: «افتحي يا ليلى… أنا جارتك» لكن الجارة سافرت #shorts",
       "privacy": "public",
-      "views": 560,
+      "views": 561,
       "likes": 9,
       "comments": 0,
       "id": "h-daftar03",
@@ -269,7 +269,7 @@
       "youtube_id": "QVIaPVuItns",
       "title": "ليلى نجت… لكن الدفتر وجد صاحبة جديدة اسمها مريم! انتظروا الحلقة القادمة · دفتر الجارة 📓 8 #shorts",
       "privacy": "public",
-      "views": 397,
+      "views": 398,
       "likes": 8,
       "comments": 0,
       "id": "h-daftar08",
@@ -291,8 +291,8 @@
       "youtube_id": "B0GRfWzPGzY",
       "title": "رسالة بخط يدي ✉️ لا أذكر أني كتبتها… وتاريخها غدًا #shorts",
       "privacy": "public",
-      "views": 364,
-      "likes": 6,
+      "views": 390,
+      "likes": 7,
       "comments": 0,
       "id": "h17-letter",
       "series": "horror",
@@ -313,12 +313,23 @@
       "youtube_id": "4EJuUe4zabo",
       "title": "ليلى ترفض كتابة اسم أحد… فاسودّت الصفحة! انتظروا الحلقة القادمة · دفتر الجارة 📓 7 #shorts",
       "privacy": "public",
-      "views": 309,
+      "views": 310,
       "likes": 5,
       "comments": 0,
       "id": "h-daftar07",
       "series": "horror",
       "publish_at": "2026-11-21T22:00:00+02:00"
+    },
+    {
+      "youtube_id": "bUC36y4xgfk",
+      "title": "هل فعلاً Excel يكسح الألغام وحده؟ 💣 اضغط خلية… وتنفتح الفارغة تلقائيًّا… الملف مجاني #shorts",
+      "privacy": "public",
+      "views": 291,
+      "likes": 2,
+      "comments": 0,
+      "id": "ep10-minesweeper",
+      "series": "excel",
+      "publish_at": "2026-11-25T13:00:00+02:00"
     },
     {
       "youtube_id": "tBhK0JOOhp0",
@@ -357,7 +368,7 @@
       "youtube_id": "AmyUcLRSgrY",
       "title": "ليلى ربطت الباب بحبل… فاستيقظت واقفة عنده! انتظروا الحلقة القادمة · دفتر الجارة 📓 5 #shorts",
       "privacy": "public",
-      "views": 153,
+      "views": 155,
       "likes": 1,
       "comments": 0,
       "id": "h-daftar05",
@@ -387,6 +398,17 @@
       "publish_at": "2026-11-09T22:00:00+02:00"
     },
     {
+      "youtube_id": "7FFnoiugE10",
+      "title": "فاتورة 500$ من لعبة ابنك؟! 💳 أوقف الشراء داخل التطبيقات في 10 ثوانٍ #shorts",
+      "privacy": "public",
+      "views": 87,
+      "likes": 0,
+      "comments": 0,
+      "id": "fam07-purchase",
+      "series": "family",
+      "publish_at": "2026-11-24T20:00:00+02:00"
+    },
+    {
       "youtube_id": "BIsYtmc2XyI",
       "title": "دفتر الجارة 📓 الحلقة 4: امرأة في النافذة تحمل دفترًا… وفيه صورة ليلى #shorts",
       "privacy": "public",
@@ -396,17 +418,6 @@
       "id": "h-daftar04",
       "series": "horror",
       "publish_at": "2026-11-14T22:00:00+02:00"
-    },
-    {
-      "youtube_id": "7FFnoiugE10",
-      "title": "فاتورة 500$ من لعبة ابنك؟! 💳 أوقف الشراء داخل التطبيقات في 10 ثوانٍ #shorts",
-      "privacy": "public",
-      "views": 79,
-      "likes": 0,
-      "comments": 0,
-      "id": "fam07-purchase",
-      "series": "family",
-      "publish_at": "2026-11-24T20:00:00+02:00"
     },
     {
       "youtube_id": "K-jLrdmkQsM",
@@ -434,7 +445,7 @@
       "youtube_id": "5HpH56EBC4Q",
       "title": "«جواهر مجانية» لابنك؟ 💎 هكذا يُسرق حساب لعبته في ثانية #shorts",
       "privacy": "public",
-      "views": 12,
+      "views": 13,
       "likes": 0,
       "comments": 0,
       "id": "fam06-gems",
@@ -444,7 +455,7 @@
     {
       "youtube_id": "r7GyZ5agXDM",
       "title": "«صديق» ابنك في اللعبة قد لا يكون طفلًا 🎮🚩 4 علامات خطر #shorts",
-      "privacy": "private",
+      "privacy": "public",
       "views": 0,
       "likes": 0,
       "comments": 0,
@@ -453,15 +464,15 @@
       "publish_at": "2026-11-25T20:00:00+02:00"
     },
     {
-      "youtube_id": "bUC36y4xgfk",
-      "title": "هل فعلاً Excel يكسح الألغام وحده؟ 💣 اضغط خلية… وتنفتح الفارغة تلقائيًّا… الملف مجاني #shorts",
+      "youtube_id": "j8j8r9wjWCs",
+      "title": "هل فعلاً رمز QR قد يسرق حساب ابنك؟ 📷🚨 جواهر مجانية… افعل هذا قبل المسح #shorts",
       "privacy": "private",
       "views": 0,
       "likes": 0,
       "comments": 0,
-      "id": "ep10-minesweeper",
-      "series": "excel",
-      "publish_at": "2026-11-25T13:00:00+02:00"
+      "id": "fam09-qr",
+      "series": "family",
+      "publish_at": "2026-11-26T20:00:00+02:00"
     }
   ]
 }
