@@ -1,0 +1,41 @@
+name: Altered content -> No (code-drawn only)
+
+# Sets YouTube's "Altered or synthetic content" to No on code-drawn videos (episodes.json entries
+# with a "composition"). AI-image videos (e.g. دفتر الجارة) and unknown videos are left as they are.
+# Run first with apply = false to see the list, then again with apply = true.
+on:
+  workflow_dispatch:
+    inputs:
+      apply:
+        description: "false = only show what would change; true = make the change"
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -q google-api-python-client google-auth
+      - name: Load YouTube token
+        env:
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+        run: |
+          T=$(openssl enc -d -aes-256-cbc -pbkdf2 -a -A -pass env:YT_CLIENT_SECRET -in youtube_token.enc)
+          echo "::add-mask::$T"
+          echo "YT_REFRESH_TOKEN=$T" >> "$GITHUB_ENV"
+      - name: Altered content
+        env:
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          APPLY: ${{ inputs.apply && '1' || '0' }}
+        run: |
+          cd scripts
+          python synthetic_off.py tech
+          if [ -f ../youtube_token_horror.enc ]; then python synthetic_off.py horror || echo "::warning::horror failed"; fi
