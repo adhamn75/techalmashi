@@ -14,11 +14,6 @@ on:
         type: choice
         options: [tech, horror]
         default: tech
-      purpose:
-        description: "publish = the normal publishing token; analytics = the separate read-only analytics token"
-        type: choice
-        options: [publish, analytics]
-        default: publish
 
 permissions:
   contents: write
@@ -36,13 +31,8 @@ jobs:
           YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
           YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
         run: |
-          if [ "${{ inputs.purpose }}" = "analytics" ]; then
-            F="youtube_analytics_${{ inputs.account }}.enc"
-            python3 scripts/exchange_analytics_code.py
-          else
           F=youtube_token.enc; [ "${{ inputs.account }}" != "tech" ] && F="youtube_token_${{ inputs.account }}.enc"
           python3 scripts/exchange_code.py
-          fi
           openssl enc -aes-256-cbc -pbkdf2 -a -A -salt -pass env:YT_CLIENT_SECRET -in token.txt -out "$F"
           rm token.txt
           git config user.name "shorts-bot"

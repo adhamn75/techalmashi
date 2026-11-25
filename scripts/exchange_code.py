@@ -39,11 +39,11 @@ token = resp.get("refresh_token")
 if not token:
     print("No refresh_token in the response; keys returned:", sorted(resp))
     sys.exit(1)
-# Guard (2026-11-25): a read-only analytics sign-in must never replace the publishing token.
+# Guard (2026-11-25): a sign-in that cannot upload must never replace the publishing token.
 granted = set(resp.get("scope", "").split())
 if "https://www.googleapis.com/auth/youtube" not in granted:
     print("This sign-in cannot upload videos (granted: " + (", ".join(sorted(granted)) or "unknown") + "). "
-          "Nothing was saved. For the read-only analytics token, run this workflow with purpose = analytics.")
+          "Nothing was saved, so publishing keeps working with the current token.")
     sys.exit(1)
 open("token.txt", "w").write(token)
 print("Refresh token received (saved encrypted).")
