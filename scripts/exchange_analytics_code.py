@@ -34,9 +34,20 @@ def check_response(resp: dict) -> str:
     return token
 
 
+def extract_code(pasted: str) -> str:
+    """Accept the whole localhost address, the address without http://, or the bare code (encoded or not)."""
+    s = "".join(pasted.split())  # drop spaces/newlines picked up while copying
+    if "?" in s or s.lower().startswith(("http", "localhost")):
+        qs = urllib.parse.parse_qs(urllib.parse.urlparse(s if "://" in s else "http://" + s).query)
+        if "code" not in qs:
+            raise ValueError("This is not the localhost address: it has no code in it. After allowing access, copy the "
+                             "address that starts with http://localhost/?code=... and try again.")
+        return qs["code"][0]
+    return urllib.parse.unquote(s)  # a bare code copied as 4%2F0Ab... becomes 4/0Ab...
+
+
 def exchange(code: str, secret: str, redirect_uri: str) -> dict:
-    if "code=" in code:  # the whole redirect URL was pasted
-        code = urllib.parse.parse_qs(urllib.parse.urlparse(code).query)["code"][0]
+    code = extract_code(code)
     body = urllib.parse.urlencode({
         "code": code,
         "client_id": CLIENT_ID,
@@ -54,8 +65,13 @@ def main() -> int:
         return 1
     try:
         resp = exchange(os.environ["AUTH_CODE"].strip(), secret, os.environ.get("REDIRECT_URI", "http://localhost"))
+    except ValueError as e:
+        print(e)
+        return 1
     except urllib.error.HTTPError as e:
         print("Google refused the code:", e.read().decode()[:300])
+        print("Codes work once and expire after a few minutes: sign in again with scripts/analytics_auth_url.py "
+              "and paste the new localhost address right away.")
         return 1
     try:
         token = check_response(resp)

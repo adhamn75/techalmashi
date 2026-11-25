@@ -153,6 +153,17 @@ class ScopeTests(unittest.TestCase):
             with self.subTest(resp=resp), self.assertRaises(ValueError):
                 xc.check_response(resp)
 
+    def test_extract_code_all_paste_forms(self):
+        for pasted in ("http://localhost/?code=4/0AbC_d-e&scope=" + urllib.parse.quote(A),
+                       "http://localhost/?code=4%2F0AbC_d-e&scope=x",
+                       "localhost/?code=4/0AbC_d-e&scope=x",
+                       "  4%2F0AbC_d-e \n",
+                       "4/0AbC_d-e"):
+            with self.subTest(pasted=pasted):
+                self.assertEqual(xc.extract_code(pasted), "4/0AbC_d-e")
+        with self.assertRaises(ValueError):
+            xc.extract_code("https://accounts.google.com/o/oauth2/v2/auth?response_type=code&client_id=x")
+
     def test_main_writes_nothing_on_bad_scope(self):
         with tempfile.TemporaryDirectory() as d, mock.patch.dict("os.environ", {"YT_CLIENT_SECRET": "s", "AUTH_CODE": "c"}):
             cwd = Path.cwd()
