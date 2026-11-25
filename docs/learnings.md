@@ -47,3 +47,10 @@
 - Family «جواهر مجانية» re-upload got 9 views vs ~1k for new family topics the same week: re-uploads are not worth a slot; new concrete dangers are.
 - Horror voice at +18 %/−22 Hz: 5 lines incl. a teaser+subscribe last line came to ~14 s of voice; a 4.4–5.2 s teaser line is the longest, start it on the black cut to stay under 18 s.
 - New horror SFX made procedurally: public/sfx/horror/ring.wav (3 s loop, bell strikes for 1.6 s) and breath.wav (4 s loop); click.wav copied into horror/.
+
+## 2026-11-25 (scheduled production run)
+- Excel fell to 2 ready (Minesweeper went out); built ep13 car racing (Ep13Racer + files/racing.xlsm), the first Excel episode with the spoken subscribe phrase inside the last line («…واشتركْ: القادمةُ…»). Family 5 ready, code-drawn horror 2: nothing needed there.
+- «هل فعلاً…؟» Breakout reached 1,062 in two days vs Space Invaders 175 with the old shape: the A/B leans toward the question title, but Breakout is also the more famous game — confirm on Minesweeper before switching all titles.
+- Subs per 1k views: 10 / 13.8k ≈ 0.72 (baseline 11-23: 8 / 11.9k ≈ 0.67). Spoken-phrase episodes start airing now; compare again after 3–4 of them.
+- The "visible brain" lesson held for the racer: a ×0.25 replay with dashed collision boxes labelled «Overlap = False» shows the trick on screen; the autopilot needed a lane-gap planner (the naive one got boxed in after 4 s), so simulate seeds first and pick one that never crashes in the filmed range.
+- Horror: the stairs (754 in a day) keeps the ~1k standalone pace, the letter (364) lags — objects that move/change on their own beat "a thing appeared" premises.

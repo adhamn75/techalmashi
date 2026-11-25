@@ -53,7 +53,7 @@ Excel draws your photo (pixel art from cells) · full attendance system with ove
 Excel sends WhatsApp messages · 3D cube spinning with formulas only · invoice that fills itself and
 exports PDF · AI inside a cell · live gold/dollar prices refreshing · Excel plays music ·
 Tetris in Excel · Excel as a calendar app · QR code generator in Excel.
-Space Invaders made (ep 8, files/invaders.xlsm). Breakout made (ep 9, files/breakout.xlsm). Minesweeper made (ep 10, files/minesweeper.xlsm). 2048 made (ep 11, files/game2048.xlsm, OnKey arrows). Platformer made (ep 12, files/platformer.xlsm, original hero «Kubi», gravity line vy = vy + G). **Promised next Excel episode (ep 12 teaser «سيارةٌ تسابق الزحام»): a top-down car racing / traffic-dodge game in cells (VBA, lanes scroll down, arrows to steer, speed rises) — make it next (ep13). No real car brands or logos.**
+Space Invaders made (ep 8, files/invaders.xlsm). Breakout made (ep 9, files/breakout.xlsm). Minesweeper made (ep 10, files/minesweeper.xlsm). 2048 made (ep 11, files/game2048.xlsm, OnKey arrows). Platformer made (ep 12, files/platformer.xlsm, original hero «Kubi», gravity line vy = vy + G). Car racing made (ep 13, files/racing.xlsm, top-down traffic dodge, Ep13Racer.sim.ts seed 99). **Promised next Excel episode (ep 13 teaser «لعبةٌ لن تهزمَ فيها Excel»): tic-tac-toe (X-O) where Excel never loses — minimax in VBA, click a cell to play, show the move scores on screen — make it next (ep14).**
 Horror code-drawn eps made: rules, frame481, elevator, camera, mirror, own number, closet, gallery (h08), ceiling (h09), radio (h10), window (h11), footprints (h12), street lamp (h13, peephole), kitchen (h14, mother's voice), last bus (h15, one-point aisle + window reflection), baby monitor (h16, device on nightstand + LEDs), letter (h17, floor-level door gap + phone-torch reading), stairs (h18, side cut-away + step counter, 13th step opens its eyes), cut-cord phone (h19, amber bulb hallway + earpiece macro + whip-pan to doorway), wall clock (h20, teal moonlight, hands run backwards, third hand grows to the bed).
 **Promised next horror (h20 teaser «تلفازٌ مطفأ… يراك»): a switched-off TV whose black screen sees you — make it next (h21).**
 
@@ -177,7 +177,7 @@ Playlists (original @tech3almashi, 2026-11-19): Excel `PLYdOHth1Xago`, Family `P
 
 **Always keep episodes ahead** (owner's rule, updated 2026-11-20): never fewer than TWO ready in any series, and for the DAILY series
 (Excel, Horror) aim for THREE, because a batch takes hours and needs the owner's PC. Check `episodes.json` ready count first and produce
-until every series is at its target before anything else. Next Excel episode: the car racing game (ep13, promised by ep12).
+until every series is at its target before anything else. Next Excel episode: unbeatable tic-tac-toe (ep14, promised by ep13).
 Horror دفتر الجارة: eps 5–6 open with a cold-open of the scariest line (`COLD=<line> EP=<n> python3 work/daftar_new/build.py`), 7–8 open calmly,
 as an A/B test — compare views after a few days.
 
