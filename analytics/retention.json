@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-25T07:22:20+00:00",
+ "updated": "2026-11-25T07:24:41+00:00",
  "account": "tech",
  "videos": [
   {
@@ -15,7 +15,7 @@
    "curve": [],
    "first_segment_ratio": null,
    "biggest_drop": null,
-   "error": "HttpError: <HttpError 403 when requesting https://youtubeanalytics.googleapis.com/v2/reports?metrics=views%2CaverageViewDuration%2CaverageViewPercentage%2CsubscribersGained%2CsubscribersLost&ids=channel%3D%3DMIN"
+   "error": "HTTP 403 forbidden: Forbidden"
   },
   {
    "id": "JC3bXtlIdUo",
@@ -30,7 +30,7 @@
    "curve": [],
    "first_segment_ratio": null,
    "biggest_drop": null,
-   "error": "HttpError: <HttpError 403 when requesting https://youtubeanalytics.googleapis.com/v2/reports?metrics=views%2CaverageViewDuration%2CaverageViewPercentage%2CsubscribersGained%2CsubscribersLost&ids=channel%3D%3DMIN"
+   "error": "HTTP 403 forbidden: Forbidden"
   },
   {
    "id": "Ip71KGZh3a0",
@@ -45,7 +45,7 @@
    "curve": [],
    "first_segment_ratio": null,
    "biggest_drop": null,
-   "error": "HttpError: <HttpError 403 when requesting https://youtubeanalytics.googleapis.com/v2/reports?metrics=views%2CaverageViewDuration%2CaverageViewPercentage%2CsubscribersGained%2CsubscribersLost&ids=channel%3D%3DMIN"
+   "error": "HTTP 403 forbidden: Forbidden"
   },
   {
    "id": "cmowwJ3_gco",
@@ -60,7 +60,7 @@
    "curve": [],
    "first_segment_ratio": null,
    "biggest_drop": null,
-   "error": "HttpError: <HttpError 403 when requesting https://youtubeanalytics.googleapis.com/v2/reports?metrics=views%2CaverageViewDuration%2CaverageViewPercentage%2CsubscribersGained%2CsubscribersLost&ids=channel%3D%3DMIN"
+   "error": "HTTP 403 forbidden: Forbidden"
   },
   {
    "id": "BVA2Rx0d_5E",
@@ -75,7 +75,7 @@
    "curve": [],
    "first_segment_ratio": null,
    "biggest_drop": null,
-   "error": "HttpError: <HttpError 403 when requesting https://youtubeanalytics.googleapis.com/v2/reports?metrics=views%2CaverageViewDuration%2CaverageViewPercentage%2CsubscribersGained%2CsubscribersLost&ids=channel%3D%3DMIN"
+   "error": "HTTP 403 forbidden: Forbidden"
   },
   {
    "id": "LhuaYmGhfqA",
@@ -90,7 +90,7 @@
    "curve": [],
    "first_segment_ratio": null,
    "biggest_drop": null,
-   "error": "HttpError: <HttpError 403 when requesting https://youtubeanalytics.googleapis.com/v2/reports?metrics=views%2CaverageViewDuration%2CaverageViewPercentage%2CsubscribersGained%2CsubscribersLost&ids=channel%3D%3DMIN"
+   "error": "HTTP 403 forbidden: Forbidden"
   },
   {
    "id": "5HpH56EBC4Q",
@@ -105,7 +105,7 @@
    "curve": [],
    "first_segment_ratio": null,
    "biggest_drop": null,
-   "error": "HttpError: <HttpError 403 when requesting https://youtubeanalytics.googleapis.com/v2/reports?metrics=views%2CaverageViewDuration%2CaverageViewPercentage%2CsubscribersGained%2CsubscribersLost&ids=channel%3D%3DMIN"
+   "error": "HTTP 403 forbidden: Forbidden"
   },
   {
    "id": "GeHgTtuz6k8",
@@ -120,7 +120,7 @@
    "curve": [],
    "first_segment_ratio": null,
    "biggest_drop": null,
-   "error": "HttpError: <HttpError 403 when requesting https://youtubeanalytics.googleapis.com/v2/reports?metrics=views%2CaverageViewDuration%2CaverageViewPercentage%2CsubscribersGained%2CsubscribersLost&ids=channel%3D%3DMIN"
+   "error": "HTTP 403 forbidden: Forbidden"
   },
   {
    "id": "asCGkWBQ2uI",
@@ -135,7 +135,7 @@
    "curve": [],
    "first_segment_ratio": null,
    "biggest_drop": null,
-   "error": "HttpError: <HttpError 403 when requesting https://youtubeanalytics.googleapis.com/v2/reports?metrics=views%2CaverageViewDuration%2CaverageViewPercentage%2CsubscribersGained%2CsubscribersLost&ids=channel%3D%3DMIN"
+   "error": "HTTP 403 forbidden: Forbidden"
   },
   {
    "id": "PIFMRt0CHbk",
@@ -150,7 +150,7 @@
    "curve": [],
    "first_segment_ratio": null,
    "biggest_drop": null,
-   "error": "HttpError: <HttpError 403 when requesting https://youtubeanalytics.googleapis.com/v2/reports?metrics=views%2CaverageViewDuration%2CaverageViewPercentage%2CsubscribersGained%2CsubscribersLost&ids=channel%3D%3DMIN"
+   "error": "HTTP 403 forbidden: Forbidden"
   },
   {
    "id": "TGKpLTdMBo0",
@@ -165,7 +165,7 @@
    "curve": [],
    "first_segment_ratio": null,
    "biggest_drop": null,
-   "error": "HttpError: <HttpError 403 when requesting https://youtubeanalytics.googleapis.com/v2/reports?metrics=views%2CaverageViewDuration%2CaverageViewPercentage%2CsubscribersGained%2CsubscribersLost&ids=channel%3D%3DMIN"
+   "error": "HTTP 403 forbidden: Forbidden"
   },
   {
    "id": "K-jLrdmkQsM",
@@ -180,7 +180,7 @@
    "curve": [],
    "first_segment_ratio": null,
    "biggest_drop": null,
-   "error": "HttpError: <HttpError 403 when requesting https://youtubeanalytics.googleapis.com/v2/reports?metrics=views%2CaverageViewDuration%2CaverageViewPercentage%2CsubscribersGained%2CsubscribersLost&ids=channel%3D%3DMIN"
+   "error": "HTTP 403 forbidden: Forbidden"
   },
   {
    "id": "lJ7ppDQ0CDQ",
@@ -195,7 +195,7 @@
    "curve": [],
    "first_segment_ratio": null,
    "biggest_drop": null,
-   "error": "HttpError: <HttpError 403 when requesting https://youtubeanalytics.googleapis.com/v2/reports?metrics=views%2CaverageViewDuration%2CaverageViewPercentage%2CsubscribersGained%2CsubscribersLost&ids=channel%3D%3DMIN"
+   "error": "HTTP 403 forbidden: Forbidden"
   },
   {
    "id": "VLsYD24ePwc",
@@ -210,7 +210,7 @@
    "curve": [],
    "first_segment_ratio": null,
    "biggest_drop": null,
-   "error": "HttpError: <HttpError 403 when requesting https://youtubeanalytics.googleapis.com/v2/reports?metrics=views%2CaverageViewDuration%2CaverageViewPercentage%2CsubscribersGained%2CsubscribersLost&ids=channel%3D%3DMIN"
+   "error": "HTTP 403 forbidden: Forbidden"
   },
   {
    "id": "LENXUU_sCvk",
@@ -225,7 +225,7 @@
    "curve": [],
    "first_segment_ratio": null,
    "biggest_drop": null,
-   "error": "HttpError: <HttpError 403 when requesting https://youtubeanalytics.googleapis.com/v2/reports?metrics=views%2CaverageViewDuration%2CaverageViewPercentage%2CsubscribersGained%2CsubscribersLost&ids=channel%3D%3DMIN"
+   "error": "HTTP 403 forbidden: Forbidden"
   },
   {
    "id": "xWR3WLq_85U",
@@ -240,7 +240,7 @@
    "curve": [],
    "first_segment_ratio": null,
    "biggest_drop": null,
-   "error": "HttpError: <HttpError 403 when requesting https://youtubeanalytics.googleapis.com/v2/reports?metrics=views%2CaverageViewDuration%2CaverageViewPercentage%2CsubscribersGained%2CsubscribersLost&ids=channel%3D%3DMIN"
+   "error": "HTTP 403 forbidden: Forbidden"
   },
   {
    "id": "H1vlM8GvZIs",
@@ -255,7 +255,7 @@
    "curve": [],
    "first_segment_ratio": null,
    "biggest_drop": null,
-   "error": "HttpError: <HttpError 403 when requesting https://youtubeanalytics.googleapis.com/v2/reports?metrics=views%2CaverageViewDuration%2CaverageViewPercentage%2CsubscribersGained%2CsubscribersLost&ids=channel%3D%3DMIN"
+   "error": "HTTP 403 forbidden: Forbidden"
   },
   {
    "id": "rbvYJoA0FbY",
@@ -270,7 +270,7 @@
    "curve": [],
    "first_segment_ratio": null,
    "biggest_drop": null,
-   "error": "HttpError: <HttpError 403 when requesting https://youtubeanalytics.googleapis.com/v2/reports?metrics=views%2CaverageViewDuration%2CaverageViewPercentage%2CsubscribersGained%2CsubscribersLost&ids=channel%3D%3DMIN"
+   "error": "HTTP 403 forbidden: Forbidden"
   },
   {
    "id": "75k-UDnbTi0",
@@ -285,7 +285,7 @@
    "curve": [],
    "first_segment_ratio": null,
    "biggest_drop": null,
-   "error": "HttpError: <HttpError 403 when requesting https://youtubeanalytics.googleapis.com/v2/reports?metrics=views%2CaverageViewDuration%2CaverageViewPercentage%2CsubscribersGained%2CsubscribersLost&ids=channel%3D%3DMIN"
+   "error": "HTTP 403 forbidden: Forbidden"
   }
  ],
  "summary": {
