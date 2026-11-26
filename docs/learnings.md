@@ -54,3 +54,9 @@
 - Subs per 1k views: 10 / 13.8k ≈ 0.72 (baseline 11-23: 8 / 11.9k ≈ 0.67). Spoken-phrase episodes start airing now; compare again after 3–4 of them.
 - The "visible brain" lesson held for the racer: a ×0.25 replay with dashed collision boxes labelled «Overlap = False» shows the trick on screen; the autopilot needed a lane-gap planner (the naive one got boxed in after 4 s), so simulate seeds first and pick one that never crashes in the filmed range.
 - Horror: the stairs (754 in a day) keeps the ~1k standalone pace, the letter (364) lags — objects that move/change on their own beat "a thing appeared" premises.
+
+## 2026-11-26 (scheduled production run)
+- Queues full: Excel 3 ready (2048, Platformer, Racing), Family 4 (hacker, Wi-Fi, passphrase, screen time), code-drawn horror 2 (phone, clock) → nothing built.
+- Family: the 2FA «اللصّ عرف كلمة المرور… وبقي خارج الباب» (1,203) and school-uniform photo (1,163) both crossed 1k in days, while game-chat stranger re-angle (124) and in-app purchase (103) stall — a single concrete scary scene in the title beats a "4 signs" list.
+- Excel: Minesweeper with the «هل فعلاً…؟» title is at 422 after a day vs Breakout 1,110 — the question shape is not a guaranteed lift; game fame still decides. Keep picking the most famous games (tic-tac-toe next, then Tetris redux / Mario-style).
+- Subs per 1k views: main channel 10 / 14.3k ≈ 0.70 (flat vs 0.67 baseline and 0.72 yesterday); spoken-phrase episodes (racing) not yet aired — re-check after it airs.
