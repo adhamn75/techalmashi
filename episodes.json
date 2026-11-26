@@ -1083,7 +1083,9 @@
         "كلمة السر",
         "تك عالماشي"
       ],
-      "status": "ready"
+      "status": "scheduled",
+      "youtube_id": "VOKVsW2LROk",
+      "publish_at": "2026-11-27T20:00:00+02:00"
     },
     {
       "id": "fam11-wifi",
@@ -1171,7 +1173,9 @@
         "أسرار Excel",
         "تك عالماشي"
       ],
-      "status": "ready"
+      "status": "scheduled",
+      "youtube_id": "QydWlbR16Z8",
+      "publish_at": "2026-11-27T13:00:00+02:00"
     },
     {
       "id": "ep12-platformer",
