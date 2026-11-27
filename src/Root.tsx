@@ -43,6 +43,10 @@ import {H17Letter, H17_FRAMES} from './horror/H17Letter';
 import {H18Stairs, H18_FRAMES} from './horror/H18Stairs';
 import {H19Phone, H19_FRAMES} from './horror/H19Phone';
 import {H20Clock, H20_FRAMES} from './horror/H20Clock';
+import {H21Tv, H21_FRAMES} from './horror/H21Tv';
+import {H22Coat, H22_FRAMES} from './horror/H22Coat';
+import {Family17Vault, FAMILY17_FRAMES} from './episodes/Fam17Vault';
+import {Family18Torch, FAMILY18_FRAMES} from './episodes/Fam18Torch';
 import {Ep09Breakout, EP09_FRAMES} from './episodes/Ep09Breakout';
 import {Ep10Mines, EP10_FRAMES} from './episodes/Ep10Mines';
 import {Ep11T2048, EP11_FRAMES} from './episodes/Ep11T2048';
@@ -104,6 +108,10 @@ export const Root: React.FC = () => (
     <Composition id="Ep12Runner" component={Ep12Runner} durationInFrames={EP12_FRAMES} fps={30} width={1080} height={1920} />
     <Composition id="Ep13Racer" component={Ep13Racer} durationInFrames={EP13_FRAMES} fps={30} width={1080} height={1920} />
     <Composition id="Ep14Xo" component={Ep14Xo} durationInFrames={EP14_FRAMES} fps={30} width={1080} height={1920} />
+    <Composition id="Family17Vault" component={Family17Vault} durationInFrames={FAMILY17_FRAMES} fps={30} width={1080} height={1920} />
+    <Composition id="Family18Torch" component={Family18Torch} durationInFrames={FAMILY18_FRAMES} fps={30} width={1080} height={1920} />
+    <Composition id="H21Tv" component={H21Tv} durationInFrames={H21_FRAMES} fps={30} width={1080} height={1920} />
+    <Composition id="H22Coat" component={H22Coat} durationInFrames={H22_FRAMES} fps={30} width={1080} height={1920} />
     {darkArchiveSeason.episodes.map((episode) => (
       <Composition
         key={episode.id}
