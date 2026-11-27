@@ -5,7 +5,7 @@ import '@fontsource/cairo/arabic-900.css';
 import season from '../../horror/dark_archive_season1.json';
 
 const FPS = 30;
-const LINE_FRAMES = 8 * FPS;
+const LINE_FRAMES = 10 * FPS;
 export const DARK_ARCHIVE_FRAMES = 6 * LINE_FRAMES;
 const FONT = 'Cairo, sans-serif';
 const clamp = {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'} as const;
