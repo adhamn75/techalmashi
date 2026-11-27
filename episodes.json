@@ -1103,7 +1103,9 @@
         "حماية الأطفال",
         "تك عالماشي"
       ],
-      "status": "ready"
+      "status": "scheduled",
+      "youtube_id": "Hly1ozhV95c",
+      "publish_at": "2026-11-28T20:00:00+02:00"
     },
     {
       "id": "fam12-passphrase",
