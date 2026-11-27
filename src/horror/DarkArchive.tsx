@@ -62,7 +62,7 @@ export const DarkArchive: React.FC<{episodeId: string}> = ({episodeId}) => {
 
   return (
     <AbsoluteFill style={{background: '#090b0f', overflow: 'hidden'}}>
-      <Img src={staticFile(`horror/${episode.id}/stills/${shotName}_11.png`)} style={{width: '100%', height: '100%', objectFit: 'cover', transform: `translateX(${driftX}px) scale(${zoom})`, filter: 'contrast(1.12) saturate(.65) brightness(.82)'}} />
+      <Img src={staticFile(`horror/${episode.id}/stills/${shotName}_23.png`)} style={{width: '100%', height: '100%', objectFit: 'cover', transform: `translateX(${driftX}px) scale(${zoom})`, filter: 'contrast(1.18) saturate(.72) brightness(.78)'}} />
       <AbsoluteFill style={{background: 'linear-gradient(180deg, rgba(0,0,0,.58) 0%, transparent 30%, transparent 58%, rgba(0,0,0,.94) 100%)'}} />
       <FilmLayer frame={frame} />
       <Stamp episode={episode} frame={frame} />

@@ -3,7 +3,7 @@
   "format": "historical analog horror",
   "language": "ar-MSA",
   "voice": {"name": "ar-SA-HamedNeural", "rate": "-5%", "pitch": "-8Hz"},
-  "visual_style": "vertical 9:16 cinematic historical analog horror, period-accurate setting, photorealistic documentary reconstruction, desaturated charcoal and aged ivory palette, subtle dark red accents, volumetric light, 35mm film grain, archival texture, slow-burn dread, no gore, no blood, no text, no logos",
+  "visual_style": "vertical 9:16 stylized cinematic historical nightmare illustration, period-accurate environment but clearly an artistic reconstruction, deep black and muted crimson palette with cold steel-blue shadows, extreme chiaroscuro, faces obscured or turned away, narrow pools of light, dense layered fog, unsettling negative space, partial silhouettes at the edge of frame, ambiguous distant forms, impossible long shadows, damaged 16mm texture, analog surveillance framing, slow-burn dread, mysterious rather than documentary, readable focal subject, no gore, no blood, no text, no logos",
   "episodes": [
     {
       "id": "da01-l8",
