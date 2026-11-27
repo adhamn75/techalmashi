@@ -1,6 +1,7 @@
 """Reply to file requests in the comments, automatically, from GitHub Actions.
 
-Every few minutes: for each Excel video in files/files_map.json that has a videoId, read its newest
+Every few minutes: for each Excel video in files/files_map.json that has a videoId (an empty videoId is
+filled from episodes.json once that episode is live, see load_entries), read its newest
 comment threads (YouTube Data API, 1 quota unit per video) and, when a top-level comment asks for
 the file (اريد / بدي / الملف / رابط / send / file ...), reply under it with that entry's "reply" text.
 A thread is skipped when the channel already replied in it, so nobody gets two replies.
@@ -16,6 +17,7 @@ import os
 import re
 import sys
 import time
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -24,12 +26,45 @@ DRY_RUN = os.environ.get("DRY_RUN") == "1"
 BLOCK = ROOT / ".reply_blocked"  # untracked marker, lives for one watcher job
 BLOCK_HOURS = 6
 MAX_REPLIES = 30  # per run, safety cap (each reply costs 50 of 10,000 daily quota units)
+QUEUE = ROOT / "episodes.json"
+FRESH_DAYS = 7  # newer videos are read on every run; older ones about once an hour (reads share the upload quota)
 
 ASK = re.compile(
     r"(أ|ا|إ)ريد|اريده|بد(ي|ى)|ابغ(ى|ا)|أبغ(ى|ا)|\bأبي\b|\bابي\b|ارسل|أرسل|ابعت|ابعث|الملف|ملف|رابط|لينك|"
     r"\bi\s*want\b|\bsend\b|\bfile\b|\blink\b|\bplease\b.*\b(file|link)\b",
     re.IGNORECASE,
 )
+
+
+def load_entries(now: datetime | None = None) -> list[dict]:
+    """files_map entries that have a live video. A videoId written in the map wins; an empty one is taken from the
+    same episode in episodes.json once its publish time has passed. Each entry also gets "published" (or None)."""
+    now = now or datetime.now(timezone.utc)
+    try:
+        queue = {e.get("id"): e for e in json.loads(QUEUE.read_text(encoding="utf-8"))["episodes"]}
+    except Exception as err:
+        print(f"::warning::episodes.json not read, using files_map.json only: {err}")
+        queue = {}
+    out = []
+    for e in json.loads(MAP.read_text(encoding="utf-8"))["files"]:
+        ep = queue.get(e.get("episode"), {})
+        queued_id = ep.get("youtube_id") or ep.get("video_id")
+        try:
+            at = datetime.fromisoformat(ep["publish_at"])
+        except (KeyError, TypeError, ValueError):
+            at = None
+        vid = e.get("videoId")
+        if not vid and queued_id and (ep.get("status") == "published" or (ep.get("status") == "scheduled" and at and at <= now)):
+            vid = queued_id
+        if vid:
+            out.append({**e, "videoId": vid, "published": at if vid == queued_id else None})
+    return out
+
+
+def due(entry: dict, now: datetime) -> bool:
+    """Whether this run should read the video's comments."""
+    at = entry.get("published")
+    return bool(at and now - at < timedelta(days=FRESH_DAYS)) or now.minute < 7
 
 
 def norm(s: str) -> str:
@@ -90,7 +125,6 @@ def logged_pairs() -> set:
 
 
 def log_request(e: dict, who: str, text: str, thread_id: str = "") -> None:
-    from datetime import datetime, timezone
     rows = json.loads(LOG.read_text(encoding="utf-8")) if LOG.exists() else []
     rows.append({"t": datetime.now(timezone.utc).replace(microsecond=0).isoformat(), "episode": e["episode"],
                  "videoId": e["videoId"], "file": e.get("file", ""), "who": who, "text": text[:80], "thread": thread_id})
@@ -105,7 +139,9 @@ def main() -> int:
     if OFF.exists():
         print(f"Replies are switched off ({OFF.name} exists).")
         return 0
-    entries = [e for e in json.loads(MAP.read_text())["files"] if e.get("videoId") and e.get("reply")]
+    now = datetime.now(timezone.utc)
+    manual = os.environ.get("GITHUB_WORKFLOW", "").startswith("Auto-reply")  # a run started by hand reads everything
+    entries = [e for e in load_entries(now) if e.get("reply") and (manual or due(e, now))]
     yt = client()
     sent = 0
     replied = load_replied()

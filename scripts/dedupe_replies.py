@@ -3,7 +3,7 @@
 Owner's rule (2026-11-14): one person gets ONE reply per video, never more. On 2026-11-13/14 a bug made
 auto_reply.py answer the same comment 156 times; this script cleans that up and keeps watching for it.
 
-For each video in files/files_map.json with a videoId: read every comment thread and its replies, group the
+For each video auto_reply.py watches (load_entries): read every comment thread and its replies, group the
 replies written by our own channel (the token's channel, and the video owner) by the top-level comment's author,
 keep the oldest reply of each group and delete the rest.
 
@@ -20,7 +20,7 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from auto_reply import client, MAP  # noqa: E402
+from auto_reply import client, load_entries  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 STATE = ROOT / "docs" / "dedupe_state.json"
@@ -69,7 +69,7 @@ def run() -> int:
 
     yt = client()
     me = yt.channels().list(part="id", mine=True).execute()["items"][0]["id"]
-    entries = [e for e in json.loads(MAP.read_text())["files"] if e.get("videoId")]
+    entries = load_entries()
     extra = []  # (episode, who, comment id)
     for e in entries:
         try:
