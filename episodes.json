@@ -595,8 +595,10 @@
         "قصة رعب قصيرة",
         "مسلسل رعب"
       ],
-      "status": "ready",
-      "playlist": "PLcR-LdebtVbI"
+      "status": "scheduled",
+      "playlist": "PLcR-LdebtVbI",
+      "youtube_id": "n1pynGX_Vug",
+      "publish_at": "2026-11-27T22:00:00+02:00"
     },
     {
       "id": "h06-ownnumber",
