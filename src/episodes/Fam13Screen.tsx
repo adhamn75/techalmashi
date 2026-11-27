@@ -80,7 +80,7 @@ export const Family13Screen: React.FC = () => {
         <div dir="rtl" style={{position: 'absolute', top: 620, width: '100%', textAlign: 'center', fontFamily: FONT, fontWeight: 900, opacity: outro, translate: `0 ${(1 - outro) * 80}px`}}>
           <div style={{display: 'inline-block', background: '#1a1f36', color: '#fff', borderRadius: 30, padding: '16px 40px', fontSize: 52}}>📤 أرسله لكل أب وأم</div><br />
           <div style={{display: 'inline-block', fontSize: 44, color: '#1a1f36', background: YEL, borderRadius: 26, padding: '6px 32px', marginTop: 22}}>🔔 اشترك ليصلك الدرس التالي</div><br />
-          <div style={{display: 'inline-block', fontSize: 42, color: '#fff', background: BLUE, borderRadius: 26, padding: '6px 30px', marginTop: 20}}>الحلقة القادمة: صورة الزيّ المدرسي 🎒</div>
+          <div style={{display: 'inline-block', fontSize: 42, color: '#fff', background: BLUE, borderRadius: 26, padding: '6px 30px', marginTop: 20}}>الحلقة القادمة: حاسبة تخفي أسرار ابنك 🧮</div>
         </div>
       )}
       <div style={{position: 'absolute', inset: 0, pointerEvents: 'none', translate: frame >= A[4] ? '-340px 760px' : '380px 700px', opacity: interpolate(frame, [A[1] - 8, A[1] + 6], [0, 1], clamp)}}>
