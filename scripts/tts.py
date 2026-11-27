@@ -39,6 +39,10 @@ async def main():
                     start = chunk["offset"] / 1e7
                     words.append({"w": chunk["text"], "start": round(start, 3), "end": round(start + chunk["duration"] / 1e7, 3)})
             (out / f"{i}.mp3").write_bytes(bytes(audio))
+            if ep.startswith("da"):
+                public_out = pathlib.Path("public/voice") / ep
+                public_out.mkdir(parents=True, exist_ok=True)
+                (public_out / f"{i}.mp3").write_bytes(bytes(audio))
             (out / f"{i}.words.json").write_text(json.dumps(words, ensure_ascii=False), encoding="utf-8")
             print(ep, i, "ok", len(words), "words")
 

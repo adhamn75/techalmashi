@@ -15,6 +15,126 @@
         "dark": "a pitch black bathroom, only two small glowing red eyes visible inside the mirror, faint red reflection on the sink, {S}",
         "reveal": "{C}, leaning out of a bathroom mirror toward the viewer, face filling the frame, a red ring of light behind the head, pure black background, {S}"
       }
+    },
+    "da01-l8": {
+      "seeds": [
+        11
+      ],
+      "shots": {
+        "launch": "1942 US Navy blimp L-8 departing over the California coast at dawn, two pilots visible through cockpit windows, vertical 9:16 cinematic historical analog horror, period-accurate setting, photorealistic documentary reconstruction, desaturated charcoal and aged ivory palette, subtle dark red accents, volumetric light, 35mm film grain, archival texture, slow-burn dread, no gore, no blood, no text, no logos",
+        "empty": "empty 1942 navy blimp cockpit drifting above foggy Pacific coastline, open side door, radio equipment still powered, vertical 9:16 cinematic historical analog horror, period-accurate setting, photorealistic documentary reconstruction, desaturated charcoal and aged ivory palette, subtle dark red accents, volumetric light, 35mm film grain, archival texture, slow-burn dread, no gore, no blood, no text, no logos",
+        "crash": "large unmanned navy blimp collapsed gently across a quiet California residential street, shocked residents at a safe distance, no injuries shown, vertical 9:16 cinematic historical analog horror, period-accurate setting, photorealistic documentary reconstruction, desaturated charcoal and aged ivory palette, subtle dark red accents, volumetric light, 35mm film grain, archival texture, slow-burn dread, no gore, no blood, no text, no logos"
+      }
+    },
+    "da02-kalachi": {
+      "seeds": [
+        11
+      ],
+      "shots": {
+        "village": "remote Kalachi Kazakhstan village in winter, quiet snow-covered houses, eerie morning stillness, vertical 9:16 cinematic historical analog horror, period-accurate setting, photorealistic documentary reconstruction, desaturated charcoal and aged ivory palette, subtle dark red accents, volumetric light, 35mm film grain, archival texture, slow-burn dread, no gore, no blood, no text, no logos",
+        "sleep": "ordinary adult villager suddenly asleep safely at a kitchen table beside an untouched tea cup, worried family nearby, vertical 9:16 cinematic historical analog horror, period-accurate setting, photorealistic documentary reconstruction, desaturated charcoal and aged ivory palette, subtle dark red accents, volumetric light, 35mm film grain, archival texture, slow-burn dread, no gore, no blood, no text, no logos",
+        "mine": "abandoned mine outside a frozen Kazakhstan village, invisible gas suggested by subtle low haze, scientific documentary mood, vertical 9:16 cinematic historical analog horror, period-accurate setting, photorealistic documentary reconstruction, desaturated charcoal and aged ivory palette, subtle dark red accents, volumetric light, 35mm film grain, archival texture, slow-burn dread, no gore, no blood, no text, no logos"
+      }
+    },
+    "da03-sheep": {
+      "seeds": [
+        11
+      ],
+      "shots": {
+        "field": "Oxfordshire countryside 1888 at night, thousands of sheep suddenly breaking from wooden pens under a moonless sky, vertical 9:16 cinematic historical analog horror, period-accurate setting, photorealistic documentary reconstruction, desaturated charcoal and aged ivory palette, subtle dark red accents, volumetric light, 35mm film grain, archival texture, slow-burn dread, no gore, no blood, no text, no logos",
+        "panic": "wide aerial view of frightened sheep running across several separated Victorian farms at the same time, nonviolent, vertical 9:16 cinematic historical analog horror, period-accurate setting, photorealistic documentary reconstruction, desaturated charcoal and aged ivory palette, subtle dark red accents, volumetric light, 35mm film grain, archival texture, slow-burn dread, no gore, no blood, no text, no logos",
+        "morning": "Victorian farmers at dawn finding huge sheep flocks packed into road corners, animals unharmed but frightened, vertical 9:16 cinematic historical analog horror, period-accurate setting, photorealistic documentary reconstruction, desaturated charcoal and aged ivory palette, subtle dark red accents, volumetric light, 35mm film grain, archival texture, slow-burn dread, no gore, no blood, no text, no logos"
+      }
+    },
+    "da04-halifax": {
+      "seeds": [
+        11
+      ],
+      "shots": {
+        "street": "1938 Halifax northern England foggy wet cobblestone street at night, ambiguous distant silhouette in a raincoat, vertical 9:16 cinematic historical analog horror, period-accurate setting, photorealistic documentary reconstruction, desaturated charcoal and aged ivory palette, subtle dark red accents, volumetric light, 35mm film grain, archival texture, slow-burn dread, no gore, no blood, no text, no logos",
+        "search": "anxious 1938 townspeople and police searching narrow foggy streets with flashlights, period accurate, vertical 9:16 cinematic historical analog horror, period-accurate setting, photorealistic documentary reconstruction, desaturated charcoal and aged ivory palette, subtle dark red accents, volumetric light, 35mm film grain, archival texture, slow-burn dread, no gore, no blood, no text, no logos",
+        "interview": "1938 police interview room with contradictory witness statements spread across a desk and an empty chair, vertical 9:16 cinematic historical analog horror, period-accurate setting, photorealistic documentary reconstruction, desaturated charcoal and aged ivory palette, subtle dark red accents, volumetric light, 35mm film grain, archival texture, slow-burn dread, no gore, no blood, no text, no logos"
+      }
+    },
+    "da05-nyos": {
+      "seeds": [
+        11
+      ],
+      "shots": {
+        "lake": "Lake Nyos Cameroon 1986 at dusk, perfectly still volcanic crater lake, subtle bubbles rising from dark water, vertical 9:16 cinematic historical analog horror, period-accurate setting, photorealistic documentary reconstruction, desaturated charcoal and aged ivory palette, subtle dark red accents, volumetric light, 35mm film grain, archival texture, slow-burn dread, no gore, no blood, no text, no logos",
+        "cloud": "heavy invisible carbon dioxide represented by faint low ground mist flowing silently downhill toward a village, vertical 9:16 cinematic historical analog horror, period-accurate setting, photorealistic documentary reconstruction, desaturated charcoal and aged ivory palette, subtle dark red accents, volumetric light, 35mm film grain, archival texture, slow-burn dread, no gore, no blood, no text, no logos",
+        "silence": "quiet Cameroon village at dawn with open doors and extinguished lamps, no bodies visible, respectful documentary framing, vertical 9:16 cinematic historical analog horror, period-accurate setting, photorealistic documentary reconstruction, desaturated charcoal and aged ivory palette, subtle dark red accents, volumetric light, 35mm film grain, archival texture, slow-burn dread, no gore, no blood, no text, no logos"
+      }
+    },
+    "da06-gasser": {
+      "seeds": [
+        11
+      ],
+      "shots": {
+        "house": "1944 modest Illinois house at midnight, faint mysterious vapor entering through a slightly open window, vertical 9:16 cinematic historical analog horror, period-accurate setting, photorealistic documentary reconstruction, desaturated charcoal and aged ivory palette, subtle dark red accents, volumetric light, 35mm film grain, archival texture, slow-burn dread, no gore, no blood, no text, no logos",
+        "shadow": "shadowy man-shaped silhouette beyond a 1940s garden fence, seen from inside a bedroom, ambiguous and distant, vertical 9:16 cinematic historical analog horror, period-accurate setting, photorealistic documentary reconstruction, desaturated charcoal and aged ivory palette, subtle dark red accents, volumetric light, 35mm film grain, archival texture, slow-burn dread, no gore, no blood, no text, no logos",
+        "factory": "wartime industrial smokestacks outside Mattoon at night, wind carrying low fumes toward the town, vertical 9:16 cinematic historical analog horror, period-accurate setting, photorealistic documentary reconstruction, desaturated charcoal and aged ivory palette, subtle dark red accents, volumetric light, 35mm film grain, archival texture, slow-burn dread, no gore, no blood, no text, no logos"
+      }
+    },
+    "da07-laughter": {
+      "seeds": [
+        11
+      ],
+      "shots": {
+        "class": "1962 rural Tanganyika school classroom, three teenage students laughing uncontrollably while classmates look worried, respectful portrayal, vertical 9:16 cinematic historical analog horror, period-accurate setting, photorealistic documentary reconstruction, desaturated charcoal and aged ivory palette, subtle dark red accents, volumetric light, 35mm film grain, archival texture, slow-burn dread, no gore, no blood, no text, no logos",
+        "closed": "empty East African school corridor with classroom doors closed, notebooks left on desks, cold unsettling daylight, vertical 9:16 cinematic historical analog horror, period-accurate setting, photorealistic documentary reconstruction, desaturated charcoal and aged ivory palette, subtle dark red accents, volumetric light, 35mm film grain, archival texture, slow-burn dread, no gore, no blood, no text, no logos",
+        "map": "archival 1962 East Africa map on a desk with red circles spreading between schools and villages, vertical 9:16 cinematic historical analog horror, period-accurate setting, photorealistic documentary reconstruction, desaturated charcoal and aged ivory palette, subtle dark red accents, volumetric light, 35mm film grain, archival texture, slow-burn dread, no gore, no blood, no text, no logos"
+      }
+    },
+    "da08-windshield": {
+      "seeds": [
+        11
+      ],
+      "shots": {
+        "glass": "1954 Seattle car windshield covered with many tiny mysterious pits, anxious owner examining it under streetlight, vertical 9:16 cinematic historical analog horror, period-accurate setting, photorealistic documentary reconstruction, desaturated charcoal and aged ivory palette, subtle dark red accents, volumetric light, 35mm film grain, archival texture, slow-burn dread, no gore, no blood, no text, no logos",
+        "checkpoint": "1950s police road checkpoint inspecting lines of cars for mysterious windshield damage, archival newsreel look, vertical 9:16 cinematic historical analog horror, period-accurate setting, photorealistic documentary reconstruction, desaturated charcoal and aged ivory palette, subtle dark red accents, volumetric light, 35mm film grain, archival texture, slow-burn dread, no gore, no blood, no text, no logos",
+        "lab": "1954 police laboratory technicians comparing old and new glass pits under magnifying lenses, vertical 9:16 cinematic historical analog horror, period-accurate setting, photorealistic documentary reconstruction, desaturated charcoal and aged ivory palette, subtle dark red accents, volumetric light, 35mm film grain, archival texture, slow-burn dread, no gore, no blood, no text, no logos"
+      }
+    },
+    "da09-darkday": {
+      "seeds": [
+        11
+      ],
+      "shots": {
+        "noon": "New England village May 1780 at noon becoming as dark as night, residents lighting candles outdoors, vertical 9:16 cinematic historical analog horror, period-accurate setting, photorealistic documentary reconstruction, desaturated charcoal and aged ivory palette, subtle dark red accents, volumetric light, 35mm film grain, archival texture, slow-burn dread, no gore, no blood, no text, no logos",
+        "animals": "farm animals returning to barns at midday under an unnatural black-orange sky, birds silent, vertical 9:16 cinematic historical analog horror, period-accurate setting, photorealistic documentary reconstruction, desaturated charcoal and aged ivory palette, subtle dark red accents, volumetric light, 35mm film grain, archival texture, slow-burn dread, no gore, no blood, no text, no logos",
+        "fire": "distant 18th century forest wildfire smoke merging with thick clouds over a dark landscape, vertical 9:16 cinematic historical analog horror, period-accurate setting, photorealistic documentary reconstruction, desaturated charcoal and aged ivory palette, subtle dark red accents, volumetric light, 35mm film grain, archival texture, slow-burn dread, no gore, no blood, no text, no logos"
+      }
+    },
+    "da10-beijing": {
+      "seeds": [
+        11
+      ],
+      "shots": {
+        "market": "Ming dynasty Beijing 1626 morning market beside tiled rooftops, peaceful period-accurate scene, vertical 9:16 cinematic historical analog horror, period-accurate setting, photorealistic documentary reconstruction, desaturated charcoal and aged ivory palette, subtle dark red accents, volumetric light, 35mm film grain, archival texture, slow-burn dread, no gore, no blood, no text, no logos",
+        "cloud": "enormous black explosion cloud above Ming Beijing rooftops, paper and wooden debris in air, no bodies shown, vertical 9:16 cinematic historical analog horror, period-accurate setting, photorealistic documentary reconstruction, desaturated charcoal and aged ivory palette, subtle dark red accents, volumetric light, 35mm film grain, archival texture, slow-burn dread, no gore, no blood, no text, no logos",
+        "aftermath": "obliterated imperial gunpowder workshop site under dark haze, officials examining a blank crater from a distance, vertical 9:16 cinematic historical analog horror, period-accurate setting, photorealistic documentary reconstruction, desaturated charcoal and aged ivory palette, subtle dark red accents, volumetric light, 35mm film grain, archival texture, slow-burn dread, no gore, no blood, no text, no logos"
+      }
+    },
+    "da11-baychimo": {
+      "seeds": [
+        11
+      ],
+      "shots": {
+        "trapped": "SS Baychimo 1931 cargo vessel trapped in Arctic sea ice during a blizzard, crew leaving across snow, vertical 9:16 cinematic historical analog horror, period-accurate setting, photorealistic documentary reconstruction, desaturated charcoal and aged ivory palette, subtle dark red accents, volumetric light, 35mm film grain, archival texture, slow-burn dread, no gore, no blood, no text, no logos",
+        "return": "empty 1930s cargo ship reappearing through Arctic fog with no crew visible, hunters watching from a safe distance, vertical 9:16 cinematic historical analog horror, period-accurate setting, photorealistic documentary reconstruction, desaturated charcoal and aged ivory palette, subtle dark red accents, volumetric light, 35mm film grain, archival texture, slow-burn dread, no gore, no blood, no text, no logos",
+        "vanish": "vast empty Arctic ice field in 1969, rotating compass in foreground, faint ship silhouette disappearing into fog, vertical 9:16 cinematic historical analog horror, period-accurate setting, photorealistic documentary reconstruction, desaturated charcoal and aged ivory palette, subtle dark red accents, volumetric light, 35mm film grain, archival texture, slow-burn dread, no gore, no blood, no text, no logos"
+      }
+    },
+    "da12-nosummer": {
+      "seeds": [
+        11
+      ],
+      "shots": {
+        "snow": "Europe June 1816, snow falling on green summer crops, farmers watching in disbelief, vertical 9:16 cinematic historical analog horror, period-accurate setting, photorealistic documentary reconstruction, desaturated charcoal and aged ivory palette, subtle dark red accents, volumetric light, 35mm film grain, archival texture, slow-burn dread, no gore, no blood, no text, no logos",
+        "sun": "dim red sun behind volcanic haze over a cold 1816 village, candles burning inside farmhouses, vertical 9:16 cinematic historical analog horror, period-accurate setting, photorealistic documentary reconstruction, desaturated charcoal and aged ivory palette, subtle dark red accents, volumetric light, 35mm film grain, archival texture, slow-burn dread, no gore, no blood, no text, no logos",
+        "tambora": "Mount Tambora eruption plume seen from far away in 1815, globe partly covered by high atmospheric ash, vertical 9:16 cinematic historical analog horror, period-accurate setting, photorealistic documentary reconstruction, desaturated charcoal and aged ivory palette, subtle dark red accents, volumetric light, 35mm film grain, archival texture, slow-burn dread, no gore, no blood, no text, no logos"
+      }
     }
   }
 }

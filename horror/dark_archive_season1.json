@@ -1,0 +1,261 @@
+{
+  "series": "الأرشيف المظلم",
+  "format": "historical analog horror",
+  "language": "ar-MSA",
+  "voice": {"name": "ar-SA-HamedNeural", "rate": "-5%", "pitch": "-8Hz"},
+  "visual_style": "vertical 9:16 cinematic historical analog horror, period-accurate setting, photorealistic documentary reconstruction, desaturated charcoal and aged ivory palette, subtle dark red accents, volumetric light, 35mm film grain, archival texture, slow-burn dread, no gore, no blood, no text, no logos",
+  "episodes": [
+    {
+      "id": "da01-l8",
+      "file": 1,
+      "title": "عاد المنطاد وحده… أين اختفى الطياران؟ | الملف L-8 #shorts",
+      "place_year": "كاليفورنيا، 1942",
+      "status_card": "حادثة موثقة — مصير الطيارين مجهول",
+      "lines": [
+        "عاد المنطاد من مهمته… لكن الطيارين لم يعودا معه.",
+        "في أغسطس 1942، أقلع منطاد البحرية L-8 وعلى متنه طياران، ثم أبلغا عن بقعة زيت فوق البحر.",
+        "بعد ساعات، ظهر المنطاد فوق كاليفورنيا وفقد ارتفاعه حتى اصطدم بشارع سكني.",
+        "كان الباب مفتوحًا، واللاسلكي يعمل، والمظلتان ما زالتا في مكانهما.",
+        "بحثوا في البحر وعلى الساحل… ولم يعثروا على الطيارين أبدًا.",
+        "فكيف عاد المنطاد وحده؟ أُغلق الملف… لكن السؤال بقي مفتوحًا."
+      ],
+      "shots": {
+        "launch": "1942 US Navy blimp L-8 departing over the California coast at dawn, two pilots visible through cockpit windows",
+        "empty": "empty 1942 navy blimp cockpit drifting above foggy Pacific coastline, open side door, radio equipment still powered",
+        "crash": "large unmanned navy blimp collapsed gently across a quiet California residential street, shocked residents at a safe distance, no injuries shown"
+      },
+      "sources": ["Naval History and Heritage Command", "Smithsonian — The 80-Year Mystery of L-8"]
+    },
+    {
+      "id": "da02-kalachi",
+      "file": 2,
+      "title": "القرية التي نام سكانها لأيام… بلا إنذار! #shorts",
+      "place_year": "كالاتشي، 2012–2015",
+      "status_card": "حادثة موثقة — التفسير العلمي مرجّح",
+      "lines": [
+        "كانوا يتحدثون بصورة طبيعية… ثم ينامون أيامًا ولا يتذكرون اللحظة الأخيرة.",
+        "في قرية كالاتشي بكازاخستان، سُجلت أكثر من مئة وأربعين حالة نوم مفاجئ.",
+        "بعض السكان ناموا في المنازل أو الشوارع، واستيقظوا بعد أيام وهم مرتبكون.",
+        "فحصت السلطات الماء والتربة والإشعاع، ولم تجد وباءً أو سببًا واحدًا بسيطًا.",
+        "التحقيق رجّح نقص الأكسجين وارتفاع غازات قادمة من منطقة منجم مهجور.",
+        "لكن أهل القرية ظلوا يسألون: من سيكون التالي؟"
+      ],
+      "shots": {
+        "village": "remote Kalachi Kazakhstan village in winter, quiet snow-covered houses, eerie morning stillness",
+        "sleep": "ordinary adult villager suddenly asleep safely at a kitchen table beside an untouched tea cup, worried family nearby",
+        "mine": "abandoned mine outside a frozen Kazakhstan village, invisible gas suggested by subtle low haze, scientific documentary mood"
+      },
+      "sources": ["National Nuclear Center of Kazakhstan — Comprehensive Survey of Kalachi Village"]
+    },
+    {
+      "id": "da03-sheep",
+      "file": 3,
+      "title": "عشرات الآلاف هربت في اللحظة نفسها… ممّ كانت تخاف؟ #shorts",
+      "place_year": "أكسفوردشير، 1888",
+      "status_card": "تقارير تاريخية موثقة — السبب غير محسوم",
+      "lines": [
+        "في اللحظة نفسها، هربت عشرات الآلاف من الخراف… من شيء لم يره أحد.",
+        "في ليلة مظلمة من نوفمبر 1888، كسرت قطعان كثيرة حظائرها في أكسفوردشير.",
+        "في الصباح، وجدها المزارعون متجمعة في الزوايا والطرقات، ترتجف وكأن شيئًا طاردها.",
+        "المزارع كانت متباعدة، ومع ذلك بدأ الذعر في الوقت نفسه تقريبًا.",
+        "اقترح الباحثون برقًا بعيدًا أو سلسلة خوف انتقلت بين القطعان، لكن لا سبب نهائيًا.",
+        "ما الذي رأته كل تلك الحيوانات في الظلام؟"
+      ],
+      "shots": {
+        "field": "Oxfordshire countryside 1888 at night, thousands of sheep suddenly breaking from wooden pens under a moonless sky",
+        "panic": "wide aerial view of frightened sheep running across several separated Victorian farms at the same time, nonviolent",
+        "morning": "Victorian farmers at dawn finding huge sheep flocks packed into road corners, animals unharmed but frightened"
+      },
+      "sources": ["Nature — Sheep Panics", "The Times contemporary reports"]
+    },
+    {
+      "id": "da04-halifax",
+      "file": 4,
+      "title": "مدينة طاردت مهاجمًا ربما لم يكن موجودًا! | هاليفاكس 1938 #shorts",
+      "place_year": "هاليفاكس، 1938",
+      "status_card": "بلاغات تاريخية — لم يثبت وجود المهاجم",
+      "lines": [
+        "عام 1938… طاردت مدينة كاملة مهاجمًا ربما لم يكن موجودًا.",
+        "بدأت بلاغات عن رجل يهاجم المارة ليلًا بشفرة ثم يختفي داخل الضباب.",
+        "خلال أيام، امتلأت الشوارع بالدوريات وانتقلت البلاغات إلى مدن مجاورة.",
+        "لكن التحقيق كشف أن بعض المبلغين اختلقوا الهجوم أو أحدثوا إصاباتهم بأنفسهم.",
+        "وبعد تسعة أيام، توقفت الاعتداءات فجأة ولم يُعثر على مهاجم واحد.",
+        "هل بدأ الأمر باعتداء حقيقي… أم أن الخوف اخترع الوحش؟"
+      ],
+      "shots": {
+        "street": "1938 Halifax northern England foggy wet cobblestone street at night, ambiguous distant silhouette in a raincoat",
+        "search": "anxious 1938 townspeople and police searching narrow foggy streets with flashlights, period accurate",
+        "interview": "1938 police interview room with contradictory witness statements spread across a desk and an empty chair"
+      },
+      "sources": ["Michael Goss — The Halifax Slasher", "Mass Observation archive"]
+    },
+    {
+      "id": "da05-nyos",
+      "file": 5,
+      "title": "البحيرة التي أطفأت قرى كاملة بلا صوت! #shorts",
+      "place_year": "الكاميرون، 1986",
+      "status_card": "كارثة طبيعية موثقة علميًا",
+      "lines": [
+        "لم يكن هناك حريق أو صوت… فقط سحابة بلا لون أطفأت قرى كاملة.",
+        "ليلة الحادي والعشرين من أغسطس 1986، أطلقت بحيرة نيوس غازًا مخزنًا في أعماقها.",
+        "اندفع ثاني أكسيد الكربون نحو القرى وأزاح الأكسجين من الهواء.",
+        "لم يرَ السكان دخانًا ولم يشموا رائحة؛ بعض الناجين فقدوا الوعي فورًا.",
+        "كانت ظاهرة طبيعية نادرة تُعرف بالانفجار البحيري، لا لعنة ولا سلاحًا.",
+        "فكيف تهرب من خطر لا تستطيع رؤيته أو شمّه؟"
+      ],
+      "shots": {
+        "lake": "Lake Nyos Cameroon 1986 at dusk, perfectly still volcanic crater lake, subtle bubbles rising from dark water",
+        "cloud": "heavy invisible carbon dioxide represented by faint low ground mist flowing silently downhill toward a village",
+        "silence": "quiet Cameroon village at dawn with open doors and extinguished lamps, no bodies visible, respectful documentary framing"
+      },
+      "sources": ["USGS Executive Summary on Lake Nyos", "PNAS lake degassing study"]
+    },
+    {
+      "id": "da06-gasser",
+      "file": 6,
+      "title": "رائحة حلوة… ثم يعجز كل من في البيت عن الحركة! #shorts",
+      "place_year": "ماتون، 1944",
+      "status_card": "البلاغات موثقة — وجود المهاجم غير مثبت",
+      "lines": [
+        "رائحة حلوة تدخل المنزل… وبعدها لا تستطيع تحريك جسدك.",
+        "في سبتمبر 1944، بدأ سكان ماتون يستيقظون على رائحة غريبة داخل بيوتهم.",
+        "شعر بعضهم بالغثيان والضعف، وقال آخرون إنهم عجزوا مؤقتًا عن الحركة.",
+        "وشهود زعموا أنهم رأوا رجلًا بملابس داكنة يهرب قرب النوافذ.",
+        "الشرطة رجّحت أبخرة مصنع قريب مع ذعر جماعي، ولم تثبت وجود مهاجم.",
+        "فهل كان هناك رجل فعلًا… أم أن مدينة كاملة استسلمت للخوف؟"
+      ],
+      "shots": {
+        "house": "1944 modest Illinois house at midnight, faint mysterious vapor entering through a slightly open window",
+        "shadow": "shadowy man-shaped silhouette beyond a 1940s garden fence, seen from inside a bedroom, ambiguous and distant",
+        "factory": "wartime industrial smokestacks outside Mattoon at night, wind carrying low fumes toward the town"
+      },
+      "sources": ["University of Illinois Library", "Eastern Illinois University newspaper bibliography", "Donald Johnson 1945 study"]
+    },
+    {
+      "id": "da07-laughter",
+      "file": 7,
+      "title": "بدأت ثلاث طالبات بالضحك… ثم أُغلقت المدارس! #shorts",
+      "place_year": "تنجانيقا، 1962",
+      "status_card": "حادثة طبية موثقة — التفسير مرجّح",
+      "lines": [
+        "بدأت ثلاث طالبات بالضحك… وبعد أسابيع أُغلقت مدارس لأن الضحك لم يعد مضحكًا.",
+        "عام 1962، ظهرت نوبات ضحك وبكاء وإرهاق في مدرسة داخل تنجانيقا.",
+        "انتقلت الحالة بين الطالبات، ثم ظهرت أعراض مشابهة في قرى ومدارس أخرى.",
+        "تأثر مئات الأشخاص خلال أشهر، من دون العثور على فيروس أو مادة سامة.",
+        "وصفها الأطباء بمرض نفسي جماعي ارتبط على الأرجح بالضغط الشديد.",
+        "لكن كيف انتشرت الحالة من قرية إلى أخرى؟"
+      ],
+      "shots": {
+        "class": "1962 rural Tanganyika school classroom, three teenage students laughing uncontrollably while classmates look worried, respectful portrayal",
+        "closed": "empty East African school corridor with classroom doors closed, notebooks left on desks, cold unsettling daylight",
+        "map": "archival 1962 East Africa map on a desk with red circles spreading between schools and villages"
+      },
+      "sources": ["Rankin and Philip clinical account", "PubMed literature on mass psychogenic illness"]
+    },
+    {
+      "id": "da08-windshield",
+      "file": 8,
+      "title": "استيقظت المدينة فوجدت العلامة نفسها على آلاف السيارات! #shorts",
+      "place_year": "سياتل، 1954",
+      "status_card": "بلاغات موثقة — معظم الأضرار كانت قديمة",
+      "lines": [
+        "استيقظت مدينة كاملة لتجد العلامة نفسها على آلاف السيارات… ثم اختفت الظاهرة فجأة.",
+        "في ربيع 1954، أبلغ سكان سياتل عن حفر صغيرة غامضة ظهرت في زجاج سياراتهم.",
+        "أقيمت حواجز طرق، وفُحصت آلاف السيارات، وانتشرت نظريات عن إشعاع أو مادة تسقط من السماء.",
+        "لكن المختبر وجد أن معظم الحفر قديمة وعادية… الناس بدأوا يلاحظونها بعد انتشار الأخبار.",
+        "وبعد أيام، توقفت البلاغات تقريبًا بالسرعة نفسها التي بدأت بها.",
+        "هل أصاب الزجاج شيء… أم أصابت المدينة عدوى الملاحظة؟"
+      ],
+      "shots": {
+        "glass": "1954 Seattle car windshield covered with many tiny mysterious pits, anxious owner examining it under streetlight",
+        "checkpoint": "1950s police road checkpoint inspecting lines of cars for mysterious windshield damage, archival newsreel look",
+        "lab": "1954 police laboratory technicians comparing old and new glass pits under magnifying lenses"
+      },
+      "sources": ["HistoryLink — Seattle Windshield Pitting Epidemic"]
+    },
+    {
+      "id": "da09-darkday",
+      "file": 9,
+      "title": "عند الظهر… تحوّل النهار إلى ليل! | اليوم المظلم 1780 #shorts",
+      "place_year": "نيو إنجلاند، 1780",
+      "status_card": "واقعة موثقة — التفسير الحديث مرجّح",
+      "lines": [
+        "عند الظهر، أشعل الناس الشموع… لأن النهار تحوّل إلى ليل.",
+        "في التاسع عشر من مايو 1780، غطت عتمة غير عادية أجزاء واسعة من نيو إنجلاند.",
+        "توقفت الطيور عن الغناء، وعادت الحيوانات إلى حظائرها، ولم يعرف السكان السبب.",
+        "وثّق شهود وعلماء معاصرون الحدث، وانتشرت الشائعات مع استمرار الظلام ساعات.",
+        "الدراسات الحديثة تربطه بدخان حرائق ضخمة امتزج بالسحب والضباب.",
+        "لكن كيف يكون شعورك عندما تختفي الشمس في منتصف النهار؟"
+      ],
+      "shots": {
+        "noon": "New England village May 1780 at noon becoming as dark as night, residents lighting candles outdoors",
+        "animals": "farm animals returning to barns at midday under an unnatural black-orange sky, birds silent",
+        "fire": "distant 18th century forest wildfire smoke merging with thick clouds over a dark landscape"
+      },
+      "sources": ["American Academy of Arts and Sciences eyewitness accounts", "US Forest Service fire-scar study"]
+    },
+    {
+      "id": "da10-beijing",
+      "file": 10,
+      "title": "الانفجار الذي محا جزءًا من بكين خلال دقيقة! #shorts",
+      "place_year": "بكين، 1626",
+      "status_card": "كارثة موثقة — السبب الدقيق غير محسوم",
+      "lines": [
+        "دقيقة واحدة… كانت كافية ليختفي جزء من مدينة بكين.",
+        "صباح الثلاثين من مايو 1626، دوّى انفجار هائل قرب مستودع البارود الإمبراطوري.",
+        "ارتفعت غيمة سوداء وتحولت آلاف المنازل إلى أنقاض، وقُتل أو أُصيب آلاف الأشخاص.",
+        "السجلات الرسمية وثّقت الكارثة، لكن مركز الانفجار دُمّر بالكامل.",
+        "طُرحت احتمالات حادث بارود أو تخريب، ولم يبقَ دليل يحسم الشرارة الأولى.",
+        "من أشعل الانفجار الذي هز العاصمة قبل أربعة قرون؟"
+      ],
+      "shots": {
+        "market": "Ming dynasty Beijing 1626 morning market beside tiled rooftops, peaceful period-accurate scene",
+        "cloud": "enormous black explosion cloud above Ming Beijing rooftops, paper and wooden debris in air, no bodies shown",
+        "aftermath": "obliterated imperial gunpowder workshop site under dark haze, officials examining a blank crater from a distance"
+      },
+      "sources": ["Palace Museum Beijing study", "Naixi Feng — Mushroom Cloud Over the Northern Capital"]
+    },
+    {
+      "id": "da11-baychimo",
+      "file": 11,
+      "title": "هجروها في الجليد… فعادت وحدها لأربعة عقود! #shorts",
+      "place_year": "القطب الشمالي، 1931–1969",
+      "status_card": "السفينة والمشاهدات موثقة — مصيرها مجهول",
+      "lines": [
+        "هجروها داخل عاصفة… لكنها ظلت تعود وحدها قرابة أربعة عقود.",
+        "عام 1931، حاصر الجليد سفينة الشحن بايشيمو فغادرها طاقمها معتقدًا أنها ستغرق.",
+        "اختفت أثناء عاصفة، ثم عُثر عليها مجددًا فارغة وسليمة.",
+        "بعدها توالت مشاهدات السفينة بين الجليد، وصعد إليها أشخاص أكثر من مرة بلا طاقم.",
+        "كان آخر ظهور مسجل سنة 1969، ثم اختفت ولم يُعثر على حطام مؤكد.",
+        "هل غرقت بايشيمو… أم ما زالت مدفونة تحت الجليد؟"
+      ],
+      "shots": {
+        "trapped": "SS Baychimo 1931 cargo vessel trapped in Arctic sea ice during a blizzard, crew leaving across snow",
+        "return": "empty 1930s cargo ship reappearing through Arctic fog with no crew visible, hunters watching from a safe distance",
+        "vanish": "vast empty Arctic ice field in 1969, rotating compass in foreground, faint ship silhouette disappearing into fog"
+      },
+      "sources": ["Hudson's Bay Company Archives", "Manitoba Museum"]
+    },
+    {
+      "id": "da12-nosummer",
+      "file": 12,
+      "title": "مرّ الشتاء… ثم جاء الصيف حاملاً الثلج! | 1816 #shorts",
+      "place_year": "العالم، 1816",
+      "status_card": "واقعة مناخية موثقة",
+      "lines": [
+        "مرّ الشتاء… ثم جاء شهر يونيو حاملاً الثلج بدل الشمس.",
+        "عام 1816، انخفضت الحرارة وتساقط الصقيع في الصيف وفشلت المحاصيل بمناطق واسعة.",
+        "لم يعرف الناس السبب، وانتشرت الشائعات والخوف مع ارتفاع أسعار الطعام.",
+        "العلماء ربطوا الكارثة لاحقًا بثوران بركان تامبورا الهائل سنة 1815.",
+        "حجبت الجسيمات جزءًا من ضوء الشمس وغيّرت المناخ عبر العالم.",
+        "إذا اختفت الفصول اليوم… كم سنحتاج لنعرف أين بدأت الكارثة؟"
+      ],
+      "shots": {
+        "snow": "Europe June 1816, snow falling on green summer crops, farmers watching in disbelief",
+        "sun": "dim red sun behind volcanic haze over a cold 1816 village, candles burning inside farmhouses",
+        "tambora": "Mount Tambora eruption plume seen from far away in 1815, globe partly covered by high atmospheric ash"
+      },
+      "sources": ["US National Park Service", "American Museum of Natural History", "Smithsonian Libraries"]
+    }
+  ]
+}

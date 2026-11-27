@@ -77,7 +77,7 @@ def upload(yt, path: Path, ep: dict, settings: dict, publish_at: datetime) -> st
             "privacyStatus": "private",
             "publishAt": publish_at.astimezone(ZoneInfo("UTC")).strftime("%Y-%m-%dT%H:%M:%SZ"),
             "selfDeclaredMadeForKids": False,
-            "containsSyntheticMedia": False,
+            "containsSyntheticMedia": bool(ep.get("synthetic_media", False)),
         },
     }
     media = MediaFileUpload(str(path), mimetype="video/mp4", resumable=True, chunksize=8 * 1024 * 1024)

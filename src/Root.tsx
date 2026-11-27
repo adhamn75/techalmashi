@@ -49,6 +49,8 @@ import {Ep11T2048, EP11_FRAMES} from './episodes/Ep11T2048';
 import {Ep12Runner, EP12_FRAMES} from './episodes/Ep12Runner';
 import {Ep13Racer, EP13_FRAMES} from './episodes/Ep13Racer';
 import {Ep14Xo, EP14_FRAMES} from './episodes/Ep14Xo';
+import {DarkArchive, DARK_ARCHIVE_FRAMES} from './horror/DarkArchive';
+import darkArchiveSeason from '../horror/dark_archive_season1.json';
 
 // Every episode is one Composition. Its id must match "composition" in episodes.json.
 export const Root: React.FC = () => (
@@ -102,5 +104,17 @@ export const Root: React.FC = () => (
     <Composition id="Ep12Runner" component={Ep12Runner} durationInFrames={EP12_FRAMES} fps={30} width={1080} height={1920} />
     <Composition id="Ep13Racer" component={Ep13Racer} durationInFrames={EP13_FRAMES} fps={30} width={1080} height={1920} />
     <Composition id="Ep14Xo" component={Ep14Xo} durationInFrames={EP14_FRAMES} fps={30} width={1080} height={1920} />
+    {darkArchiveSeason.episodes.map((episode) => (
+      <Composition
+        key={episode.id}
+        id={`DarkArchive${String(episode.file).padStart(2, '0')}`}
+        component={DarkArchive}
+        defaultProps={{episodeId: episode.id}}
+        durationInFrames={DARK_ARCHIVE_FRAMES}
+        fps={30}
+        width={1080}
+        height={1920}
+      />
+    ))}
   </>
 );
