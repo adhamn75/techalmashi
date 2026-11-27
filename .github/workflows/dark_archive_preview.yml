@@ -1,0 +1,29 @@
+name: Dark Archive preview
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "public/horror/da01-l8/**"
+
+permissions:
+  contents: read
+
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - name: Render first Dark Archive short
+        run: npx remotion render src/index.ts DarkArchive01 out/dark-archive-01.mp4 --codec=h264 --crf=20 --concurrency=2
+      - uses: actions/upload-artifact@v4
+        with:
+          name: dark-archive-01-preview
+          path: out/dark-archive-01.mp4
+          retention-days: 7
