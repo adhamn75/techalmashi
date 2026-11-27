@@ -90,6 +90,20 @@ def client():
     return build("youtube", "v3", credentials=creds, cache_discovery=False)
 
 
+def read_threads(yt, video_id: str) -> dict:
+    """Newest comment threads of a video. YouTube sometimes answers a good request with a passing 400
+    "processingFailure"; that one read is tried a second time."""
+    req = yt.commentThreads().list(
+        part="snippet,replies", videoId=video_id, order="time", maxResults=50, textFormat="plainText")
+    try:
+        return req.execute()
+    except Exception as err:
+        if "processingFailure" not in str(err):
+            raise
+        time.sleep(3)
+        return req.execute()
+
+
 def owner_replied(yt, thread, owner: str) -> bool:
     s = thread["snippet"]
     if s["topLevelComment"]["snippet"].get("authorChannelId", {}).get("value") == owner:
@@ -152,9 +166,7 @@ def main() -> int:
         me = None
     for e in entries:
         try:
-            resp = yt.commentThreads().list(
-                part="snippet,replies", videoId=e["videoId"], order="time", maxResults=50, textFormat="plainText"
-            ).execute()
+            resp = read_threads(yt, e["videoId"])
         except Exception as err:  # comments disabled, video removed...
             print(f"[{e['episode']}] cannot read comments: {err}")
             continue

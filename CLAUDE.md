@@ -25,6 +25,8 @@ make episodes, is to keep that queue full with good, *different* episodes.
 - Measure each wav and place lines with `VoiceTrack` so they never overlap; stretch scenes to fit the voice
   (episodes may run 15–18 s). Keep SFX at 0.4–0.6 volume under the voice.
 - After rendering, normalise: `ffmpeg -i in.mp4 -c:v copy -af loudnorm=I=-14:TP=-1.5:LRA=11 -c:a aac -b:a 192k out.mp4`.
+  `scripts/publish.py` does this by itself after every render (`normalise`, since 2026-11-27); pre-rendered `"video"` files
+  must already be mastered by their own build.
 
 ## Hard rules
 - 12–18 seconds. 30 fps, 1080×1920.
@@ -78,7 +80,7 @@ we posted to the same person, keeping the first, within a quota cap (100 deletes
 Any change to replying must keep both guards. Kill switch: a file `.replies_off` in the repo root.
 
 ## Channels recovered — hold LIFTED (2026-11-19)
-Owner's decision 2026-11-19: excel and family publish again (daily Excel 13:00, Family Tue+Fri 20:00, Horror daily 22:00).
+Owner's decision 2026-11-19: excel and family publish again (daily Excel 13:00, Family Tue+Fri 20:00, Horror daily 22:00; current slots: see «Production sequence & schedule»).
 Official channel = **@tech3almashi (UC089ZB6HkdbJhATBrddL7oQ)**, a Brand Account «almashi temp». The wrong channel @tech3almashi-n (UCAo35INP2CMim87ZrqF3jJw) was DELETED by the owner on 2026-11-19.
 One Google login (tech3almashi@gmail.com) owns: tech3almashi (Brand «almashi temp») and Horror shorts (@Horrorshorts-l9i, a Brand Account).
 Token: youtube_token.enc points at the ORIGINAL channel (at the Google chooser: tech3almashi@gmail.com, then Brand «almashi temp»; the plain account gives the wrong channel).
@@ -156,7 +158,7 @@ Subscriber conversion is the bottleneck (3 subs from ~5k views).
 - **Family first.** Keep the family queue the fullest; build new family episodes before anything else.
 - **Excel = famous games only** (Snake, Tetris, Flappy, Pac-Man, Mario-style…) with the free file. Skip abstract demos.
 - **Horror every other day**: its slot in episodes.json has `"every_days": 2, "anchor": "2026-11-13"`
-  (publish.py skips the other days). Remove those two keys to go back to daily.
+  (publish.py skips the other days). Remove those two keys to go back to daily. (Superseded: horror is daily at 22:00 now.)
 - **Every outro gives a reason to subscribe**: a yellow pill «🔔 اشترك ليصلك الدرس التالي» (family) /
   «🔔 اشترك لتصلك اللعبة التالية» (Excel) next to the main CTA, and the same line in the description.
 
@@ -169,7 +171,7 @@ never aimed at children, always "not made for kids". Scary through atmosphere, s
 
 ## Production sequence & schedule (owner's decisions, 2026-11-12) — follow this every time
 **Slots (episodes.json → settings.slots, Asia/Beirut) — UPDATED 2026-11-20 by the owner:** Excel daily 13:00 · Family DAILY 20:00 (was Tue+Fri) ·
-Horror TWICE a day 18:00 + 22:00 (publish.py now guards per slot time, not per day, so re-runs never fill a slot twice).
+Horror ONE a day at 22:00 (the 18:00 slot was removed the same day, owner's pacing rule; publish.py guards per slot time, so re-runs never fill a slot twice).
 Tell the owner when any series drops below 3 ready episodes. Local renders here: `--browser-executable=/usr/bin/google-chrome --concurrency=2`.
 Playlists (original @tech3almashi, 2026-11-19): Excel `PLYdOHth1Xago`, Family `PLfUdrVKeKj4Y`, دفتر الجارة (horror channel) `PLcR-LdebtVbI`. An episode's own `"playlist"` field overrides the series playlist in `settings.playlists`; every دفتر الجارة episode gets `"playlist": "PLcR-LdebtVbI"` and other horror stories stay outside it. Every video (any series) ends with a teaser for the next one + a subscribe reason.
 
