@@ -1,0 +1,36 @@
+name: Dark Archive v2 preview
+
+on:
+  push:
+    paths:
+      - ".github/workflows/dark_archive_v2_preview.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  preview-v2:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: pip -q install torch --index-url https://download.pytorch.org/whl/cpu
+      - run: pip -q install diffusers transformers accelerate huggingface_hub pillow
+      - name: Generate mysterious episode-one images
+        run: python scripts/horror/gen_stills.py da01-l8
+      - run: npm ci
+      - name: Render episode-one v2
+        run: npx remotion render src/index.ts DarkArchive01 out/dark-archive-01-mystery.mp4 --codec=h264 --crf=20 --concurrency=2
+      - uses: actions/upload-artifact@v4
+        with:
+          name: dark-archive-01-mystery-preview
+          path: out/dark-archive-01-mystery.mp4
+          retention-days: 7
