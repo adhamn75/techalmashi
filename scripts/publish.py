@@ -59,6 +59,23 @@ def render(composition: str, path: Path) -> None:
         cwd=ROOT, check=True,
     )
     tmp.replace(path)
+    normalise(path)
+
+
+def normalise(path: Path) -> None:
+    """Bring a fresh render to YouTube loudness (-14 LUFS, -1.5 dBTP), picture untouched, with Remotion's bundled
+    ffmpeg. If it fails the render is uploaded as it is: a quiet video is better than an empty slot."""
+    tmp = path.with_name(path.stem + ".loud.mp4")
+    try:
+        subprocess.run(
+            ["npx", "remotion", "ffmpeg", "-y", "-loglevel", "error", "-i", str(path), "-c:v", "copy",
+             "-af", "loudnorm=I=-14:TP=-1.5:LRA=11", "-ar", "48000", "-c:a", "aac", "-b:a", "192k", str(tmp)],
+            cwd=ROOT, check=True,
+        )
+        tmp.replace(path)
+    except (OSError, subprocess.CalledProcessError) as err:
+        tmp.unlink(missing_ok=True)
+        print(f"::warning::{path.name}: loudness not normalised, using the render as it is: {err}")
 
 
 def upload(yt, path: Path, ep: dict, settings: dict, publish_at: datetime) -> str:
