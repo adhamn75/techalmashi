@@ -60,3 +60,10 @@
 - Family: the 2FA «اللصّ عرف كلمة المرور… وبقي خارج الباب» (1,203) and school-uniform photo (1,163) both crossed 1k in days, while game-chat stranger re-angle (124) and in-app purchase (103) stall — a single concrete scary scene in the title beats a "4 signs" list.
 - Excel: Minesweeper with the «هل فعلاً…؟» title is at 422 after a day vs Breakout 1,110 — the question shape is not a guaranteed lift; game fame still decides. Keep picking the most famous games (tic-tac-toe next, then Tetris redux / Mario-style).
 - Subs per 1k views: main channel 10 / 14.3k ≈ 0.70 (flat vs 0.67 baseline and 0.72 yesterday); spoken-phrase episodes (racing) not yet aired — re-check after it airs.
+
+## 2026-11-27 (scheduled production run)
+- Queues: Excel 2 ready (Platformer, Racing) → built ep14 tic-tac-toe (Ep14Xo + files/tictactoe.xlsm, minimax in VBA). Family 3 ready (Wi-Fi, passphrase, screen time), code-drawn horror 2 (phone, clock): nothing needed there.
+- Minesweeper reached 541 in two days vs Breakout 1,110: mid-fame games land ~half of the famous ones. Tic-tac-toe is universally known, and its trick (Excel tries 27,732 games) is a number on screen — test whether a "visible AI" beats a plain arcade clone.
+- Family «صديق ابنك في اللعبة» re-angle got 879 in two days while in-app purchase (141) and QR (61 in hours) lag: stranger/predator danger keeps outpulling money/settings topics.
+- Subs per 1k views: 10 / 15.9k ≈ 0.63 (down from 0.70): views grow, subs don't. The spoken phrase starts with racing (airs next Excel slot); judge after 3–4 such episodes.
+- For a strategy game, scores written INSIDE the empty squares (green/white/red) read at phone size much better than a side panel; fanning mini-boards out of each square sell "it tries every future" without extra narration.
