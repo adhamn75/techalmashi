@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-27T18:15:46.722553+00:00",
+  "updated": "2026-11-28T08:24:37.111387+00:00",
   "videos": [
     {
       "youtube_id": "TGKpLTdMBo0",
@@ -16,7 +16,7 @@
       "youtube_id": "rzHoB0MhhgA",
       "title": "رقمي أنا 📞 اتصل بي الساعة 3: «افتح الباب… أنا في الخارج» #shorts",
       "privacy": "public",
-      "views": 1373,
+      "views": 1374,
       "likes": 10,
       "comments": 0,
       "id": "h06-ownnumber",
@@ -116,7 +116,7 @@
       "title": "الخزانة 🚪 كل ليلة الساعة 3 تُطرق من الداخل… الليلة طرقتُ أنا أولًا #shorts",
       "privacy": "public",
       "views": 1131,
-      "likes": 13,
+      "likes": 12,
       "comments": 0,
       "id": "h07-closet",
       "series": "horror",
@@ -148,7 +148,7 @@
       "youtube_id": "OOg_rt2pI_8",
       "title": "الدرج 🪜 أعدّه كل ليلة 12 درجة… الليلة صار 13 #shorts",
       "privacy": "public",
-      "views": 996,
+      "views": 1003,
       "likes": 11,
       "comments": 0,
       "id": "h18-stairs",
@@ -200,17 +200,6 @@
       "publish_at": "2026-11-19T22:00:00+02:00"
     },
     {
-      "youtube_id": "r7GyZ5agXDM",
-      "title": "«صديق» ابنك في اللعبة قد لا يكون طفلًا 🎮🚩 4 علامات خطر #shorts",
-      "privacy": "public",
-      "views": 884,
-      "likes": 5,
-      "comments": 0,
-      "id": "fam08-stranger",
-      "series": "family",
-      "publish_at": "2026-11-25T20:00:00+02:00"
-    },
-    {
       "youtube_id": "cD451ImVilE",
       "title": "آثار أقدام 👣 استيقظت على ماءٍ يقطر… والآثار تقف عند سريري #shorts",
       "privacy": "public",
@@ -231,6 +220,17 @@
       "id": "h11-window",
       "series": "horror",
       "publish_at": "2026-11-17T22:00:00+02:00"
+    },
+    {
+      "youtube_id": "r7GyZ5agXDM",
+      "title": "«صديق» ابنك في اللعبة قد لا يكون طفلًا 🎮🚩 4 علامات خطر #shorts",
+      "privacy": "public",
+      "views": 880,
+      "likes": 5,
+      "comments": 0,
+      "id": "fam08-stranger",
+      "series": "family",
+      "publish_at": "2026-11-25T20:00:00+02:00"
     },
     {
       "youtube_id": "tCiSvZIEuXQ",
@@ -288,6 +288,17 @@
       "publish_at": "2026-11-16T22:00:00+02:00"
     },
     {
+      "youtube_id": "LENXUU_sCvk",
+      "title": "لعبة تتريس حقيقية داخل Excel؟! 🎮 الملف مجاني #shorts",
+      "privacy": "public",
+      "views": 400,
+      "likes": 3,
+      "comments": 1,
+      "id": "ep03-tetris",
+      "series": "excel",
+      "publish_at": "2026-11-10T13:00:00+02:00"
+    },
+    {
       "youtube_id": "QVIaPVuItns",
       "title": "ليلى نجت… لكن الدفتر وجد صاحبة جديدة اسمها مريم! انتظروا الحلقة القادمة · دفتر الجارة 📓 8 #shorts",
       "privacy": "public",
@@ -299,15 +310,15 @@
       "publish_at": "2026-11-22T22:00:00+02:00"
     },
     {
-      "youtube_id": "LENXUU_sCvk",
-      "title": "لعبة تتريس حقيقية داخل Excel؟! 🎮 الملف مجاني #shorts",
+      "youtube_id": "ALCzHcF3R_Y",
+      "title": "الدفتر كتب: سينطفئ النور! ثم طُرق الباب… انتظروا الحلقة القادمة · دفتر الجارة 📓 9 #shorts",
       "privacy": "public",
       "views": 398,
-      "likes": 3,
-      "comments": 1,
-      "id": "ep03-tetris",
-      "series": "excel",
-      "publish_at": "2026-11-10T13:00:00+02:00"
+      "likes": 7,
+      "comments": 0,
+      "id": "h-daftar09",
+      "series": "horror",
+      "publish_at": "2026-11-25T22:00:00+02:00"
     },
     {
       "youtube_id": "B0GRfWzPGzY",
@@ -321,21 +332,10 @@
       "publish_at": "2026-11-23T22:00:00+02:00"
     },
     {
-      "youtube_id": "ALCzHcF3R_Y",
-      "title": "الدفتر كتب: سينطفئ النور! ثم طُرق الباب… انتظروا الحلقة القادمة · دفتر الجارة 📓 9 #shorts",
-      "privacy": "public",
-      "views": 385,
-      "likes": 7,
-      "comments": 0,
-      "id": "h-daftar09",
-      "series": "horror",
-      "publish_at": "2026-11-25T22:00:00+02:00"
-    },
-    {
       "youtube_id": "VLsYD24ePwc",
       "title": "«أرسل لي الكود الذي وصلك» 🚨 هكذا يُسرق واتساب ابنك #shorts",
       "privacy": "public",
-      "views": 323,
+      "views": 327,
       "likes": 4,
       "comments": 0,
       "id": "fam03-code",
@@ -346,7 +346,7 @@
       "youtube_id": "4EJuUe4zabo",
       "title": "ليلى ترفض كتابة اسم أحد… فاسودّت الصفحة! انتظروا الحلقة القادمة · دفتر الجارة 📓 7 #shorts",
       "privacy": "public",
-      "views": 316,
+      "views": 317,
       "likes": 6,
       "comments": 0,
       "id": "h-daftar07",
@@ -363,6 +363,17 @@
       "id": "h-daftar06",
       "series": "horror",
       "publish_at": "2026-11-20T22:00:00+02:00"
+    },
+    {
+      "youtube_id": "VOKVsW2LROk",
+      "title": "هاكر جرّب 4 حيل على حساب طفلك… وفشل في كلها! 🛡️ #shorts",
+      "privacy": "public",
+      "views": 226,
+      "likes": 4,
+      "comments": 0,
+      "id": "fam10-hacker",
+      "series": "family",
+      "publish_at": "2026-11-27T20:00:00+02:00"
     },
     {
       "youtube_id": "d3qbYTS3GGQ",
@@ -390,7 +401,7 @@
       "youtube_id": "AmyUcLRSgrY",
       "title": "ليلى ربطت الباب بحبل… فاستيقظت واقفة عنده! انتظروا الحلقة القادمة · دفتر الجارة 📓 5 #shorts",
       "privacy": "public",
-      "views": 161,
+      "views": 165,
       "likes": 1,
       "comments": 0,
       "id": "h-daftar05",
@@ -401,7 +412,7 @@
       "youtube_id": "7FFnoiugE10",
       "title": "فاتورة 500$ من لعبة ابنك؟! 💳 أوقف الشراء داخل التطبيقات في 10 ثوانٍ #shorts",
       "privacy": "public",
-      "views": 143,
+      "views": 147,
       "likes": 0,
       "comments": 0,
       "id": "fam07-purchase",
@@ -423,12 +434,23 @@
       "youtube_id": "j8j8r9wjWCs",
       "title": "هل فعلاً رمز QR قد يسرق حساب ابنك؟ 📷🚨 جواهر مجانية… افعل هذا قبل المسح #shorts",
       "privacy": "public",
-      "views": 107,
+      "views": 131,
       "likes": 0,
       "comments": 0,
       "id": "fam09-qr",
       "series": "family",
       "publish_at": "2026-11-26T20:00:00+02:00"
+    },
+    {
+      "youtube_id": "QydWlbR16Z8",
+      "title": "لعبة 2048 داخل Excel؟! 🟨 اضغط سهمًا… فتندمج الخلايا حتى 2048… الملف مجاني #shorts",
+      "privacy": "public",
+      "views": 122,
+      "likes": 1,
+      "comments": 0,
+      "id": "ep11-2048",
+      "series": "excel",
+      "publish_at": "2026-11-27T13:00:00+02:00"
     },
     {
       "youtube_id": "dIupMNHksc4",
@@ -453,15 +475,15 @@
       "publish_at": "2026-11-14T22:00:00+02:00"
     },
     {
-      "youtube_id": "QydWlbR16Z8",
-      "title": "لعبة 2048 داخل Excel؟! 🟨 اضغط سهمًا… فتندمج الخلايا حتى 2048… الملف مجاني #shorts",
+      "youtube_id": "djLpYuPi8ns",
+      "title": "رنّ هاتف ليلى… واسمها هي على الشاشة! انتظروا الحلقة القادمة · دفتر الجارة 📓 10 #shorts",
       "privacy": "public",
-      "views": 68,
-      "likes": 0,
+      "views": 63,
+      "likes": 2,
       "comments": 0,
-      "id": "ep11-2048",
-      "series": "excel",
-      "publish_at": "2026-11-27T13:00:00+02:00"
+      "id": "h-daftar10",
+      "series": "horror",
+      "publish_at": "2026-11-26T22:00:00+02:00"
     },
     {
       "youtube_id": "K-jLrdmkQsM",
@@ -475,15 +497,15 @@
       "publish_at": "2026-11-11T13:00:00+02:00"
     },
     {
-      "youtube_id": "djLpYuPi8ns",
-      "title": "رنّ هاتف ليلى… واسمها هي على الشاشة! انتظروا الحلقة القادمة · دفتر الجارة 📓 10 #shorts",
+      "youtube_id": "5HpH56EBC4Q",
+      "title": "«جواهر مجانية» لابنك؟ 💎 هكذا يُسرق حساب لعبته في ثانية #shorts",
       "privacy": "public",
-      "views": 37,
-      "likes": 1,
+      "views": 19,
+      "likes": 0,
       "comments": 0,
-      "id": "h-daftar10",
-      "series": "horror",
-      "publish_at": "2026-11-26T22:00:00+02:00"
+      "id": "fam06-gems",
+      "series": "family",
+      "publish_at": "2026-11-20T20:00:00+02:00"
     },
     {
       "youtube_id": "2HCAEVfQRoE",
@@ -497,26 +519,15 @@
       "publish_at": "2026-11-11T22:00:00+02:00"
     },
     {
-      "youtube_id": "5HpH56EBC4Q",
-      "title": "«جواهر مجانية» لابنك؟ 💎 هكذا يُسرق حساب لعبته في ثانية #shorts",
+      "youtube_id": "n1pynGX_Vug",
+      "title": "ليلى رأت في المرآة من ليس هي! انتظروا الحلقة القادمة · دفتر الجارة 📓 11 #shorts",
       "privacy": "public",
-      "views": 18,
+      "views": 3,
       "likes": 0,
       "comments": 0,
-      "id": "fam06-gems",
-      "series": "family",
-      "publish_at": "2026-11-20T20:00:00+02:00"
-    },
-    {
-      "youtube_id": "VOKVsW2LROk",
-      "title": "هاكر جرّب 4 حيل على حساب طفلك… وفشل في كلها! 🛡️ #shorts",
-      "privacy": "public",
-      "views": 2,
-      "likes": 0,
-      "comments": 0,
-      "id": "fam10-hacker",
-      "series": "family",
-      "publish_at": "2026-11-27T20:00:00+02:00"
+      "id": "h-daftar11",
+      "series": "horror",
+      "publish_at": "2026-11-27T22:00:00+02:00"
     },
     {
       "youtube_id": "Hly1ozhV95c",

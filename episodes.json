@@ -1203,7 +1203,7 @@
     {
       "series": "horror",
       "channel": "UC9lU_G718LC15JQSMQpcbog",
-      "status": "ready",
+      "status": "scheduled",
       "id": "h19-phone",
       "composition": "H19Phone",
       "title": "الهاتف ☎️ سلكه مقطوع منذ سنين… الليلة رنّ، وفي السماعة أنفاس #shorts",
@@ -1218,7 +1218,9 @@
         "رعب منتصف الليل",
         "هاتف مقطوع",
         "الهاتف القديم"
-      ]
+      ],
+      "youtube_id": "o6UTuro2ZbA",
+      "publish_at": "2026-11-28T22:00:00+02:00"
     },
     {
       "series": "horror",
