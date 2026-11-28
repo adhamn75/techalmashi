@@ -67,3 +67,10 @@
 - Family «صديق ابنك في اللعبة» re-angle got 879 in two days while in-app purchase (141) and QR (61 in hours) lag: stranger/predator danger keeps outpulling money/settings topics.
 - Subs per 1k views: 10 / 15.9k ≈ 0.63 (down from 0.70): views grow, subs don't. The spoken phrase starts with racing (airs next Excel slot); judge after 3–4 such episodes.
 - For a strategy game, scores written INSIDE the empty squares (green/white/red) read at phone size much better than a side panel; fanning mini-boards out of each square sell "it tries every future" without extra narration.
+
+## 2026-11-28 (scheduled production run)
+- Queues full: Excel 3 ready (Platformer, Racing, Tic-tac-toe), Family 4 (passphrase, screen time, vault, torch), code-drawn horror 4 (phone, clock, TV, coat) → nothing built.
+- Family split stays stark: 2FA (1,202) and uniform photo (1,163) vs in-app purchase (144 after 4 days) and QR (127): concrete-danger-to-the-child scenes win, money/settings topics stall — keep the stranger/predator angle in the front of the family queue (fam19 live-stream gifts fits it).
+- Excel: Breakout 1,110 > Minesweeper 551 > 2048 117 (day 1): fame of the game still decides; Pong (ep15) is famous but old — sell it as «أوّل لعبة فيديو في التاريخ» in the title.
+- Horror: standalone code-drawn stairs (1,002) holds the ~1k pace while the letter (390) lags — objects that change on their own keep winning.
+- Subs per 1k views: 11 / 16.2k ≈ 0.68 (flat). Spoken-phrase episodes still too few to judge.
